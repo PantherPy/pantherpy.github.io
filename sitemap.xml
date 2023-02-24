@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://panther.io/</loc>
+         <lastmod>2023-02-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://panther.io/benchmarks/</loc>
+         <lastmod>2023-02-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://panther.io/configs/</loc>
+         <lastmod>2023-02-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://panther.io/features/</loc>
+         <lastmod>2023-02-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://panther.io/release_notes/</loc>
+         <lastmod>2023-02-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+</urlset>
