@@ -6,18 +6,18 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Fast & Friendly Python Framework">
+        <meta name="description" content="Fast &  Friendly, Web Framework For Building Async APIs">
       
       
       
-        <link rel="canonical" href="https://panther.io/">
+        <link rel="canonical" href="https://pantherpy.github.io/">
       
       
       
         <link rel="next" href="configs/">
       
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.14">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.12">
     
     
       
@@ -25,10 +25,10 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.113286f1.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.0d440cfe.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.2505c338.min.css">
       
       
 
@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction" class="md-skip">
+        <a href="#panther" class="md-skip">
           Skip to content
         </a>
       
@@ -173,7 +173,7 @@
         <a href="https://github.com/AliRn76/Panther" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
   </div>
   <div class="md-source__repository">
     AliRn76/Panther
@@ -218,7 +218,7 @@
       <a href="https://github.com/AliRn76/Panther" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
   </div>
   <div class="md-source__repository">
     AliRn76/Panther
@@ -242,8 +242,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           Introduction
@@ -260,8 +258,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -270,13 +266,41 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
-    Requirements
+  <a href="#panther" class="md-nav__link">
+    Panther
   </a>
+  
+    <nav class="md-nav" aria-label="Panther">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benchmark" class="md-nav__link">
+    Benchmark
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
+  <a href="#test-source-codes-here" class="md-nav__link">
+    test source codes: here
+  </a>
+  
+    <nav class="md-nav" aria-label="test source codes: here">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#installation" class="md-nav__link">
     Installation
   </a>
@@ -285,8 +309,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#create-virtual-environment" class="md-nav__link">
-    Create Virtual Environment
+  <a href="#create-a-virtual-environment" class="md-nav__link">
+    Create a Virtual Environment
   </a>
   
 </li>
@@ -309,8 +333,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#usage" class="md-nav__link">
     Usage
   </a>
@@ -350,8 +374,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#example" class="md-nav__link">
     Example
   </a>
@@ -360,16 +384,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#you-can-create-project-structure-yourself" class="md-nav__link">
-    You can create project structure yourself
+  <a href="#you-can-create-project-with" class="md-nav__link">
+    You can create project with
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#or-leave-it-to-panther" class="md-nav__link">
-    Or leave it to Panther
+  <a href="#or-create-it-yourself" class="md-nav__link">
+    or create it yourself:
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -463,8 +492,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -473,13 +500,41 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
-    Requirements
+  <a href="#panther" class="md-nav__link">
+    Panther
   </a>
+  
+    <nav class="md-nav" aria-label="Panther">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benchmark" class="md-nav__link">
+    Benchmark
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
+  <a href="#test-source-codes-here" class="md-nav__link">
+    test source codes: here
+  </a>
+  
+    <nav class="md-nav" aria-label="test source codes: here">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#installation" class="md-nav__link">
     Installation
   </a>
@@ -488,8 +543,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#create-virtual-environment" class="md-nav__link">
-    Create Virtual Environment
+  <a href="#create-a-virtual-environment" class="md-nav__link">
+    Create a Virtual Environment
   </a>
   
 </li>
@@ -512,8 +567,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#usage" class="md-nav__link">
     Usage
   </a>
@@ -553,8 +608,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#example" class="md-nav__link">
     Example
   </a>
@@ -563,16 +618,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#you-can-create-project-structure-yourself" class="md-nav__link">
-    You can create project structure yourself
+  <a href="#you-can-create-project-with" class="md-nav__link">
+    You can create project with
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#or-leave-it-to-panther" class="md-nav__link">
-    Or leave it to Panther
+  <a href="#or-create-it-yourself" class="md-nav__link">
+    or create it yourself:
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -599,70 +659,141 @@
   
 
 
-<h1 id="introduction">Introduction</h1>
-<p>Panther is a fast &amp; friendly python framework.</p>
-<h2 id="requirements">Requirements</h2>
-<div class="highlight"><pre><span></span><code><span class="go">Python 3.10+</span>
-</code></pre></div>
+
+  <h1>Introduction</h1>
+
+<h2 id="panther">Panther<a class="headerlink" href="#panther" title="Permanent link">#</a></h2>
+<p><b>Is A Fast &amp;  Friendly, Web Framework For Building Async APIs With Python 3.11+</b> </p>
 <hr/>
 
-<h2 id="installation">Installation</h2>
+<h3 id="features">Features<a class="headerlink" href="#features" title="Permanent link">#</a></h3>
+<ul>
+<li>Document-oriented Databases ORM (TinyDB, MongoDB)</li>
+<li>Visual API Monitoring (In Terminal)</li>
+<li>Cache APIs (In Memory, In Redis)</li>
+<li>Built-in Authentication Classes (Customizable)</li>
+<li>Built-in Permission Classes (Customizable)</li>
+<li>Handle Custom Middlewares</li>
+</ul>
+<hr />
+<h3 id="benchmark">Benchmark<a class="headerlink" href="#benchmark" title="Permanent link">#</a></h3>
+<p>We implemented most of the Python frameworks and sent 
+<code>2_000</code> requests per second 
+for a total of <code>10</code> seconds
+(Total <code>200_000</code> requeusts)
+in the same environment
+with <a href="https://github.com/nakabonne/ali">https://github.com/nakabonne/ali</a> and here's the result:</p>
+<blockquote>
+<p>we won't rate other frameworks with throughput, so the names are censored.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Request Handled</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Framework 1</td>
+<td>x</td>
+</tr>
+<tr>
+<td>Panther</td>
+<td>x</td>
+</tr>
+<tr>
+<td>Framework 2</td>
+<td>x</td>
+</tr>
+<tr>
+<td>Framework 3</td>
+<td>x</td>
+</tr>
+<tr>
+<td>Framework 4</td>
+<td>x</td>
+</tr>
+<tr>
+<td>Framework 5</td>
+<td>x</td>
+</tr>
+<tr>
+<td>Framework 6</td>
+<td>x</td>
+</tr>
+<tr>
+<td>Framework 7</td>
+<td>x</td>
+</tr>
+</tbody>
+</table>
+<h2 id="test-source-codes-here">test source codes: <a href="https://pantherpy.github.io/benchmark/codes">here</a><a class="headerlink" href="#test-source-codes-here" title="Permanent link">#</a></h2>
+<h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">#</a></h3>
 <ul>
 <li>
-<h3 id="create-virtual-environment">Create Virtual Environment</h3>
-<div class="highlight"><pre><span></span><code>$ python -m venv .venv
+<h4 id="create-a-virtual-environment">Create a Virtual Environment<a class="headerlink" href="#create-a-virtual-environment" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
 </code></pre></div>
 </li>
 <li>
-<h3 id="active-the-environment">Active The Environment</h3>
+<h4 id="active-the-environment">Active The Environment<a class="headerlink" href="#active-the-environment" title="Permanent link">#</a></h4>
 <ul>
-<li>
-<p>Linux &amp; Mac
-  <div class="highlight"><pre><span></span><code>$ source .venv/bin/activate
-</code></pre></div></p>
-</li>
-<li>
-<p>Windows
-  <div class="highlight"><pre><span></span><code>$ .\.venv\Scripts\activate
-</code></pre></div></p>
-</li>
+<li>Linux &amp; Mac
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</code></pre></div></li>
+<li>Windows
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>.<span class="se">\.</span>venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+</code></pre></div></li>
 </ul>
 </li>
 <li>
-<h3 id="install-panther">Install Panther</h3>
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>panter
+<h4 id="install-panther">Install Panther<a class="headerlink" href="#install-panther" title="Permanent link">#</a></h4>
+<p><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>panter
 </code></pre></div>
+    or
+    <div class="highlight"><pre><span></span><code><span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>panter<span class="o">[</span>full<span class="o">]</span><span class="w"> </span><span class="c1"># include JWT Authentication</span>
+</code></pre></div></p>
 </li>
 </ul>
 <hr/>
 
-<h2 id="usage">Usage</h2>
+<h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h3>
 <ul>
 <li>
-<h4 id="create-project">Create Project</h4>
+<h4 id="create-project">Create Project<a class="headerlink" href="#create-project" title="Permanent link">#</a></h4>
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>panther<span class="w"> </span>create<span class="w"> </span>&lt;project_name&gt;<span class="w"> </span>&lt;directory&gt;
 </code></pre></div>
 </li>
 <li>
-<h4 id="run-project">Run Project</h4>
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>panther<span class="w"> </span>run<span class="w"> </span>
+<h4 id="run-project">Run Project<a class="headerlink" href="#run-project" title="Permanent link">#</a></h4>
+<p>Panther needs Uvicorn as ASGI (Asynchronous Server Gateway Interface)
+  <div class="highlight"><pre><span></span><code><span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>uvicorn<span class="o">[</span>standard<span class="o">]</span>
 </code></pre></div>
+  Then
+  <div class="highlight"><pre><span></span><code><span class="gp">$ </span>panther<span class="w"> </span>run<span class="w"> </span>
+</code></pre></div></p>
 </li>
 <li>
-<h4 id="monitoring-requests">Monitoring Requests</h4>
+<h4 id="monitoring-requests">Monitoring Requests<a class="headerlink" href="#monitoring-requests" title="Permanent link">#</a></h4>
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>panther<span class="w"> </span>monitor<span class="w"> </span>
 </code></pre></div>
 </li>
 <li>
-<h4 id="python-shell">Python Shell</h4>
+<h4 id="python-shell">Python Shell<a class="headerlink" href="#python-shell" title="Permanent link">#</a></h4>
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>panther<span class="w"> </span>shell<span class="w"> </span>
 </code></pre></div>
 </li>
 </ul>
-<h2 id="example">Example</h2>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">#</a></h3>
 <ul>
 <li>
-<h4 id="you-can-create-project-structure-yourself">You can create project structure yourself</h4>
+<h4 id="you-can-create-project-with">You can create project with<a class="headerlink" href="#you-can-create-project-with" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="gp">$ </span>panther<span class="w"> </span>create<span class="w"> </span>myproject
+</code></pre></div>
+</li>
+<li>
+<h4 id="or-create-it-yourself">or create it yourself:<a class="headerlink" href="#or-create-it-yourself" title="Permanent link">#</a></h4>
 <p><strong>core/configs.py</strong>:</p>
 <div class="highlight"><pre><span></span><code><span class="n">URLs</span> <span class="o">=</span> <span class="s1">&#39;core/urls.py&#39;</span>
 </code></pre></div>
@@ -684,7 +815,6 @@
 <p><strong>app/apis.py</strong>:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther</span> <span class="kn">import</span> <span class="n">version</span><span class="p">,</span> <span class="n">status</span>
 <span class="kn">from</span> <span class="nn">panther.app</span> <span class="kn">import</span> <span class="n">API</span>
-<span class="kn">from</span> <span class="nn">panther.configs</span> <span class="kn">import</span> <span class="n">config</span>
 <span class="kn">from</span> <span class="nn">panther.request</span> <span class="kn">import</span> <span class="n">Request</span>
 <span class="kn">from</span> <span class="nn">panther.response</span> <span class="kn">import</span> <span class="n">Response</span>
 
@@ -698,9 +828,6 @@
 <span class="k">async</span> <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
     <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="n">version</span><span class="p">(),</span>
-        <span class="s1">&#39;debug&#39;</span><span class="p">:</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;debug&#39;</span><span class="p">],</span>
-        <span class="s1">&#39;db_engine&#39;</span><span class="p">:</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;db_engine&#39;</span><span class="p">],</span>
-        <span class="s1">&#39;default_cache_exp&#39;</span><span class="p">:</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;default_cache_exp&#39;</span><span class="p">],</span>
         <span class="s1">&#39;user_agent&#39;</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">user_agent</span><span class="p">,</span>
         <span class="s1">&#39;content_length&#39;</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">content_length</span><span class="p">,</span>
     <span class="p">}</span>
@@ -708,16 +835,15 @@
 </code></pre></div>
 </li>
 <li>
-<h4 id="or-leave-it-to-panther">Or leave it to Panther</h4>
-<div class="highlight"><pre><span></span><code><span class="go">panther create myproject</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="go">cd myproject</span>
-</code></pre></div>
+<p><b> Then run (<code>$ panther run</code>) the project, now you can see these two urls:</b></p>
+</li>
+<li>
+<p><a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a></p>
+</li>
+<li>
+<p><a href="http://127.0.0.1:8000/info/">http://127.0.0.1:8000/info/</a></p>
 </li>
 </ul>
-<p>Then run (<code>$ panther run</code>) the project, now you can see these two urls:</p>
-<p><a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a></p>
-<p><a href="http://127.0.0.1:8000/info/">http://127.0.0.1:8000/info/</a></p>
 <blockquote>
 <p>More examples: <a href="https://github.com/AliRn76/panther/tree/master/example">https://github.com/AliRn76/panther/tree/master/example</a>.</p>
 </blockquote>
@@ -758,14 +884,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.2a6f1dda.min.js"></script>
-      
-        <script src="https://www.starlette.io/js/chat.js"></script>
-      
-        <script src="https://www.starlette.io/js/sidecar-1.5.0.js"></script>
+      <script src="assets/javascripts/bundle.4b2c34cd.min.js"></script>
       
     
   </body>
