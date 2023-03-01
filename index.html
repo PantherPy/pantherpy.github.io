@@ -287,50 +287,10 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#test-source-codes-here" class="md-nav__link">
-    test source codes: here
-  </a>
-  
-    <nav class="md-nav" aria-label="test source codes: here">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
   <a href="#installation" class="md-nav__link">
     Installation
   </a>
-  
-    <nav class="md-nav" aria-label="Installation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#create-a-virtual-environment" class="md-nav__link">
-    Create a Virtual Environment
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#active-the-environment" class="md-nav__link">
-    Active The Environment
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#install-panther" class="md-nav__link">
-    Install Panther
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -437,25 +397,58 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="features/" class="md-nav__link">
-        Features
+      <a href="tutorials/create_project/" class="md-nav__link">
+        Create Project
       </a>
     </li>
   
 
-    
-      
-      
-      
-
+            
+          
+            
+              
   
   
   
     <li class="md-nav__item">
-      <a href="benchmarks/" class="md-nav__link">
-        Benchmarks
+      <a href="tutorials/first_api/" class="md-nav__link">
+        First API
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -470,6 +463,21 @@
     <li class="md-nav__item">
       <a href="release_notes/" class="md-nav__link">
         Release Notes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="todos/" class="md-nav__link">
+        TODOs
       </a>
     </li>
   
@@ -521,50 +529,10 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#test-source-codes-here" class="md-nav__link">
-    test source codes: here
-  </a>
-  
-    <nav class="md-nav" aria-label="test source codes: here">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
   <a href="#installation" class="md-nav__link">
     Installation
   </a>
-  
-    <nav class="md-nav" aria-label="Installation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#create-a-virtual-environment" class="md-nav__link">
-    Create a Virtual Environment
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#active-the-environment" class="md-nav__link">
-    Active The Environment
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#install-panther" class="md-nav__link">
-    Install Panther
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -678,86 +646,97 @@
 <hr />
 <h3 id="benchmark">Benchmark<a class="headerlink" href="#benchmark" title="Permanent link">#</a></h3>
 <p>We implemented most of the Python frameworks and sent 
-<code>2_000</code> requests per second 
+<code>60_000</code> requests per second 
 for a total of <code>10</code> seconds
-(Total <code>200_000</code> requeusts)
+(Total <code>600_000</code> requests)
 in the same environment
 with <a href="https://github.com/nakabonne/ali">https://github.com/nakabonne/ali</a> and here's the result:</p>
 <blockquote>
-<p>we won't rate other frameworks with throughput, so the names are censored.</p>
+<p>we won't rate other frameworks with throughput, so the names are censored.
+but you can find the detailed results &amp; source codes <a href="https://pantherpy.github.io/benchmark/codes">[here]</a></p>
 </blockquote>
 <table>
 <thead>
 <tr>
 <th>Framework</th>
 <th>Request Handled</th>
+<th>Max Latencies</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Framework 1</td>
-<td>x</td>
+<td>...</td>
+<td>275,060</td>
+<td>270.3ms</td>
+</tr>
+<tr>
+<td>...</td>
+<td>188,016</td>
+<td>195.6ms</td>
 </tr>
 <tr>
 <td>Panther</td>
-<td>x</td>
+<td>156,743</td>
+<td>214.7ms</td>
 </tr>
 <tr>
-<td>Framework 2</td>
-<td>x</td>
+<td>...</td>
+<td>66,274</td>
+<td>476.2ms</td>
 </tr>
 <tr>
-<td>Framework 3</td>
-<td>x</td>
+<td>...</td>
+<td>52,350</td>
+<td>1.2924s</td>
 </tr>
 <tr>
-<td>Framework 4</td>
-<td>x</td>
+<td>...</td>
+<td>32,944</td>
+<td>30.00ms</td>
 </tr>
 <tr>
-<td>Framework 5</td>
-<td>x</td>
+<td>...</td>
+<td>31,336</td>
+<td>30.03ms</td>
 </tr>
 <tr>
-<td>Framework 6</td>
-<td>x</td>
-</tr>
-<tr>
-<td>Framework 7</td>
-<td>x</td>
+<td>...</td>
+<td>19,820</td>
+<td>30.0s</td>
 </tr>
 </tbody>
 </table>
-<h2 id="test-source-codes-here">test source codes: <a href="https://pantherpy.github.io/benchmark/codes">here</a><a class="headerlink" href="#test-source-codes-here" title="Permanent link">#</a></h2>
+<hr />
 <h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">#</a></h3>
 <ul>
-<li>
-<h4 id="create-a-virtual-environment">Create a Virtual Environment<a class="headerlink" href="#create-a-virtual-environment" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
-</code></pre></div>
-</li>
-<li>
-<h4 id="active-the-environment">Active The Environment<a class="headerlink" href="#active-the-environment" title="Permanent link">#</a></h4>
+<li><details>
+    <summary>Create a Virtual Environment</summary>
+    <pre>$ python -m venv .venv</pre></li>
+</ul>
+</details>
 <ul>
+<li><details>
+    <summary>Active The Environment</summary><ul>
 <li>Linux &amp; Mac
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-</code></pre></div></li>
+  <pre>$ source .venv/bin/activate</pre></li>
 <li>Windows
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>.<span class="se">\.</span>venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
-</code></pre></div></li>
+  <pre>$ .\.venv\Scripts\activate</pre></li>
 </ul>
 </li>
-<li>
-<h4 id="install-panther">Install Panther<a class="headerlink" href="#install-panther" title="Permanent link">#</a></h4>
-<p><div class="highlight"><pre><span></span><code><span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>panter
-</code></pre></div>
-    or
-    <div class="highlight"><pre><span></span><code><span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>panter<span class="o">[</span>full<span class="o">]</span><span class="w"> </span><span class="c1"># include JWT Authentication</span>
-</code></pre></div></p>
+</ul>
+</details>
+<ul>
+<li><details open>
+    <summary>Install Panther</summary><ul>
+<li>Normal
+  <pre>$ pip install panther</pre></li>
+<li>Include JWT Authentication
+  <pre>$ pip install panther[full]</pre>
+  </details></li>
+</ul>
 </li>
 </ul>
-<hr/>
-
+<hr />
 <h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h3>
 <ul>
 <li>
