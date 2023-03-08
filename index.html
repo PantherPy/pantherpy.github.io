@@ -461,6 +461,21 @@
   
   
     <li class="md-nav__item">
+      <a href="benchmarks/" class="md-nav__link">
+        Benchmarks
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="release_notes/" class="md-nav__link">
         Release Notes
       </a>
@@ -632,11 +647,10 @@
 
 <h2 id="panther">Panther<a class="headerlink" href="#panther" title="Permanent link">#</a></h2>
 <p><b>Is A Fast &amp;  Friendly, Web Framework For Building Async APIs With Python 3.11+</b> </p>
-<hr/>
-
+<hr />
 <h3 id="features">Features<a class="headerlink" href="#features" title="Permanent link">#</a></h3>
 <ul>
-<li>Document-oriented Databases ORM (TinyDB, MongoDB)</li>
+<li>Document-oriented Databases ORM (<a href="https://pypi.org/project/slark/">SlarkDB</a>, MongoDB)</li>
 <li>Visual API Monitoring (In Terminal)</li>
 <li>Cache APIs (In Memory, In Redis)</li>
 <li>Built-in Authentication Classes (Customizable)</li>
@@ -646,62 +660,76 @@
 <hr />
 <h3 id="benchmark">Benchmark<a class="headerlink" href="#benchmark" title="Permanent link">#</a></h3>
 <p>We implemented most of the Python frameworks and sent 
-<code>60_000</code> requests per second 
-for a total of <code>10</code> seconds
-(Total <code>600_000</code> requests)
+<code>25,000</code> requests per second 
+for <code>10</code> seconds
+(Total <code>250,000</code> requests)
 in the same environment
 with <a href="https://github.com/nakabonne/ali">https://github.com/nakabonne/ali</a> and here's the result:</p>
 <blockquote>
-<p>we won't rate other frameworks with throughput, so the names are censored.
-but you can find the detailed results &amp; source codes <a href="https://pantherpy.github.io/benchmark/codes">[here]</a></p>
+<p>you can find the detailed results &amp; source codes here --&gt; <a href="https://pantherpy.github.io/benchmarks/">https://pantherpy.github.io/benchmarks/</a></p>
 </blockquote>
 <table>
 <thead>
 <tr>
 <th>Framework</th>
+<th>Throughput</th>
 <th>Request Handled</th>
 <th>Max Latencies</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>...</td>
-<td>275,060</td>
-<td>270.3ms</td>
-</tr>
-<tr>
-<td>...</td>
-<td>188,016</td>
-<td>195.6ms</td>
+<td>Sanic</td>
+<td>23,326</td>
+<td>233,842</td>
+<td>268.8ms</td>
 </tr>
 <tr>
 <td>Panther</td>
-<td>156,743</td>
-<td>214.7ms</td>
+<td>14,719</td>
+<td>147,595</td>
+<td>113.1ms</td>
 </tr>
 <tr>
-<td>...</td>
-<td>66,274</td>
-<td>476.2ms</td>
+<td>FastAPI</td>
+<td>14,573</td>
+<td>146,467</td>
+<td>155.1ms</td>
 </tr>
 <tr>
-<td>...</td>
-<td>52,350</td>
-<td>1.2924s</td>
+<td>Tornado</td>
+<td>4,969</td>
+<td>50.585</td>
+<td>426.5ms</td>
 </tr>
 <tr>
-<td>...</td>
-<td>32,944</td>
-<td>30.00ms</td>
+<td>Flask</td>
+<td>3,555</td>
+<td>36,396</td>
+<td>1.2s</td>
 </tr>
 <tr>
-<td>...</td>
-<td>31,336</td>
-<td>30.03ms</td>
+<td>Django</td>
+<td>2,188</td>
+<td>22,814</td>
+<td>526.3ms</td>
 </tr>
 <tr>
-<td>...</td>
-<td>19,820</td>
+<td>Bottle</td>
+<td>1,226</td>
+<td>39,650</td>
+<td>30.0s</td>
+</tr>
+<tr>
+<td>Pyramid</td>
+<td>1,023</td>
+<td>30,912</td>
+<td>30.0s</td>
+</tr>
+<tr>
+<td>Cherrypy</td>
+<td>639</td>
+<td>24,944</td>
 <td>30.0s</td>
 </tr>
 </tbody>
