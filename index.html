@@ -647,10 +647,14 @@
 
 <h2 id="panther">Panther<a class="headerlink" href="#panther" title="Permanent link">#</a></h2>
 <p><b>Is A Fast &amp;  Friendly, Web Framework For Building Async APIs With Python 3.11+</b> </p>
+<blockquote>
+<p><em>Full Documentation</em> -&gt; <a href="https://pantherpy.github.io">https://pantherpy.github.io</a></p>
+<p><em>Github</em> -&gt; <a href="https://github.com/AliRn76/panther/">https://github.com/AliRn76/panther/</a></p>
+</blockquote>
 <hr />
 <h3 id="features">Features<a class="headerlink" href="#features" title="Permanent link">#</a></h3>
 <ul>
-<li>Document-oriented Databases ORM (<a href="https://pypi.org/project/slark/">SlarkDB</a>, MongoDB)</li>
+<li>Document-oriented Databases ODM (<a href="https://pypi.org/project/pantherdb/">PantherDB</a>, MongoDB)</li>
 <li>Visual API Monitoring (In Terminal)</li>
 <li>Cache APIs (In Memory, In Redis)</li>
 <li>Built-in Authentication Classes (Customizable)</li>
@@ -666,7 +670,7 @@ for <code>10</code> seconds
 in the same environment
 with <a href="https://github.com/nakabonne/ali">https://github.com/nakabonne/ali</a> and here's the result:</p>
 <blockquote>
-<p>you can find the detailed results &amp; source codes here --&gt; <a href="https://pantherpy.github.io/benchmarks/">https://pantherpy.github.io/benchmarks/</a></p>
+<p>you can find the detailed results &amp; source codes here --&gt; <a href="https://pantherpy.github.io/benchmarks/">benchmarks</a></p>
 </blockquote>
 <table>
 <thead>
@@ -758,7 +762,7 @@ with <a href="https://github.com/nakabonne/ali">https://github.com/nakabonne/ali
     <summary>Install Panther</summary><ul>
 <li>Normal
   <pre>$ pip install panther</pre></li>
-<li>Include JWT Authentication
+<li>Include JWT Authentication &amp; MongoDB Requirements
   <pre>$ pip install panther[full]</pre>
   </details></li>
 </ul>
@@ -774,12 +778,11 @@ with <a href="https://github.com/nakabonne/ali">https://github.com/nakabonne/ali
 </li>
 <li>
 <h4 id="run-project">Run Project<a class="headerlink" href="#run-project" title="Permanent link">#</a></h4>
-<p>Panther needs Uvicorn as ASGI (Asynchronous Server Gateway Interface)
-  <div class="highlight"><pre><span></span><code><span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>uvicorn<span class="o">[</span>standard<span class="o">]</span>
-</code></pre></div>
-  Then
-  <div class="highlight"><pre><span></span><code><span class="gp">$ </span>panther<span class="w"> </span>run<span class="w"> </span>
-</code></pre></div></p>
+<pre><code>Panther uses [Uvicorn](https://github.com/encode/uvicorn) as ASGI (Asynchronous Server Gateway Interface)
+```console
+$ panther run 
+```
+</code></pre>
 </li>
 <li>
 <h4 id="monitoring-requests">Monitoring Requests<a class="headerlink" href="#monitoring-requests" title="Permanent link">#</a></h4>
@@ -788,8 +791,11 @@ with <a href="https://github.com/nakabonne/ali">https://github.com/nakabonne/ali
 </li>
 <li>
 <h4 id="python-shell">Python Shell<a class="headerlink" href="#python-shell" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>panther<span class="w"> </span>shell<span class="w"> </span>
-</code></pre></div>
+<pre><code>Panther Uses [bpython](https://bpython-interpreter.org) for shell
+```console
+$ panther shell 
+```
+</code></pre>
 </li>
 </ul>
 <h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">#</a></h3>
@@ -820,8 +826,11 @@ with <a href="https://github.com/nakabonne/ali">https://github.com/nakabonne/ali
 <span class="p">}</span>
 </code></pre></div>
 <p><strong>app/apis.py</strong>:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther</span> <span class="kn">import</span> <span class="n">version</span><span class="p">,</span> <span class="n">status</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
 <span class="kn">from</span> <span class="nn">panther.app</span> <span class="kn">import</span> <span class="n">API</span>
+<span class="kn">from</span> <span class="nn">panther.configs</span> <span class="kn">import</span> <span class="n">config</span>
+<span class="kn">from</span> <span class="nn">panther</span> <span class="kn">import</span> <span class="n">version</span><span class="p">,</span> <span class="n">status</span>
 <span class="kn">from</span> <span class="nn">panther.request</span> <span class="kn">import</span> <span class="n">Request</span>
 <span class="kn">from</span> <span class="nn">panther.response</span> <span class="kn">import</span> <span class="n">Response</span>
 
@@ -831,12 +840,13 @@ with <a href="https://github.com/nakabonne/ali">https://github.com/nakabonne/ali
     <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;detail&#39;</span><span class="p">:</span> <span class="s1">&#39;Hello World&#39;</span><span class="p">}</span>
 
 
-<span class="nd">@API</span><span class="p">()</span>
+<span class="nd">@API</span><span class="p">(</span><span class="n">cache</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
     <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="n">version</span><span class="p">(),</span>
+        <span class="s1">&#39;datetime_now&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span>
         <span class="s1">&#39;user_agent&#39;</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">user_agent</span><span class="p">,</span>
-        <span class="s1">&#39;content_length&#39;</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">content_length</span><span class="p">,</span>
+        <span class="s1">&#39;db_engine&#39;</span><span class="p">:</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;db_engine&#39;</span><span class="p">],</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_202_ACCEPTED</span><span class="p">)</span>
 </code></pre></div>

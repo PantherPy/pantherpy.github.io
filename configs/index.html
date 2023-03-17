@@ -294,6 +294,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#log_queries" class="md-nav__link">
+    LOG_QUERIES
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#middlewares" class="md-nav__link">
     MIDDLEWARES
   </a>
@@ -471,6 +478,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#log_queries" class="md-nav__link">
+    LOG_QUERIES
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#middlewares" class="md-nav__link">
     MIDDLEWARES
   </a>
@@ -521,13 +535,20 @@
 <p>Panther  stores all the configs in the <code>core/configs.py</code></p>
 <h3 id="monitoring">MONITORING<a class="headerlink" href="#monitoring" title="Permanent link">#</a></h3>
 <blockquote>
-<p><b>Type:</b> <code>bool</code> (<b>Default:</b> <code>True</code>)</p>
+<p><b>Type:</b> <code>bool</code> (<b>Default:</b> <code>False</code>)</p>
 </blockquote>
 <p>It should be <code>True</code> if you want to use <code>panther monitor</code> command
 and see the monitoring logs</p>
 <p>If <code>True</code> it will:</p>
 <ul>
 <li>Log every request</li>
+</ul>
+<h3 id="log_queries">LOG_QUERIES<a class="headerlink" href="#log_queries" title="Permanent link">#</a></h3>
+<blockquote>
+<p><b>Type:</b> <code>bool</code> (<b>Default:</b> <code>False</code>)</p>
+</blockquote>
+<p>If <code>True</code> it will:</p>
+<ul>
 <li>Calculate every query perf time</li>
 </ul>
 <hr />
