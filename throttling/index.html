@@ -74,6 +74,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#for-all-apis-example" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -410,9 +415,45 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Throttling
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Throttling
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#for-all-apis-example" class="md-nav__link">
+    For All APIs Example:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-single-api-example" class="md-nav__link">
+    For Single API Example:
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -496,6 +537,28 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#for-all-apis-example" class="md-nav__link">
+    For All APIs Example:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-single-api-example" class="md-nav__link">
+    For Single API Example:
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -514,7 +577,45 @@
 
   <h1>Throttling</h1>
 
+<blockquote>
+<p><b>Variable:</b> <code>THROTTLING</code> </p>
+<p><b>Type:</b> <code>str</code> </p>
+</blockquote>
+<p>In Panther, you can use <code>Throttling</code> for all APIs at once in <code>core/configs.py</code> or per API in its <code>@API</code> decorator</p>
+<p>The <code>Throttling</code> class has 2 field <code>rate</code> &amp; <code>duration</code></p>
+<blockquote>
+<p>rate: int</p>
+<p>duration: datetime.timedelta</p>
+</blockquote>
+<p>It will return <code>Too Many Request</code> <code>status_code: 429</code> if user try to request in the <code>duration</code> more than <code>rate</code>
+And user will baned( get<code>Too Many Request</code> ) for <code>duration</code></p>
+<p>And keep that in mind if you have <code>Throttling</code> in <code>@API()</code>, the <code>Throttling</code> of <code>core/configs.py</code> will be ignored.</p>
+<h3 id="for-all-apis-example">For All APIs Example:<a class="headerlink" href="#for-all-apis-example" title="Permanent link">#</a></h3>
+<p>core/configs.py
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
 
+<span class="kn">from</span> <span class="nn">panther.throttling</span> <span class="kn">import</span> <span class="n">Throttling</span>
+
+
+<span class="c1"># User only can request 5 times in every minute</span>
+<span class="n">THROTTLING</span> <span class="o">=</span> <span class="n">Throttling</span><span class="p">(</span><span class="n">rate</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+</code></pre></div></p>
+<h3 id="for-single-api-example">For Single API Example:<a class="headerlink" href="#for-single-api-example" title="Permanent link">#</a></h3>
+<p>apis.py
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
+
+<span class="kn">from</span> <span class="nn">panther.throttling</span> <span class="kn">import</span> <span class="n">Throttling</span>
+<span class="kn">from</span> <span class="nn">panther.app</span> <span class="kn">import</span> <span class="n">API</span>
+
+
+<span class="c1"># User only can request 5 times in every minute</span>
+<span class="n">InfoThrottling</span> <span class="o">=</span> <span class="n">Throttling</span><span class="p">(</span><span class="n">rate</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+
+
+<span class="nd">@API</span><span class="p">(</span><span class="n">throttling</span><span class="o">=</span><span class="n">InfoThrottling</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">info_api</span><span class="p">():</span>
+    <span class="k">pass</span>
+</code></pre></div></p>
 
 
 
