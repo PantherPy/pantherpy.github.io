@@ -276,8 +276,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
-    Features
+  <a href="#why-use-panther" class="md-nav__link">
+    Why Use Panther ?
   </a>
   
 </li>
@@ -638,8 +638,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
-    Features
+  <a href="#why-use-panther" class="md-nav__link">
+    Why Use Panther ?
   </a>
   
 </li>
@@ -753,12 +753,16 @@
 
 <h2 id="panther">Panther<a class="headerlink" href="#panther" title="Permanent link">#</a></h2>
 <p><b>Is A Fast &amp;  Friendly, Web Framework For Building Async APIs With Python 3.11+</b> </p>
+<p align="center">
+  <img src="https://github.com/AliRn76/panther/raw/master/docs/docs/images/logo.png" alt="logo" style="width: 200px">
+</p>
+
 <blockquote>
-<p><em>Full Documentation</em> -&gt; <a href="https://pantherpy.github.io">https://pantherpy.github.io</a></p>
 <p><em>Github</em> -&gt; <a href="https://github.com/AliRn76/panther/">https://github.com/AliRn76/panther/</a></p>
+<p><em>PyPI</em> -&gt; <a href="https://pypi.org/project/panther/">https://pypi.org/project/panther/</a></p>
 </blockquote>
 <hr />
-<h3 id="features">Features<a class="headerlink" href="#features" title="Permanent link">#</a></h3>
+<h3 id="why-use-panther">Why Use Panther ?<a class="headerlink" href="#why-use-panther" title="Permanent link">#</a></h3>
 <ul>
 <li>Document-oriented Databases ODM (<a href="https://pypi.org/project/pantherdb/">PantherDB</a>, MongoDB)</li>
 <li>Visual API Monitoring (In Terminal)</li>
@@ -766,6 +770,7 @@
 <li>Built-in Authentication Classes (Customizable)</li>
 <li>Built-in Permission Classes (Customizable)</li>
 <li>Handle Custom Middlewares</li>
+<li>Handle Custom Throttling </li>
 </ul>
 <hr />
 <h3 id="benchmark">Benchmark<a class="headerlink" href="#benchmark" title="Permanent link">#</a></h3>
@@ -884,8 +889,7 @@ with <a href="https://github.com/nakabonne/ali">https://github.com/nakabonne/ali
 </li>
 <li>
 <h4 id="run-project">Run Project<a class="headerlink" href="#run-project" title="Permanent link">#</a></h4>
-<pre><code>Panther uses [Uvicorn](https://github.com/encode/uvicorn) as ASGI (Asynchronous Server Gateway Interface)
-</code></pre>
+<p>Panther uses <a href="https://github.com/encode/uvicorn">Uvicorn</a> as ASGI (Asynchronous Server Gateway Interface)</p>
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>panther<span class="w"> </span>run<span class="w"> </span>
 </code></pre></div>
 </li>
@@ -896,8 +900,7 @@ with <a href="https://github.com/nakabonne/ali">https://github.com/nakabonne/ali
 </li>
 <li>
 <h4 id="python-shell">Python Shell<a class="headerlink" href="#python-shell" title="Permanent link">#</a></h4>
-<pre><code>Panther Uses [bpython](https://bpython-interpreter.org) for shell
-</code></pre>
+<p>Panther Uses <a href="https://bpython-interpreter.org">bpython</a> for shell</p>
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>panther<span class="w"> </span>shell<span class="w"> </span>
 </code></pre></div>
 </li>
@@ -930,21 +933,24 @@ with <a href="https://github.com/nakabonne/ali">https://github.com/nakabonne/ali
 <span class="p">}</span>
 </code></pre></div>
 <p><strong>app/apis.py</strong>:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
 
 <span class="kn">from</span> <span class="nn">panther.app</span> <span class="kn">import</span> <span class="n">API</span>
 <span class="kn">from</span> <span class="nn">panther.configs</span> <span class="kn">import</span> <span class="n">config</span>
 <span class="kn">from</span> <span class="nn">panther</span> <span class="kn">import</span> <span class="n">version</span><span class="p">,</span> <span class="n">status</span>
 <span class="kn">from</span> <span class="nn">panther.request</span> <span class="kn">import</span> <span class="n">Request</span>
 <span class="kn">from</span> <span class="nn">panther.response</span> <span class="kn">import</span> <span class="n">Response</span>
+<span class="kn">from</span> <span class="nn">panther.throttling</span> <span class="kn">import</span> <span class="n">Throttling</span>
 
+
+<span class="n">InfoThrottling</span> <span class="o">=</span> <span class="n">Throttling</span><span class="p">(</span><span class="n">rate</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
 
 <span class="nd">@API</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
     <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;detail&#39;</span><span class="p">:</span> <span class="s1">&#39;Hello World&#39;</span><span class="p">}</span>
 
 
-<span class="nd">@API</span><span class="p">(</span><span class="n">cache</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nd">@API</span><span class="p">(</span><span class="n">cache</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">throttling</span><span class="o">=</span><span class="n">InfoThrottling</span><span class="p">)</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
     <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="n">version</span><span class="p">(),</span>
