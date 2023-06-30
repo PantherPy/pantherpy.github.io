@@ -520,20 +520,26 @@
 <p>Create Virtual Environment with: 
   <div class="highlight"><pre><span></span><code><span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
 </code></pre></div></p>
-<p>and active it with:
-- In Linux or Mac:
+<p>and active it with:</p>
+<ul>
+<li>
+<p>In Linux or Mac:
     <div class="highlight"><pre><span></span><code><span class="gp">$ </span><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-</code></pre></div>
-- In windows:
+</code></pre></div></p>
+</li>
+<li>
+<p>In windows:
     <div class="highlight"><pre><span></span><code><span class="gp">$ </span>.<span class="se">\.</span>venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
 </code></pre></div></p>
+</li>
+</ul>
 <p>Now we can create a test project named <code>blog</code> with: </p>
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>panther<span class="w"> </span>create<span class="w"> </span>blog
 </code></pre></div>
-<p>and if you don't want to panther create directory with name of project, so pass you custom directory name to it:</p>
+<p>and if you don't want Panther to create a directory with the name of the project, so pass your custom directory name to it:</p>
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>panther<span class="w"> </span>create<span class="w"> </span>blog<span class="w"> </span>custom_directory
 </code></pre></div>
-<p>Now you can run the project with::
+<p>Now you can run the project with:
 <div class="highlight"><pre><span></span><code><span class="gp">$ </span>panther<span class="w"> </span>run
 </code></pre></div></p>
 <p>and check this two sample endpoints on your browser:</p>
