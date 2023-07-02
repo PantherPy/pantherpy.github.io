@@ -2,82 +2,92 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://pantherpy.github.io/</loc>
-         <lastmod>2023-06-30</lastmod>
+         <lastmod>2023-07-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pantherpy.github.io/authentications/</loc>
-         <lastmod>2023-06-30</lastmod>
+         <lastmod>2023-07-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pantherpy.github.io/benchmarks/</loc>
-         <lastmod>2023-06-30</lastmod>
+         <lastmod>2023-07-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pantherpy.github.io/caching/</loc>
-         <lastmod>2023-06-30</lastmod>
+         <lastmod>2023-07-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pantherpy.github.io/configs/</loc>
-         <lastmod>2023-06-30</lastmod>
+         <lastmod>2023-07-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pantherpy.github.io/jwt/</loc>
-         <lastmod>2023-06-30</lastmod>
+         <lastmod>2023-07-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pantherpy.github.io/log_queries/</loc>
-         <lastmod>2023-06-30</lastmod>
+         <lastmod>2023-07-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pantherpy.github.io/middlewares/</loc>
-         <lastmod>2023-06-30</lastmod>
+         <lastmod>2023-07-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pantherpy.github.io/monitoring/</loc>
-         <lastmod>2023-06-30</lastmod>
+         <lastmod>2023-07-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pantherpy.github.io/release_notes/</loc>
-         <lastmod>2023-06-30</lastmod>
+         <lastmod>2023-07-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pantherpy.github.io/throttling/</loc>
-         <lastmod>2023-06-30</lastmod>
+         <lastmod>2023-07-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pantherpy.github.io/todos/</loc>
-         <lastmod>2023-06-30</lastmod>
+         <lastmod>2023-07-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pantherpy.github.io/urls/</loc>
-         <lastmod>2023-06-30</lastmod>
+         <lastmod>2023-07-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pantherpy.github.io/user_model/</loc>
-         <lastmod>2023-06-30</lastmod>
+         <lastmod>2023-07-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pantherpy.github.io/tutorials/create_project/</loc>
-         <lastmod>2023-06-30</lastmod>
+         <lastmod>2023-07-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pantherpy.github.io/tutorials/first_api/</loc>
-         <lastmod>2023-06-30</lastmod>
+         <lastmod>2023-07-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://pantherpy.github.io/tutorials/panther_odm/</loc>
+         <lastmod>2023-07-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://pantherpy.github.io/tutorials/working_with_db/</loc>
+         <lastmod>2023-07-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
