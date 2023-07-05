@@ -547,29 +547,30 @@
 <p>Let's write custom API that returns <code>current time</code> of your system:</p>
 <ol>
 <li>
-<p>Create <code>time_api()</code> in <code>app/apis.py</code> </p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
-<span class="kn">from</span> <span class="nn">panther</span> <span class="kn">import</span> <span class="n">status</span>
-<span class="kn">from</span> <span class="nn">panther.app</span> <span class="kn">import</span> <span class="n">API</span>
+<p>Create <code>time_api()</code> in <code>app/apis.py</code></p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>  
+<span class="kn">from</span> <span class="nn">panther</span> <span class="kn">import</span> <span class="n">status</span>  
+<span class="kn">from</span> <span class="nn">panther.app</span> <span class="kn">import</span> <span class="n">API</span>  
 <span class="kn">from</span> <span class="nn">panther.response</span> <span class="kn">import</span> <span class="n">Response</span>
 
 
-<span class="nd">@API</span><span class="p">()</span>
-<span class="k">async</span> <span class="k">def</span> <span class="nf">time_api</span><span class="p">():</span>
+<span class="nd">@API</span><span class="p">()</span>  
+<span class="k">async</span> <span class="k">def</span> <span class="nf">time_api</span><span class="p">():</span>  
     <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(),</span> <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_202_ACCEPTED</span><span class="p">)</span>
 </code></pre></div>
 </li>
 <li>
 <p>Add <code>time</code> url in <code>app/urls.py</code> that points to <code>time_api()</code></p>
-<p>```python
-   ...
-   from app.apis import time_api</p>
-<p>urls = {
-    '': hello_world,
-    'info/': info,
-    'time/': time_api,
-}
-```</p>
+<div class="highlight"><pre><span></span><code><span class="o">...</span>  
+<span class="kn">from</span> <span class="nn">app.apis</span> <span class="kn">import</span> <span class="n">time_api</span>  
+
+
+<span class="n">urls</span> <span class="o">=</span> <span class="p">{</span>  
+    <span class="s1">&#39;&#39;</span><span class="p">:</span> <span class="n">hello_world</span><span class="p">,</span>  
+    <span class="s1">&#39;info/&#39;</span><span class="p">:</span> <span class="n">info</span><span class="p">,</span>  
+    <span class="s1">&#39;time/&#39;</span><span class="p">:</span> <span class="n">time_api</span><span class="p">,</span>  
+ <span class="p">}</span>  
+</code></pre></div>
 </li>
 </ol>
 <p>Now you can see the current time in your browser:</p>

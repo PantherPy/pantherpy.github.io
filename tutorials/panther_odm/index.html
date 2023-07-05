@@ -392,8 +392,71 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#insert_one_1" class="md-nav__link">
-    insert_one:
+  <a href="#insert_many" class="md-nav__link">
+    insert_many:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete" class="md-nav__link">
+    delete:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete_one" class="md-nav__link">
+    delete_one:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete_many" class="md-nav__link">
+    delete_many:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    update:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update_one" class="md-nav__link">
+    update_one:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update_many" class="md-nav__link">
+    update_many:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#last" class="md-nav__link">
+    last:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#count" class="md-nav__link">
+    count:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#find_or_insert" class="md-nav__link">
+    find_or_insert:
   </a>
   
 </li>
@@ -609,8 +672,71 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#insert_one_1" class="md-nav__link">
-    insert_one:
+  <a href="#insert_many" class="md-nav__link">
+    insert_many:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete" class="md-nav__link">
+    delete:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete_one" class="md-nav__link">
+    delete_one:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete_many" class="md-nav__link">
+    delete_many:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    update:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update_one" class="md-nav__link">
+    update_one:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update_many" class="md-nav__link">
+    update_many:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#last" class="md-nav__link">
+    last:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#count" class="md-nav__link">
+    count:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#find_or_insert" class="md-nav__link">
+    find_or_insert:
   </a>
   
 </li>
@@ -635,57 +761,160 @@
 
   <h1>Panther ODM</h1>
 
-<p>Panther ODM</p>
+<p>Panther ODM  </p>
 <h3 id="find_one">find_one:<a class="headerlink" href="#find_one" title="Permanent link">#</a></h3>
 <ul>
-<li>Find the first match document</li>
+<li>Find the first match document  </li>
 <li>
-<p>Example: 
-    <code>python 
-  User.find_one(id=1, name='Ali')</code></p>
-<p><code>python
-   User.find_one({'id': 1, 'name': 'Ali'})</code></p>
-<p><code>python
-   User.find_one({'id': 1}, name='Ali')</code></p>
+<p>Example:  </p>
+<div class="highlight"><pre><span></span><code><span class="n">user</span><span class="p">:</span> <span class="n">User</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">find_one</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>  
+
+<span class="n">user</span><span class="p">:</span> <span class="n">User</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">find_one</span><span class="p">({</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ali&#39;</span><span class="p">})</span>  
+
+<span class="n">user</span><span class="p">:</span> <span class="n">User</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">find_one</span><span class="p">({</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>  
+</code></pre></div>
 </li>
 </ul>
 <h3 id="find">find:<a class="headerlink" href="#find" title="Permanent link">#</a></h3>
 <ul>
-<li>Find all of the matches documents</li>
+<li>Find all the matches documents  </li>
 <li>
-<p>Example: 
-    <code>python 
-  User.find(id=1, name='Ali')</code></p>
-<p><code>python
-   User.find({'id': 1, 'name': 'Ali'})</code></p>
-<p><code>python
-   User.find({'id': 1}, name='Ali')</code></p>
+<p>Example:  </p>
+<div class="highlight"><pre><span></span><code><span class="n">users</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">User</span><span class="p">]</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>  
+
+<span class="n">users</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">User</span><span class="p">]</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ali&#39;</span><span class="p">})</span>  
+
+<span class="n">users</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">User</span><span class="p">]</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>  
+</code></pre></div>
 </li>
 </ul>
 <h3 id="insert_one">insert_one:<a class="headerlink" href="#insert_one" title="Permanent link">#</a></h3>
 <ul>
-<li>Insert only one document into database</li>
+<li>Insert only one document into database  </li>
 <li>
-<p>Example: 
-    <code>python 
-  User.insert_one(id=1, name='Ali')</code></p>
-<p><code>python
-   User.insert_one({'id': 1, 'name': 'Ali'})</code></p>
-<p><code>python
-   User.insert_one({'id': 1}, name='Ali')</code></p>
+<p>Example:  </p>
+<div class="highlight"><pre><span></span><code><span class="n">User</span><span class="o">.</span><span class="n">insert_one</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>  
+
+<span class="n">User</span><span class="o">.</span><span class="n">insert_one</span><span class="p">({</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ali&#39;</span><span class="p">})</span>  
+
+<span class="n">User</span><span class="o">.</span><span class="n">insert_one</span><span class="p">({</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>  
+</code></pre></div>
 </li>
 </ul>
-<h3 id="insert_one_1">insert_one:<a class="headerlink" href="#insert_one_1" title="Permanent link">#</a></h3>
+<h3 id="insert_many">insert_many:<a class="headerlink" href="#insert_many" title="Permanent link">#</a></h3>
 <ul>
-<li>Insert only one document into database</li>
+<li>Insert only one document into database  </li>
 <li>
-<p>Example: 
-    <code>python 
-  User.insert_one(id=1, name='Ali')</code></p>
-<p><code>python
-   User.insert_one({'id': 1, 'name': 'Ali'})</code></p>
-<p><code>python
-   User.insert_one({'id': 1}, name='Ali')</code></p>
+<p>Example:  </p>
+<div class="highlight"><pre><span></span><code><span class="n">User</span><span class="o">.</span><span class="n">insert_many</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">26</span><span class="p">)</span>  
+
+<span class="n">User</span><span class="o">.</span><span class="n">insert_many</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ali&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">26</span><span class="p">})</span>  
+
+<span class="n">User</span><span class="o">.</span><span class="n">insert_many</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ali&#39;</span><span class="p">},</span> <span class="n">age</span><span class="o">=</span><span class="mi">26</span><span class="p">)</span>  
+</code></pre></div>
+</li>
+</ul>
+<h3 id="delete">delete:<a class="headerlink" href="#delete" title="Permanent link">#</a></h3>
+<ul>
+<li>Delete the selected document from database</li>
+<li>
+<p>Example:  </p>
+<div class="highlight"><pre><span></span><code><span class="n">user</span><span class="p">:</span> <span class="n">User</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">find_one</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
+<span class="n">user</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+</code></pre></div>
+</li>
+</ul>
+<h3 id="delete_one">delete_one:<a class="headerlink" href="#delete_one" title="Permanent link">#</a></h3>
+<ul>
+<li>Delete the first match document  from database</li>
+<li>
+<p>Example:  </p>
+<div class="highlight"><pre><span></span><code><span class="n">is_deleted</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">delete_one</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
+</code></pre></div>
+</li>
+</ul>
+<h3 id="delete_many">delete_many:<a class="headerlink" href="#delete_many" title="Permanent link">#</a></h3>
+<ul>
+<li>Delete all the matches document  from database</li>
+<li>
+<p>Example:  </p>
+<div class="highlight"><pre><span></span><code><span class="n">deleted_count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">delete_many</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
+
+<span class="n">deleted_count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">delete_many</span><span class="p">({</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
+
+<span class="n">deleted_count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">delete_many</span><span class="p">({</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ali&#39;</span><span class="p">})</span>
+</code></pre></div>
+</li>
+</ul>
+<h3 id="update">update:<a class="headerlink" href="#update" title="Permanent link">#</a></h3>
+<ul>
+<li>Update the selected document in database</li>
+<li>
+<p>Example:  </p>
+<div class="highlight"><pre><span></span><code><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">find_one</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
+<span class="n">user</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Saba&#39;</span><span class="p">)</span>
+</code></pre></div>
+</li>
+</ul>
+<h3 id="update_one">update_one:<a class="headerlink" href="#update_one" title="Permanent link">#</a></h3>
+<ul>
+<li>Update the first match document in database</li>
+<li>You should filter with <code>dictionary</code> as <code>first parameter</code> 
+and pass the fields you want to update as <code>kwargs</code> or another <code>dictionary</code> as <code>second parameter</code></li>
+<li>
+<p>Example:  </p>
+<div class="highlight"><pre><span></span><code><span class="n">is_updated</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">update_one</span><span class="p">({</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ali&#39;</span><span class="p">},</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Saba&#39;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">26</span><span class="p">)</span>
+
+<span class="n">is_updated</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">update_one</span><span class="p">({</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ali&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Saba&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">26</span><span class="p">})</span>
+
+<span class="n">is_updated</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">update_one</span><span class="p">({</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ali&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Saba&#39;</span><span class="p">},</span> <span class="n">age</span><span class="o">=</span><span class="mi">26</span><span class="p">)</span>
+</code></pre></div>
+</li>
+</ul>
+<h3 id="update_many">update_many:<a class="headerlink" href="#update_many" title="Permanent link">#</a></h3>
+<ul>
+<li>Update all the matches document in database</li>
+<li>You should filter with <code>dictionary</code> as <code>first parameter</code> 
+and pass the fields you want to update as <code>kwargs</code> or another <code>dictionary</code> as <code>second parameter</code></li>
+<li>
+<p>Example:  </p>
+<div class="highlight"><pre><span></span><code><span class="n">updated_count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">update_many</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ali&#39;</span><span class="p">},</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Saba&#39;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">26</span><span class="p">)</span>
+
+<span class="n">updated_count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">update_many</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ali&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Saba&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">26</span><span class="p">})</span>
+
+<span class="n">updated_count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">update_many</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ali&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Saba&#39;</span><span class="p">},</span> <span class="n">age</span><span class="o">=</span><span class="mi">26</span><span class="p">)</span>
+</code></pre></div>
+</li>
+</ul>
+<h3 id="last">last:<a class="headerlink" href="#last" title="Permanent link">#</a></h3>
+<ul>
+<li>Find the last match document</li>
+<li>
+<p>Example:  </p>
+<div class="highlight"><pre><span></span><code><span class="n">user</span><span class="p">:</span> <span class="n">User</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">last</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">26</span><span class="p">)</span>  
+
+<span class="n">user</span><span class="p">:</span> <span class="n">User</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">last</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ali&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">26</span><span class="p">})</span>  
+
+<span class="n">user</span><span class="p">:</span> <span class="n">User</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">last</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ali&#39;</span><span class="p">},</span> <span class="n">age</span><span class="o">=</span><span class="mi">26</span><span class="p">)</span>  
+</code></pre></div>
+</li>
+</ul>
+<h3 id="count">count:<a class="headerlink" href="#count" title="Permanent link">#</a></h3>
+<ul>
+<li>Count of the matches documents</li>
+<li>
+<p>Example:  </p>
+<div class="highlight"><pre><span></span><code><span class="n">users_count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
+</code></pre></div>
+</li>
+</ul>
+<h3 id="find_or_insert">find_or_insert:<a class="headerlink" href="#find_or_insert" title="Permanent link">#</a></h3>
+<ul>
+<li>Find the match document or Create one if none exists</li>
+<li>
+<p>Example:  </p>
+<div class="highlight"><pre><span></span><code><span class="n">user</span><span class="p">:</span> <span class="n">User</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">find_or_insert</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 </ul>
 
