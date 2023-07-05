@@ -26,6 +26,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://pantherpy.github.io/first_api/</loc>
+         <lastmod>2023-07-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://pantherpy.github.io/jwt/</loc>
          <lastmod>2023-07-05</lastmod>
          <changefreq>daily</changefreq>
@@ -42,6 +47,11 @@
     </url>
     <url>
          <loc>https://pantherpy.github.io/monitoring/</loc>
+         <lastmod>2023-07-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://pantherpy.github.io/panther_odm/</loc>
          <lastmod>2023-07-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -71,22 +81,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://pantherpy.github.io/tutorials/create_project/</loc>
-         <lastmod>2023-07-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://pantherpy.github.io/tutorials/first_api/</loc>
-         <lastmod>2023-07-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://pantherpy.github.io/tutorials/panther_odm/</loc>
-         <lastmod>2023-07-05</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://pantherpy.github.io/tutorials/working_with_db/</loc>
+         <loc>https://pantherpy.github.io/working_with_db/</loc>
          <lastmod>2023-07-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
