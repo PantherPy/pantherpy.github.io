@@ -367,8 +367,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-log-query-decorator" class="md-nav__link">
-    The Log Query Decorator
+  <a href="#the-log-query-decorator-is-something-like-this" class="md-nav__link">
+    The Log Query Decorator Is Something Like This
   </a>
   
 </li>
@@ -533,8 +533,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-log-query-decorator" class="md-nav__link">
-    The Log Query Decorator
+  <a href="#the-log-query-decorator-is-something-like-this" class="md-nav__link">
+    The Log Query Decorator Is Something Like This
   </a>
   
 </li>
@@ -565,20 +565,21 @@
 <p><b>Default:</b> <code>False</code></p>
 </blockquote>
 <p>Panther has a <code>log_query</code> decorator on queries that process the <code>perf_time</code> of every query</p>
-<p>Make sure it is <code>False</code> on production </p>
+<p>Make sure it is <code>False</code> on production for better performance</p>
 <h4 id="log-example">Log Example:<a class="headerlink" href="#log-example" title="Permanent link">#</a></h4>
 <div class="highlight"><pre><span></span><code><span class="n">INFO</span><span class="p">:</span>     <span class="o">|</span> <span class="mi">2023</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">19</span> <span class="mi">20</span><span class="p">:</span><span class="mi">37</span><span class="p">:</span><span class="mi">27</span> <span class="o">|</span> <span class="n">Query</span> <span class="o">--&gt;</span>  <span class="n">User</span><span class="o">.</span><span class="n">insert_one</span><span class="p">()</span> <span class="o">--&gt;</span> <span class="mf">1.6</span> <span class="n">ms</span>
 </code></pre></div>
-<h4 id="the-log-query-decorator">The Log Query Decorator<a class="headerlink" href="#the-log-query-decorator" title="Permanent link">#</a></h4>
+<h4 id="the-log-query-decorator-is-something-like-this">The Log Query Decorator Is Something Like This<a class="headerlink" href="#the-log-query-decorator-is-something-like-this" title="Permanent link">#</a></h4>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">log_query</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">log</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;log_queries&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
         <span class="n">start</span> <span class="o">=</span> <span class="n">perf_counter</span><span class="p">()</span>
         <span class="n">response</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="n">end</span> <span class="o">=</span> <span class="n">perf_counter</span><span class="p">()</span>
-        <span class="n">class_name</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="vm">__name__</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;__name__&#39;</span><span class="p">)</span> <span class="k">else</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
-        <span class="n">query_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\033</span><span class="s1">[1mQuery --&gt;</span><span class="se">\033</span><span class="s1">[0m  </span><span class="si">{</span><span class="n">class_name</span><span class="si">}</span><span class="s1">.</span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">() --&gt; </span><span class="si">{</span><span class="p">(</span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1_000</span><span class="si">:</span><span class="s1">.2</span><span class="si">}</span><span class="s1"> ms&#39;</span><span class="p">)</span>
+        <span class="n">class_name</span> <span class="o">=</span> <span class="o">...</span>
+        <span class="n">query_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Query --&gt;  </span><span class="si">{</span><span class="n">class_name</span><span class="si">}</span><span class="s1">.</span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">() --&gt; </span><span class="si">{</span><span class="p">(</span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1_000</span><span class="si">:</span><span class="s1">.2</span><span class="si">}</span><span class="s1"> ms&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">response</span>
     <span class="k">return</span> <span class="n">log</span>
 </code></pre></div>

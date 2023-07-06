@@ -671,7 +671,7 @@
 and see the monitoring logs</p>
 <p>If <code>True</code> it will:</p>
 <ul>
-<li>Log every request</li>
+<li>Log every request in <code>logs/monitoring.log</code></li>
 </ul>
 <hr />
 <h3 id="log_queries"><a href="https://pantherpy.github.io/log_queries">LOG_QUERIES</a><a class="headerlink" href="#log_queries" title="Permanent link">#</a></h3>
@@ -680,7 +680,7 @@ and see the monitoring logs</p>
 </blockquote>
 <p>If <code>True</code> it will:</p>
 <ul>
-<li>Calculate every query perf time</li>
+<li>Calculate every query perf time &amp; Log them in <code>logs/query.log</code></li>
 </ul>
 <hr />
 <h3 id="middlewares"><a href="https://pantherpy.github.io/middlewares">MIDDLEWARES</a><a class="headerlink" href="#middlewares" title="Permanent link">#</a></h3>
@@ -693,7 +693,7 @@ and see the monitoring logs</p>
 <blockquote>
 <p><b>Type:</b> <code>str | None</code> (<b>Default:</b> <code>None</code>)</p>
 </blockquote>
-<p>Every request go through <code>authentication()</code> method of this <code>class</code></p>
+<p>Every request goes through <code>authentication()</code> method of this <code>class</code></p>
 <p><em>Example:</em> <code>AUTHENTICATION = 'panther.authentications.JWTAuthentication'</code></p>
 <hr />
 <h3 id="urls"><a href="https://pantherpy.github.io/urls">URLs</a><a class="headerlink" href="#urls" title="Permanent link">#</a></h3>
@@ -707,7 +707,9 @@ and see the monitoring logs</p>
 <blockquote>
 <p><b>Type:</b> <code>timedelta| None</code> (<b>Default:</b> <code>None</code>)</p>
 </blockquote>
-<p>It uses when you set <code>cache=True</code> in <code>@API</code> decorator</p>
+<p>We use it as default <code>cache_exp_time</code> you can overwrite it in your <code>@API</code> too</p>
+<p>It is used when you set <code>cache=True</code> in <code>@API</code> decorator</p>
+<p><em>Example:</em> <code>DEFAULT_CACHE_EXP = timedelta(seconds=10)</code></p>
 <hr />
 <h3 id="throttling"><a href="https://pantherpy.github.io/throttling">THROTTLING</a><a class="headerlink" href="#throttling" title="Permanent link">#</a></h3>
 <blockquote>
@@ -718,16 +720,16 @@ and see the monitoring logs</p>
 <hr />
 <h3 id="user_model"><a href="https://pantherpy.github.io/user_model">USER_MODEL</a><a class="headerlink" href="#user_model" title="Permanent link">#</a></h3>
 <blockquote>
-<p><b>Type:</b> <code>str | None</code> (<b>Default:</b> <code>'panther.db.models.User'</code>)</p>
+<p><b>Type:</b> <code>str | None</code> (<b>Default:</b> <code>'panther.db.models.BaseUser'</code>)</p>
 </blockquote>
-<p>It uses on authentication</p>
+<p>It is used for authentication</p>
 <p><em>Example:</em> <code>USER_MODEL = 'panther.db.models.User'</code></p>
 <hr />
 <h3 id="jwtconfig"><a href="https://pantherpy.github.io/jwt">JWTConfig</a><a class="headerlink" href="#jwtconfig" title="Permanent link">#</a></h3>
 <blockquote>
 <p><b>Type:</b> <code>dict | None</code> (<b>Default:</b> <code>JWTConfig = {'key': SECRET_KEY}</code>)</p>
 </blockquote>
-<p>It uses when you set <code>panther.authentications.JWTAuthentication</code> as <code>AUTHENTICATION</code></p>
+<p>We use it when you set <code>panther.authentications.JWTAuthentication</code> as <code>AUTHENTICATION</code></p>
 
 
 
