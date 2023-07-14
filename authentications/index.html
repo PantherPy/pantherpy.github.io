@@ -74,6 +74,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#jwtauthentication" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -250,8 +255,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../first_api/" class="md-nav__link">
-        First API
+      <a href="../first_crud/" class="md-nav__link">
+        First Crud
       </a>
     </li>
   
@@ -362,9 +367,51 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Authentications
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Authentications
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#jwtauthentication" class="md-nav__link">
+    JWTAuthentication
+  </a>
+  
+    <nav class="md-nav" aria-label="JWTAuthentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    Intro
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -478,6 +525,34 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#jwtauthentication" class="md-nav__link">
+    JWTAuthentication
+  </a>
+  
+    <nav class="md-nav" aria-label="JWTAuthentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    Intro
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -496,7 +571,44 @@
 
   <h1>Authentications</h1>
 
+<blockquote>
+<p><b>Variable:</b> <code>AUTHENTICATION</code>  </p>
+<p><b>Type:</b> <code>str</code></p>
+<p><b>Default:</b> <code>None</code></p>
+</blockquote>
+<p>You can set your Authentication class in <code>core/configs.py</code>  then Panther will use this class for authentication in every <code>API</code> you set <code>auth=True</code> in <code>@API()</code>  _and put the <code>user</code> in <code>request.user</code> or <code>raise HTTP_401_UNAUTHORIZED</code> </p>
+<p>We already have one built-in authentication class which is used <code>jwt</code> for authentication and you can write your own authentication class too (we are going to disccuss about both of this scenarios)</p>
+<h3 id="jwtauthentication">JWTAuthentication<a class="headerlink" href="#jwtauthentication" title="Permanent link">#</a></h3>
+<h4 id="intro">Intro<a class="headerlink" href="#intro" title="Permanent link">#</a></h4>
+<p>This class will 
+- get the <code>token</code> from <code>Authorization</code> header of request with keyword of <code>Bearer</code>
+- then going to <code>decode</code> it 
+- and find the match <code>user</code> with the <code>USER_MODEL</code> you have been already set</p>
+<blockquote>
+<p><code>JWTAuthentication</code> is going to use <code>panther.db.models.BaseUser</code> if you didn't set the <code>USER_MODEL</code> in your <code>core/configs.py</code></p>
+</blockquote>
+<p>You can customize these 3 variables for <code>JWTAuthentication</code> in your <code>core/configs.py</code> as <code>JWTConfig</code> like below (<code>JWTConfig</code> is optional):</p>
+<div class="highlight"><pre><span></span><code><span class="o">...</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
+<span class="kn">from</span> <span class="nn">panther.utils</span> <span class="kn">import</span> <span class="n">load_env</span>  
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
+<span class="n">BASE_DIR</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">parent</span>  
+<span class="n">env</span> <span class="o">=</span> <span class="n">load_env</span><span class="p">(</span><span class="n">BASE_DIR</span> <span class="o">/</span> <span class="s1">&#39;.env&#39;</span><span class="p">)</span>
+
+<span class="n">SECRET_KEY</span> <span class="o">=</span> <span class="n">env</span><span class="p">[</span><span class="s1">&#39;SECRET_KEY&#39;</span><span class="p">]</span>
+
+<span class="n">JWTConfig</span> <span class="o">=</span> <span class="p">{</span>  
+    <span class="s1">&#39;algorithm&#39;</span><span class="p">:</span> <span class="s1">&#39;HS256&#39;</span><span class="p">,</span>  
+    <span class="s1">&#39;life_time&#39;</span><span class="p">:</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>  
+    <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="n">SECRET_KEY</span><span class="p">,</span>  
+<span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p><strong>key</strong>             --&gt; <code>Default</code> using your <code>SECRET_KEY</code>
+<strong>algorithm</strong>  --&gt; <code>Default</code> using <code>HS256</code>
+<strong>life_time</strong>    --&gt; <code>Default</code> using <code>timedelta(days=1)</code> </p>
+</blockquote>
 
 
 
