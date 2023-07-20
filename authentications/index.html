@@ -394,18 +394,12 @@
     JWTAuthentication
   </a>
   
-    <nav class="md-nav" aria-label="JWTAuthentication">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#intro" class="md-nav__link">
-    Intro
-  </a>
-  
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#custom-authentication" class="md-nav__link">
+    Custom Authentication
+  </a>
   
 </li>
       
@@ -536,18 +530,12 @@
     JWTAuthentication
   </a>
   
-    <nav class="md-nav" aria-label="JWTAuthentication">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#intro" class="md-nav__link">
-    Intro
-  </a>
-  
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#custom-authentication" class="md-nav__link">
+    Custom Authentication
+  </a>
   
 </li>
       
@@ -576,14 +564,16 @@
 <p><b>Type:</b> <code>str</code></p>
 <p><b>Default:</b> <code>None</code></p>
 </blockquote>
-<p>You can set your Authentication class in <code>core/configs.py</code>  then Panther will use this class for authentication in every <code>API</code> you set <code>auth=True</code> in <code>@API()</code>  _and put the <code>user</code> in <code>request.user</code> or <code>raise HTTP_401_UNAUTHORIZED</code> </p>
-<p>We already have one built-in authentication class which is used <code>jwt</code> for authentication and you can write your own authentication class too (we are going to disccuss about both of this scenarios)</p>
+<p>You can set your Authentication class in <code>core/configs.py</code>, then Panther will use this class for authentication in every <code>API</code>, if you set <code>auth=True</code> in <code>@API()</code>, and put the <code>user</code> in <code>request.user</code> or <code>raise HTTP_401_UNAUTHORIZED</code> </p>
+<p>We already have one built-in authentication class which is used <code>JWT</code> for authentication.</p>
+<p>You can write your own authentication class too (we are going to discuss it)</p>
 <h3 id="jwtauthentication">JWTAuthentication<a class="headerlink" href="#jwtauthentication" title="Permanent link">#</a></h3>
-<h4 id="intro">Intro<a class="headerlink" href="#intro" title="Permanent link">#</a></h4>
-<p>This class will 
-- get the <code>token</code> from <code>Authorization</code> header of request with keyword of <code>Bearer</code>
-- then going to <code>decode</code> it 
-- and find the match <code>user</code> with the <code>USER_MODEL</code> you have been already set</p>
+<p>This class will </p>
+<ul>
+<li>Get the <code>token</code> from <code>Authorization</code> header of request with keyword of <code>Bearer</code></li>
+<li><code>decode</code> it </li>
+<li>Find the match <code>user</code> in <code>USER_MODEL</code> you have already set</li>
+</ul>
 <blockquote>
 <p><code>JWTAuthentication</code> is going to use <code>panther.db.models.BaseUser</code> if you didn't set the <code>USER_MODEL</code> in your <code>core/configs.py</code></p>
 </blockquote>
@@ -599,15 +589,36 @@
 <span class="n">SECRET_KEY</span> <span class="o">=</span> <span class="n">env</span><span class="p">[</span><span class="s1">&#39;SECRET_KEY&#39;</span><span class="p">]</span>
 
 <span class="n">JWTConfig</span> <span class="o">=</span> <span class="p">{</span>  
+    <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="n">SECRET_KEY</span><span class="p">,</span>  
     <span class="s1">&#39;algorithm&#39;</span><span class="p">:</span> <span class="s1">&#39;HS256&#39;</span><span class="p">,</span>  
     <span class="s1">&#39;life_time&#39;</span><span class="p">:</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>  
-    <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="n">SECRET_KEY</span><span class="p">,</span>  
 <span class="p">}</span>
 </code></pre></div>
 <blockquote>
-<p><strong>key</strong>             --&gt; <code>Default</code> using your <code>SECRET_KEY</code>
-<strong>algorithm</strong>  --&gt; <code>Default</code> using <code>HS256</code>
-<strong>life_time</strong>    --&gt; <code>Default</code> using <code>timedelta(days=1)</code> </p>
+<p><strong>key</strong> &emsp;&emsp;&emsp;&emsp;--&gt; default is <code>SECRET_KEY</code></p>
+<p><strong>algorithm</strong> &emsp; --&gt; default is <code>HS256</code></p>
+<p><strong>life_time</strong>&emsp;&emsp;--&gt; default is <code>timedelta(days=1)</code> </p>
+</blockquote>
+<h3 id="custom-authentication">Custom Authentication<a class="headerlink" href="#custom-authentication" title="Permanent link">#</a></h3>
+<ul>
+<li>
+<p>Create a class and inherits it from <code>panther.authentications.BaseAuthentication</code></p>
+</li>
+<li>
+<p>Implement <code>authentication(cls, request: Request)</code> method</p>
+<ul>
+<li>Process the <code>request.headers.authorization</code> or ...</li>
+<li>Return Instance of <code>USER_MODEL</code></li>
+<li>Or raise <code>panther.exceptions.AuthenticationException</code> </li>
+</ul>
+</li>
+<li>
+<p>Address it in <code>core/configs.py</code></p>
+</li>
+<li><code>AUTHENTICATION = 'project_name.core.authentications.CustomAuthentication'</code></li>
+</ul>
+<blockquote>
+<p>You can look at the source code of JWTAuthentication for </p>
 </blockquote>
 
 
