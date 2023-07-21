@@ -283,13 +283,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#benchmark" class="md-nav__link">
-    Benchmark
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#installation" class="md-nav__link">
     Installation
   </a>
@@ -627,13 +620,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#benchmark" class="md-nav__link">
-    Benchmark
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#installation" class="md-nav__link">
     Installation
   </a>
@@ -754,83 +740,6 @@
 <li>Handle Custom Middlewares</li>
 <li>Handle Custom Throttling </li>
 </ul>
-<hr />
-<h3 id="benchmark">Benchmark<a class="headerlink" href="#benchmark" title="Permanent link">#</a></h3>
-<p>We implemented most of the Python frameworks and sent 
-<code>25,000</code> requests per second 
-for <code>10</code> seconds
-(Total <code>250,000</code> requests)
-in the same environment
-with <a href="https://github.com/nakabonne/ali">https://github.com/nakabonne/ali</a> and here's the result:</p>
-<blockquote>
-<p>you can find the detailed results &amp; source codes here --&gt; <a href="https://pantherpy.github.io/benchmarks/">benchmarks</a></p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>Framework</th>
-<th>Throughput</th>
-<th>Request Handled</th>
-<th>Max Latencies</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Sanic</td>
-<td>23,326</td>
-<td>233,842</td>
-<td>268.8ms</td>
-</tr>
-<tr>
-<td>Panther</td>
-<td>14,719</td>
-<td>147,595</td>
-<td>113.1ms</td>
-</tr>
-<tr>
-<td>FastAPI</td>
-<td>14,573</td>
-<td>146,467</td>
-<td>155.1ms</td>
-</tr>
-<tr>
-<td>Tornado</td>
-<td>4,969</td>
-<td>50.585</td>
-<td>426.5ms</td>
-</tr>
-<tr>
-<td>Flask</td>
-<td>3,555</td>
-<td>36,396</td>
-<td>1.2s</td>
-</tr>
-<tr>
-<td>Django</td>
-<td>2,188</td>
-<td>22,814</td>
-<td>526.3ms</td>
-</tr>
-<tr>
-<td>Bottle</td>
-<td>1,226</td>
-<td>39,650</td>
-<td>30.0s</td>
-</tr>
-<tr>
-<td>Pyramid</td>
-<td>1,023</td>
-<td>30,912</td>
-<td>30.0s</td>
-</tr>
-<tr>
-<td>Cherrypy</td>
-<td>639</td>
-<td>24,944</td>
-<td>30.0s</td>
-</tr>
-</tbody>
-</table>
 <hr />
 <h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">#</a></h3>
 <ul>

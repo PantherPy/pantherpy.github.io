@@ -348,6 +348,27 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#filter-response-fields" class="md-nav__link">
+    Filter Response Fields
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-the-response" class="md-nav__link">
+    Cache The Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#throttle-the-request" class="md-nav__link">
+    Throttle The Request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#api-retrieve-a-book" class="md-nav__link">
     API - Retrieve a Book
   </a>
@@ -664,6 +685,27 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#filter-response-fields" class="md-nav__link">
+    Filter Response Fields
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-the-response" class="md-nav__link">
+    Cache The Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#throttle-the-request" class="md-nav__link">
+    Throttle The Request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#api-retrieve-a-book" class="md-nav__link">
     API - Retrieve a Book
   </a>
@@ -826,7 +868,7 @@
 <span class="k">async</span> <span class="k">def</span> <span class="nf">book_api</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
     <span class="n">body</span><span class="p">:</span> <span class="n">BookSerializer</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">data</span>
 
-    <span class="n">Book</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">Book</span><span class="o">.</span><span class="n">insert_one</span><span class="p">(</span>
         <span class="n">name</span><span class="o">=</span><span class="n">body</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
         <span class="n">author</span><span class="o">=</span><span class="n">body</span><span class="o">.</span><span class="n">author</span><span class="p">,</span>
         <span class="n">pages_count</span><span class="o">=</span><span class="n">body</span><span class="o">.</span><span class="n">pages_count</span><span class="p">,</span>
@@ -909,6 +951,110 @@
 
     <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_501_NOT_IMPLEMENTED</span><span class="p">)</span>
 </code></pre></div>
+<blockquote>
+<p>Panther validate input with <code>input_model</code>, only in <code>POST</code>, <code>PUT</code>, <code>PATCH</code> methods.</p>
+</blockquote>
+<h3 id="filter-response-fields">Filter Response Fields<a class="headerlink" href="#filter-response-fields" title="Permanent link">#</a></h3>
+<p>Assume we don't want to return field <code>author</code> in response:</p>
+<ol>
+<li>
+<p>Create new serializer in <code>app/serializers.py</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
+
+
+<span class="k">class</span> <span class="nc">BookOutputSerializer</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">pages_count</span><span class="p">:</span> <span class="nb">int</span>
+</code></pre></div>
+</li>
+<li>
+<p>Add the <code>BookOutputSerializer</code> as <code>output_model</code> to your <code>API()</code>
+    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther</span> <span class="kn">import</span> <span class="n">status</span>
+<span class="kn">from</span> <span class="nn">panther.app</span> <span class="kn">import</span> <span class="n">API</span>
+<span class="kn">from</span> <span class="nn">panther.request</span> <span class="kn">import</span> <span class="n">Request</span>
+<span class="kn">from</span> <span class="nn">panther.response</span> <span class="kn">import</span> <span class="n">Response</span>
+
+<span class="kn">from</span> <span class="nn">app.serializers</span> <span class="kn">import</span> <span class="n">BookSerializer</span><span class="p">,</span> <span class="n">BookOutputSerializer</span>
+<span class="kn">from</span> <span class="nn">app.models</span> <span class="kn">import</span> <span class="n">Book</span>
+
+
+<span class="nd">@API</span><span class="p">(</span><span class="n">input_model</span><span class="o">=</span><span class="n">BookSerializer</span><span class="p">,</span> <span class="n">output_model</span><span class="o">=</span><span class="n">BookOutputSerializer</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">book_api</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+        <span class="o">...</span>
+
+    <span class="k">elif</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;GET&#39;</span><span class="p">:</span>
+        <span class="n">books</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Book</span><span class="p">]</span> <span class="o">=</span> <span class="n">Book</span><span class="o">.</span><span class="n">find</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">books</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_200_OK</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_501_NOT_IMPLEMENTED</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+</ol>
+<blockquote>
+<p>Panther use the <code>output_model</code>, in all methods.</p>
+</blockquote>
+<h3 id="cache-the-response">Cache The Response<a class="headerlink" href="#cache-the-response" title="Permanent link">#</a></h3>
+<p>For caching the response, we should add <code>cache=True</code> in <code>API()</code>.
+And it will return the cached response every time till <code>cache_exp_time</code></p>
+<p>For setting a custom expiration time for API we need to add <code>cache_exp_time</code> to <code>API()</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
+
+<span class="kn">from</span> <span class="nn">panther</span> <span class="kn">import</span> <span class="n">status</span>
+<span class="kn">from</span> <span class="nn">panther.app</span> <span class="kn">import</span> <span class="n">API</span>
+<span class="kn">from</span> <span class="nn">panther.request</span> <span class="kn">import</span> <span class="n">Request</span>
+<span class="kn">from</span> <span class="nn">panther.response</span> <span class="kn">import</span> <span class="n">Response</span>
+
+<span class="kn">from</span> <span class="nn">app.serializers</span> <span class="kn">import</span> <span class="n">BookSerializer</span><span class="p">,</span> <span class="n">BookOutputSerializer</span>
+<span class="kn">from</span> <span class="nn">app.models</span> <span class="kn">import</span> <span class="n">Book</span>
+
+
+<span class="nd">@API</span><span class="p">(</span><span class="n">input_model</span><span class="o">=</span><span class="n">BookSerializer</span><span class="p">,</span> <span class="n">output_model</span><span class="o">=</span><span class="n">BookOutputSerializer</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cache_exp_time</span><span class="o">=</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">book_api</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+        <span class="o">...</span>
+
+    <span class="k">elif</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;GET&#39;</span><span class="p">:</span>
+        <span class="n">books</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Book</span><span class="p">]</span> <span class="o">=</span> <span class="n">Book</span><span class="o">.</span><span class="n">find</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">books</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_200_OK</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_501_NOT_IMPLEMENTED</span><span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p>Panther is going to use the <code>DEFAULT_CACHE_EXP</code> from <code>core/configs.py</code> if <code>cache_exp_time</code> has not been set.</p>
+</blockquote>
+<h3 id="throttle-the-request">Throttle The Request<a class="headerlink" href="#throttle-the-request" title="Permanent link">#</a></h3>
+<p>For setting rate limit for requests, we can add <a href="https://pantherpy.github.io/throttling/">throttling</a> to <code>API()</code>, it should be the instance of <code>panther.throttling.Throttling</code>,
+something like below <em>(in the below example user can't request more than 10 times in a minutes)</em>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
+
+<span class="kn">from</span> <span class="nn">panther</span> <span class="kn">import</span> <span class="n">status</span>
+<span class="kn">from</span> <span class="nn">panther.app</span> <span class="kn">import</span> <span class="n">API</span>
+<span class="kn">from</span> <span class="nn">panther.request</span> <span class="kn">import</span> <span class="n">Request</span>
+<span class="kn">from</span> <span class="nn">panther.response</span> <span class="kn">import</span> <span class="n">Response</span>
+<span class="kn">from</span> <span class="nn">panther.throttling</span> <span class="kn">import</span> <span class="n">Throttling</span>
+
+<span class="kn">from</span> <span class="nn">app.serializers</span> <span class="kn">import</span> <span class="n">BookSerializer</span><span class="p">,</span> <span class="n">BookOutputSerializer</span>
+<span class="kn">from</span> <span class="nn">app.models</span> <span class="kn">import</span> <span class="n">Book</span>
+
+
+<span class="nd">@API</span><span class="p">(</span>
+    <span class="n">input_model</span><span class="o">=</span><span class="n">BookSerializer</span><span class="p">,</span> 
+    <span class="n">output_model</span><span class="o">=</span><span class="n">BookOutputSerializer</span><span class="p">,</span> 
+    <span class="n">cache</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+    <span class="n">cache_exp_time</span><span class="o">=</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span>
+    <span class="n">throttling</span><span class="o">=</span><span class="n">Throttling</span><span class="p">(</span><span class="n">rate</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">book_api</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+        <span class="o">...</span>
+
+    <span class="k">elif</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;GET&#39;</span><span class="p">:</span>
+        <span class="n">books</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Book</span><span class="p">]</span> <span class="o">=</span> <span class="n">Book</span><span class="o">.</span><span class="n">find</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">books</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_200_OK</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_501_NOT_IMPLEMENTED</span><span class="p">)</span>
+</code></pre></div>
 <h3 id="api-retrieve-a-book">API - Retrieve a Book<a class="headerlink" href="#api-retrieve-a-book" title="Permanent link">#</a></h3>
 <p>For <code>retrieve</code>, <code>update</code> and <code>delete</code> API, we are going to</p>
 <ol>
@@ -954,8 +1100,10 @@
 <span class="nd">@API</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">single_book_api</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">,</span> <span class="n">book_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;GET&#39;</span><span class="p">:</span>
-        <span class="n">book</span><span class="p">:</span> <span class="n">Book</span> <span class="o">=</span> <span class="n">Book</span><span class="o">.</span><span class="n">find_one</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">book_id</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">book</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_200_OK</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">book</span> <span class="o">:=</span> <span class="n">Book</span><span class="o">.</span><span class="n">find_one</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">book_id</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">book</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_200_OK</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_404_NOT_FOUND</span><span class="p">)</span>
 </code></pre></div>
 </li>
 </ol>
@@ -1006,7 +1154,7 @@
     <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;GET&#39;</span><span class="p">:</span>
         <span class="o">...</span>
     <span class="k">elif</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;PUT&#39;</span><span class="p">:</span>
-        <span class="n">is_updated</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">Book</span><span class="o">.</span><span class="n">update_one</span><span class="p">({</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="n">book_id</span><span class="p">},</span> <span class="o">**</span><span class="n">request</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">is_updated</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">Book</span><span class="o">.</span><span class="n">update_one</span><span class="p">({</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="n">book_id</span><span class="p">},</span> <span class="n">request</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">dict</span><span class="p">())</span>
         <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;is_updated&#39;</span><span class="p">:</span> <span class="n">is_updated</span><span class="p">}</span>
         <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_202_ACCEPTED</span><span class="p">)</span>
 </code></pre></div>
@@ -1027,7 +1175,7 @@
     <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;GET&#39;</span><span class="p">:</span>
         <span class="o">...</span>
     <span class="k">elif</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;PUT&#39;</span><span class="p">:</span>
-        <span class="n">updated_count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">Book</span><span class="o">.</span><span class="n">update_many</span><span class="p">({</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="n">book_id</span><span class="p">},</span> <span class="o">**</span><span class="n">request</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">updated_count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">Book</span><span class="o">.</span><span class="n">update_many</span><span class="p">({</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="n">book_id</span><span class="p">},</span> <span class="n">request</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">dict</span><span class="p">())</span>
         <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;updated_count&#39;</span><span class="p">:</span> <span class="n">updated_count</span><span class="p">}</span>
         <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_202_ACCEPTED</span><span class="p">)</span>
 </code></pre></div>
@@ -1060,9 +1208,11 @@
         <span class="k">elif</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;PUT&#39;</span><span class="p">:</span>
             <span class="o">...</span>
         <span class="k">elif</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;DELETE&#39;</span><span class="p">:</span>
-            <span class="n">book</span><span class="p">:</span> <span class="n">Book</span> <span class="o">=</span> <span class="n">Book</span><span class="o">.</span><span class="n">find_one</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">book_id</span><span class="p">)</span>
-            <span class="n">book</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
-            <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_204_NO_CONTENT</span><span class="p">)</span>
+            <span class="n">is_deleted</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">Book</span><span class="o">.</span><span class="n">delete_one</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">book_id</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">is_deleted</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_204_NO_CONTENT</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span><span class="p">)</span>
 </code></pre></div>
     2. Delete with <code>delete_one</code> query</p>
 <div class="highlight"><pre><span></span><code>    <span class="kn">from</span> <span class="nn">panther</span> <span class="kn">import</span> <span class="n">status</span>
