@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://pantherpy.github.io/urls/">
+        <link rel="canonical" href="https://pantherpy.github.io/websocket/">
       
       
-        <link rel="prev" href="../authentications/">
+        <link rel="prev" href="../configs/">
       
       
-        <link rel="next" href="../throttling/">
+        <link rel="next" href="../monitoring/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>URLs - Panther</title>
+        <title>WebSocket - Panther</title>
       
     
     
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#path-variables-are-handled-like-below" class="md-skip">
+        <a href="#structure-requirements" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              URLs
+              WebSocket
             
           </span>
         </div>
@@ -409,9 +409,27 @@
       
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../websocket/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    WebSocket
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -420,6 +438,58 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#structure-requirements" class="md-nav__link">
+    Structure &amp; Requirements
+  </a>
+  
+    <nav class="md-nav" aria-label="Structure & Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-websocket-class" class="md-nav__link">
+    Create WebSocket Class
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-urls" class="md-nav__link">
+    Update URLs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    How It Works?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -504,27 +574,9 @@
       
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    URLs
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../urls/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -533,38 +585,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#path-variables-are-handled-like-below" class="md-nav__link">
-    Path Variables are handled like below:
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -670,15 +690,35 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#path-variables-are-handled-like-below" class="md-nav__link">
-    Path Variables are handled like below:
+  <a href="#structure-requirements" class="md-nav__link">
+    Structure &amp; Requirements
   </a>
+  
+    <nav class="md-nav" aria-label="Structure & Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-websocket-class" class="md-nav__link">
+    Create WebSocket Class
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-urls" class="md-nav__link">
+    Update URLs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example
+  <a href="#how-it-works" class="md-nav__link">
+    How It Works?
   </a>
   
 </li>
@@ -701,62 +741,71 @@
   
 
 
-  <h1>URLs</h1>
+  <h1>WebSocket</h1>
 
+<p>Panther supports <code>WebSockets</code> routing just like <code>APIs</code></p>
+<h2 id="structure-requirements">Structure &amp; Requirements<a class="headerlink" href="#structure-requirements" title="Permanent link">#</a></h2>
+<h3 id="create-websocket-class">Create WebSocket Class<a class="headerlink" href="#create-websocket-class" title="Permanent link">#</a></h3>
+<p>Create the <code>BookWebsocket()</code> in <code>app/websockets.py</code> which inherited from <code>GenericWebsocket</code>: </p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.websocket</span> <span class="kn">import</span> <span class="n">GenericWebsocket</span>
+
+
+<span class="k">class</span> <span class="nc">BookWebsocket</span><span class="p">(</span><span class="n">GenericWebsocket</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">accept</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">connection_id</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">receive</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bytes</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="c1"># Just Echo The Message</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div>
 <blockquote>
-<p><b>Variable:</b> <code>URLs</code> </p>
-<p><b>Type:</b> <code>str</code> </p>
-<p><b>Required:</b> <code>True</code></p>
+<p>We are going to discuss it below ...</p>
 </blockquote>
-<ul>
-<li><code>URLs</code> should point to your root <code>urls</code> with dotted address (<code>path.module.url_dict</code>),
-and it should be <code>dict</code>.</li>
-<li>
-<p><code>key</code> of url_routing dict is <code>path</code> &amp; value is <code>endpoint</code> or another <code>dict</code></p>
-</li>
-<li>
-<h4 id="path-variables-are-handled-like-below">Path Variables are handled like below:<a class="headerlink" href="#path-variables-are-handled-like-below" title="Permanent link">#</a></h4>
-<ul>
-<li>&lt;<code>variable_name</code>&gt;</li>
-<li>Example: <code>user/&lt;user_id&gt;/blog/&lt;title&gt;/</code></li>
-<li>The <code>endpoint</code> should have parameters with those names too</li>
-<li>Example: <code>async def profile_api(user_id: int, title: str):</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">#</a></h2>
-<ul>
-<li>core/configs.py
-    <div class="highlight"><pre><span></span><code><span class="err">`</span><span class="n">URLs</span> <span class="o">=</span> <span class="s1">&#39;core.urls.url_routing`</span>
-</code></pre></div></li>
-<li>core/urls.py
-    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">app.urls</span> <span class="kn">import</span> <span class="n">app_urls</span>
+<h3 id="update-urls">Update URLs<a class="headerlink" href="#update-urls" title="Permanent link">#</a></h3>
+<p>Add the <code>BookWebsocket()</code> in <code>app/urls.py</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">app.websockets</span> <span class="kn">import</span> <span class="n">BookWebsocket</span>
 
-<span class="n">url_routing</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;user/&#39;</span><span class="p">:</span> <span class="n">app_urls</span><span class="p">,</span>
-<span class="p">}</span>
-</code></pre></div></li>
-<li>
-<p>app/urls.py
-    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">app.apis</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">urls</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;login/&#39;</span><span class="p">:</span> <span class="n">login_api</span><span class="p">,</span>
-    <span class="s1">&#39;logout/&#39;</span><span class="p">:</span> <span class="n">logout_api</span><span class="p">,</span>
-    <span class="s1">&#39;profile/&lt;user_id&gt;/&#39;</span><span class="p">:</span> <span class="n">profile_api</span><span class="p">,</span>
+    <span class="s1">&#39;ws/book/&#39;</span><span class="p">:</span> <span class="n">BookWebsocket</span><span class="p">,</span>
 <span class="p">}</span>
-</code></pre></div></p>
+</code></pre></div>
+<h2 id="how-it-works">How It Works?<a class="headerlink" href="#how-it-works" title="Permanent link">#</a></h2>
+<ol>
+<li>Client tries to connect to your <code>ws/book/</code> url with <code>websocket</code> protocol</li>
+<li>The <code>connect()</code> method of your <code>BookWebsocket</code> is going to call</li>
+<li>You should validate the connection with <code>self.headers</code>, <code>self.query_params</code> or etc</li>
+<li>Then <code>accept()</code> the connection with <code>self.accept()</code></li>
+<li>Now you can see the unique <code>connection_id</code> which is specified to this user with <code>self.connection_id</code>, you may want to store it somewhere (<code>db</code>, <code>cache</code>, or etc.)</li>
+<li>If client sent you any message you are going to receive it in <code>receive()</code> method, the client message can be <code>str</code> or <code>bytes</code>.</li>
+<li>If you want to send anything to the client, </li>
+<li>In websocket class scope: You can send it with <code>self.send()</code> which only takes <code>data</code>.</li>
+<li>Out of websocket class scope: You can send it with <code>send_message_to_websocket()</code> from <code>panther.websocket</code>, it's an <code>async</code> function which takes 2 args, <code>connection_id</code> and <code>data</code> which can have any type, like below:
+       <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.websocket</span> <span class="kn">import</span> <span class="n">send_message_to_websocket</span>
+<span class="k">await</span> <span class="n">send_message_to_websocket</span><span class="p">(</span><span class="n">connection_id</span><span class="o">=</span><span class="s1">&#39;connection_id&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s1">&#39;New Message From WS&#39;</span><span class="p">)</span> 
+</code></pre></div></li>
+<li>If you want to use <code>webscoket</code> in <code>multi-tread</code> or <code>multi-instance</code> backend, you should add <code>RedisMiddleware</code> in your <code>configs</code> or it won't work well.
+<a href="https://pantherpy.github.io/middlewares/#redis-middleware">[Adding Redis Middleware]</a></li>
+<li>
+<p>If you want to close a connection:</p>
+<ul>
+<li>In websocket class scope: You can close connection with <code>self.close()</code> method which takes 2 args, <code>code</code> and <code>reason</code>, like below:
+    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther</span> <span class="kn">import</span> <span class="n">status</span>
+<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">WS_1000_NORMAL_CLOSURE</span><span class="p">,</span> <span class="n">reason</span><span class="o">=</span><span class="s1">&#39;I just want to close it&#39;</span><span class="p">)</span>
+</code></pre></div></li>
+<li>Out of websocket class scope <strong>(Not Recommended)</strong>: You can close it with <code>close_websocket_connection()</code> from <code>panther.websocket</code>, it's <code>async</code> function with takes 3 args, <code>connection_id</code>, <code>code</code> and <code>reason</code>, like below: 
+    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther</span> <span class="kn">import</span> <span class="n">status</span>
+<span class="kn">from</span> <span class="nn">panther.websocket</span> <span class="kn">import</span> <span class="n">close_websocket_connection</span>
+<span class="k">await</span> <span class="n">close_websocket_connection</span><span class="p">(</span><span class="n">connection_id</span><span class="o">=</span><span class="s1">&#39;connection_id&#39;</span><span class="p">,</span> <span class="n">code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">WS_1008_POLICY_VIOLATION</span><span class="p">,</span> <span class="n">reason</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</code></pre></div></li>
+</ul>
 </li>
 <li>
-<p>app/apis.py
-    <div class="highlight"><pre><span></span><code><span class="o">...</span>
-
-<span class="nd">@API</span><span class="p">()</span>
-<span class="k">async</span> <span class="k">def</span> <span class="nf">profile_api</span><span class="p">(</span><span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">User</span><span class="o">.</span><span class="n">find_one</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">user_id</span><span class="p">)</span>
-</code></pre></div></p>
+<p>WebSocket Echo Example -&gt; <a href="https://github.com/PantherPy/echo_websocket">Https://GitHub.com/PantherPy/echo_websocket</a></p>
 </li>
-</ul>
+<li>Enjoy.</li>
+</ol>
 
 
 
