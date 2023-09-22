@@ -804,8 +804,19 @@
 </ul>
 </li>
 <li>
-<p>WebSocket Echo Example -&gt; <a href="https://github.com/PantherPy/echo_websocket">Https://GitHub.com/PantherPy/echo_websocket</a></p>
+<p><code>Path Variables</code> are going to pass to <code>connect()</code> like below:
+   <div class="highlight"><pre><span></span><code> <span class="kn">from</span> <span class="nn">panther.websocket</span> <span class="kn">import</span> <span class="n">GenericWebsocket</span>
+
+ <span class="k">class</span> <span class="nc">UserWebsocket</span><span class="p">(</span><span class="n">GenericWebsocket</span><span class="p">):</span>
+     <span class="k">async</span> <span class="k">def</span> <span class="nf">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">room_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+         <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">accept</span><span class="p">()</span>
+
+ <span class="n">url</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="s1">&#39;/ws/&lt;user_id&gt;/&lt;room_id&gt;/&#39;</span><span class="p">:</span> <span class="n">UserWebsocket</span>   
+ <span class="p">}</span>
+</code></pre></div></p>
 </li>
+<li>WebSocket Echo Example -&gt; <a href="https://github.com/PantherPy/echo_websocket">Https://GitHub.com/PantherPy/echo_websocket</a></li>
 <li>Enjoy.</li>
 </ol>
 
