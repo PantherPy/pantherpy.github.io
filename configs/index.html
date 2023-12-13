@@ -507,6 +507,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#startup" class="md-nav__link">
+    STARTUP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shutdown" class="md-nav__link">
+    SHUTDOWN
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -820,6 +834,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#startup" class="md-nav__link">
+    STARTUP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shutdown" class="md-nav__link">
+    SHUTDOWN
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -878,7 +906,7 @@ and see the monitoring logs</p>
 <p><b>Type:</b> <code>str</code> (<b>Required</b>)</p>
 </blockquote>
 <p>It should be the address of your <code>urls</code> <code>dict</code></p>
-<p><em>Example:</em> <code>URLS = 'configs.urls.url_routing'</code></p>
+<p><em>Example:</em> <code>URLS = 'core.configs.urls.url_routing'</code></p>
 <hr />
 <h3 id="default_cache_exp"><a href="https://pantherpy.github.io/caching">DEFAULT_CACHE_EXP</a><a class="headerlink" href="#default_cache_exp" title="Permanent link">#</a></h3>
 <blockquote>
@@ -916,6 +944,22 @@ and see the monitoring logs</p>
 <ul>
 <li><code>initialize()</code> the <code>background_tasks</code></li>
 </ul>
+<hr />
+<h3 id="startup"><a href="https://pantherpy.github.io/startup">STARTUP</a><a class="headerlink" href="#startup" title="Permanent link">#</a></h3>
+<blockquote>
+<p><b>Type:</b> <code>str | None</code> (<b>Default:</b> <code>None</code>)</p>
+</blockquote>
+<p>It should be dotted address of your <code>startup</code> function,
+this function can be <code>sync</code> or <code>async</code></p>
+<p><em>Example:</em> <code>URLS = 'core.configs.startup'</code></p>
+<hr />
+<h3 id="shutdown"><a href="https://pantherpy.github.io/shutdown">SHUTDOWN</a><a class="headerlink" href="#shutdown" title="Permanent link">#</a></h3>
+<blockquote>
+<p><b>Type:</b> <code>str | None</code> (<b>Default:</b> <code>None</code>)</p>
+</blockquote>
+<p>It should be dotted address of your <code>shutdown</code> function
+this function can be <code>sync</code> or <code>async</code></p>
+<p><em>Example:</em> <code>URLS = 'core.configs.shutdown'</code></p>
 
 
 

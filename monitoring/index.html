@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#the-monitoring-middleware" class="md-skip">
+        <a href="#log-example" class="md-skip">
           Skip to content
         </a>
       
@@ -472,8 +472,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-monitoring-middleware" class="md-nav__link">
-    The Monitoring Middleware:
+  <a href="#log-example" class="md-nav__link">
+    Log Example:
   </a>
   
 </li>
@@ -682,8 +682,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-monitoring-middleware" class="md-nav__link">
-    The Monitoring Middleware:
+  <a href="#log-example" class="md-nav__link">
+    Log Example:
   </a>
   
 </li>
@@ -716,16 +716,10 @@
 <p>Panther has a <code>Monitoring</code> middleware that process the <code>perf_time</code> of every request</p>
 <p>It will create a <code>monitoring.log</code> file and log the records</p>
 <p>Then you can watch them live with: <code>panther monitor</code></p>
-<h4 id="the-monitoring-middleware">The Monitoring Middleware:<a class="headerlink" href="#the-monitoring-middleware" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code>    <span class="k">async</span> <span class="k">def</span> <span class="nf">before</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Request</span><span class="p">:</span>
-        <span class="n">ip</span><span class="p">,</span> <span class="n">port</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">client</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">log</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="si">}</span><span class="s1"> | </span><span class="si">{</span><span class="n">request</span><span class="o">.</span><span class="n">path</span><span class="si">}</span><span class="s1"> | </span><span class="si">{</span><span class="n">ip</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s1">&#39;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">start_time</span> <span class="o">=</span> <span class="n">perf_counter</span><span class="p">()</span>
-        <span class="k">return</span> <span class="n">request</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>    <span class="k">async</span> <span class="k">def</span> <span class="nf">after</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">status_code</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-        <span class="n">response_time</span> <span class="o">=</span> <span class="p">(</span><span class="n">perf_counter</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_time</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1_000</span>
-        <span class="n">monitoring_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="si">}</span><span class="s1"> | </span><span class="si">{</span><span class="n">response_time</span><span class="si">:</span><span class="s1"> .3</span><span class="si">}</span><span class="s1"> ms | </span><span class="si">{</span><span class="n">status_code</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<h4 id="log-example">Log Example:<a class="headerlink" href="#log-example" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">date</span> <span class="n">time</span> <span class="o">|</span> <span class="n">method</span> <span class="o">|</span> <span class="n">path</span> <span class="o">|</span> <span class="n">ip</span><span class="p">:</span><span class="n">port</span> <span class="o">|</span> <span class="n">response_time</span> <span class="p">[</span><span class="n">ms</span><span class="p">,</span> <span class="n">s</span><span class="p">]</span> <span class="o">|</span> <span class="n">status</span>
+
+<span class="mi">2023</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">11</span> <span class="mi">18</span><span class="p">:</span><span class="mi">23</span><span class="p">:</span><span class="mi">42</span> <span class="o">|</span> <span class="n">GET</span> <span class="o">|</span> <span class="o">/</span><span class="n">login</span> <span class="o">|</span> <span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">55710</span> <span class="o">|</span> <span class="mf">2.8021</span> <span class="n">ms</span> <span class="o">|</span> <span class="mi">200</span>
 </code></pre></div>
 
 
