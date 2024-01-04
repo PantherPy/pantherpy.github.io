@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
     
     
       
@@ -560,9 +560,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#custom-middleware-example" class="md-nav__link">
+  <a href="#middleware-types" class="md-nav__link">
     <span class="md-ellipsis">
-      Custom Middleware Example
+      Middleware Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#write-custom-middleware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Write Custom Middleware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-http-middleware-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom HTTP Middleware Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-http-websocket-middleware-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom HTTP + Websocket Middleware Example
     </span>
   </a>
   
@@ -783,9 +810,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#custom-middleware-example" class="md-nav__link">
+  <a href="#middleware-types" class="md-nav__link">
     <span class="md-ellipsis">
-      Custom Middleware Example
+      Middleware Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#write-custom-middleware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Write Custom Middleware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-http-middleware-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom HTTP Middleware Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-http-websocket-middleware-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom HTTP + Websocket Middleware Example
     </span>
   </a>
   
@@ -833,12 +887,12 @@
 <p>And you can write your own custom middlewares too</p>
 <h2 id="structure-of-middlewares">Structure of middlewares<a class="headerlink" href="#structure-of-middlewares" title="Permanent link">#</a></h2>
 <p><code>MIDDLEWARES</code> itself is a <code>list</code> of <code>tuples</code> which each <code>tuple</code> is like below:</p>
-<p>(<code>Address of Middleware Class</code>, <code>kwargs as dict</code>)</p>
+<p>(<code>Dotted Address of The Middleware Class</code>, <code>kwargs as dict</code>)</p>
 <h2 id="database-middleware">Database Middleware<a class="headerlink" href="#database-middleware" title="Permanent link">#</a></h2>
-<p>This middleware will create a <code>db</code> connection that uses in <code>ODM</code> or you can use it manually from:
+<p>This middleware will create a <code>db</code> connection which is used in <code>ODM</code> and you can use it manually too, it gives you a database connection:
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.db.connection</span> <span class="kn">import</span> <span class="n">db</span>
 </code></pre></div></p>
-<p>We only support 2 database: <code>PantherDB</code> &amp; <code>MongoDB</code></p>
+<p>We only support 2 database for now: <code>PantherDB</code> &amp; <code>MongoDB</code></p>
 <ul>
 <li>Address of Middleware: <code>panther.middlewares.db.DatabaseMiddleware</code></li>
 <li>
@@ -855,13 +909,13 @@
 <li>
 <p>Example of <code>PantherDB</code> (<code>Built-in Local Storage</code>):
   <div class="highlight"><pre><span></span><code><span class="n">MIDDLEWARES</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">(</span><span class="s1">&#39;panther.middlewares.db.DatabaseMiddleware&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;pantherdb://</span><span class="si">{</span><span class="n">BASE_DIR</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">DB_NAME</span><span class="si">}</span><span class="s1">.pdb&#39;</span><span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;panther.middlewares.db.DatabaseMiddleware&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;pantherdb://project_directory/database.pdb&#39;</span><span class="p">}),</span>
 <span class="p">]</span>
 </code></pre></div></p>
 </li>
 <li>Example of <code>MongoDB</code>:
   <div class="highlight"><pre><span></span><code><span class="n">MIDDLEWARES</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">(</span><span class="s1">&#39;panther.middlewares.db.DatabaseMiddleware&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;mongodb://</span><span class="si">{</span><span class="n">DB_HOST</span><span class="si">}</span><span class="s1">:27017/</span><span class="si">{</span><span class="n">DB_NAME</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">}),</span>
+    <span class="p">(</span><span class="s1">&#39;panther.middlewares.db.DatabaseMiddleware&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;mongodb://127.0.0.1:27017/example&#39;</span><span class="p">}),</span>
 <span class="p">]</span>
 </code></pre></div></li>
 </ul>
@@ -882,25 +936,46 @@
 </li>
 </ul>
 <h2 id="custom-middleware">Custom Middleware<a class="headerlink" href="#custom-middleware" title="Permanent link">#</a></h2>
-<p>Write a <code>class</code> and inherit from
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.middlewares.base</span> <span class="kn">import</span> <span class="n">BaseMiddleware</span>
-</code></pre></div></p>
-<p>Then you can write your custom <code>before()</code> and <code>after()</code> methods</p>
+<h3 id="middleware-types">Middleware Types<a class="headerlink" href="#middleware-types" title="Permanent link">#</a></h3>
+<p>We have 3 type of Middlewares, make sure that you are inheriting from the correct one:
+  - <code>Base Middleware</code>: which is used for both <code>websocket</code> and <code>http</code> requests 
+    - <code>HTTP Middleware</code>: which is only used for <code>http</code> requests
+    - <code>Websocket Middleware</code>: which is only used for <code>websocket</code> requests</p>
+<h3 id="write-custom-middleware">Write Custom Middleware<a class="headerlink" href="#write-custom-middleware" title="Permanent link">#</a></h3>
 <ul>
-<li>The <code>methods</code> should be <code>async</code></li>
+<li>
+<p>Write a <code>class</code> and inherit from one of the classes below
+    <div class="highlight"><pre><span></span><code><span class="c1"># For HTTP Requests</span>
+<span class="kn">from</span> <span class="nn">panther.middlewares.base</span> <span class="kn">import</span> <span class="n">HTTPMiddleware</span>
+
+<span class="c1"># For Websocket Requests</span>
+<span class="kn">from</span> <span class="nn">panther.middlewares.base</span> <span class="kn">import</span> <span class="n">WebsocketMiddleware</span>
+
+<span class="c1"># For Both HTTP and Websocket Requests</span>
+<span class="kn">from</span> <span class="nn">panther.middlewares.base</span> <span class="kn">import</span> <span class="n">BaseMiddleware</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Then you can write your custom <code>before()</code> and <code>after()</code> methods</p>
+</li>
+<li>
+<p>The <code>methods</code> should be <code>async</code></p>
+</li>
 <li><code>before()</code> should have <code>request</code> parameter</li>
 <li><code>after()</code> should have <code>response</code> parameter</li>
 <li>overwriting the <code>before()</code> and <code>after()</code> are optional</li>
 <li>The <code>methods</code> can get <code>kwargs</code> from their <code>__init__</code></li>
 </ul>
-<h3 id="custom-middleware-example">Custom Middleware Example<a class="headerlink" href="#custom-middleware-example" title="Permanent link">#</a></h3>
-<p>core/middlewares.py
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.request</span> <span class="kn">import</span> <span class="n">Request</span>
+<h3 id="custom-http-middleware-example">Custom HTTP Middleware Example<a class="headerlink" href="#custom-http-middleware-example" title="Permanent link">#</a></h3>
+<ul>
+<li>
+<p><strong>core/middlewares.py</strong>
+    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.middlewares.base</span> <span class="kn">import</span> <span class="n">HTTPMiddleware</span>
+<span class="kn">from</span> <span class="nn">panther.request</span> <span class="kn">import</span> <span class="n">Request</span>
 <span class="kn">from</span> <span class="nn">panther.response</span> <span class="kn">import</span> <span class="n">Response</span>
-<span class="kn">from</span> <span class="nn">panther.middlewares.base</span> <span class="kn">import</span> <span class="n">BaseMiddleware</span>
 
 
-<span class="k">class</span> <span class="nc">CustomMiddleware</span><span class="p">(</span><span class="n">BaseMiddleware</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">CustomMiddleware</span><span class="p">(</span><span class="n">HTTPMiddleware</span><span class="p">):</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">something</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">something</span> <span class="o">=</span> <span class="n">something</span>
@@ -912,12 +987,48 @@
     <span class="k">async</span> <span class="k">def</span> <span class="nf">after</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">:</span> <span class="n">Response</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Response</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;After Endpoint&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">something</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">response</span>
-</code></pre></div>
-core/configs.py
-<div class="highlight"><pre><span></span><code>  <span class="n">MIDDLEWARES</span> <span class="o">=</span> <span class="p">[</span>
-      <span class="p">(</span><span class="s1">&#39;core.middlewares.CustomMiddleware&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;something&#39;</span><span class="p">:</span> <span class="s1">&#39;hello-world&#39;</span><span class="p">}),</span>
-  <span class="p">]</span>
 </code></pre></div></p>
+</li>
+<li>
+<p><strong>core/configs.py</strong>
+    <div class="highlight"><pre><span></span><code><span class="n">MIDDLEWARES</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="p">(</span><span class="s1">&#39;core.middlewares.CustomMiddleware&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;something&#39;</span><span class="p">:</span> <span class="s1">&#39;hello-world&#39;</span><span class="p">}),</span>
+<span class="p">]</span>
+</code></pre></div></p>
+</li>
+</ul>
+<h3 id="custom-http-websocket-middleware-example">Custom HTTP + Websocket Middleware Example<a class="headerlink" href="#custom-http-websocket-middleware-example" title="Permanent link">#</a></h3>
+<ul>
+<li>
+<p><strong>core/middlewares.py</strong>
+    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.middlewares.base</span> <span class="kn">import</span> <span class="n">BaseMiddleware</span>
+<span class="kn">from</span> <span class="nn">panther.request</span> <span class="kn">import</span> <span class="n">Request</span>
+<span class="kn">from</span> <span class="nn">panther.response</span> <span class="kn">import</span> <span class="n">Response</span>
+<span class="kn">from</span> <span class="nn">panther.websocket</span> <span class="kn">import</span> <span class="n">GenericWebsocket</span> 
+
+
+<span class="k">class</span> <span class="nc">SayHiMiddleware</span><span class="p">(</span><span class="n">BaseMiddleware</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">before</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span> <span class="o">|</span> <span class="n">GenericWebsocket</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Request</span> <span class="o">|</span> <span class="n">GenericWebsocket</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">request</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">after</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">:</span> <span class="n">Response</span> <span class="o">|</span> <span class="n">GenericWebsocket</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Response</span> <span class="o">|</span> <span class="n">GenericWebsocket</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Goodbye &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">response</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>core/configs.py</strong>
+    <div class="highlight"><pre><span></span><code><span class="n">MIDDLEWARES</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="p">(</span><span class="s1">&#39;core.middlewares.SayHiMiddleware&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ali Rn&#39;</span><span class="p">}),</span>
+<span class="p">]</span>
+</code></pre></div></p>
+</li>
+</ul>
 
 
 

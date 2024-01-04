@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
     
     
       
@@ -831,14 +831,14 @@
 <li>Client tries to connect to your <code>ws/book/</code> url with <code>websocket</code> protocol</li>
 <li>The <code>connect()</code> method of your <code>BookWebsocket</code> is going to call</li>
 <li>You should validate the connection with <code>self.headers</code>, <code>self.query_params</code> or etc</li>
-<li>Then <code>accept()</code> the connection with <code>self.accept()</code></li>
+<li>Then <code>accept()</code> the connection with <code>self.accept()</code> otherwise it is going to be <code>rejected</code> by default.</li>
 <li>Now you can see the unique <code>connection_id</code> which is specified to this user with <code>self.connection_id</code>, you may want to store it somewhere (<code>db</code>, <code>cache</code>, or etc.)</li>
-<li>If client sent you any message you are going to receive it in <code>receive()</code> method, the client message can be <code>str</code> or <code>bytes</code>.</li>
+<li>If the client sends you any message, you will receive it in <code>receive()</code> method, the client message can be <code>str</code> or <code>bytes</code>.</li>
 <li>If you want to send anything to the client:<ul>
 <li>In websocket class scope: You can send it with <code>self.send()</code> which only takes <code>data</code>.</li>
-<li>Out of websocket class scope: You can send it with <code>send_message_to_websocket()</code> from <code>panther.websocket</code>, it's an <code>async</code> function which takes 2 args, <code>connection_id</code> and <code>data</code> which can have any type, like below:
+<li>Out of websocket class scope: You can send it with <code>send_message_to_websocket()</code> from <code>panther.websocket</code>, it's an <code>async</code> function which takes 2 args, <code>connection_id</code> and <code>data</code>(which can have any type):
     <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.websocket</span> <span class="kn">import</span> <span class="n">send_message_to_websocket</span>
-<span class="k">await</span> <span class="n">send_message_to_websocket</span><span class="p">(</span><span class="n">connection_id</span><span class="o">=</span><span class="s1">&#39;connection_id&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s1">&#39;New Message From WS&#39;</span><span class="p">)</span> 
+<span class="k">await</span> <span class="n">send_message_to_websocket</span><span class="p">(</span><span class="n">connection_id</span><span class="o">=</span><span class="s1">&#39;7e82d57c9ec0478787b01916910a9f45&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s1">&#39;New Message From WS&#39;</span><span class="p">)</span> 
 </code></pre></div></li>
 </ul>
 </li>
@@ -847,19 +847,19 @@
 <li>
 <p>If you want to close a connection:</p>
 <ul>
-<li>In websocket class scope: You can close connection with <code>self.close()</code> method which takes 2 args, <code>code</code> and <code>reason</code>, like below:
+<li>In websocket class scope: You can close connection with <code>self.close()</code> method which takes 2 args, <code>code</code> and <code>reason</code>:
     <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther</span> <span class="kn">import</span> <span class="n">status</span>
 <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">WS_1000_NORMAL_CLOSURE</span><span class="p">,</span> <span class="n">reason</span><span class="o">=</span><span class="s1">&#39;I just want to close it&#39;</span><span class="p">)</span>
 </code></pre></div></li>
 <li>Out of websocket class scope <strong>(Not Recommended)</strong>: You can close it with <code>close_websocket_connection()</code> from <code>panther.websocket</code>, it's <code>async</code> function with takes 3 args, <code>connection_id</code>, <code>code</code> and <code>reason</code>, like below: 
     <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther</span> <span class="kn">import</span> <span class="n">status</span>
 <span class="kn">from</span> <span class="nn">panther.websocket</span> <span class="kn">import</span> <span class="n">close_websocket_connection</span>
-<span class="k">await</span> <span class="n">close_websocket_connection</span><span class="p">(</span><span class="n">connection_id</span><span class="o">=</span><span class="s1">&#39;connection_id&#39;</span><span class="p">,</span> <span class="n">code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">WS_1008_POLICY_VIOLATION</span><span class="p">,</span> <span class="n">reason</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">await</span> <span class="n">close_websocket_connection</span><span class="p">(</span><span class="n">connection_id</span><span class="o">=</span><span class="s1">&#39;7e82d57c9ec0478787b01916910a9f45&#39;</span><span class="p">,</span> <span class="n">code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">WS_1008_POLICY_VIOLATION</span><span class="p">,</span> <span class="n">reason</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 </code></pre></div></li>
 </ul>
 </li>
 <li>
-<p><code>Path Variables</code> are going to pass to <code>connect()</code> like below:
+<p><code>Path Variables</code> will be passed to <code>connect()</code>:
    <div class="highlight"><pre><span></span><code> <span class="kn">from</span> <span class="nn">panther.websocket</span> <span class="kn">import</span> <span class="n">GenericWebsocket</span>
 
  <span class="k">class</span> <span class="nc">UserWebsocket</span><span class="p">(</span><span class="n">GenericWebsocket</span><span class="p">):</span>
