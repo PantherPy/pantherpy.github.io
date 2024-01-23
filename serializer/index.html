@@ -10,26 +10,28 @@
       
       
       
-        <link rel="canonical" href="https://pantherpy.github.io/">
+        <link rel="canonical" href="https://pantherpy.github.io/serializer/">
       
       
+        <link rel="prev" href="../configs/">
       
-        <link rel="next" href="function_first_crud/">
+      
+        <link rel="next" href="../websocket/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
     
     
       
-        <title>Panther</title>
+        <title>Serializer - Panther</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,7 +50,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#panther" class="md-skip">
+        <a href="#style-1-pydantic" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +92,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Panther" class="md-header__button md-logo" aria-label="Panther" data-md-component="logo">
+    <a href=".." title="Panther" class="md-header__button md-logo" aria-label="Panther" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -110,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Introduction
+              Serializer
             
           </span>
         </div>
@@ -223,7 +225,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Panther" class="md-nav__button md-logo" aria-label="Panther" data-md-component="logo">
+    <a href=".." title="Panther" class="md-nav__button md-logo" aria-label="Panther" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -250,28 +252,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Introduction
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -280,144 +264,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#panther" class="md-nav__link">
-    <span class="md-ellipsis">
-      Panther
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Panther">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#why-use-panther" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why Use Panther ?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#supported-by" class="md-nav__link">
-    <span class="md-ellipsis">
-      Supported by
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#benchmark" class="md-nav__link">
-    <span class="md-ellipsis">
-      Benchmark
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Usage
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Usage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#create-project" class="md-nav__link">
-    <span class="md-ellipsis">
-      Create Project
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#run-project" class="md-nav__link">
-    <span class="md-ellipsis">
-      Run Project
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#monitoring-requests" class="md-nav__link">
-    <span class="md-ellipsis">
-      Monitoring Requests
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#python-shell" class="md-nav__link">
-    <span class="md-ellipsis">
-      Python Shell
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#single-file-structure-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Single-File Structure Example
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#roadmap" class="md-nav__link">
-    <span class="md-ellipsis">
-      Roadmap
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -466,7 +312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="function_first_crud/" class="md-nav__link">
+      <a href="../function_first_crud/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -487,7 +333,7 @@
   
   
     <li class="md-nav__item">
-      <a href="class_first_crud/" class="md-nav__link">
+      <a href="../class_first_crud/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -515,7 +361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="working_with_db/" class="md-nav__link">
+      <a href="../working_with_db/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -535,7 +381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="panther_odm/" class="md-nav__link">
+      <a href="../panther_odm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -555,7 +401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="configs/" class="md-nav__link">
+      <a href="../configs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -572,10 +418,28 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="serializer/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Serializer
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -584,6 +448,57 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#style-1-pydantic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Style 1 (Pydantic)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#style-2-model-serializer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Style 2 (Model Serializer)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Style 2 (Model Serializer)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -595,7 +510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="websocket/" class="md-nav__link">
+      <a href="../websocket/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -615,7 +530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="monitoring/" class="md-nav__link">
+      <a href="../monitoring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -635,7 +550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="log_queries/" class="md-nav__link">
+      <a href="../log_queries/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -655,7 +570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="middlewares/" class="md-nav__link">
+      <a href="../middlewares/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -675,7 +590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="authentications/" class="md-nav__link">
+      <a href="../authentications/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -695,7 +610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="urls/" class="md-nav__link">
+      <a href="../urls/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -715,7 +630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="throttling/" class="md-nav__link">
+      <a href="../throttling/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -735,7 +650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="background_tasks/" class="md-nav__link">
+      <a href="../background_tasks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -755,7 +670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="single_file/" class="md-nav__link">
+      <a href="../single_file/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -775,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="release_notes/" class="md-nav__link">
+      <a href="../release_notes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -795,7 +710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="todos/" class="md-nav__link">
+      <a href="../todos/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -833,115 +748,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#panther" class="md-nav__link">
+  <a href="#style-1-pydantic" class="md-nav__link">
     <span class="md-ellipsis">
-      Panther
+      Style 1 (Pydantic)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Panther">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#style-2-model-serializer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Style 2 (Model Serializer)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Style 2 (Model Serializer)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#why-use-panther" class="md-nav__link">
+  <a href="#notes" class="md-nav__link">
     <span class="md-ellipsis">
-      Why Use Panther ?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#supported-by" class="md-nav__link">
-    <span class="md-ellipsis">
-      Supported by
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#benchmark" class="md-nav__link">
-    <span class="md-ellipsis">
-      Benchmark
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Usage
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Usage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#create-project" class="md-nav__link">
-    <span class="md-ellipsis">
-      Create Project
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#run-project" class="md-nav__link">
-    <span class="md-ellipsis">
-      Run Project
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#monitoring-requests" class="md-nav__link">
-    <span class="md-ellipsis">
-      Monitoring Requests
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#python-shell" class="md-nav__link">
-    <span class="md-ellipsis">
-      Python Shell
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#single-file-structure-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Single-File Structure Example
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#roadmap" class="md-nav__link">
-    <span class="md-ellipsis">
-      Roadmap
+      Notes:
     </span>
   </a>
   
@@ -970,202 +798,82 @@
   
 
 
-  <h1>Introduction</h1>
+  <h1>Serializer</h1>
 
-<h2 id="panther">Panther<a class="headerlink" href="#panther" title="Permanent link">#</a></h2>
-<p><b>Is A Fast &amp;  Friendly Web Framework For Building Async APIs With Python 3.10+</b> </p>
-<p align="center">
-  <img src="https://github.com/AliRn76/panther/raw/master/docs/docs/images/logo-vertical.png" alt="logo" style="width: 450px">
-</p>
+<p>You can write your <code>serializer</code> in 2 style:</p>
+<h2 id="style-1-pydantic">Style 1 (Pydantic)<a class="headerlink" href="#style-1-pydantic" title="Permanent link">#</a></h2>
+<p>Write a normal <code>pydantic</code> class and use it as serializer:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
+<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">Field</span>
 
-<p><center></p>
-<p><a href="https://pypi.org/project/panther/"><img alt="PyPI" src="https://img.shields.io/pypi/v/panther?label=PyPI" /></a> <a href="https://pypi.org/project/panther/"><img alt="PyVersion" src="https://img.shields.io/pypi/pyversions/panther.svg" /></a> <a href="https://codecov.io/github/AliRn76/panther"><img alt="codecov" src="https://codecov.io/github/AliRn76/panther/graph/badge.svg?token=YWFQA43GSP" /></a> <a href="https://pepy.tech/project/panther"><img alt="Downloads" src="https://static.pepy.tech/badge/panther/month" /></a> <a href="https://github.com/alirn76/panther/blob/main/LICENSE"><img alt="license" src="https://img.shields.io/github/license/alirn76/panther.svg" /></a></p>
-<p></center></p>
-<hr />
-<h3 id="why-use-panther">Why Use Panther ?<a class="headerlink" href="#why-use-panther" title="Permanent link">#</a></h3>
-<ul>
-<li>Document-oriented Databases ODM (<a href="https://pypi.org/project/pantherdb/">PantherDB</a>, MongoDB)</li>
-<li>Built-in Websocket Support</li>
-<li>Cache APIs (In Memory, In Redis)</li>
-<li>Built-in Authentication Classes (Customizable)</li>
-<li>Built-in Permission Classes (Customizable)</li>
-<li>Handle Custom Middlewares</li>
-<li>Handle Custom Throttling </li>
-<li>Visual API Monitoring (In Terminal)</li>
-</ul>
-<hr />
-<h3 id="supported-by">Supported by<a class="headerlink" href="#supported-by" title="Permanent link">#</a></h3>
-<p><center>
-    <a href="https://drive.google.com/file/d/17xe1hicIiRF7SQ-clg9SETdc19SktCbV/view?usp=sharing">
-      <img alt="jetbrains" src="https://github.com/AliRn76/panther/raw/master/docs/docs/images/jb_beam_50x50.png">
-    </a>
-</center></p>
-<hr />
-<h3 id="benchmark">Benchmark<a class="headerlink" href="#benchmark" title="Permanent link">#</a></h3>
-<table>
-<thead>
-<tr>
-<th>Framework</th>
-<th>Throughput (Request/Second)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Blacksheep</td>
-<td>5,339</td>
-</tr>
-<tr>
-<td>Muffin</td>
-<td>5,320</td>
-</tr>
-<tr>
-<td>Panther</td>
-<td>5,112</td>
-</tr>
-<tr>
-<td>Sanic</td>
-<td>3,660</td>
-</tr>
-<tr>
-<td>FastAPI</td>
-<td>3,260</td>
-</tr>
-<tr>
-<td>Tornado</td>
-<td>2,081</td>
-</tr>
-<tr>
-<td>Bottle</td>
-<td>2,045</td>
-</tr>
-<tr>
-<td>Django</td>
-<td>821</td>
-</tr>
-<tr>
-<td>Flask</td>
-<td>749</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p><strong>More Detail:</strong> <a href="https://GitHub.com/PantherPy/frameworks-benchmark">https://GitHub.com/PantherPy/frameworks-benchmark</a></p>
-</blockquote>
-<hr />
-<h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">#</a></h3>
-<ul>
-<li><details>
-    <summary>1. Create a Virtual Environment</summary>
-    <pre>$ python3 -m venv .venv</pre></li>
-</ul>
-</details>
-<ul>
-<li><details>
-    <summary>2. Active The Environment</summary><ul>
-<li>Linux &amp; Mac
-  <pre>$ source .venv/bin/activate</pre></li>
-<li>Windows
-  <pre>$ ..venv\Scripts\activate</pre></li>
-</ul>
-</li>
-</ul>
-</details>
-<ul>
-<li><details open>
-    <summary>3. <b>Install Panther</b></summary><ul>
-<li>⬇ Normal Installation
-  <pre><b>$ pip install panther</b></pre></li>
-<li>⬇ Include full requirements (MongoDB, JWTAuth, Ruff, Redis, bpython)
-  <pre>$ pip install panther[full]</pre>
-  </details></li>
-</ul>
-</li>
-</ul>
-<hr />
-<h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h3>
-<ul>
-<li>
-<h4 id="create-project">Create Project<a class="headerlink" href="#create-project" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>panther<span class="w"> </span>create
-</code></pre></div>
-</li>
-<li>
-<h4 id="run-project">Run Project<a class="headerlink" href="#run-project" title="Permanent link">#</a></h4>
-<p><div class="highlight"><pre><span></span><code><span class="gp">$ </span>panther<span class="w"> </span>run<span class="w"> </span>--reload
-</code></pre></div>
-  <em>* Panther uses <a href="https://github.com/encode/uvicorn">Uvicorn</a> as ASGI (Asynchronous Server Gateway Interface) but you can run the project with <a href="https://pypi.org/project/granian/">Granian</a>, <a href="https://pypi.org/project/daphne/">daphne</a> or any ASGI server too</em></p>
-</li>
-<li>
-<h4 id="monitoring-requests">Monitoring Requests<a class="headerlink" href="#monitoring-requests" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>panther<span class="w"> </span>monitor<span class="w"> </span>
-</code></pre></div>
-</li>
-<li>
-<h4 id="python-shell">Python Shell<a class="headerlink" href="#python-shell" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>panther<span class="w"> </span>shell
-</code></pre></div>
-</li>
-</ul>
-<hr />
-<h3 id="single-file-structure-example">Single-File Structure Example<a class="headerlink" href="#single-file-structure-example" title="Permanent link">#</a></h3>
-<ul>
-<li>
-<p>Create <code>main.py</code></p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
-
-<span class="kn">from</span> <span class="nn">panther</span> <span class="kn">import</span> <span class="n">version</span><span class="p">,</span> <span class="n">status</span><span class="p">,</span> <span class="n">Panther</span>
 <span class="kn">from</span> <span class="nn">panther.app</span> <span class="kn">import</span> <span class="n">API</span>
 <span class="kn">from</span> <span class="nn">panther.request</span> <span class="kn">import</span> <span class="n">Request</span>
 <span class="kn">from</span> <span class="nn">panther.response</span> <span class="kn">import</span> <span class="n">Response</span>
-<span class="kn">from</span> <span class="nn">panther.throttling</span> <span class="kn">import</span> <span class="n">Throttling</span>
-
-<span class="n">InfoThrottling</span> <span class="o">=</span> <span class="n">Throttling</span><span class="p">(</span><span class="n">rate</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
 
 
-<span class="nd">@API</span><span class="p">()</span>
-<span class="k">async</span> <span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
-    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;detail&#39;</span><span class="p">:</span> <span class="s1">&#39;Hello World&#39;</span><span class="p">}</span>
+<span class="k">class</span> <span class="nc">UserSerializer</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+   <span class="n">username</span><span class="p">:</span> <span class="nb">str</span>
+   <span class="n">password</span><span class="p">:</span> <span class="nb">str</span>
+   <span class="n">first_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+   <span class="n">last_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 
 
-<span class="nd">@API</span><span class="p">(</span><span class="n">cache</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">throttling</span><span class="o">=</span><span class="n">InfoThrottling</span><span class="p">)</span>
-<span class="k">async</span> <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;panther_version&#39;</span><span class="p">:</span> <span class="n">version</span><span class="p">(),</span>
-        <span class="s1">&#39;datetime_now&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span>
-        <span class="s1">&#39;user_agent&#39;</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">user_agent</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_202_ACCEPTED</span><span class="p">)</span>
-
-
-<span class="n">url_routing</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;&#39;</span><span class="p">:</span> <span class="n">hello_world</span><span class="p">,</span>
-    <span class="s1">&#39;info&#39;</span><span class="p">:</span> <span class="n">info</span><span class="p">,</span>
-<span class="p">}</span>
-
-<span class="n">app</span> <span class="o">=</span> <span class="n">Panther</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">configs</span><span class="o">=</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">urls</span><span class="o">=</span><span class="n">url_routing</span><span class="p">)</span>
+<span class="nd">@API</span><span class="p">(</span><span class="n">input_model</span><span class="o">=</span><span class="n">UserSerializer</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">serializer_example</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
+   <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">validated_data</span><span class="p">)</span>
 </code></pre></div>
+<h2 id="style-2-model-serializer">Style 2 (Model Serializer)<a class="headerlink" href="#style-2-model-serializer" title="Permanent link">#</a></h2>
+<p>Use panther <code>ModelSerializer</code> to write your serializer which will use your <code>model</code> fields as its fields, and you can say which fields are <code>required</code></p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">Field</span>
+
+<span class="kn">from</span> <span class="nn">panther</span> <span class="kn">import</span> <span class="n">status</span>
+<span class="kn">from</span> <span class="nn">panther.app</span> <span class="kn">import</span> <span class="n">API</span>
+<span class="kn">from</span> <span class="nn">panther.db</span> <span class="kn">import</span> <span class="n">Model</span>
+<span class="kn">from</span> <span class="nn">panther.request</span> <span class="kn">import</span> <span class="n">Request</span>
+<span class="kn">from</span> <span class="nn">panther.response</span> <span class="kn">import</span> <span class="n">Response</span>
+<span class="kn">from</span> <span class="nn">panther.serializer</span> <span class="kn">import</span> <span class="n">ModelSerializer</span>
+
+
+<span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">username</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">password</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">first_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">last_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">UserModelSerializer</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ModelSerializer</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">User</span><span class="p">):</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;first_name&#39;</span><span class="p">,</span> <span class="s1">&#39;last_name&#39;</span><span class="p">]</span>
+    <span class="n">required_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;first_name&#39;</span><span class="p">]</span>
+
+
+<span class="nd">@API</span><span class="p">(</span><span class="n">input_model</span><span class="o">=</span><span class="n">UserModelSerializer</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">model_serializer_example</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">validated_data</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_202_ACCEPTED</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="notes">Notes:<a class="headerlink" href="#notes" title="Permanent link">#</a></h3>
+<ol>
+<li>
+<p>In the example above <code>UserModelSerializer</code> only accepts the values of <code>fields</code> attribute</p>
 </li>
 <li>
-<p>Run the project:</p>
-<ul>
-<li><code>$ panther run --reload</code> </li>
-</ul>
+<p>In default the <code>UserModelSerializer.fields</code> are same as <code>User.fields</code> but you can change their default and make them required with <code>required_fields</code> attribute  </p>
 </li>
 <li>
-<p>now you can see these two urls:</b></p>
-<ul>
-<li><a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a></li>
-<li><a href="http://127.0.0.1:8000/info/">http://127.0.0.1:8000/info/</a></li>
-</ul>
+<p>If you want uses <code>required_fields</code> you have to put them in <code>fields</code> too.</p>
 </li>
-</ul>
-<blockquote>
-<p><strong>Next Step: <a href="https://pantherpy.github.io/function_first_crud">First CRUD</a></strong></p>
-<p><strong>Real Word Example: <a href="https://GitHub.com/PantherPy/panther-example">Https://GitHub.com/PantherPy/panther-example</a></strong></p>
-</blockquote>
-<hr />
-<h3 id="roadmap">Roadmap<a class="headerlink" href="#roadmap" title="Permanent link">#</a></h3>
-<p><img alt="roadmap" src="https://raw.githubusercontent.com/AliRn76/panther/master/docs/docs/images/roadmap.jpg" /></p>
+<li>
+<p><code>fields</code> attribute is <code>required</code> when you are using <code>ModelSerializer</code> as <code>metaclass</code></p>
+</li>
+<li>
+<p><code>model=</code> is required when you are using <code>ModelSerializer</code> as <code>metaclass</code></p>
+</li>
+<li>
+<p>You have to use <code>ModelSerializer</code> as <code>metaclass</code> (not as a parent)</p>
+</li>
+<li>
+<p>Panther is going to create a <code>pydantic</code> model as your <code>UserModelSerializer</code> in the startup</p>
+</li>
+</ol>
 
 
 
@@ -1212,10 +920,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
     
   </body>
