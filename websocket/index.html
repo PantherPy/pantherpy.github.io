@@ -862,8 +862,14 @@
 </code></pre></div></li>
 </ul>
 </li>
-<li>If you want to use <code>webscoket</code> in <code>multi-tread</code> or <code>multi-instance</code> backend, you should add <code>RedisMiddleware</code> in your <code>configs</code> or it won't work well.
+<li>If you want to use <code>webscoket</code> in a backend with <code>multiple workers</code>, we recommend you to add <code>RedisMiddleware</code> in your <code>configs</code> 
 <a href="https://pantherpy.github.io/middlewares/#redis-middleware">[Adding Redis Middleware]</a></li>
+<li>
+<p>If you don't want to add <code>RedisMiddleware</code> and you still want to use <code>websocket</code> in <code>multi-thread</code>, 
+you have to use <code>--preload</code> option while running the project like below:
+   <div class="highlight"><pre><span></span><code>gunicorn<span class="w"> </span>-w<span class="w"> </span><span class="m">10</span><span class="w"> </span>-k<span class="w"> </span>uvicorn.workers.UvicornWorker<span class="w"> </span>main:app<span class="w"> </span>--preload
+</code></pre></div></p>
+</li>
 <li>
 <p>If you want to close a connection:</p>
 <ul>
