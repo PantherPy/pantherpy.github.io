@@ -16,11 +16,11 @@
         <link rel="prev" href="../panther_odm/">
       
       
-        <link rel="next" href="../serializer/">
+        <link rel="next" href="../redis/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.f2e4d321.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -278,10 +278,8 @@
     
     
     
-    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
@@ -361,11 +359,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../working_with_db/" class="md-nav__link">
+      <a href="../database/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Working With Database
+    Database
   </span>
   
 
@@ -483,6 +481,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ws_authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      WS_AUTHENTICATION
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#urls" class="md-nav__link">
     <span class="md-ellipsis">
       URLs
@@ -563,10 +570,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#database" class="md-nav__link">
+    <span class="md-ellipsis">
+      DATABASE
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redis" class="md-nav__link">
+    <span class="md-ellipsis">
+      REDIS
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../redis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Redis
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -603,46 +648,6 @@
   
   <span class="md-ellipsis">
     WebSocket
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../monitoring/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Monitoring
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../log_queries/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Log Queries
   </span>
   
 
@@ -778,11 +783,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../release_notes/" class="md-nav__link">
+      <a href="../monitoring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Release Notes
+    Monitoring
   </span>
   
 
@@ -798,11 +803,31 @@
   
   
     <li class="md-nav__item">
-      <a href="../todos/" class="md-nav__link">
+      <a href="../log_queries/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    TODOs
+    Log Queries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release Notes
   </span>
   
 
@@ -868,6 +893,15 @@
   <a href="#authentication" class="md-nav__link">
     <span class="md-ellipsis">
       AUTHENTICATION
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ws_authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      WS_AUTHENTICATION
     </span>
   </a>
   
@@ -954,6 +988,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#database" class="md-nav__link">
+    <span class="md-ellipsis">
+      DATABASE
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redis" class="md-nav__link">
+    <span class="md-ellipsis">
+      REDIS
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -973,14 +1025,14 @@
 
 
 <h1 id="configs">Configs<a class="headerlink" href="#configs" title="Permanent link">#</a></h1>
-<p>Panther  stores all the configs in the <code>core/configs.py</code></p>
+<p>Panther collect all the configs from your <code>core/configs.py</code> or the module you passed directly to <code>Panther(configs=__name__)</code></p>
 <h3 id="monitoring"><a href="https://pantherpy.github.io/monitoring">MONITORING</a><a class="headerlink" href="#monitoring" title="Permanent link">#</a></h3>
 <blockquote>
 <p><b>Type:</b> <code>bool</code> (<b>Default:</b> <code>False</code>)</p>
 </blockquote>
 <p>It should be <code>True</code> if you want to use <code>panther monitor</code> command
 and see the monitoring logs</p>
-<p>If <code>True</code> it will:</p>
+<p>If <code>True</code>:</p>
 <ul>
 <li>Log every request in <code>logs/monitoring.log</code></li>
 </ul>
@@ -989,9 +1041,9 @@ and see the monitoring logs</p>
 <blockquote>
 <p><b>Type:</b> <code>bool</code> (<b>Default:</b> <code>False</code>)</p>
 </blockquote>
-<p>If <code>True</code> it will:</p>
+<p>If <code>True</code>:</p>
 <ul>
-<li>Calculate every query perf time &amp; Log them in <code>logs/query.log</code></li>
+<li>Calculate every query <code>perf time</code> &amp; Log them in <code>logs/query.log</code></li>
 </ul>
 <hr />
 <h3 id="middlewares"><a href="https://pantherpy.github.io/middlewares">MIDDLEWARES</a><a class="headerlink" href="#middlewares" title="Permanent link">#</a></h3>
@@ -1004,15 +1056,23 @@ and see the monitoring logs</p>
 <blockquote>
 <p><b>Type:</b> <code>str | None</code> (<b>Default:</b> <code>None</code>)</p>
 </blockquote>
-<p>Every request goes through <code>authentication()</code> method of this <code>class</code></p>
+<p>Every request goes through <code>authentication()</code> method of this <code>class</code> (if <code>auth = True</code>)</p>
 <p><em>Example:</em> <code>AUTHENTICATION = 'panther.authentications.JWTAuthentication'</code></p>
+<hr />
+<h3 id="ws_authentication"><a href="https://pantherpy.github.io/authentications">WS_AUTHENTICATION</a><a class="headerlink" href="#ws_authentication" title="Permanent link">#</a></h3>
+<blockquote>
+<p><b>Type:</b> <code>str | None</code> (<b>Default:</b> <code>None</code>)</p>
+</blockquote>
+<p>WebSocket requests goes through <code>authentication()</code> method of this <code>class</code>, before the <code>connect()</code> (if <code>auth = True</code>)</p>
+<p><em>Example:</em> <code>WS_AUTHENTICATION = 'panther.authentications.QueryParamJWTAuthentication'</code></p>
 <hr />
 <h3 id="urls"><a href="https://pantherpy.github.io/urls">URLs</a><a class="headerlink" href="#urls" title="Permanent link">#</a></h3>
 <blockquote>
 <p><b>Type:</b> <code>str</code> (<b>Required</b>)</p>
 </blockquote>
+<p>It can be optional if you pass your <code>urls</code> directly to <code>Panther(urls=url_routing)</code></p>
 <p>It should be the address of your <code>urls</code> <code>dict</code></p>
-<p><em>Example:</em> <code>URLS = 'core.configs.urls.url_routing'</code></p>
+<p><em>Example:</em> <code>URLs = 'core.configs.urls.url_routing'</code></p>
 <hr />
 <h3 id="default_cache_exp"><a href="https://pantherpy.github.io/caching">DEFAULT_CACHE_EXP</a><a class="headerlink" href="#default_cache_exp" title="Permanent link">#</a></h3>
 <blockquote>
@@ -1046,7 +1106,7 @@ and see the monitoring logs</p>
 <blockquote>
 <p><b>Type:</b> <code>bool</code> (<b>Default:</b> <code>False</code>)</p>
 </blockquote>
-<p>If <code>True</code> it will:</p>
+<p>If <code>True</code>:</p>
 <ul>
 <li><code>initialize()</code> the <code>background_tasks</code></li>
 </ul>
@@ -1057,7 +1117,7 @@ and see the monitoring logs</p>
 </blockquote>
 <p>It should be dotted address of your <code>startup</code> function,
 this function can be <code>sync</code> or <code>async</code></p>
-<p><em>Example:</em> <code>URLS = 'core.configs.startup'</code></p>
+<p><em>Example:</em> <code>STARTUP = 'core.configs.startup'</code></p>
 <hr />
 <h3 id="shutdown"><a href="https://pantherpy.github.io/shutdown">SHUTDOWN</a><a class="headerlink" href="#shutdown" title="Permanent link">#</a></h3>
 <blockquote>
@@ -1065,7 +1125,7 @@ this function can be <code>sync</code> or <code>async</code></p>
 </blockquote>
 <p>It should be dotted address of your <code>shutdown</code> function
 this function can be <code>sync</code> or <code>async</code></p>
-<p><em>Example:</em> <code>URLS = 'core.configs.shutdown'</code></p>
+<p><em>Example:</em> <code>SHUTDOWN = 'core.configs.shutdown'</code></p>
 <hr />
 <h3 id="auto_reformat"><a href="https://pantherpy.github.io/auto_reformat">AUTO_REFORMAT</a><a class="headerlink" href="#auto_reformat" title="Permanent link">#</a></h3>
 <blockquote>
@@ -1075,6 +1135,18 @@ this function can be <code>sync</code> or <code>async</code></p>
 <p>You may want to write your custom <code>ruff.toml</code> in root of your project.</p>
 <p>Reference: <a href="https://docs.astral.sh/ruff/formatter/">https://docs.astral.sh/ruff/formatter/</a></p>
 <p><em>Example:</em> <code>AUTO_REFORMAT = True</code></p>
+<hr />
+<h3 id="database"><a href="https://pantherpy.github.io/database">DATABASE</a><a class="headerlink" href="#database" title="Permanent link">#</a></h3>
+<blockquote>
+<p><b>Type:</b> <code>dict</code> (<b>Default:</b> <code>{}</code>)</p>
+</blockquote>
+<p>We use it to create <code>database</code> connection</p>
+<hr />
+<h3 id="redis"><a href="https://pantherpy.github.io/redis">REDIS</a><a class="headerlink" href="#redis" title="Permanent link">#</a></h3>
+<blockquote>
+<p><b>Type:</b> <code>dict</code> (<b>Default:</b> <code>{}</code>)</p>
+</blockquote>
+<p>We use it to create <code>redis</code> connection</p>
 
 
 
@@ -1121,10 +1193,10 @@ this function can be <code>sync</code> or <code>async</code></p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../assets/javascripts/bundle.8fd75fb4.min.js"></script>
       
     
   </body>

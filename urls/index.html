@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.f2e4d321.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -278,10 +278,8 @@
     
     
     
-    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
@@ -361,11 +359,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../working_with_db/" class="md-nav__link">
+      <a href="../database/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Working With Database
+    Database
   </span>
   
 
@@ -421,6 +419,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../redis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Redis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../serializer/" class="md-nav__link">
         
   
@@ -446,46 +464,6 @@
   
   <span class="md-ellipsis">
     WebSocket
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../monitoring/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Monitoring
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../log_queries/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Log Queries
   </span>
   
 
@@ -675,11 +653,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../release_notes/" class="md-nav__link">
+      <a href="../monitoring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Release Notes
+    Monitoring
   </span>
   
 
@@ -695,11 +673,31 @@
   
   
     <li class="md-nav__item">
-      <a href="../todos/" class="md-nav__link">
+      <a href="../log_queries/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    TODOs
+    Log Queries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release Notes
   </span>
   
 
@@ -776,10 +774,10 @@
 <p><b>Required:</b> <code>True</code></p>
 </blockquote>
 <ul>
-<li><code>URLs</code> should point to your root <code>urls</code> with dotted address (<code>path.module.url_dict</code>),
-and it should be <code>dict</code>.</li>
+<li><code>URLs</code> should point to your root <code>urls</code> with dotted address (<code>path.module.url_dict</code>)</li>
+<li>The target of <code>URLs</code> should be <code>dict</code>.</li>
 <li>
-<p><code>key</code> of url_routing dict is <code>path</code> &amp; value is <code>endpoint</code> or another <code>dict</code></p>
+<p>The <code>key</code> in <code>url_routing</code> is the <code>path</code> &amp; value is the <code>endpoint</code> or another <code>dict</code></p>
 </li>
 <li>
 <h4 id="path-variables-are-handled-like-below">Path Variables are handled like below:<a class="headerlink" href="#path-variables-are-handled-like-below" title="Permanent link">#</a></h4>
@@ -787,13 +785,14 @@ and it should be <code>dict</code>.</li>
 <li>&lt;<code>variable_name</code>&gt;</li>
 <li>Example: <code>user/&lt;user_id&gt;/blog/&lt;title&gt;/</code></li>
 <li>The <code>endpoint</code> should have parameters with those names too</li>
-<li>Example: <code>async def profile_api(user_id: int, title: str):</code></li>
+<li>Example Function-Base: <code>async def profile_api(user_id: int, title: str):</code></li>
+<li>Example Class-Base: <code>async def get(user_id: int, title: str):</code></li>
 </ul>
 </li>
 </ul>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">#</a></h2>
 <ul>
-<li>core/configs.py
+<li><code>configs</code>
     <div class="highlight"><pre><span></span><code><span class="n">URLs</span> <span class="o">=</span> <span class="s1">&#39;core.urls.url_routing</span>
 </code></pre></div></li>
 <li>core/urls.py
@@ -870,10 +869,10 @@ and it should be <code>dict</code>.</li>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../assets/javascripts/bundle.8fd75fb4.min.js"></script>
       
     
   </body>

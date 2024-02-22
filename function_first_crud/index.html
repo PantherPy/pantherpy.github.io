@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.f2e4d321.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -280,10 +280,8 @@
     
     
     
-    
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
@@ -393,9 +391,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#add-database-middleware" class="md-nav__link">
+  <a href="#add-database" class="md-nav__link">
     <span class="md-ellipsis">
-      Add Database Middleware
+      Add Database
     </span>
   </a>
   
@@ -537,11 +535,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../working_with_db/" class="md-nav__link">
+      <a href="../database/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Working With Database
+    Database
   </span>
   
 
@@ -597,6 +595,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../redis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Redis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../serializer/" class="md-nav__link">
         
   
@@ -622,46 +640,6 @@
   
   <span class="md-ellipsis">
     WebSocket
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../monitoring/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Monitoring
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../log_queries/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Log Queries
   </span>
   
 
@@ -797,11 +775,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../release_notes/" class="md-nav__link">
+      <a href="../monitoring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Release Notes
+    Monitoring
   </span>
   
 
@@ -817,11 +795,31 @@
   
   
     <li class="md-nav__item">
-      <a href="../todos/" class="md-nav__link">
+      <a href="../log_queries/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    TODOs
+    Log Queries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release Notes
   </span>
   
 
@@ -892,9 +890,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#add-database-middleware" class="md-nav__link">
+  <a href="#add-database" class="md-nav__link">
     <span class="md-ellipsis">
-      Add Database Middleware
+      Add Database
     </span>
   </a>
   
@@ -1054,16 +1052,18 @@
     <span class="s1">&#39;/&#39;</span><span class="p">:</span> <span class="n">app_urls</span><span class="p">,</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="add-database-middleware">Add Database Middleware<a class="headerlink" href="#add-database-middleware" title="Permanent link">#</a></h3>
-<p>Add one database middleware in <code>core/configs.py</code> <code>MIDDLEWARES</code>, we are going to add <code>pantherdb</code></p>
+<h3 id="add-database">Add Database<a class="headerlink" href="#add-database" title="Permanent link">#</a></h3>
+<p>Add <code>DATABASE</code> in <code>configs</code>, we are going to add <code>pantherdb</code></p>
 <blockquote>
-<p><a href="https://github.com/PantherPy/PantherDB/#readme">PantherDB</a> is a Simple, FileBase and Document Oriented database:</p>
+<p><a href="https://github.com/PantherPy/PantherDB/#readme">PantherDB</a> is a Simple, File-Base and Document Oriented database</p>
 </blockquote>
 <div class="highlight"><pre><span></span><code><span class="o">...</span>
-
-<span class="n">MIDDLEWARES</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">(</span><span class="s1">&#39;panther.middlewares.db.DatabaseMiddleware&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;pantherdb://</span><span class="si">{</span><span class="n">BASE_DIR</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">DB_NAME</span><span class="si">}</span><span class="s1">.pdb&#39;</span><span class="p">}),</span>
-<span class="p">]</span>
+<span class="n">DATABASE</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;engine&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;panther.db.connections.PantherDBConnection&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="o">...</span>
 </code></pre></div>
 <h2 id="apis">APIs<a class="headerlink" href="#apis" title="Permanent link">#</a></h2>
 <h3 id="api-create-a-book">API - Create a Book<a class="headerlink" href="#api-create-a-book" title="Permanent link">#</a></h3>
@@ -1565,10 +1565,10 @@ something like below <em>(in the below example user can't request more than 10 t
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../assets/javascripts/bundle.8fd75fb4.min.js"></script>
       
     
   </body>

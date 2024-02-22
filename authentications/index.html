@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.f2e4d321.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -278,10 +278,8 @@
     
     
     
-    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
@@ -361,11 +359,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../working_with_db/" class="md-nav__link">
+      <a href="../database/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Working With Database
+    Database
   </span>
   
 
@@ -421,6 +419,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../redis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Redis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../serializer/" class="md-nav__link">
         
   
@@ -446,46 +464,6 @@
   
   <span class="md-ellipsis">
     WebSocket
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../monitoring/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Monitoring
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../log_queries/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Log Queries
   </span>
   
 
@@ -568,6 +546,30 @@
       JWTAuthentication
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#queryparamjwtauthentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      QueryParamJWTAuthentication
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="QueryParamJWTAuthentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#websocket-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Websocket Authentication
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -675,11 +677,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../release_notes/" class="md-nav__link">
+      <a href="../monitoring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Release Notes
+    Monitoring
   </span>
   
 
@@ -695,11 +697,31 @@
   
   
     <li class="md-nav__item">
-      <a href="../todos/" class="md-nav__link">
+      <a href="../log_queries/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    TODOs
+    Log Queries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release Notes
   </span>
   
 
@@ -742,6 +764,30 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#queryparamjwtauthentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      QueryParamJWTAuthentication
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="QueryParamJWTAuthentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#websocket-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Websocket Authentication
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#custom-authentication" class="md-nav__link">
     <span class="md-ellipsis">
       Custom Authentication
@@ -771,24 +817,25 @@
   <h1>Authentications</h1>
 
 <blockquote>
-<p><b>Variable:</b> <code>AUTHENTICATION</code>  </p>
+<p><b>Variable:</b> <code>AUTHENTICATION</code> &amp; <code>WS_AUTHENTICATION</code>  </p>
 <p><b>Type:</b> <code>str</code></p>
 <p><b>Default:</b> <code>None</code></p>
 </blockquote>
-<p>You can set your Authentication class in <code>core/configs.py</code>, then Panther will use this class for authentication in every <code>API</code>, if you set <code>auth=True</code> in <code>@API()</code>, and put the <code>user</code> in <code>request.user</code> or <code>raise HTTP_401_UNAUTHORIZED</code> </p>
-<p>We already have one built-in authentication class which is used <code>JWT</code> for authentication.</p>
-<p>You can write your own authentication class too (we are going to discuss it)</p>
+<p>You can set your Authentication class in <code>configs</code>, now, if you set <code>auth=True</code> in <code>@API()</code>, Panther will use this class for authentication of every <code>API</code>, and put the <code>user</code> in <code>request.user</code> or <code>raise HTTP_401_UNAUTHORIZED</code> </p>
+<p>We implemented a built-in authentication class which used <code>JWT</code> for authentication.
+But, You can use your own custom authentication class too.</p>
 <h3 id="jwtauthentication">JWTAuthentication<a class="headerlink" href="#jwtauthentication" title="Permanent link">#</a></h3>
 <p>This class will </p>
 <ul>
-<li>Get the <code>token</code> from <code>Authorization</code> header of request with keyword of <code>Bearer</code></li>
-<li><code>decode</code> it </li>
-<li>Find the match <code>user</code> in <code>USER_MODEL</code> you have already set</li>
+<li>Get the <code>token</code> from <code>Authorization</code> header of request.</li>
+<li>Check the <code>Bearer</code></li>
+<li><code>decode</code> the <code>token</code> </li>
+<li>Find the matched <code>user</code> (It uses the <code>USER_MODEL</code>)</li>
 </ul>
 <blockquote>
-<p><code>JWTAuthentication</code> is going to use <code>panther.db.models.BaseUser</code> if you didn't set the <code>USER_MODEL</code> in your <code>core/configs.py</code></p>
+<p><code>JWTAuthentication</code> is going to use <code>panther.db.models.BaseUser</code> if you didn't set the <code>USER_MODEL</code> in your <code>configs</code></p>
 </blockquote>
-<p>You can customize these 3 variables for <code>JWTAuthentication</code> in your <code>core/configs.py</code> as <code>JWTConfig</code> like below (<code>JWTConfig</code> is optional):</p>
+<p>You can customize these 4 variables for <code>JWTAuthentication</code> in your <code>configs</code> as <code>JWTConfig</code> like below (<code>JWTConfig</code> is optional):</p>
 <div class="highlight"><pre><span></span><code><span class="o">...</span>
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
 <span class="kn">from</span> <span class="nn">panther.utils</span> <span class="kn">import</span> <span class="n">load_env</span>  
@@ -803,33 +850,52 @@
     <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="n">SECRET_KEY</span><span class="p">,</span>  
     <span class="s1">&#39;algorithm&#39;</span><span class="p">:</span> <span class="s1">&#39;HS256&#39;</span><span class="p">,</span>  
     <span class="s1">&#39;life_time&#39;</span><span class="p">:</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>  
+    <span class="s1">&#39;refresh_life_time&#39;</span><span class="p">:</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span>  
 <span class="p">}</span>
 </code></pre></div>
 <blockquote>
 <p><strong>key</strong> &emsp;&emsp;&emsp;&emsp;--&gt; default is <code>SECRET_KEY</code></p>
 <p><strong>algorithm</strong> &emsp; --&gt; default is <code>HS256</code></p>
 <p><strong>life_time</strong>&emsp;&emsp;--&gt; default is <code>timedelta(days=1)</code> </p>
+<p><strong>refresh_life_time</strong>&emsp;&emsp;--&gt; default is <code>multiply 2 of life_time</code> </p>
 </blockquote>
+<h3 id="queryparamjwtauthentication">QueryParamJWTAuthentication<a class="headerlink" href="#queryparamjwtauthentication" title="Permanent link">#</a></h3>
+<ul>
+<li>
+<p>This class is same as <code>JWTAuthentication</code> and the only difference is that, this class is looking for token in <code>query params</code> not in the <code>headers</code></p>
+</li>
+<li>
+<p>You should pass the token like this:</p>
+<blockquote>
+<p>https://example.com/path?authorization=Bearer%20access_token</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="websocket-authentication">Websocket Authentication<a class="headerlink" href="#websocket-authentication" title="Permanent link">#</a></h4>
+<p>This class is very useful when you are trying to authenticate the user in websocket</p>
+<p>Add this into your <code>configs</code>:
+<div class="highlight"><pre><span></span><code><span class="n">WS_AUTHENTICATION</span> <span class="o">=</span> <span class="s1">&#39;panther.authentications.QueryParamJWTAuthentication&#39;</span>
+</code></pre></div></p>
 <h3 id="custom-authentication">Custom Authentication<a class="headerlink" href="#custom-authentication" title="Permanent link">#</a></h3>
 <ul>
 <li>
 <p>Create a class and inherits it from <code>panther.authentications.BaseAuthentication</code></p>
 </li>
 <li>
-<p>Implement <code>authentication(cls, request: Request)</code> method</p>
+<p>Implement <code>async authentication(cls, request: Request | Websocket)</code> method</p>
 <ul>
 <li>Process the <code>request.headers.authorization</code> or ...</li>
 <li>Return Instance of <code>USER_MODEL</code></li>
-<li>Or raise <code>panther.exceptions.AuthenticationException</code> </li>
+<li>Or raise <code>panther.exceptions.AuthenticationAPIError</code> </li>
 </ul>
 </li>
 <li>
-<p>Address it in <code>core/configs.py</code></p>
+<p>Address it in <code>configs</code></p>
 </li>
 <li><code>AUTHENTICATION = 'project_name.core.authentications.CustomAuthentication'</code></li>
 </ul>
 <blockquote>
-<p>You can look at the source code of JWTAuthentication for </p>
+<p>You can see the source code of JWTAuthentication <a href="https://github.com/AliRn76/panther/blob/da2654ccdd83ebcacda91a1aaf51d5aeb539eff5/panther/authentications.py#L38">[here]</a> </p>
 </blockquote>
 
 
@@ -877,10 +943,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../assets/javascripts/bundle.8fd75fb4.min.js"></script>
       
     
   </body>

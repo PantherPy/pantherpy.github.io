@@ -16,11 +16,11 @@
         <link rel="prev" href="../background_tasks/">
       
       
-        <link rel="next" href="../release_notes/">
+        <link rel="next" href="../monitoring/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.f2e4d321.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -278,10 +278,8 @@
     
     
     
-    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
@@ -361,11 +359,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../working_with_db/" class="md-nav__link">
+      <a href="../database/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Working With Database
+    Database
   </span>
   
 
@@ -421,6 +419,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../redis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Redis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../serializer/" class="md-nav__link">
         
   
@@ -446,46 +464,6 @@
   
   <span class="md-ellipsis">
     WebSocket
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../monitoring/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Monitoring
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../log_queries/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Log Queries
   </span>
   
 
@@ -649,6 +627,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -666,11 +659,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../release_notes/" class="md-nav__link">
+      <a href="../monitoring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Release Notes
+    Monitoring
   </span>
   
 
@@ -686,11 +679,31 @@
   
   
     <li class="md-nav__item">
-      <a href="../todos/" class="md-nav__link">
+      <a href="../log_queries/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    TODOs
+    Log Queries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release Notes
   </span>
   
 
@@ -730,6 +743,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -765,7 +793,7 @@
 </code></pre></div>
 </li>
 <li>
-<p>Add your <code>APIs</code> to a <code>dict</code> (ex: <code>url_routing</code>)</p>
+<p>Add your <code>APIs</code> to a <code>dict</code> (example: <code>url_routing</code>)</p>
 <p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.app</span> <span class="kn">import</span> <span class="n">API</span>
 
 <span class="nd">@API</span><span class="p">()</span>
@@ -795,12 +823,13 @@
 </code></pre></div></p>
 </li>
 </ol>
-<blockquote>
-<p><code>URLs</code> is a required config unless you pass the <code>urls</code> to the <code>Panther</code>  </p>
-<p>When you pass the <code>configs</code> to the <code>Panther(configs=...)</code>, Panther is going to load the configs from this file,
-else it is going to load <code>core/configs.py</code> file</p>
-<p>You can pass the <code>startup</code> and <code>shutdown</code> functions to the <code>Panther()</code> too.</p>
-</blockquote>
+<h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">#</a></h3>
+<ul>
+<li><code>URLs</code> is a required config unless you pass the <code>urls</code> directly to the <code>Panther</code>  </li>
+<li>When you pass the <code>configs</code> to the <code>Panther(configs=...)</code>, Panther is going to load the configs from this file, 
+else it is going to load <code>core/configs.py</code> file</li>
+<li>You can pass the <code>startup</code> and <code>shutdown</code> functions to the <code>Panther()</code> too.</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther</span> <span class="kn">import</span> <span class="n">Panther</span>
 <span class="kn">from</span> <span class="nn">panther.app</span> <span class="kn">import</span> <span class="n">API</span>
 
@@ -866,10 +895,10 @@ else it is going to load <code>core/configs.py</code> file</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../assets/javascripts/bundle.8fd75fb4.min.js"></script>
       
     
   </body>

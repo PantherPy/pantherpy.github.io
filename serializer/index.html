@@ -13,14 +13,14 @@
         <link rel="canonical" href="https://pantherpy.github.io/serializer/">
       
       
-        <link rel="prev" href="../configs/">
+        <link rel="prev" href="../redis/">
       
       
         <link rel="next" href="../websocket/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.f2e4d321.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -278,10 +278,8 @@
     
     
     
-    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
@@ -361,11 +359,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../working_with_db/" class="md-nav__link">
+      <a href="../database/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Working With Database
+    Database
   </span>
   
 
@@ -406,6 +404,26 @@
   
   <span class="md-ellipsis">
     Configs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../redis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Redis
   </span>
   
 
@@ -482,15 +500,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#simple-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Simple Usage
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#notes" class="md-nav__link">
     <span class="md-ellipsis">
       Notes
@@ -499,14 +508,20 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#complex-usage" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#style-3-model-serializer-pydantic" class="md-nav__link">
     <span class="md-ellipsis">
-      Complex Usage
+      Style 3 (Model Serializer + Pydantic)
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Style 3 (Model Serializer + Pydantic)">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#notes_1" class="md-nav__link">
@@ -542,46 +557,6 @@
   
   <span class="md-ellipsis">
     WebSocket
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../monitoring/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Monitoring
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../log_queries/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Log Queries
   </span>
   
 
@@ -717,11 +692,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../release_notes/" class="md-nav__link">
+      <a href="../monitoring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Release Notes
+    Monitoring
   </span>
   
 
@@ -737,11 +712,31 @@
   
   
     <li class="md-nav__item">
-      <a href="../todos/" class="md-nav__link">
+      <a href="../log_queries/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    TODOs
+    Log Queries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release Notes
   </span>
   
 
@@ -794,15 +789,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#simple-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Simple Usage
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#notes" class="md-nav__link">
     <span class="md-ellipsis">
       Notes
@@ -811,14 +797,20 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#complex-usage" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#style-3-model-serializer-pydantic" class="md-nav__link">
     <span class="md-ellipsis">
-      Complex Usage
+      Style 3 (Model Serializer + Pydantic)
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="Style 3 (Model Serializer + Pydantic)">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#notes_1" class="md-nav__link">
@@ -854,7 +846,7 @@
 
   <h1>Serializer</h1>
 
-<p>You can write your <code>serializer</code> in 2 style:</p>
+<p>You can write your <code>serializer</code> in ۳ style:</p>
 <h2 id="style-1-pydantic">Style 1 (Pydantic)<a class="headerlink" href="#style-1-pydantic" title="Permanent link">#</a></h2>
 <p>Write a normal <code>pydantic</code> class and use it as serializer:</p>
 <div class="highlight"><pre><span></span><code> <span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
@@ -877,7 +869,6 @@
      <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">validated_data</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="style-2-model-serializer">Style 2 (Model Serializer)<a class="headerlink" href="#style-2-model-serializer" title="Permanent link">#</a></h2>
-<h3 id="simple-usage">Simple Usage<a class="headerlink" href="#simple-usage" title="Permanent link">#</a></h3>
 <p>Use panther <code>ModelSerializer</code> to write your serializer which will use your <code>model</code> to create fields.</p>
 <div class="highlight"><pre><span></span><code> <span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">Field</span>
 
@@ -913,7 +904,7 @@
 <li><code>Config.model</code> and <code>Config.fields</code> are <code>required</code> when you are using <code>ModelSerializer</code>.</li>
 <li>If you want to use <code>Config.required_fields</code>, you have to put its value in <code>Config.fields</code> too.</li>
 </ol>
-<h3 id="complex-usage">Complex Usage<a class="headerlink" href="#complex-usage" title="Permanent link">#</a></h3>
+<h2 id="style-3-model-serializer-pydantic">Style 3 (Model Serializer + Pydantic)<a class="headerlink" href="#style-3-model-serializer-pydantic" title="Permanent link">#</a></h2>
 <p>You can use <code>pydantic.BaseModel</code> features in <code>ModelSerializer</code> too.</p>
 <div class="highlight"><pre><span></span><code> <span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">Field</span><span class="p">,</span> <span class="n">field_validator</span><span class="p">,</span> <span class="n">ConfigDict</span>
 
@@ -954,8 +945,8 @@
 </code></pre></div>
 <h3 id="notes_1">Notes<a class="headerlink" href="#notes_1" title="Permanent link">#</a></h3>
 <ol>
-<li>You can add custom <code>fields</code> in <code>pydantic style</code> </li>
-<li>You can add <code>model_config</code> as <code>attribute</code> and also in the <code>Config</code></li>
+<li>You can add custom <code>fields</code> </li>
+<li>You can add <code>model_config</code> as <code>attribute</code> or as <code>Config</code></li>
 <li>You can use <code>@field_validator</code> and other <code>validators</code> of <code>pydantic</code>.</li>
 </ol>
 
@@ -1004,10 +995,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../assets/javascripts/bundle.8fd75fb4.min.js"></script>
       
     
   </body>

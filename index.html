@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.f2e4d321.min.css">
       
         
         <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
@@ -392,9 +392,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#single-file-structure-example" class="md-nav__link">
+  <a href="#api-example" class="md-nav__link">
     <span class="md-ellipsis">
-      Single-File Structure Example
+      API Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#websocket-echo-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      WebSocket Echo Example
     </span>
   </a>
   
@@ -432,10 +441,8 @@
     
     
     
-    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
@@ -515,11 +522,11 @@
   
   
     <li class="md-nav__item">
-      <a href="working_with_db/" class="md-nav__link">
+      <a href="database/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Working With Database
+    Database
   </span>
   
 
@@ -575,6 +582,26 @@
   
   
     <li class="md-nav__item">
+      <a href="redis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Redis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="serializer/" class="md-nav__link">
         
   
@@ -600,46 +627,6 @@
   
   <span class="md-ellipsis">
     WebSocket
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="monitoring/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Monitoring
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="log_queries/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Log Queries
   </span>
   
 
@@ -775,11 +762,11 @@
   
   
     <li class="md-nav__item">
-      <a href="release_notes/" class="md-nav__link">
+      <a href="monitoring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Release Notes
+    Monitoring
   </span>
   
 
@@ -795,11 +782,31 @@
   
   
     <li class="md-nav__item">
-      <a href="todos/" class="md-nav__link">
+      <a href="log_queries/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    TODOs
+    Log Queries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="release_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release Notes
   </span>
   
 
@@ -930,9 +937,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#single-file-structure-example" class="md-nav__link">
+  <a href="#api-example" class="md-nav__link">
     <span class="md-ellipsis">
-      Single-File Structure Example
+      API Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#websocket-echo-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      WebSocket Echo Example
     </span>
   </a>
   
@@ -984,14 +1000,17 @@
 <hr />
 <h3 id="why-use-panther">Why Use Panther ?<a class="headerlink" href="#why-use-panther" title="Permanent link">#</a></h3>
 <ul>
-<li>Document-oriented Databases ODM (<a href="https://pypi.org/project/pantherdb/">PantherDB</a>, MongoDB)</li>
-<li>Built-in Websocket Support</li>
-<li>Cache APIs (In Memory, In Redis)</li>
-<li>Built-in Authentication Classes (Customizable)</li>
-<li>Built-in Permission Classes (Customizable)</li>
-<li>Handle Custom Middlewares</li>
-<li>Handle Custom Throttling </li>
-<li>Visual API Monitoring (In Terminal)</li>
+<li>Include Simple <strong>File-Base</strong> Database (<a href="https://pypi.org/project/pantherdb/">PantherDB</a>)</li>
+<li>Built-in Document-oriented Databases <strong>ODM</strong> (<strong>MongoDB</strong>, PantherDB)</li>
+<li>Built-in <strong>Websocket</strong> Support</li>
+<li>Built-in API <strong>Caching</strong> System (In Memory, <strong>Redis</strong>)</li>
+<li>Built-in <strong>Authentication</strong> Classes</li>
+<li>Built-in <strong>Permission</strong> Classes</li>
+<li>Support Custom <strong>Background Tasks</strong></li>
+<li>Support Custom <strong>Middlewares</strong></li>
+<li>Support Custom <strong>Throttling</strong></li>
+<li>Visual API <strong>Monitoring</strong> (In Terminal)</li>
+<li>It's One Of The <strong>Fastest Python Frameworks</strong> </li>
 </ul>
 <hr />
 <h3 id="supported-by">Supported by<a class="headerlink" href="#supported-by" title="Permanent link">#</a></h3>
@@ -1075,7 +1094,7 @@
     <summary>3. <b>Install Panther</b></summary><ul>
 <li>⬇ Normal Installation
   <pre><b>$ pip install panther</b></pre></li>
-<li>⬇ Include full requirements (MongoDB, JWTAuth, Ruff, Redis, bpython)
+<li>⬇ Include full requirements (MongoDB, JWTAuth, Ruff, Redis, Websockets, Cryptography, bpython)
   <pre>$ pip install panther[full]</pre>
   </details></li>
 </ul>
@@ -1086,62 +1105,50 @@
 <ul>
 <li>
 <h4 id="create-project">Create Project<a class="headerlink" href="#create-project" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>panther<span class="w"> </span>create
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>panther<span class="w"> </span>create
 </code></pre></div>
 </li>
 <li>
 <h4 id="run-project">Run Project<a class="headerlink" href="#run-project" title="Permanent link">#</a></h4>
-<p><div class="highlight"><pre><span></span><code><span class="gp">$ </span>panther<span class="w"> </span>run<span class="w"> </span>--reload
+<p><div class="highlight"><pre><span></span><code>$<span class="w"> </span>panther<span class="w"> </span>run<span class="w"> </span>--reload
 </code></pre></div>
   <em>* Panther uses <a href="https://github.com/encode/uvicorn">Uvicorn</a> as ASGI (Asynchronous Server Gateway Interface) but you can run the project with <a href="https://pypi.org/project/granian/">Granian</a>, <a href="https://pypi.org/project/daphne/">daphne</a> or any ASGI server too</em></p>
 </li>
 <li>
 <h4 id="monitoring-requests">Monitoring Requests<a class="headerlink" href="#monitoring-requests" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>panther<span class="w"> </span>monitor<span class="w"> </span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>panther<span class="w"> </span>monitor<span class="w"> </span>
 </code></pre></div>
 </li>
 <li>
 <h4 id="python-shell">Python Shell<a class="headerlink" href="#python-shell" title="Permanent link">#</a></h4>
-<div class="highlight"><pre><span></span><code><span class="gp">$ </span>panther<span class="w"> </span>shell
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>panther<span class="w"> </span>shell
 </code></pre></div>
 </li>
 </ul>
 <hr />
-<h3 id="single-file-structure-example">Single-File Structure Example<a class="headerlink" href="#single-file-structure-example" title="Permanent link">#</a></h3>
+<h3 id="api-example">API Example<a class="headerlink" href="#api-example" title="Permanent link">#</a></h3>
 <ul>
 <li>
 <p>Create <code>main.py</code></p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
 
-<span class="kn">from</span> <span class="nn">panther</span> <span class="kn">import</span> <span class="n">version</span><span class="p">,</span> <span class="n">status</span><span class="p">,</span> <span class="n">Panther</span>
-<span class="kn">from</span> <span class="nn">panther.app</span> <span class="kn">import</span> <span class="n">API</span>
-<span class="kn">from</span> <span class="nn">panther.request</span> <span class="kn">import</span> <span class="n">Request</span>
+<span class="kn">from</span> <span class="nn">panther</span> <span class="kn">import</span> <span class="n">status</span><span class="p">,</span> <span class="n">Panther</span>
+<span class="kn">from</span> <span class="nn">panther.app</span> <span class="kn">import</span> <span class="n">GenericAPI</span>
 <span class="kn">from</span> <span class="nn">panther.response</span> <span class="kn">import</span> <span class="n">Response</span>
-<span class="kn">from</span> <span class="nn">panther.throttling</span> <span class="kn">import</span> <span class="n">Throttling</span>
-
-<span class="n">InfoThrottling</span> <span class="o">=</span> <span class="n">Throttling</span><span class="p">(</span><span class="n">rate</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
 
 
-<span class="nd">@API</span><span class="p">()</span>
-<span class="k">async</span> <span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
-    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;detail&#39;</span><span class="p">:</span> <span class="s1">&#39;Hello World&#39;</span><span class="p">}</span>
+<span class="k">class</span> <span class="nc">FirstAPI</span><span class="p">(</span><span class="n">GenericAPI</span><span class="p">):</span>
+    <span class="c1"># Cache Response For 10 Seconds</span>
+    <span class="n">cache</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">cache_exp_time</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">date_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;detail&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;Hello World | </span><span class="si">{</span><span class="n">date_time</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_202_ACCEPTED</span><span class="p">)</span>
 
 
-<span class="nd">@API</span><span class="p">(</span><span class="n">cache</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">throttling</span><span class="o">=</span><span class="n">InfoThrottling</span><span class="p">)</span>
-<span class="k">async</span> <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;panther_version&#39;</span><span class="p">:</span> <span class="n">version</span><span class="p">(),</span>
-        <span class="s1">&#39;datetime_now&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span>
-        <span class="s1">&#39;user_agent&#39;</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">user_agent</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_202_ACCEPTED</span><span class="p">)</span>
-
-
-<span class="n">url_routing</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;&#39;</span><span class="p">:</span> <span class="n">hello_world</span><span class="p">,</span>
-    <span class="s1">&#39;info&#39;</span><span class="p">:</span> <span class="n">info</span><span class="p">,</span>
-<span class="p">}</span>
-
+<span class="n">url_routing</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;&#39;</span><span class="p">:</span> <span class="n">FirstAPI</span><span class="p">}</span>
 <span class="n">app</span> <span class="o">=</span> <span class="n">Panther</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">configs</span><span class="o">=</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">urls</span><span class="o">=</span><span class="n">url_routing</span><span class="p">)</span>
 </code></pre></div>
 </li>
@@ -1152,16 +1159,64 @@
 </ul>
 </li>
 <li>
-<p>now you can see these two urls:</b></p>
+<p>Checkout the <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a></p>
+</li>
+</ul>
+<h3 id="websocket-echo-example">WebSocket Echo Example<a class="headerlink" href="#websocket-echo-example" title="Permanent link">#</a></h3>
 <ul>
-<li><a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a></li>
-<li><a href="http://127.0.0.1:8000/info/">http://127.0.0.1:8000/info/</a></li>
+<li>
+<p>Create <code>main.py</code></p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther</span> <span class="kn">import</span> <span class="n">Panther</span>
+<span class="kn">from</span> <span class="nn">panther.app</span> <span class="kn">import</span> <span class="n">GenericAPI</span>
+<span class="kn">from</span> <span class="nn">panther.response</span> <span class="kn">import</span> <span class="n">HTMLResponse</span>
+<span class="kn">from</span> <span class="nn">panther.websocket</span> <span class="kn">import</span> <span class="n">GenericWebsocket</span>
+
+
+<span class="k">class</span> <span class="nc">FirstWebsocket</span><span class="p">(</span><span class="n">GenericWebsocket</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">accept</span><span class="p">()</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">receive</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bytes</span><span class="p">):</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">MainPage</span><span class="p">(</span><span class="n">GenericAPI</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        &lt;input type=&quot;text&quot; id=&quot;messageInput&quot;&gt;</span>
+<span class="s2">        &lt;button id=&quot;sendButton&quot;&gt;Send Message&lt;/button&gt;</span>
+<span class="s2">        &lt;ul id=&quot;messages&quot;&gt;&lt;/ul&gt;</span>
+<span class="s2">        &lt;script&gt;</span>
+<span class="s2">            var socket = new WebSocket(&#39;ws://127.0.0.1:8000/ws&#39;);</span>
+<span class="s2">            socket.addEventListener(&#39;message&#39;, function (event) {</span>
+<span class="s2">                var li = document.createElement(&#39;li&#39;);</span>
+<span class="s2">                document.getElementById(&#39;messages&#39;).appendChild(li).textContent = &#39;Server: &#39; + event.data;</span>
+<span class="s2">            });</span>
+<span class="s2">            function sendMessage() {</span>
+<span class="s2">                socket.send(document.getElementById(&#39;messageInput&#39;).value);</span>
+<span class="s2">            }</span>
+<span class="s2">            document.getElementById(&#39;sendButton&#39;).addEventListener(&#39;click&#39;, sendMessage);</span>
+<span class="s2">        &lt;/script&gt;</span>
+<span class="s2">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">HTMLResponse</span><span class="p">(</span><span class="n">template</span><span class="p">)</span>
+
+<span class="n">url_routing</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;&#39;</span><span class="p">:</span> <span class="n">MainPage</span><span class="p">,</span>
+    <span class="s1">&#39;ws&#39;</span><span class="p">:</span> <span class="n">FirstWebsocket</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Panther</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">configs</span><span class="o">=</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">urls</span><span class="o">=</span><span class="n">url_routing</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>Run the project:</p>
+<ul>
+<li><code>$ panther run --reload</code> </li>
 </ul>
 </li>
+<li>Go to <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a> and work with your <code>websocket</code></li>
 </ul>
 <blockquote>
 <p><strong>Next Step: <a href="https://pantherpy.github.io/function_first_crud">First CRUD</a></strong></p>
-<p><strong>Real Word Example: <a href="https://GitHub.com/PantherPy/panther-example">Https://GitHub.com/PantherPy/panther-example</a></strong></p>
 </blockquote>
 <hr />
 <h3 id="roadmap">Roadmap<a class="headerlink" href="#roadmap" title="Permanent link">#</a></h3>
@@ -1212,10 +1267,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="assets/javascripts/bundle.8fd75fb4.min.js"></script>
       
     
   </body>

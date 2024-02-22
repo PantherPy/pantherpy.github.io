@@ -16,11 +16,11 @@
         <link rel="prev" href="../serializer/">
       
       
-        <link rel="next" href="../monitoring/">
+        <link rel="next" href="../middlewares/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.f2e4d321.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -278,10 +278,8 @@
     
     
     
-    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
@@ -361,11 +359,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../working_with_db/" class="md-nav__link">
+      <a href="../database/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Working With Database
+    Database
   </span>
   
 
@@ -406,6 +404,26 @@
   
   <span class="md-ellipsis">
     Configs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../redis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Redis
   </span>
   
 
@@ -539,46 +557,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../monitoring/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Monitoring
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../log_queries/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Log Queries
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../middlewares/" class="md-nav__link">
         
   
@@ -699,11 +677,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../release_notes/" class="md-nav__link">
+      <a href="../monitoring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Release Notes
+    Monitoring
   </span>
   
 
@@ -719,11 +697,31 @@
   
   
     <li class="md-nav__item">
-      <a href="../todos/" class="md-nav__link">
+      <a href="../log_queries/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    TODOs
+    Log Queries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release Notes
   </span>
   
 
@@ -838,7 +836,7 @@
 <p>We are going to discuss it below ...</p>
 </blockquote>
 <h3 id="update-urls">Update URLs<a class="headerlink" href="#update-urls" title="Permanent link">#</a></h3>
-<p>Add the <code>BookWebsocket()</code> in <code>app/urls.py</code>:</p>
+<p>Add the <code>BookWebsocket</code> in <code>app/urls.py</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">app.websockets</span> <span class="kn">import</span> <span class="n">BookWebsocket</span>
 
 
@@ -854,7 +852,7 @@
 <li>Then <code>accept()</code> the connection with <code>self.accept()</code> otherwise it is going to be <code>rejected</code> by default.</li>
 <li>Now you can see the unique <code>connection_id</code> which is specified to this user with <code>self.connection_id</code>, you may want to store it somewhere (<code>db</code>, <code>cache</code>, or etc.)</li>
 <li>If the client sends you any message, you will receive it in <code>receive()</code> method, the client message can be <code>str</code> or <code>bytes</code>.</li>
-<li>If you want to send anything to the client:<ul>
+<li>If you want to <strong>send</strong> anything to the client:<ul>
 <li>In websocket class scope: You can send it with <code>self.send()</code> which only takes <code>data</code>.</li>
 <li>Out of websocket class scope: You can send it with <code>send_message_to_websocket()</code> from <code>panther.websocket</code>, it's an <code>async</code> function which takes 2 args, <code>connection_id</code> and <code>data</code>(which can have any type):
     <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.websocket</span> <span class="kn">import</span> <span class="n">send_message_to_websocket</span>
@@ -865,13 +863,13 @@
 <li>If you want to use <code>webscoket</code> in a backend with <code>multiple workers</code>, we recommend you to add <code>RedisMiddleware</code> in your <code>configs</code> 
 <a href="https://pantherpy.github.io/middlewares/#redis-middleware">[Adding Redis Middleware]</a></li>
 <li>
-<p>If you don't want to add <code>RedisMiddleware</code> and you still want to use <code>websocket</code> in <code>multi-thread</code>, 
-you have to use <code>--preload</code> option while running the project like below:
+<p>If you <strong>don't</strong> want to add <code>RedisMiddleware</code> and you still want to run <code>websocket</code> with <code>multiple workers</code> with <code>gunicorn</code>, 
+you have to use <code>--preload</code>, like below:
    <div class="highlight"><pre><span></span><code>gunicorn<span class="w"> </span>-w<span class="w"> </span><span class="m">10</span><span class="w"> </span>-k<span class="w"> </span>uvicorn.workers.UvicornWorker<span class="w"> </span>main:app<span class="w"> </span>--preload
 </code></pre></div></p>
 </li>
 <li>
-<p>If you want to close a connection:</p>
+<p>If you want to <strong>close</strong> a connection:</p>
 <ul>
 <li>In websocket class scope: You can close connection with <code>self.close()</code> method which takes 2 args, <code>code</code> and <code>reason</code>:
     <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther</span> <span class="kn">import</span> <span class="n">status</span>
@@ -946,10 +944,10 @@ you have to use <code>--preload</code> option while running the project like bel
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../assets/javascripts/bundle.8fd75fb4.min.js"></script>
       
     
   </body>

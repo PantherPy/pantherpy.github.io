@@ -13,14 +13,14 @@
         <link rel="canonical" href="https://pantherpy.github.io/middlewares/">
       
       
-        <link rel="prev" href="../log_queries/">
+        <link rel="prev" href="../websocket/">
       
       
         <link rel="next" href="../authentications/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.f2e4d321.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -278,10 +278,8 @@
     
     
     
-    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
@@ -361,11 +359,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../working_with_db/" class="md-nav__link">
+      <a href="../database/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Working With Database
+    Database
   </span>
   
 
@@ -421,6 +419,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../redis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Redis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../serializer/" class="md-nav__link">
         
   
@@ -446,46 +464,6 @@
   
   <span class="md-ellipsis">
     WebSocket
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../monitoring/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Monitoring
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../log_queries/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Log Queries
   </span>
   
 
@@ -546,24 +524,6 @@
   <a href="#structure-of-middlewares" class="md-nav__link">
     <span class="md-ellipsis">
       Structure of middlewares
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#database-middleware" class="md-nav__link">
-    <span class="md-ellipsis">
-      Database Middleware
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#redis-middleware" class="md-nav__link">
-    <span class="md-ellipsis">
-      Redis Middleware
     </span>
   </a>
   
@@ -735,11 +695,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../release_notes/" class="md-nav__link">
+      <a href="../monitoring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Release Notes
+    Monitoring
   </span>
   
 
@@ -755,11 +715,31 @@
   
   
     <li class="md-nav__item">
-      <a href="../todos/" class="md-nav__link">
+      <a href="../log_queries/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    TODOs
+    Log Queries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release Notes
   </span>
   
 
@@ -796,24 +776,6 @@
   <a href="#structure-of-middlewares" class="md-nav__link">
     <span class="md-ellipsis">
       Structure of middlewares
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#database-middleware" class="md-nav__link">
-    <span class="md-ellipsis">
-      Database Middleware
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#redis-middleware" class="md-nav__link">
-    <span class="md-ellipsis">
-      Redis Middleware
     </span>
   </a>
   
@@ -895,72 +857,15 @@
 <p><b>Type:</b> <code>list</code> </p>
 <p><b>Default:</b> <code>[]</code></p>
 </blockquote>
-<p>Panther has several <code>built-in</code> middleware:</p>
-<ul>
-<li>
-<p>Database Middleware</p>
-</li>
-<li>
-<p>Redis Middleware</p>
-</li>
-</ul>
-<p>And you can write your own custom middlewares too</p>
 <h2 id="structure-of-middlewares">Structure of middlewares<a class="headerlink" href="#structure-of-middlewares" title="Permanent link">#</a></h2>
 <p><code>MIDDLEWARES</code> itself is a <code>list</code> of <code>tuples</code> which each <code>tuple</code> is like below:</p>
 <p>(<code>Dotted Address of The Middleware Class</code>, <code>kwargs as dict</code>)</p>
-<h2 id="database-middleware">Database Middleware<a class="headerlink" href="#database-middleware" title="Permanent link">#</a></h2>
-<p>This middleware will create a <code>db</code> connection which is used in <code>ODM</code> and you can use it manually too, it gives you a database connection:
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.db.connection</span> <span class="kn">import</span> <span class="n">db</span>
-</code></pre></div></p>
-<p>We only support 2 database for now: <code>PantherDB</code> &amp; <code>MongoDB</code></p>
-<ul>
-<li>Address of Middleware: <code>panther.middlewares.db.DatabaseMiddleware</code></li>
-<li>
-<p>kwargs:</p>
-<ul>
-<li>
-<p><code>{'url': f'pantherdb://{BASE_DIR}/{DB_NAME}.pdb'}</code></p>
-</li>
-<li>
-<p><code>{'url': f'mongodb://{DB_HOST}:27017/{DB_NAME}'}</code></p>
-</li>
-</ul>
-</li>
-<li>
-<p>Example of <code>PantherDB</code> (<code>Built-in Local Storage</code>):
-  <div class="highlight"><pre><span></span><code><span class="n">MIDDLEWARES</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">(</span><span class="s1">&#39;panther.middlewares.db.DatabaseMiddleware&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;pantherdb://project_directory/database.pdb&#39;</span><span class="p">}),</span>
-<span class="p">]</span>
-</code></pre></div></p>
-</li>
-<li>Example of <code>MongoDB</code>:
-  <div class="highlight"><pre><span></span><code><span class="n">MIDDLEWARES</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">(</span><span class="s1">&#39;panther.middlewares.db.DatabaseMiddleware&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;mongodb://127.0.0.1:27017/example&#39;</span><span class="p">}),</span>
-<span class="p">]</span>
-</code></pre></div></li>
-</ul>
-<h2 id="redis-middleware">Redis Middleware<a class="headerlink" href="#redis-middleware" title="Permanent link">#</a></h2>
-<ul>
-<li>Address of Middleware: <code>panther.middlewares.redis.RedisMiddleware</code></li>
-<li>
-<p>kwargs: 
-    <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="s1">&#39;host&#39;</span><span class="p">:</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span> <span class="s1">&#39;port&#39;</span><span class="p">:</span> <span class="mi">6379</span><span class="p">,</span> <span class="o">...</span><span class="p">}</span>
-</code></pre></div></p>
-</li>
-<li>
-<p>Example
-  <div class="highlight"><pre><span></span><code><span class="n">MIDDLEWARES</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">(</span><span class="s1">&#39;panther.middlewares.redis.RedisMiddleware&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;host&#39;</span><span class="p">:</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span> <span class="s1">&#39;port&#39;</span><span class="p">:</span> <span class="mi">6379</span><span class="p">}),</span>
-<span class="p">]</span>
-</code></pre></div></p>
-</li>
-</ul>
 <h2 id="custom-middleware">Custom Middleware<a class="headerlink" href="#custom-middleware" title="Permanent link">#</a></h2>
 <h3 id="middleware-types">Middleware Types<a class="headerlink" href="#middleware-types" title="Permanent link">#</a></h3>
 <p>We have 3 type of Middlewares, make sure that you are inheriting from the correct one:
   - <code>Base Middleware</code>: which is used for both <code>websocket</code> and <code>http</code> requests 
-    - <code>HTTP Middleware</code>: which is only used for <code>http</code> requests
-    - <code>Websocket Middleware</code>: which is only used for <code>websocket</code> requests</p>
+  - <code>HTTP Middleware</code>: which is only used for <code>http</code> requests
+  - <code>Websocket Middleware</code>: which is only used for <code>websocket</code> requests</p>
 <h3 id="write-custom-middleware">Write Custom Middleware<a class="headerlink" href="#write-custom-middleware" title="Permanent link">#</a></h3>
 <ul>
 <li>
@@ -1095,10 +1000,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../assets/javascripts/bundle.8fd75fb4.min.js"></script>
       
     
   </body>

@@ -10,23 +10,25 @@
       
       
       
-        <link rel="canonical" href="https://pantherpy.github.io/todos/">
+        <link rel="canonical" href="https://pantherpy.github.io/redis/">
       
       
-        <link rel="prev" href="../release_notes/">
+        <link rel="prev" href="../configs/">
       
+      
+        <link rel="next" href="../serializer/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
     
     
       
-        <title>TODOs - Panther</title>
+        <title>Redis - Panther</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.f2e4d321.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -74,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#base" class="md-skip">
+        <a href="#structure" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              TODOs
+              Redis
             
           </span>
         </div>
@@ -276,10 +278,8 @@
     
     
     
-    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
@@ -359,11 +359,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../working_with_db/" class="md-nav__link">
+      <a href="../database/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Working With Database
+    Database
   </span>
   
 
@@ -416,6 +416,104 @@
       
   
   
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Redis
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Redis
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redisconnection" class="md-nav__link">
+    <span class="md-ellipsis">
+      RedisConnection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RedisConnection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How it works?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
   
   
     <li class="md-nav__item">
@@ -444,46 +542,6 @@
   
   <span class="md-ellipsis">
     WebSocket
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../monitoring/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Monitoring
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../log_queries/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Log Queries
   </span>
   
 
@@ -619,11 +677,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../release_notes/" class="md-nav__link">
+      <a href="../monitoring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Release Notes
+    Monitoring
   </span>
   
 
@@ -636,135 +694,38 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    TODOs
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../log_queries/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    TODOs
+    Log Queries
   </span>
   
 
       </a>
-      
-        
+    </li>
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    
       
-        <li class="md-nav__item">
-  <a href="#base" class="md-nav__link">
-    <span class="md-ellipsis">
-      Base
-    </span>
-  </a>
-  
-</li>
       
-        <li class="md-nav__item">
-  <a href="#database" class="md-nav__link">
-    <span class="md-ellipsis">
-      Database:
-    </span>
-  </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#custom-odm" class="md-nav__link">
-    <span class="md-ellipsis">
-      Custom ODM
-    </span>
-  </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#middleware" class="md-nav__link">
-    <span class="md-ellipsis">
-      Middleware
-    </span>
-  </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#authentication" class="md-nav__link">
-    <span class="md-ellipsis">
-      Authentication
-    </span>
-  </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cache" class="md-nav__link">
-    <span class="md-ellipsis">
-      Cache
-    </span>
-  </a>
+    <li class="md-nav__item">
+      <a href="../release_notes/" class="md-nav__link">
+        
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cli" class="md-nav__link">
-    <span class="md-ellipsis">
-      CLI
-    </span>
-  </a>
+  <span class="md-ellipsis">
+    Release Notes
+  </span>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#documentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Documentation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tests" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tests
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
+
+      </a>
     </li>
   
 
@@ -794,81 +755,42 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#base" class="md-nav__link">
+  <a href="#structure" class="md-nav__link">
     <span class="md-ellipsis">
-      Base
+      Structure
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#database" class="md-nav__link">
+  <a href="#redisconnection" class="md-nav__link">
     <span class="md-ellipsis">
-      Database:
+      RedisConnection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RedisConnection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#custom-odm" class="md-nav__link">
-    <span class="md-ellipsis">
-      Custom ODM
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#middleware" class="md-nav__link">
+  <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
-      Middleware
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#authentication" class="md-nav__link">
-    <span class="md-ellipsis">
-      Authentication
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cache" class="md-nav__link">
-    <span class="md-ellipsis">
-      Cache
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cli" class="md-nav__link">
-    <span class="md-ellipsis">
-      CLI
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#documentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Documentation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tests" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tests
+      How it works?
     </span>
   </a>
   
@@ -892,110 +814,48 @@
   
 
 
-  <h1>TODOs</h1>
+  <h1>Redis</h1>
 
-<h4 id="base">Base<a class="headerlink" href="#base" title="Permanent link">#</a></h4>
+<p>Panther currently built-in supports 2 database (<code>MongoDB</code>, <code>PantherDB</code>), but you can define your own custom database connection and queries too.</p>
+<h3 id="structure">Structure<a class="headerlink" href="#structure" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">REDIS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;address of the class&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;arg1&#39;</span><span class="p">:</span> <span class="s1">&#39;value1&#39;</span><span class="p">,</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="redisconnection">RedisConnection<a class="headerlink" href="#redisconnection" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">REDIS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;panther.db.connections.RedisConnection&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;host&#39;</span><span class="p">:</span> <span class="o">...</span><span class="p">,</span>  <span class="c1"># default is localhost</span>
+    <span class="s1">&#39;port&#39;</span><span class="p">:</span> <span class="o">...</span><span class="p">,</span>  <span class="c1"># default is 6379</span>
+    <span class="s1">&#39;db&#39;</span><span class="p">:</span> <span class="o">...</span><span class="p">,</span>  <span class="c1"># default is 0</span>
+    <span class="s1">&#39;websocket_db&#39;</span><span class="p">:</span> <span class="o">...</span><span class="p">,</span>  <span class="c1"># default is 0</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">#</a></h4>
 <ul>
-<li>&#x2705; Start with Uvicorn </li>
-<li>&#x2705; Fix URL Routing </li>
-<li>&#x2705; Read Configs </li>
-<li>&#x2705; Handle Exceptions </li>
-<li>&#x2705; Add Custom Logger </li>
-<li>&#x2705; Request Class </li>
-<li>&#x2705; Response Class </li>
-<li>&#x2705; Validate Input </li>
-<li>&#x2705; Custom Output Model </li>
-<li>&#x2705; Log Queries</li>
-<li>&#x2705; Add Package Requirements</li>
-<li>&#x2705; Custom Logging</li>
-<li>&#x2705; Caching</li>
-<li>&#x2705; Handle Path Variable</li>
-<li>&#x2705; Handle Simple Multipart-FormData</li>
-<li>&#x2705; Handle Throttling</li>
-<li>&#x2705; Handle ClassBase APIs</li>
-<li>&#x2705; Handle File </li>
-<li>&#x2705; Handle Complex Multipart-FormData</li>
-<li>&#x2705; Handle Testing</li>
-<li>&#x2705; Handle WS </li>
-<li>&#9744; Handle Cookie</li>
-<li>&#9744; Generate Swagger For APIs</li>
+<li>The arguments are same as <code>redis.Redis.__init__()</code> except <code>websocket_db</code></li>
+<li>You can specify which <code>db</code> is for your <code>websocket</code> connections </li>
 </ul>
-<h4 id="database">Database:<a class="headerlink" href="#database" title="Permanent link">#</a></h4>
+<h3 id="how-it-works">How it works?<a class="headerlink" href="#how-it-works" title="Permanent link">#</a></h3>
 <ul>
-<li>&#x2705; Structure Of DB Connection</li>
-<li>&#x2705; PantherDB Connection</li>
-<li>&#x2705; MongoDB Connection</li>
-<li>&#x2705; Create Custom BaseModel For All Type Of Databases</li>
-<li>&#x2705; Set PantherDB As Default</li>
-</ul>
-<h4 id="custom-odm">Custom ODM<a class="headerlink" href="#custom-odm" title="Permanent link">#</a></h4>
-<ul>
-<li>&#x2705; Find One</li>
-<li>&#x2705; Find </li>
-<li>&#x2705; Last</li>
-<li>&#x2705; Count</li>
-<li>&#x2705; Insert One </li>
-<li>&#x2705; Insert Many </li>
-<li>&#x2705; Delete One</li>
-<li>&#x2705; Delete Many</li>
-<li>&#x2705; Delete Itself</li>
-<li>&#x2705; Update One</li>
-<li>&#x2705; Update Many</li>
-<li>&#x2705; Update Itself</li>
-<li>&#x2705; Find or Insert</li>
-<li>&#x2705; Find or Raise</li>
-<li>&#x2705; Save</li>
-<li>&#9744; Find with Pagination</li>
-<li>&#9744; Aggregation</li>
-<li>&#9744; Complex Pipelines</li>
-<li>&#9744; ...</li>
-</ul>
-<h4 id="middleware">Middleware<a class="headerlink" href="#middleware" title="Permanent link">#</a></h4>
-<ul>
-<li>&#x2705; Add Middlewares To Structure</li>
-<li>&#x2705; Create BaseMiddleware</li>
-<li>&#x2705; Pass Custom Parameters To Middlewares</li>
-<li>&#x2705; Handle Custom Middlewares</li>
-</ul>
-<h4 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">#</a></h4>
-<ul>
-<li>&#x2705; JWT Authentication</li>
-<li>&#x2705; Separate Auth For Every API</li>
-<li>&#x2705; Handle Permissions </li>
-<li>&#9744; Token Storage Authentication</li>
-<li>&#9744; Cookie Authentication</li>
-<li>&#9744; Query Param Authentication</li>
-<li>&#9744; Store JWT After Logout In Redis/ Memory</li>
-</ul>
-<h4 id="cache">Cache<a class="headerlink" href="#cache" title="Permanent link">#</a></h4>
-<ul>
-<li>&#x2705; Add Redis To Structure</li>
-<li>&#x2705; Create Cache Decorator</li>
-<li>&#x2705; Handle In Memory Caching </li>
-<li>&#x2705; Handle In Redis Caching </li>
-<li>&#9744; Write Async LRU_Caching With TTL (Replace it with in memory ...)</li>
-</ul>
-<h4 id="cli">CLI<a class="headerlink" href="#cli" title="Permanent link">#</a></h4>
-<ul>
-<li>&#x2705; Create Project </li>
-<li>&#x2705; Run Project </li>
-<li>&#x2705; Create Project with Options</li>
-<li>&#x2705; Monitoring With Textual</li>
-<li>&#x2705; Monitor Requests, Response &amp; Time</li>
-<li>&#9744; Create Project With TUI</li>
-</ul>
-<h4 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">#</a></h4>
-<ul>
-<li>&#x2705; Create MkDocs For Project </li>
-<li>&#x2705; Benchmarks</li>
-<li>&#x2705; Release Notes</li>
-<li>&#x2705; Features</li>
-<li>&#9744; Complete The MkDoc</li>
-</ul>
-<h4 id="tests">Tests<a class="headerlink" href="#tests" title="Permanent link">#</a></h4>
-<ul>
-<li>&#x2705; Start Writing Tests For Panther </li>
-<li>&#x2705; Test Client</li>
+<li>
+<p>Panther creates a redis connection depends on <code>REDIS</code> block you defined in <code>configs</code></p>
+</li>
+<li>
+<p>You can access to it from <code>from panther.db.connections import redis</code></p>
+</li>
+<li>
+<p>Example: 
+    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.db.connections</span> <span class="kn">import</span> <span class="n">redis</span>
+
+<span class="n">redis</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">redis</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  
+</code></pre></div></p>
+</li>
 </ul>
 
 
@@ -1043,10 +903,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../assets/javascripts/bundle.8fd75fb4.min.js"></script>
       
     
   </body>

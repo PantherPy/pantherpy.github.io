@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://pantherpy.github.io/working_with_db/">
+        <link rel="canonical" href="https://pantherpy.github.io/database/">
       
       
         <link rel="prev" href="../class_first_crud/">
@@ -20,15 +20,15 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
     
     
       
-        <title>Working With Database - Panther</title>
+        <title>Database - Panther</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.f2e4d321.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -75,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#structure" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -107,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Working With Database
+              Database
             
           </span>
         </div>
@@ -273,10 +278,8 @@
     
     
     
-    
     <li class="md-nav__item md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
@@ -363,15 +366,124 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Database
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Working With Database
+    Database
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pantherdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      PantherDB
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PantherDB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mongodb" class="md-nav__link">
+    <span class="md-ellipsis">
+      MongoDB
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MongoDB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How it works?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -424,6 +536,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../redis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Redis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../serializer/" class="md-nav__link">
         
   
@@ -449,46 +581,6 @@
   
   <span class="md-ellipsis">
     WebSocket
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../monitoring/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Monitoring
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../log_queries/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Log Queries
   </span>
   
 
@@ -624,11 +716,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../release_notes/" class="md-nav__link">
+      <a href="../monitoring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Release Notes
+    Monitoring
   </span>
   
 
@@ -644,11 +736,31 @@
   
   
     <li class="md-nav__item">
-      <a href="../todos/" class="md-nav__link">
+      <a href="../log_queries/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    TODOs
+    Log Queries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release Notes
   </span>
   
 
@@ -675,6 +787,95 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pantherdb" class="md-nav__link">
+    <span class="md-ellipsis">
+      PantherDB
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PantherDB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mongodb" class="md-nav__link">
+    <span class="md-ellipsis">
+      MongoDB
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MongoDB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How it works?
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -691,16 +892,69 @@
   
 
 
-  <h1>Working With Database</h1>
+  <h1>Database</h1>
 
-<p>Panther create a database connection depends on <a href="https://pantherpy.github.io/middlewares/#database-middleware">database middleware</a> you are using on <code>core/configs.py</code> 
-and you can access to this connection from your <code>models</code> 
-or direct access from <code>from panther.db.connection import db</code></p>
-<p>Now we are going to create a new API which uses our default database(<code>PantherDB</code>) and creating a <code>Book</code></p>
-<ol>
+<p>Panther currently built-in supports 2 database (<code>MongoDB</code>, <code>PantherDB</code>), but you can define your own custom database connection and queries too.</p>
+<h3 id="structure">Structure<a class="headerlink" href="#structure" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">DATABASE</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;engine&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;address of engine&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;arg1&#39;</span><span class="p">:</span> <span class="s1">&#39;value1&#39;</span><span class="p">,</span>
+        <span class="o">...</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;query&#39;</span><span class="p">:</span> <span class="s1">&#39;address of query class&#39;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">#</a></h4>
+<ul>
+<li>Built-in supported engines:</li>
+<li><code>panther.db.connections.PantherDBConnection</code></li>
+<li><code>panther.db.connections.MongoDBConnection</code></li>
+<li><code>engine</code> values, other than the <code>class</code> will be passed to the <code>class.__init__()</code> </li>
+<li><code>query</code> is not required when you are using default supported engines, but you can customize it</li>
+</ul>
+<h3 id="pantherdb">PantherDB<a class="headerlink" href="#pantherdb" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">DATABASE</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;engine&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;panther.db.connections.PantherDBConnection&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="n">BASE_DIR</span> <span class="o">/</span> <span class="s1">&#39;database.pdb&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;encryption&#39;</span><span class="p">:</span> <span class="kc">True</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="notes_1">Notes<a class="headerlink" href="#notes_1" title="Permanent link">#</a></h4>
+<ul>
+<li><code>path</code> is not required, but you can customize the directory and file of your database</li>
+<li><code>encryption</code> is not required and default is <code>False</code></li>
+<li>The <code>cryptography</code> package is required if you set <code>encryption</code> to <code>True</code></li>
+</ul>
+<h3 id="mongodb">MongoDB<a class="headerlink" href="#mongodb" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">DATABASE</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;engine&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;panther.db.connections.MongoDBConnection&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;host&#39;</span><span class="p">:</span> <span class="s1">&#39;mongodb://127.0.0.1:27017/database_name&#39;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="notes_2">Notes<a class="headerlink" href="#notes_2" title="Permanent link">#</a></h4>
+<ul>
+<li>The parameters are same as <code>pymongo.MongoClient</code> <a href="https://pymongo.readthedocs.io/en/stable/tutorial.html#making-a-connection-with-mongoclient">[Reference]</a></li>
+</ul>
+<h3 id="how-it-works">How it works?<a class="headerlink" href="#how-it-works" title="Permanent link">#</a></h3>
+<ul>
+<li>
+<p>Panther creates a database connection depends on <code>DATABASE</code> block you defined in <code>configs</code></p>
+</li>
+<li>
+<p>You can access to this connection with your <code>models</code>,
+or direct access from <code>from panther.db.connections import db</code></p>
+</li>
+<li>
+<p>Now we are going to create a new API which uses <code>PantherDB</code> and creating a <code>Book</code></p>
+</li>
 <li>
 <p>Create <code>Book</code> model in <code>app/models.py</code>
-    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.db</span> <span class="kn">import</span> <span class="n">Model</span>
+      <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.db</span> <span class="kn">import</span> <span class="n">Model</span>
 
 
 <span class="k">class</span> <span class="nc">Book</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
@@ -712,13 +966,10 @@ or direct access from <code>from panther.db.connection import db</code></p>
 <li>
 <p>Add <code>book</code> url in <code>app/urls.py</code> that points to <code>book_api()</code></p>
 <div class="highlight"><pre><span></span><code><span class="o">...</span>
-<span class="kn">from</span> <span class="nn">app.apis</span> <span class="kn">import</span> <span class="n">time_api</span><span class="p">,</span> <span class="n">book_api</span>
+<span class="kn">from</span> <span class="nn">app.apis</span> <span class="kn">import</span> <span class="n">book_api</span>
 
 
 <span class="n">urls</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;&#39;</span><span class="p">:</span> <span class="n">hello_world</span><span class="p">,</span>
-    <span class="s1">&#39;info/&#39;</span><span class="p">:</span> <span class="n">info</span><span class="p">,</span>
-    <span class="s1">&#39;time/&#39;</span><span class="p">:</span> <span class="n">time_api</span><span class="p">,</span>
     <span class="s1">&#39;book/&#39;</span><span class="p">:</span> <span class="n">book_api</span><span class="p">,</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -754,8 +1005,8 @@ or direct access from <code>from panther.db.connection import db</code></p>
     <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_201_CREATED</span><span class="p">)</span>  
 </code></pre></div>
 </li>
-</ol>
-<p>In <a href="https://pantherpy.github.io/panther_odm/">next</a> step we are going to explain more about <code>Panther ODM</code></p>
+</ul>
+<p><strong>In <a href="https://pantherpy.github.io/panther_odm/">next</a> step we are going to explain more about <code>Panther ODM</code></strong></p>
 
 
 
@@ -802,10 +1053,10 @@ or direct access from <code>from panther.db.connection import db</code></p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../assets/javascripts/bundle.8fd75fb4.min.js"></script>
       
     
   </body>
