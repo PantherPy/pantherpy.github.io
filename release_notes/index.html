@@ -2533,11 +2533,16 @@
 <h3 id="400">4.0.0<a class="headerlink" href="#400" title="Permanent link">#</a></h3>
 <ul>
 <li>Move <code>database</code> and <code>redis</code> connections from <code>MIDDLEWARES</code> to their own block, <code>DATABASE</code> and <code>REDIS</code></li>
-<li>Make queries <code>async</code></li>
+<li>Make <code>Database</code> queries <code>async</code></li>
+<li>Make <code>Redis</code> queries <code>async</code></li>
+<li>Add <code>StreamingResponse</code></li>
+<li>Add <code>generics</code> API classes (Pagination, Sort, Filter, Search, ...)</li>
 <li>Add <code>login()</code> &amp; <code>logout()</code> to <code>JWTAuthentication</code> and used it in <code>BaseUser</code></li>
 <li>Support <code>Authentication</code> &amp; <code>Authorization</code> in <code>Websocket</code></li>
 <li>Rename all exceptions suffix from <code>Exception</code> to <code>Error</code> (https://peps.python.org/pep-0008/#exception-names)</li>
-<li>Support <code>pantherdb 1.4</code></li>
+<li>Support <code>pantherdb 2.0.0</code> (<code>Cursor</code> Added)</li>
+<li>Remove <code>watchfiles</code> from required dependencies</li>
+<li>Support <code>exclude</code> and <code>optional_fields</code> in <code>ModelSerializer</code></li>
 <li>Minor Improvements</li>
 </ul>
 <h3 id="390">3.9.0<a class="headerlink" href="#390" title="Permanent link">#</a></h3>

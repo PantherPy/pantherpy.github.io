@@ -886,12 +886,20 @@
      <span class="n">first_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
      <span class="n">last_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 
-
+ <span class="c1"># type 1 - using fields</span>
  <span class="k">class</span> <span class="nc">UserModelSerializer</span><span class="p">(</span><span class="n">ModelSerializer</span><span class="p">):</span>
      <span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
          <span class="n">model</span> <span class="o">=</span> <span class="n">User</span>
          <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;first_name&#39;</span><span class="p">,</span> <span class="s1">&#39;last_name&#39;</span><span class="p">]</span>
          <span class="n">required_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;first_name&#39;</span><span class="p">]</span>
+
+ <span class="c1"># type 2 - using exclude</span>
+ <span class="k">class</span> <span class="nc">UserModelSerializer</span><span class="p">(</span><span class="n">ModelSerializer</span><span class="p">):</span>
+     <span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
+         <span class="n">model</span> <span class="o">=</span> <span class="n">User</span>
+         <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;*&#39;</span>
+         <span class="n">required_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;first_name&#39;</span><span class="p">]</span>
+         <span class="n">exclude</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">]</span>
 
 
  <span class="nd">@API</span><span class="p">(</span><span class="n">input_model</span><span class="o">=</span><span class="n">UserModelSerializer</span><span class="p">)</span>
@@ -900,9 +908,14 @@
 </code></pre></div>
 <h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">#</a></h3>
 <ol>
-<li>In the example above, <code>ModelSerializer</code> will look up for the value of <code>Config.fields</code> in the <code>User.fields</code> and use their <code>type</code> and <code>value</code> for the <code>validation</code>.</li>
+<li>In the example above, <code>ModelSerializer</code> will look up for the value of <code>Config.fields</code> in the <code>User.model_fields</code> and use their <code>type</code> and <code>value</code> for the <code>validation</code>.</li>
 <li><code>Config.model</code> and <code>Config.fields</code> are <code>required</code> when you are using <code>ModelSerializer</code>.</li>
-<li>If you want to use <code>Config.required_fields</code>, you have to put its value in <code>Config.fields</code> too.</li>
+<li>You can force a field to be required with <code>Config.required_fields</code> </li>
+<li>You can force a field to be optional with <code>Config.optional_fields</code> </li>
+<li><code>Config.required_fields</code> and <code>Config.optional_fields</code> can't include same fields </li>
+<li>If you want to use <code>Config.required_fields</code> or <code>Config.optional_fields</code> you have to put their value in <code>Config.fields</code> too.</li>
+<li><code>Config.fields</code> &amp; <code>Config.required_fields</code> &amp; <code>Config.optional_fields</code> can be <code>*</code> too (Include all the model fields)</li>
+<li><code>Config.exclude</code> is mostly used when <code>Config.fields</code> is <code>'*'</code></li>
 </ol>
 <h2 id="style-3-model-serializer-pydantic">Style 3 (Model Serializer + Pydantic)<a class="headerlink" href="#style-3-model-serializer-pydantic" title="Permanent link">#</a></h2>
 <p>You can use <code>pydantic.BaseModel</code> features in <code>ModelSerializer</code> too.</p>
@@ -930,8 +943,9 @@
 
      <span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
          <span class="n">model</span> <span class="o">=</span> <span class="n">User</span>
-         <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;first_name&#39;</span><span class="p">,</span> <span class="s1">&#39;last_name&#39;</span><span class="p">]</span>
+         <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;first_name&#39;</span><span class="p">,</span> <span class="s1">&#39;last_name&#39;</span><span class="p">]</span>
          <span class="n">required_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;first_name&#39;</span><span class="p">]</span>
+         <span class="n">optional_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;last_name&#39;</span><span class="p">]</span>
 
  <span class="nd">@field_validator</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">)</span>
  <span class="k">def</span> <span class="nf">validate_username</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">username</span><span class="p">):</span>

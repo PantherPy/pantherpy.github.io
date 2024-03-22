@@ -588,6 +588,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#timezone" class="md-nav__link">
+    <span class="md-ellipsis">
+      TIMEZONE
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1006,6 +1015,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#timezone" class="md-nav__link">
+    <span class="md-ellipsis">
+      TIMEZONE
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1031,11 +1049,12 @@
 <p><b>Type:</b> <code>bool</code> (<b>Default:</b> <code>False</code>)</p>
 </blockquote>
 <p>It should be <code>True</code> if you want to use <code>panther monitor</code> command
-and see the monitoring logs</p>
+and watch the monitoring</p>
 <p>If <code>True</code>:</p>
 <ul>
 <li>Log every request in <code>logs/monitoring.log</code></li>
 </ul>
+<p><em>Requires <a href="https://watchfiles.helpmanual.io">watchfiles</a> package.</em></p>
 <hr />
 <h3 id="log_queries"><a href="https://pantherpy.github.io/log_queries">LOG_QUERIES</a><a class="headerlink" href="#log_queries" title="Permanent link">#</a></h3>
 <blockquote>
@@ -1057,6 +1076,7 @@ and see the monitoring logs</p>
 <p><b>Type:</b> <code>str | None</code> (<b>Default:</b> <code>None</code>)</p>
 </blockquote>
 <p>Every request goes through <code>authentication()</code> method of this <code>class</code> (if <code>auth = True</code>)</p>
+<p><em>Requires <a href="https://python-jose.readthedocs.io/en/latest/">python-jose</a> package.</em></p>
 <p><em>Example:</em> <code>AUTHENTICATION = 'panther.authentications.JWTAuthentication'</code></p>
 <hr />
 <h3 id="ws_authentication"><a href="https://pantherpy.github.io/authentications">WS_AUTHENTICATION</a><a class="headerlink" href="#ws_authentication" title="Permanent link">#</a></h3>
@@ -1133,6 +1153,7 @@ this function can be <code>sync</code> or <code>async</code></p>
 </blockquote>
 <p>It will reformat your code on every reload (on every change if you run the project with <code>--reload</code>) </p>
 <p>You may want to write your custom <code>ruff.toml</code> in root of your project.</p>
+<p><em>Requires <a href="https://docs.astral.sh/ruff/">ruff</a> package.</em></p>
 <p>Reference: <a href="https://docs.astral.sh/ruff/formatter/">https://docs.astral.sh/ruff/formatter/</a></p>
 <p><em>Example:</em> <code>AUTO_REFORMAT = True</code></p>
 <hr />
@@ -1146,7 +1167,15 @@ this function can be <code>sync</code> or <code>async</code></p>
 <blockquote>
 <p><b>Type:</b> <code>dict</code> (<b>Default:</b> <code>{}</code>)</p>
 </blockquote>
+<p><em>Requires <a href="https://redis-py.readthedocs.io/en/stable/">redis</a> package.</em></p>
 <p>We use it to create <code>redis</code> connection</p>
+<hr />
+<h3 id="timezone"><a href="https://pantherpy.github.io/timezone">TIMEZONE</a><a class="headerlink" href="#timezone" title="Permanent link">#</a></h3>
+<blockquote>
+<p><b>Type:</b> <code>str</code> (<b>Default:</b> <code>'UTC'</code>)</p>
+</blockquote>
+<p>Used in <code>panther.utils.timezone_now()</code> which returns a <code>datetime</code> based on your <code>timezone</code></p>
+<p>And <code>panther.utils.timezone_now()</code> used in <code>BaseUser.date_created</code> and <code>BaseUser.last_login</code> </p>
 
 
 
