@@ -16,7 +16,7 @@
         <link rel="prev" href="../middlewares/">
       
       
-        <link rel="next" href="../urls/">
+        <link rel="next" href="../events/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -289,7 +289,7 @@
             
   
   <span class="md-ellipsis">
-    First Crud
+    How To CRUD
   </span>
   
 
@@ -299,7 +299,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            First Crud
+            How To CRUD
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -336,6 +336,27 @@
   
   <span class="md-ellipsis">
     Class Base
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../generic_crud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Generic
   </span>
   
 
@@ -597,6 +618,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../events/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Events
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../urls/" class="md-nav__link">
         
   
@@ -821,16 +862,20 @@
 <p><b>Type:</b> <code>str</code></p>
 <p><b>Default:</b> <code>None</code></p>
 </blockquote>
-<p>You can set your Authentication class in <code>configs</code>, now, if you set <code>auth=True</code> in <code>@API()</code>, Panther will use this class for authentication of every <code>API</code>, and put the <code>user</code> in <code>request.user</code> or <code>raise HTTP_401_UNAUTHORIZED</code> </p>
-<p>We implemented a built-in authentication class which used <code>JWT</code> for authentication.
-But, You can use your own custom authentication class too.</p>
+<p>You can set Authentication class in your <code>configs</code> </p>
+<p>Panther use it, to authenticate every API/ WS if <code>auth=True</code> and give you the user or <code>raise HTTP_401_UNAUTHORIZED</code></p>
+<p>The <code>user</code> will be in <code>request.user</code> in APIs and in <code>self.user</code> in WSs </p>
+<hr />
+<p>We implemented 2 built-in authentication classes which use <code>JWT</code> for authentication.</p>
+<p>But, You can use your own custom authentication class too.</p>
+<hr />
 <h3 id="jwtauthentication">JWTAuthentication<a class="headerlink" href="#jwtauthentication" title="Permanent link">#</a></h3>
 <p>This class will </p>
 <ul>
 <li>Get the <code>token</code> from <code>Authorization</code> header of request.</li>
 <li>Check the <code>Bearer</code></li>
 <li><code>decode</code> the <code>token</code> </li>
-<li>Find the matched <code>user</code> (It uses the <code>USER_MODEL</code>)</li>
+<li>Find the matched <code>user</code></li>
 </ul>
 <blockquote>
 <p><code>JWTAuthentication</code> is going to use <code>panther.db.models.BaseUser</code> if you didn't set the <code>USER_MODEL</code> in your <code>configs</code></p>
@@ -872,8 +917,7 @@ But, You can use your own custom authentication class too.</p>
 </li>
 </ul>
 <h4 id="websocket-authentication">Websocket Authentication<a class="headerlink" href="#websocket-authentication" title="Permanent link">#</a></h4>
-<p>This class is very useful when you are trying to authenticate the user in websocket</p>
-<p>Add this into your <code>configs</code>:
+<p>The <code>QueryParamJWTAuthentication</code> is very useful when you are trying to authenticate the user in websocket, you just have to add this into your <code>configs</code>:
 <div class="highlight"><pre><span></span><code><span class="n">WS_AUTHENTICATION</span> <span class="o">=</span> <span class="s1">&#39;panther.authentications.QueryParamJWTAuthentication&#39;</span>
 </code></pre></div></p>
 <h3 id="custom-authentication">Custom Authentication<a class="headerlink" href="#custom-authentication" title="Permanent link">#</a></h3>
@@ -890,12 +934,13 @@ But, You can use your own custom authentication class too.</p>
 </ul>
 </li>
 <li>
-<p>Address it in <code>configs</code></p>
+<p>Add it into your <code>configs</code>
+  <div class="highlight"><pre><span></span><code><span class="n">AUTHENTICATION</span> <span class="o">=</span> <span class="s1">&#39;project_name.core.authentications.CustomAuthentication&#39;</span>
+</code></pre></div></p>
 </li>
-<li><code>AUTHENTICATION = 'project_name.core.authentications.CustomAuthentication'</code></li>
 </ul>
 <blockquote>
-<p>You can see the source code of JWTAuthentication <a href="https://github.com/AliRn76/panther/blob/da2654ccdd83ebcacda91a1aaf51d5aeb539eff5/panther/authentications.py#L38">[here]</a> </p>
+<p>You can see the source code of JWTAuthentication <a href="https://github.com/AliRn76/panther/blob/da2654ccdd83ebcacda91a1aaf51d5aeb539eff5/panther/authentications.py">[here]</a> </p>
 </blockquote>
 
 

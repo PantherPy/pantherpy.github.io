@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://pantherpy.github.io/class_first_crud/">
+        <link rel="canonical" href="https://pantherpy.github.io/generic_crud/">
       
       
-        <link rel="prev" href="../function_first_crud/">
+        <link rel="prev" href="../class_first_crud/">
       
       
-        <link rel="next" href="../generic_crud/">
+        <link rel="next" href="../database/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Class Base - Panther</title>
+        <title>Generic - Panther</title>
       
     
     
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Class Base
+              Generic
             
           </span>
         </div>
@@ -330,6 +330,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../class_first_crud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Base
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -344,7 +365,7 @@
           
   
   <span class="md-ellipsis">
-    Class Base
+    Generic
   </span>
   
 
@@ -355,7 +376,7 @@
         
   
   <span class="md-ellipsis">
-    Class Base
+    Generic
   </span>
   
 
@@ -454,29 +475,62 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#filter-response-fields" class="md-nav__link">
+  <a href="#pagination-search-filter-sort" class="md-nav__link">
     <span class="md-ellipsis">
-      Filter Response Fields
+      Pagination, Search, Filter, Sort
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pagination, Search, Filter, Sort">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pagination" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pagination
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cache-the-response" class="md-nav__link">
+  <a href="#search" class="md-nav__link">
     <span class="md-ellipsis">
-      Cache The Response
+      Search
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#throttle-the-request" class="md-nav__link">
+  <a href="#filter" class="md-nav__link">
     <span class="md-ellipsis">
-      Throttle The Request
+      Filter
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sort
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -516,27 +570,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../generic_crud/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Generic
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -973,29 +1006,62 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#filter-response-fields" class="md-nav__link">
+  <a href="#pagination-search-filter-sort" class="md-nav__link">
     <span class="md-ellipsis">
-      Filter Response Fields
+      Pagination, Search, Filter, Sort
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pagination, Search, Filter, Sort">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pagination" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pagination
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cache-the-response" class="md-nav__link">
+  <a href="#search" class="md-nav__link">
     <span class="md-ellipsis">
-      Cache The Response
+      Search
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#throttle-the-request" class="md-nav__link">
+  <a href="#filter" class="md-nav__link">
     <span class="md-ellipsis">
-      Throttle The Request
+      Filter
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sort
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1049,7 +1115,7 @@
   
 
 
-  <h1>Class Base</h1>
+  <h1>Generic</h1>
 
 <p>We assume you could run the project with <a href="https://pantherpy.github.io/#installation">Introduction</a></p>
 <p>Now let's write custom APIs for <code>Create</code>, <code>Retrieve</code>, <code>Update</code> and <code>Delete</code> a <code>Book</code>:</p>
@@ -1107,256 +1173,138 @@
 </code></pre></div>
 <h2 id="apis">APIs<a class="headerlink" href="#apis" title="Permanent link">#</a></h2>
 <h3 id="api-create-a-book">API - Create a Book<a class="headerlink" href="#api-create-a-book" title="Permanent link">#</a></h3>
-<p>Now we are going to create a book on <code>post</code> request, We need to:</p>
+<p>Now we are going to create a book on <code>POST</code> request, we need to:</p>
 <ol>
 <li>
-<p>Declare <code>post</code> method in <code>BookAPI</code>:
-    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.app</span> <span class="kn">import</span> <span class="n">GenericAPI</span>
+<p>Inherit from <code>CreateAPI</code>:
+    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.generics</span> <span class="kn">import</span> <span class="n">CreateAPI</span>
 
 
-<span class="k">class</span> <span class="nc">BookAPI</span><span class="p">(</span><span class="n">GenericAPI</span><span class="p">):</span>
-
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="o">...</span>
+<span class="k">class</span> <span class="nc">BookAPI</span><span class="p">(</span><span class="n">CreateAPI</span><span class="p">):</span>
+    <span class="o">...</span>
 </code></pre></div></p>
 </li>
 <li>
-<p>Declare <code>request: Request</code> in <code>BookAPI.post()</code> function:
-    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.app</span> <span class="kn">import</span> <span class="n">GenericAPI</span>
-<span class="kn">from</span> <span class="nn">panther.request</span> <span class="kn">import</span> <span class="n">Request</span>
-
-
-<span class="k">class</span> <span class="nc">BookAPI</span><span class="p">(</span><span class="n">GenericAPI</span><span class="p">):</span>
-
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
-        <span class="o">...</span>
-</code></pre></div></p>
-</li>
-<li>
-<p>Create serializer in <code>app/serializers.py</code>, we used <code>pydantic</code> for the <code>validation</code> of <code>request.data</code> :
-    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
-
-
-<span class="k">class</span> <span class="nc">BookSerializer</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">author</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">pages_count</span><span class="p">:</span> <span class="nb">int</span>
-</code></pre></div></p>
-</li>
-<li>
-<p>Pass the created serializer to our <code>BookAPI</code> as <code>input_model</code> so the incoming data will be validated and cleaned automatically:</p>
-<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.app</span> <span class="kn">import</span> <span class="n">GenericAPI</span>
-<span class="kn">from</span> <span class="nn">panther.request</span> <span class="kn">import</span> <span class="n">Request</span>
-
-<span class="kn">from</span> <span class="nn">app.serializers</span> <span class="kn">import</span> <span class="n">BookSerializer</span>
-
-
-<span class="k">class</span> <span class="nc">BookAPI</span><span class="p">(</span><span class="n">GenericAPI</span><span class="p">):</span>
-    <span class="n">input_model</span> <span class="o">=</span> <span class="n">BookSerializer</span>
-
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
-        <span class="o">...</span>
-</code></pre></div>
-   Now we have access to <code>request.data</code>, We are going to use it like the below for ease of use, so the auto-suggest helps us in development:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.app</span> <span class="kn">import</span> <span class="n">GenericAPI</span>
-<span class="kn">from</span> <span class="nn">panther.request</span> <span class="kn">import</span> <span class="n">Request</span>
-
-<span class="kn">from</span> <span class="nn">app.serializers</span> <span class="kn">import</span> <span class="n">BookSerializer</span>
-
-
-<span class="k">class</span> <span class="nc">BookAPI</span><span class="p">(</span><span class="n">GenericAPI</span><span class="p">):</span>
-    <span class="n">input_model</span> <span class="o">=</span> <span class="n">BookSerializer</span>
-
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
-        <span class="n">body</span><span class="p">:</span> <span class="n">BookSerializer</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">validated_data</span>
-        <span class="o">...</span>
-</code></pre></div>
-</li>
-<li>
-<p>Now we have access to the validated data, and we can create our first book:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.app</span> <span class="kn">import</span> <span class="n">GenericAPI</span>
-<span class="kn">from</span> <span class="nn">panther.request</span> <span class="kn">import</span> <span class="n">Request</span>
-
-<span class="kn">from</span> <span class="nn">app.serializers</span> <span class="kn">import</span> <span class="n">BookSerializer</span>
+<p>Create a ModelSerializer in <code>app/serializers.py</code>, for <code>validation</code> of the <code>request.data</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.serializer</span> <span class="kn">import</span> <span class="n">ModelSerializer</span>
 <span class="kn">from</span> <span class="nn">app.models</span> <span class="kn">import</span> <span class="n">Book</span>
 
-
-<span class="k">class</span> <span class="nc">BookAPI</span><span class="p">(</span><span class="n">GenericAPI</span><span class="p">):</span>
-    <span class="n">input_model</span> <span class="o">=</span> <span class="n">BookSerializer</span>
-
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
-        <span class="n">body</span><span class="p">:</span> <span class="n">BookSerializer</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">validated_data</span>
-        <span class="k">await</span> <span class="n">Book</span><span class="o">.</span><span class="n">insert_one</span><span class="p">(</span>
-            <span class="n">name</span><span class="o">=</span><span class="n">body</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-            <span class="n">author</span><span class="o">=</span><span class="n">body</span><span class="o">.</span><span class="n">author</span><span class="p">,</span>
-            <span class="n">pages_count</span><span class="o">=</span><span class="n">body</span><span class="o">.</span><span class="n">pages_count</span><span class="p">,</span>
-        <span class="p">)</span>
-        <span class="o">...</span>
+<span class="k">class</span> <span class="nc">BookSerializer</span><span class="p">(</span><span class="n">ModelSerializer</span><span class="p">):</span>
+    <span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">Book</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;author&#39;</span><span class="p">,</span> <span class="s1">&#39;pages_count&#39;</span><span class="p">]</span>
 </code></pre></div>
 </li>
 <li>
-<p>And finally we return <code>201 Created</code> status_code as response of <code>post</code>:
-    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther</span> <span class="kn">import</span> <span class="n">status</span>
-<span class="kn">from</span> <span class="nn">panther.app</span> <span class="kn">import</span> <span class="n">GenericAPI</span>
-<span class="kn">from</span> <span class="nn">panther.request</span> <span class="kn">import</span> <span class="n">Request</span>
-<span class="kn">from</span> <span class="nn">panther.response</span> <span class="kn">import</span> <span class="n">Response</span>
-
+<p>Set the created serializer in <code>BookAPI</code> as <code>input_model</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.app</span> <span class="kn">import</span> <span class="n">CreateAPI</span>
 <span class="kn">from</span> <span class="nn">app.serializers</span> <span class="kn">import</span> <span class="n">BookSerializer</span>
-<span class="kn">from</span> <span class="nn">app.models</span> <span class="kn">import</span> <span class="n">Book</span>
 
 
-<span class="k">class</span> <span class="nc">BookAPI</span><span class="p">(</span><span class="n">GenericAPI</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">BookAPI</span><span class="p">(</span><span class="n">CreateAPI</span><span class="p">):</span>
     <span class="n">input_model</span> <span class="o">=</span> <span class="n">BookSerializer</span>
-
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
-        <span class="n">body</span><span class="p">:</span> <span class="n">BookSerializer</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">validated_data</span>
-        <span class="n">book</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Book</span><span class="o">.</span><span class="n">insert_one</span><span class="p">(</span>
-            <span class="n">name</span><span class="o">=</span><span class="n">body</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-            <span class="n">author</span><span class="o">=</span><span class="n">body</span><span class="o">.</span><span class="n">author</span><span class="p">,</span>
-            <span class="n">pages_count</span><span class="o">=</span><span class="n">body</span><span class="o">.</span><span class="n">pages_count</span><span class="p">,</span>
-        <span class="p">)</span>
-        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">book</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_201_CREATED</span><span class="p">)</span>
-</code></pre></div></p>
+</code></pre></div>
 </li>
 </ol>
-<blockquote>
-<p>The response.data can be <code>Instance of Models</code>, <code>dict</code>, <code>str</code>, <code>tuple</code>, <code>list</code>, <code>str</code> or <code>None</code></p>
-<p>Panther will return <code>None</code> if you don't return anything as response.</p>
-</blockquote>
+<p>It is going to create a <code>Book</code> with incoming <code>request.data</code> and return that instance to user with status code of <code>201</code></p>
 <h3 id="api-list-of-books">API - List of Books<a class="headerlink" href="#api-list-of-books" title="Permanent link">#</a></h3>
-<p>We just need to add another method for <code>GET</code> method and return the lists of books:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther</span> <span class="kn">import</span> <span class="n">status</span>
-<span class="kn">from</span> <span class="nn">panther.app</span> <span class="kn">import</span> <span class="n">GenericAPI</span>
-<span class="kn">from</span> <span class="nn">panther.request</span> <span class="kn">import</span> <span class="n">Request</span>
-<span class="kn">from</span> <span class="nn">panther.response</span> <span class="kn">import</span> <span class="n">Response</span>
-
-<span class="kn">from</span> <span class="nn">app.serializers</span> <span class="kn">import</span> <span class="n">BookSerializer</span>
-<span class="kn">from</span> <span class="nn">app.models</span> <span class="kn">import</span> <span class="n">Book</span>
-
-
-<span class="k">class</span> <span class="nc">BookAPI</span><span class="p">(</span><span class="n">GenericAPI</span><span class="p">):</span>
-    <span class="n">input_model</span> <span class="o">=</span> <span class="n">BookSerializer</span>
-
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
-        <span class="o">...</span>
-
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">books</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Book</span><span class="o">.</span><span class="n">find</span><span class="p">()</span>
-        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">books</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_200_OK</span><span class="p">)</span>
-</code></pre></div>
-<blockquote>
-<p>Panther validate input with <code>input_model</code>, only in <code>POST</code>, <code>PUT</code>, <code>PATCH</code> methods.</p>
-</blockquote>
-<h3 id="filter-response-fields">Filter Response Fields<a class="headerlink" href="#filter-response-fields" title="Permanent link">#</a></h3>
-<p>Assume we don't want to return field <code>author</code> in response:</p>
+<p>Let's return list of books of <code>GET</code> method, we need to:</p>
 <ol>
 <li>
-<p>Create new serializer in <code>app/serializers.py</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
+<p>Inherit from <code>ListAPI</code>
+    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.generics</span> <span class="kn">import</span> <span class="n">CreateAPI</span><span class="p">,</span> <span class="n">ListAPI</span>
+<span class="kn">from</span> <span class="nn">app.serializers</span> <span class="kn">import</span> <span class="n">BookSerializer</span>
 
-
-<span class="k">class</span> <span class="nc">BookOutputSerializer</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">pages_count</span><span class="p">:</span> <span class="nb">int</span>
-</code></pre></div>
+<span class="k">class</span> <span class="nc">BookAPI</span><span class="p">(</span><span class="n">CreateAPI</span><span class="p">,</span> <span class="n">ListAPI</span><span class="p">):</span>
+    <span class="n">input_model</span> <span class="o">=</span> <span class="n">BookSerializer</span>
+    <span class="o">...</span>
+</code></pre></div></p>
 </li>
 <li>
-<p>Add the <code>BookOutputSerializer</code> as <code>output_model</code> to your <code>class</code></p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther</span> <span class="kn">import</span> <span class="n">status</span>
-<span class="kn">from</span> <span class="nn">panther.app</span> <span class="kn">import</span> <span class="n">GenericAPI</span>
+<p>define <code>objects</code> method, so the <code>ListAPI</code> knows to return which books</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.generics</span> <span class="kn">import</span> <span class="n">CreateAPI</span><span class="p">,</span> <span class="n">ListAPI</span>
 <span class="kn">from</span> <span class="nn">panther.request</span> <span class="kn">import</span> <span class="n">Request</span>
-<span class="kn">from</span> <span class="nn">panther.response</span> <span class="kn">import</span> <span class="n">Response</span>
 
-<span class="kn">from</span> <span class="nn">app.serializers</span> <span class="kn">import</span> <span class="n">BookSerializer</span><span class="p">,</span> <span class="n">BookOutputSerializer</span>
 <span class="kn">from</span> <span class="nn">app.models</span> <span class="kn">import</span> <span class="n">Book</span>
+<span class="kn">from</span> <span class="nn">app.serializers</span> <span class="kn">import</span> <span class="n">BookSerializer</span>
 
-
-<span class="k">class</span> <span class="nc">BookAPI</span><span class="p">(</span><span class="n">GenericAPI</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">BookAPI</span><span class="p">(</span><span class="n">CreateAPI</span><span class="p">,</span> <span class="n">ListAPI</span><span class="p">):</span>
     <span class="n">input_model</span> <span class="o">=</span> <span class="n">BookSerializer</span>
-    <span class="n">output_model</span> <span class="o">=</span> <span class="n">BookOutputSerializer</span>
 
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
-        <span class="o">...</span>
-
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">books</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Book</span><span class="o">.</span><span class="n">find</span><span class="p">()</span>
-        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">books</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_200_OK</span><span class="p">)</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">objects</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="k">await</span> <span class="n">Book</span><span class="o">.</span><span class="n">find</span><span class="p">()</span>
 </code></pre></div>
 </li>
 </ol>
-<blockquote>
-<p>Panther use the <code>output_model</code>, in all methods.</p>
-</blockquote>
-<h3 id="cache-the-response">Cache The Response<a class="headerlink" href="#cache-the-response" title="Permanent link">#</a></h3>
-<p>For caching the response, we should add <code>cache=True</code> in <code>API()</code>.
-And it will return the cached response every time till <code>cache_exp_time</code></p>
-<p>For setting a custom expiration time for API we need to add <code>cache_exp_time</code> to <code>API()</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
-
-<span class="kn">from</span> <span class="nn">panther</span> <span class="kn">import</span> <span class="n">status</span>
-<span class="kn">from</span> <span class="nn">panther.app</span> <span class="kn">import</span> <span class="n">GenericAPI</span>
+<h3 id="pagination-search-filter-sort">Pagination, Search, Filter, Sort<a class="headerlink" href="#pagination-search-filter-sort" title="Permanent link">#</a></h3>
+<h4 id="pagination">Pagination<a class="headerlink" href="#pagination" title="Permanent link">#</a></h4>
+<p>Use <code>panther.pagination.Pagination</code> as <code>pagination</code></p>
+<p><strong>Usage:</strong> It will look for the <code>limit</code> and <code>skip</code> in the <code>query params</code> and return its own response template</p>
+<p><strong>Example:</strong> <code>?limit=10&amp;skip=20</code></p>
+<hr />
+<h4 id="search">Search<a class="headerlink" href="#search" title="Permanent link">#</a></h4>
+<p>Define the fields you want the search, query on them in <code>search_fields</code> </p>
+<p>The value of <code>search_fields</code> should be <code>list</code></p>
+<p><strong>Usage:</strong> It works with <code>search</code> query param --&gt; <code>?search=maybe_name_of_the_book_or_author</code></p>
+<p><strong>Example:</strong> <code>?search=maybe_name_of_the_book_or_author</code></p>
+<hr />
+<h4 id="filter">Filter<a class="headerlink" href="#filter" title="Permanent link">#</a></h4>
+<p>Define the fields you want to be filterable in <code>filter_fields</code> </p>
+<p>The value of <code>filter_fields</code> should be <code>list</code></p>
+<p><strong>Usage:</strong> It will look for each value of the <code>filter_fields</code> in the <code>query params</code> and query on them</p>
+<p><strong>Example:</strong> <code>?name=name_of_the_book&amp;author=author_of_the_book</code></p>
+<hr />
+<h4 id="sort">Sort<a class="headerlink" href="#sort" title="Permanent link">#</a></h4>
+<p>Define the fields you want to be sortable in <code>sort_fields</code> </p>
+<p>The value of <code>sort_fields</code> should be <code>list</code></p>
+<p><strong>Usage:</strong> It will look for each value of the <code>sort_fields</code> in the <code>query params</code> and sort with them</p>
+<p><strong>Example:</strong> <code>?sort=pages_count,-name</code></p>
+<p><strong>Notice:</strong>
+   - fields should be separated with a column <code>,</code>
+   - use <code>field_name</code> for ascending sort
+   - use <code>-field_name</code> for descending sort</p>
+<hr />
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.generics</span> <span class="kn">import</span> <span class="n">CreateAPI</span><span class="p">,</span> <span class="n">ListAPI</span>
+<span class="kn">from</span> <span class="nn">panther.pagination</span> <span class="kn">import</span> <span class="n">Pagination</span>
 <span class="kn">from</span> <span class="nn">panther.request</span> <span class="kn">import</span> <span class="n">Request</span>
-<span class="kn">from</span> <span class="nn">panther.response</span> <span class="kn">import</span> <span class="n">Response</span>
 
-<span class="kn">from</span> <span class="nn">app.serializers</span> <span class="kn">import</span> <span class="n">BookSerializer</span><span class="p">,</span> <span class="n">BookOutputSerializer</span>
 <span class="kn">from</span> <span class="nn">app.models</span> <span class="kn">import</span> <span class="n">Book</span>
+<span class="kn">from</span> <span class="nn">app.serializers</span> <span class="kn">import</span> <span class="n">BookSerializer</span><span class="p">,</span> <span class="n">BookOutputSerializer</span>
 
-
-<span class="k">class</span> <span class="nc">BookAPI</span><span class="p">(</span><span class="n">GenericAPI</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">BookAPI</span><span class="p">(</span><span class="n">CreateAPI</span><span class="p">,</span> <span class="n">ListAPI</span><span class="p">):</span>
     <span class="n">input_model</span> <span class="o">=</span> <span class="n">BookSerializer</span>
     <span class="n">output_model</span> <span class="o">=</span> <span class="n">BookOutputSerializer</span>
-    <span class="n">cache</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="n">cache_exp_time</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">pagination</span> <span class="o">=</span> <span class="n">Pagination</span>
+    <span class="n">search_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;author&#39;</span><span class="p">]</span>
+    <span class="n">filter_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;author&#39;</span><span class="p">]</span>
+    <span class="n">sort_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;pages_count&#39;</span><span class="p">]</span>
 
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
-        <span class="o">...</span>
-
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">books</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Book</span><span class="o">.</span><span class="n">find</span><span class="p">()</span>
-        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">books</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_200_OK</span><span class="p">)</span>
-</code></pre></div>
-<blockquote>
-<p>Panther is going to use the <code>DEFAULT_CACHE_EXP</code> from <code>core/configs.py</code> if <code>cache_exp_time</code> has not been set.</p>
-</blockquote>
-<h3 id="throttle-the-request">Throttle The Request<a class="headerlink" href="#throttle-the-request" title="Permanent link">#</a></h3>
-<p>For setting rate limit for requests, we can add <a href="https://pantherpy.github.io/throttling/">throttling</a> to <code>BookAPI</code>, it should be the instance of <code>panther.throttling.Throttling</code>,
-something like below <em>(in the below example user can't request more than 10 times in a minutes)</em>:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
-
-<span class="kn">from</span> <span class="nn">panther</span> <span class="kn">import</span> <span class="n">status</span>
-<span class="kn">from</span> <span class="nn">panther.app</span> <span class="kn">import</span> <span class="n">GenericAPI</span>
-<span class="kn">from</span> <span class="nn">panther.request</span> <span class="kn">import</span> <span class="n">Request</span>
-<span class="kn">from</span> <span class="nn">panther.response</span> <span class="kn">import</span> <span class="n">Response</span>
-<span class="kn">from</span> <span class="nn">panther.throttling</span> <span class="kn">import</span> <span class="n">Throttling</span>
-
-<span class="kn">from</span> <span class="nn">app.serializers</span> <span class="kn">import</span> <span class="n">BookSerializer</span><span class="p">,</span> <span class="n">BookOutputSerializer</span>
-<span class="kn">from</span> <span class="nn">app.models</span> <span class="kn">import</span> <span class="n">Book</span>
-
-
-<span class="k">class</span> <span class="nc">BookAPI</span><span class="p">(</span><span class="n">GenericAPI</span><span class="p">):</span>
-    <span class="n">input_model</span> <span class="o">=</span> <span class="n">BookSerializer</span>
-    <span class="n">output_model</span> <span class="o">=</span> <span class="n">BookOutputSerializer</span>
-    <span class="n">cache</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="n">cache_exp_time</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-    <span class="n">throttling</span> <span class="o">=</span> <span class="n">Throttling</span><span class="p">(</span><span class="n">rate</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
-
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
-        <span class="o">...</span>
-
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">books</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Book</span><span class="o">.</span><span class="n">find</span><span class="p">()</span>
-        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">books</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_200_OK</span><span class="p">)</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">objects</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="k">await</span> <span class="n">Book</span><span class="o">.</span><span class="n">find</span><span class="p">()</span>
 </code></pre></div>
 <h3 id="api-retrieve-a-book">API - Retrieve a Book<a class="headerlink" href="#api-retrieve-a-book" title="Permanent link">#</a></h3>
-<p>For <code>retrieve</code>, <code>update</code> and <code>delete</code> API, we are going to</p>
+<p>Now we are going to retrieve a book on <code>GET</code> request, we need to:</p>
 <ol>
 <li>
-<p>Create another class named <code>SingleBookAPI</code> in <code>app/apis.py</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.app</span> <span class="kn">import</span> <span class="n">GenericAPI</span>
+<p>Inherit from <code>RetrieveAPI</code>:
+    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.generics</span> <span class="kn">import</span> <span class="n">RetrieveAPI</span>
 
 
-<span class="k">class</span> <span class="nc">SingleBookAPI</span><span class="p">(</span><span class="n">GenericAPI</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">SingleBookAPI</span><span class="p">(</span><span class="n">RetrieveAPI</span><span class="p">):</span>
     <span class="o">...</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>define <code>object</code> method, so the <code>RetrieveAPI</code> knows to return which book</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.generics</span> <span class="kn">import</span> <span class="n">RetrieveAPI</span>
+<span class="kn">from</span> <span class="nn">panther.request</span> <span class="kn">import</span> <span class="n">Request</span>
+<span class="kn">from</span> <span class="nn">app.models</span> <span class="kn">import</span> <span class="n">Book</span>
+
+
+<span class="k">class</span> <span class="nc">SingleBookAPI</span><span class="p">(</span><span class="n">RetrieveAPI</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">object</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="k">await</span> <span class="n">Book</span><span class="o">.</span><span class="n">find_one_or_raise</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;book_id&#39;</span><span class="p">])</span>
 </code></pre></div>
 </li>
 <li>
@@ -1373,79 +1321,63 @@ something like below <em>(in the below example user can't request more than 10 t
 </ol>
 <blockquote>
 <p>You should write the <a href="https://pantherpy.github.io/urls/#path-variables-are-handled-like-below">Path Variable</a> in <code>&lt;</code> and <code>&gt;</code></p>
-<p>You should have the parameter with the same name of <code>path variable</code> in you <code>api</code> with normal <code>type hints</code></p>
-<p>Panther will convert type of the <code>path variable</code> to your parameter type, then pass it</p>
 </blockquote>
+<h3 id="api-update-a-book">API - Update a Book<a class="headerlink" href="#api-update-a-book" title="Permanent link">#</a></h3>
 <ol>
 <li>
-<p>Complete the api:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther</span> <span class="kn">import</span> <span class="n">status</span>
-<span class="kn">from</span> <span class="nn">panther.app</span> <span class="kn">import</span> <span class="n">GenericAPI</span>
-<span class="kn">from</span> <span class="nn">panther.response</span> <span class="kn">import</span> <span class="n">Response</span>
-
+<p>Inherit from <code>UpdateAPI</code></p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.generics</span> <span class="kn">import</span> <span class="n">RetrieveAPI</span><span class="p">,</span> <span class="n">UpdateAPI</span>
+<span class="kn">from</span> <span class="nn">panther.request</span> <span class="kn">import</span> <span class="n">Request</span>
 <span class="kn">from</span> <span class="nn">app.models</span> <span class="kn">import</span> <span class="n">Book</span>
 
 
-<span class="k">class</span> <span class="nc">SingleBookAPI</span><span class="p">(</span><span class="n">GenericAPI</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">SingleBookAPI</span><span class="p">(</span><span class="n">RetrieveAPI</span><span class="p">,</span> <span class="n">UpdateAPI</span><span class="p">):</span>
+    <span class="o">...</span>
 
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">book_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">book</span> <span class="o">:=</span> <span class="k">await</span> <span class="n">Book</span><span class="o">.</span><span class="n">find_one</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">book_id</span><span class="p">):</span>
-            <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">book</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_200_OK</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_404_NOT_FOUND</span><span class="p">)</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">object</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="k">await</span> <span class="n">Book</span><span class="o">.</span><span class="n">find_one_or_raise</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;book_id&#39;</span><span class="p">])</span>
 </code></pre></div>
 </li>
-</ol>
-<h3 id="api-update-a-book">API - Update a Book<a class="headerlink" href="#api-update-a-book" title="Permanent link">#</a></h3>
-<p>Add another method named <code>put()</code> for <code>PUT</code> method and update the book you want:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther</span> <span class="kn">import</span> <span class="n">status</span>
-<span class="kn">from</span> <span class="nn">panther.app</span> <span class="kn">import</span> <span class="n">GenericAPI</span>
+<li>
+<p>Add <code>input_model</code> so the <code>UpdateAPI</code> knows how to validate the <code>request.data</code></p>
+<blockquote>
+<p>We use the same serializer as CreateAPI serializer we defined above</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.generics</span> <span class="kn">import</span> <span class="n">RetrieveAPI</span><span class="p">,</span> <span class="n">UpdateAPI</span>
 <span class="kn">from</span> <span class="nn">panther.request</span> <span class="kn">import</span> <span class="n">Request</span>
-<span class="kn">from</span> <span class="nn">panther.response</span> <span class="kn">import</span> <span class="n">Response</span>
-
 <span class="kn">from</span> <span class="nn">app.models</span> <span class="kn">import</span> <span class="n">Book</span>
 <span class="kn">from</span> <span class="nn">app.serializers</span> <span class="kn">import</span> <span class="n">BookSerializer</span>
 
 
-<span class="k">class</span> <span class="nc">SingleBookAPI</span><span class="p">(</span><span class="n">GenericAPI</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">SingleBookAPI</span><span class="p">(</span><span class="n">RetrieveAPI</span><span class="p">,</span> <span class="n">UpdateAPI</span><span class="p">):</span>
     <span class="n">input_model</span> <span class="o">=</span> <span class="n">BookSerializer</span>
 
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">book_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-        <span class="o">...</span>
-
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">,</span> <span class="n">book_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-        <span class="n">is_updated</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Book</span><span class="o">.</span><span class="n">update_one</span><span class="p">({</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="n">book_id</span><span class="p">},</span> <span class="n">request</span><span class="o">.</span><span class="n">validated_data</span><span class="o">.</span><span class="n">model_dump</span><span class="p">())</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;is_updated&#39;</span><span class="p">:</span> <span class="n">is_updated</span><span class="p">}</span>
-        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_202_ACCEPTED</span><span class="p">)</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">object</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="k">await</span> <span class="n">Book</span><span class="o">.</span><span class="n">find_one_or_raise</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;book_id&#39;</span><span class="p">])</span>
 </code></pre></div>
-<blockquote>
-<p>You can handle the PATCH the same way as PUT</p>
-</blockquote>
+</li>
+</ol>
 <h3 id="api-delete-a-book">API - Delete a Book<a class="headerlink" href="#api-delete-a-book" title="Permanent link">#</a></h3>
-<p>Add another method named <code>delete()</code> for <code>DELETE</code> method and delete the book you want:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther</span> <span class="kn">import</span> <span class="n">status</span>
-<span class="kn">from</span> <span class="nn">panther.app</span> <span class="kn">import</span> <span class="n">GenericAPI</span>
+<ol>
+<li>
+<p>Inherit from <code>DeleteAPI</code></p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.generics</span> <span class="kn">import</span> <span class="n">RetrieveAPI</span><span class="p">,</span> <span class="n">UpdateAPI</span><span class="p">,</span> <span class="n">DeleteAPI</span>
 <span class="kn">from</span> <span class="nn">panther.request</span> <span class="kn">import</span> <span class="n">Request</span>
-<span class="kn">from</span> <span class="nn">panther.response</span> <span class="kn">import</span> <span class="n">Response</span>
-
 <span class="kn">from</span> <span class="nn">app.models</span> <span class="kn">import</span> <span class="n">Book</span>
+<span class="kn">from</span> <span class="nn">app.serializers</span> <span class="kn">import</span> <span class="n">BookSerializer</span>
 
-<span class="k">class</span> <span class="nc">SingleBookAPI</span><span class="p">(</span><span class="n">GenericAPI</span><span class="p">):</span>
+
+<span class="k">class</span> <span class="nc">SingleBookAPI</span><span class="p">(</span><span class="n">RetrieveAPI</span><span class="p">,</span> <span class="n">UpdateAPI</span><span class="p">,</span> <span class="n">DeleteAPI</span><span class="p">):</span>
     <span class="n">input_model</span> <span class="o">=</span> <span class="n">BookSerializer</span>
 
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">book_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-        <span class="o">...</span>
-
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">,</span> <span class="n">book_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-        <span class="o">...</span>
-
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">book_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-        <span class="n">is_deleted</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Book</span><span class="o">.</span><span class="n">delete_one</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">book_id</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">is_deleted</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_204_NO_CONTENT</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span><span class="p">)</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">object</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="k">await</span> <span class="n">Book</span><span class="o">.</span><span class="n">find_one_or_raise</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;book_id&#39;</span><span class="p">])</span>
 </code></pre></div>
+</li>
+<li>
+<p>It requires <code>object</code> method which we defined before, so it's done.</p>
+</li>
+</ol>
 
 
 

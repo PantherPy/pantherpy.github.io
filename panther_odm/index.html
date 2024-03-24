@@ -289,7 +289,7 @@
             
   
   <span class="md-ellipsis">
-    First Crud
+    How To CRUD
   </span>
   
 
@@ -299,7 +299,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            First Crud
+            How To CRUD
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -336,6 +336,27 @@
   
   <span class="md-ellipsis">
     Class Base
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../generic_crud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Generic
   </span>
   
 
@@ -436,6 +457,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="find">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#skip-limit-and-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      skip, limit and sort
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cursor" class="md-nav__link">
+    <span class="md-ellipsis">
+      cursor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -469,15 +514,6 @@
   <a href="#aggregate" class="md-nav__link">
     <span class="md-ellipsis">
       aggregate
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#find-with-skip-limit-sort" class="md-nav__link">
-    <span class="md-ellipsis">
-      find with skip, limit, sort
     </span>
   </a>
   
@@ -726,6 +762,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../events/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Events
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../urls/" class="md-nav__link">
         
   
@@ -899,6 +955,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="find">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#skip-limit-and-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      skip, limit and sort
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cursor" class="md-nav__link">
+    <span class="md-ellipsis">
+      cursor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -932,15 +1012,6 @@
   <a href="#aggregate" class="md-nav__link">
     <span class="md-ellipsis">
       aggregate
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#find-with-skip-limit-sort" class="md-nav__link">
-    <span class="md-ellipsis">
-      find with skip, limit, sort
     </span>
   </a>
   
@@ -1086,15 +1157,25 @@
 </code></pre></div>
 <h3 id="find">find<a class="headerlink" href="#find" title="Permanent link">#</a></h3>
 <p>Get documents from the database.</p>
-<div class="highlight"><pre><span></span><code><span class="n">users</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">User</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">users</span><span class="p">:</span> <span class="n">Cursor</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
 <span class="ow">or</span>
-<span class="n">users</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">User</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ali&#39;</span><span class="p">})</span>
+<span class="n">users</span><span class="p">:</span> <span class="n">Cursor</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ali&#39;</span><span class="p">})</span>
 <span class="ow">or</span>
-<span class="n">users</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">User</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">},</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
+<span class="n">users</span><span class="p">:</span> <span class="n">Cursor</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">},</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
 </code></pre></div>
+<h4 id="skip-limit-and-sort">skip, limit and sort<a class="headerlink" href="#skip-limit-and-sort" title="Permanent link">#</a></h4>
+<p><code>skip()</code>, <code>limit()</code> and <code>sort()</code> are also available as chain methods</p>
+<div class="highlight"><pre><span></span><code><span class="n">users</span><span class="p">:</span> <span class="n">Cursor</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">skip</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">([(</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)])</span>
+</code></pre></div>
+<h4 id="cursor">cursor<a class="headerlink" href="#cursor" title="Permanent link">#</a></h4>
+<p>The <code>find()</code> method, returns a <code>Crusor</code> depends on the database
+- <code>from panther.db.cursor import Cursor</code> for <code>MongoDB</code>
+- <code>from pantherdb import Cursor</code> for <code>PantherDB</code></p>
+<p>You can work with these cursors as list and directly pass them to <code>Response(data=cursor)</code></p>
+<p>They are designed to return an instance of your model in <code>iterations</code>(<code>__next__()</code>) or accessing by index(<code>__getitem__()</code>)</p>
 <h3 id="all">all<a class="headerlink" href="#all" title="Permanent link">#</a></h3>
 <p>Get all documents from the database. (Alias of <code>.find()</code>)</p>
-<div class="highlight"><pre><span></span><code><span class="n">users</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">User</span><span class="p">]</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="n">users</span><span class="p">:</span> <span class="n">Cursor</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
 </code></pre></div>
 <h3 id="first">first<a class="headerlink" href="#first" title="Permanent link">#</a></h3>
 <p>Get the first document from the database.</p>
@@ -1133,17 +1214,6 @@
     <span class="o">...</span>
 <span class="p">]</span>
 <span class="n">users</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">pipeline</span><span class="p">)</span>
-</code></pre></div>
-<h3 id="find-with-skip-limit-sort">find with skip, limit, sort<a class="headerlink" href="#find-with-skip-limit-sort" title="Permanent link">#</a></h3>
-<p>Get limited documents from the database from offset and sorted by something</p>
-<blockquote>
-<p>Only available in mongodb</p>
-</blockquote>
-<div class="highlight"><pre><span></span><code><span class="n">users</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">User</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">skip</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s1">&#39;_id&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="ow">or</span>
-<span class="n">users</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">User</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ali&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">skip</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s1">&#39;_id&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="ow">or</span>
-<span class="n">users</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">User</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">},</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">skip</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s1">&#39;_id&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="count">count<a class="headerlink" href="#count" title="Permanent link">#</a></h3>
 <p>Count the number of documents in this collection.</p>
@@ -1267,7 +1337,7 @@
 <ul>
 <li>Get a single document from the database]</li>
 <li><strong>or</strong> </li>
-<li>Raise an <code>APIError(f'{Model} Does Not Exist')</code></li>
+<li>Raise an <code>NotFoundAPIError(f'{Model} Does Not Exist')</code></li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">app.models</span> <span class="kn">import</span> <span class="n">User</span>
 
@@ -1278,9 +1348,11 @@
 <span class="n">user</span><span class="p">:</span> <span class="n">User</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find_one_or_raise</span><span class="p">({</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">},</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="save">save<a class="headerlink" href="#save" title="Permanent link">#</a></h3>
-<p>Save the document.
-- If it has id --&gt; <code>Update</code> It
-- else --&gt; <code>Insert</code> It</p>
+<p>Save the document.</p>
+<ul>
+<li>If it has id --&gt; <code>Update</code> It</li>
+<li>else --&gt; <code>Insert</code> It</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">app.models</span> <span class="kn">import</span> <span class="n">User</span>
 
 <span class="c1"># Update</span>

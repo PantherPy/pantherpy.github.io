@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://pantherpy.github.io/urls/">
+        <link rel="canonical" href="https://pantherpy.github.io/events/">
       
       
-        <link rel="prev" href="../events/">
+        <link rel="prev" href="../authentications/">
       
       
-        <link rel="next" href="../throttling/">
+        <link rel="next" href="../urls/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>URLs - Panther</title>
+        <title>Events - Panther</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#path-variables-are-handled-like-below" class="md-skip">
+        <a href="#startup-event" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              URLs
+              Events
             
           </span>
         </div>
@@ -537,26 +537,6 @@
       
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../events/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Events
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
     
   
   
@@ -571,7 +551,7 @@
           
   
   <span class="md-ellipsis">
-    URLs
+    Events
   </span>
   
 
@@ -582,7 +562,7 @@
         
   
   <span class="md-ellipsis">
-    URLs
+    Events
   </span>
   
 
@@ -602,18 +582,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#path-variables-are-handled-like-below" class="md-nav__link">
+  <a href="#startup-event" class="md-nav__link">
     <span class="md-ellipsis">
-      Path Variables are handled like below:
+      Startup Event
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
+  <a href="#shutdown-event" class="md-nav__link">
     <span class="md-ellipsis">
-      Example
+      Shutdown Event
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notice
     </span>
   </a>
   
@@ -623,6 +612,26 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../urls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    URLs
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -772,18 +781,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#path-variables-are-handled-like-below" class="md-nav__link">
+  <a href="#startup-event" class="md-nav__link">
     <span class="md-ellipsis">
-      Path Variables are handled like below:
+      Startup Event
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
+  <a href="#shutdown-event" class="md-nav__link">
     <span class="md-ellipsis">
-      Example
+      Shutdown Event
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notice
     </span>
   </a>
   
@@ -807,62 +825,29 @@
   
 
 
-  <h1>URLs</h1>
+  <h1>Events</h1>
 
-<blockquote>
-<p><b>Variable:</b> <code>URLs</code> </p>
-<p><b>Type:</b> <code>str</code> </p>
-<p><b>Required:</b> <code>True</code></p>
-</blockquote>
+<h2 id="startup-event">Startup Event<a class="headerlink" href="#startup-event" title="Permanent link">#</a></h2>
+<p>Use <code>Event.startup</code> decorator</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.events</span> <span class="kn">import</span> <span class="n">Event</span>
+
+
+<span class="nd">@Event</span><span class="o">.</span><span class="n">startup</span>
+<span class="k">def</span> <span class="nf">do_something_on_startup</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, I am at startup&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="shutdown-event">Shutdown Event<a class="headerlink" href="#shutdown-event" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.events</span> <span class="kn">import</span> <span class="n">Event</span>
+
+
+<span class="nd">@Event</span><span class="o">.</span><span class="n">shutdown</span>
+<span class="k">def</span> <span class="nf">do_something_on_shutdown</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Good Bye, I am at shutdown&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="notice">Notice<a class="headerlink" href="#notice" title="Permanent link">#</a></h2>
 <ul>
-<li><code>URLs</code> should point to your root <code>urls</code> with dotted address (<code>path.module.url_dict</code>)</li>
-<li>The target of <code>URLs</code> should be <code>dict</code>.</li>
-<li>
-<p>The <code>key</code> in <code>url_routing</code> is the <code>path</code> &amp; value is the <code>endpoint</code> or another <code>dict</code></p>
-</li>
-<li>
-<h4 id="path-variables-are-handled-like-below">Path Variables are handled like below:<a class="headerlink" href="#path-variables-are-handled-like-below" title="Permanent link">#</a></h4>
-<ul>
-<li>&lt;<code>variable_name</code>&gt;</li>
-<li>Example: <code>user/&lt;user_id&gt;/blog/&lt;title&gt;/</code></li>
-<li>The <code>endpoint</code> should have parameters with those names too</li>
-<li>Example Function-Base: <code>async def profile_api(user_id: int, title: str):</code></li>
-<li>Example Class-Base: <code>async def get(self, user_id: int, title: str):</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">#</a></h2>
-<ul>
-<li><code>configs</code>
-    <div class="highlight"><pre><span></span><code><span class="n">URLs</span> <span class="o">=</span> <span class="s1">&#39;core.urls.url_routing</span>
-</code></pre></div></li>
-<li>core/urls.py
-    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">app.urls</span> <span class="kn">import</span> <span class="n">app_urls</span>
-
-<span class="n">url_routing</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;user/&#39;</span><span class="p">:</span> <span class="n">app_urls</span><span class="p">,</span>
-<span class="p">}</span>
-</code></pre></div></li>
-<li>
-<p>app/urls.py
-    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">app.apis</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="n">urls</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;login/&#39;</span><span class="p">:</span> <span class="n">login_api</span><span class="p">,</span>
-    <span class="s1">&#39;logout/&#39;</span><span class="p">:</span> <span class="n">logout_api</span><span class="p">,</span>
-    <span class="s1">&#39;profile/&lt;user_id&gt;/&#39;</span><span class="p">:</span> <span class="n">profile_api</span><span class="p">,</span>
-<span class="p">}</span>
-</code></pre></div></p>
-</li>
-<li>
-<p>app/apis.py
-    <div class="highlight"><pre><span></span><code><span class="o">...</span>
-
-<span class="nd">@API</span><span class="p">()</span>
-<span class="k">async</span> <span class="k">def</span> <span class="nf">profile_api</span><span class="p">(</span><span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">User</span><span class="o">.</span><span class="n">find_one</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">user_id</span><span class="p">)</span>
-</code></pre></div></p>
-</li>
+<li>You can have <strong>multiple</strong> events on <code>startup</code> and <code>shutdown</code></li>
+<li>Events can be <code>sync</code> or <code>async</code></li>
 </ul>
 
 

@@ -289,7 +289,7 @@
             
   
   <span class="md-ellipsis">
-    First Crud
+    How To CRUD
   </span>
   
 
@@ -299,7 +299,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            First Crud
+            How To CRUD
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -336,6 +336,27 @@
   
   <span class="md-ellipsis">
     Class Base
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../generic_crud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Generic
   </span>
   
 
@@ -504,6 +525,26 @@
   
   <span class="md-ellipsis">
     Authentications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Events
   </span>
   
 
@@ -818,9 +859,13 @@
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">Panther</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">configs</span><span class="o">=</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">urls</span><span class="o">=</span><span class="n">url_routing</span><span class="p">)</span>
 </code></pre></div>
-4. Run the project
-<div class="highlight"><pre><span></span><code>panther<span class="w"> </span>run<span class="w"> </span>
-</code></pre></div></p>
+4. Run the project</p>
+<ul>
+<li>If name of your file is <code>main.py</code> --&gt; 
+<code>panther run</code></li>
+<li>else use <code>uvicorn</code> --&gt;
+   <code>uvicorn file_name:app</code></li>
+</ul>
 </li>
 </ol>
 <h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">#</a></h3>
@@ -828,7 +873,6 @@
 <li><code>URLs</code> is a required config unless you pass the <code>urls</code> directly to the <code>Panther</code>  </li>
 <li>When you pass the <code>configs</code> to the <code>Panther(configs=...)</code>, Panther is going to load the configs from this file, 
 else it is going to load <code>core/configs.py</code> file</li>
-<li>You can pass the <code>startup</code> and <code>shutdown</code> functions to the <code>Panther()</code> too.</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther</span> <span class="kn">import</span> <span class="n">Panther</span>
 <span class="kn">from</span> <span class="nn">panther.app</span> <span class="kn">import</span> <span class="n">API</span>
@@ -841,13 +885,7 @@ else it is going to load <code>core/configs.py</code> file</li>
      <span class="s1">&#39;/&#39;</span><span class="p">:</span> <span class="n">hello_world_api</span><span class="p">,</span>
 <span class="p">}</span>
 
-<span class="k">def</span> <span class="nf">startup</span><span class="p">():</span>
-   <span class="k">pass</span>
-
-<span class="k">def</span> <span class="nf">shutdown</span><span class="p">():</span>
-   <span class="k">pass</span>
-
-<span class="n">app</span> <span class="o">=</span> <span class="n">Panther</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">configs</span><span class="o">=</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">urls</span><span class="o">=</span><span class="n">url_routing</span><span class="p">,</span> <span class="n">startup</span><span class="o">=</span><span class="n">startup</span><span class="p">,</span> <span class="n">shutdown</span><span class="o">=</span><span class="n">shutdown</span><span class="p">)</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Panther</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">configs</span><span class="o">=</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">urls</span><span class="o">=</span><span class="n">url_routing</span><span class="p">)</span>
 </code></pre></div>
 
 

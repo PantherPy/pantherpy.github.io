@@ -289,7 +289,7 @@
             
   
   <span class="md-ellipsis">
-    First Crud
+    How To CRUD
   </span>
   
 
@@ -299,7 +299,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            First Crud
+            How To CRUD
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -336,6 +336,27 @@
   
   <span class="md-ellipsis">
     Class Base
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../generic_crud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Generic
   </span>
   
 
@@ -597,6 +618,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../events/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Events
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../urls/" class="md-nav__link">
         
   
@@ -828,7 +869,7 @@
         <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">accept</span><span class="p">()</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">connection_id</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
 
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">receive</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bytes</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">receive</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bytes</span><span class="p">):</span>
         <span class="c1"># Just Echo The Message</span>
         <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
 </code></pre></div>
@@ -895,7 +936,6 @@ you have to use <code>--preload</code>, like below:
  <span class="p">}</span>
 </code></pre></div></p>
 </li>
-<li>WebSocket Echo Example -&gt; <a href="https://github.com/PantherPy/echo_websocket">Https://GitHub.com/PantherPy/echo_websocket</a></li>
 <li>Enjoy.</li>
 </ol>
 
