@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://pantherpy.github.io/redis/">
+        <link rel="canonical" href="https://pantherpy.github.io/model/">
       
       
-        <link rel="prev" href="../query/">
+        <link rel="prev" href="../urls/">
       
       
-        <link rel="next" href="../events/">
+        <link rel="next" href="../database/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Redis - Panther</title>
+        <title>Models - Panther</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#redis-integration" class="md-skip">
+        <a href="#panther-models" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Redis
+              Models
             
           </span>
         </div>
@@ -365,10 +365,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../model/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Models
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -379,6 +401,104 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defining-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defining Attributes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Defining Attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list" class="md-nav__link">
+    <span class="md-ellipsis">
+      List
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dictionary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dictionary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nested-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nested Models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#foreign-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Foreign Keys
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optional Attributes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -431,32 +551,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Redis
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../redis/" class="md-nav__link">
         
   
   
@@ -467,53 +565,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuration
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      How It Works
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#features-using-redis" class="md-nav__link">
-    <span class="md-ellipsis">
-      Features Using Redis
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -948,29 +999,80 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+  <a href="#creating-a-model" class="md-nav__link">
     <span class="md-ellipsis">
-      Configuration
+      Creating a Model
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
+  <a href="#defining-attributes" class="md-nav__link">
     <span class="md-ellipsis">
-      How It Works
+      Defining Attributes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Defining Attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Types
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#features-using-redis" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#list" class="md-nav__link">
     <span class="md-ellipsis">
-      Features Using Redis
+      List
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dictionary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dictionary
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nested-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nested Models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#foreign-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Foreign Keys
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optional Attributes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -993,44 +1095,158 @@
   
 
 
-<h1 id="redis-integration">Redis Integration<a class="headerlink" href="#redis-integration" title="Permanent link">#</a></h1>
-<p>Redis is a fast, in-memory key-value store commonly used for caching, session management, real-time analytics, and pub/sub messaging. Panther supports Redis natively, allowing you to leverage its power for authentication, caching, throttling, and websocket pub/sub features.</p>
-<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">#</a></h2>
-<p>To enable Redis in Panther, fill out the <code>REDIS</code> block in your configuration file:</p>
-<div class="highlight"><pre><span></span><code><span class="n">REDIS</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;panther.db.connections.RedisConnection&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;host&#39;</span><span class="p">:</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>  <span class="c1"># Optional, default is &#39;localhost&#39;</span>
-    <span class="s1">&#39;port&#39;</span><span class="p">:</span> <span class="mi">6379</span><span class="p">,</span>         <span class="c1"># Optional, default is 6379</span>
-    <span class="s1">&#39;db&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>              <span class="c1"># Optional, default is 0</span>
-    <span class="c1"># Add any other redis-py supported parameters here</span>
-<span class="p">}</span>
-</code></pre></div>
-<p><strong>Note:</strong> The arguments are the same as those accepted by <code>redis.Redis.__init__()</code> from the <a href="https://redis.readthedocs.io/en/latest/">redis documentation</a>.</p>
-<h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">#</a></h2>
-<ul>
-<li>Panther creates an asynchronous Redis connection based on the <code>REDIS</code> block you define in your configuration.</li>
-<li>
-<p>You can access the Redis connection via:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.db.connections</span><span class="w"> </span><span class="kn">import</span> <span class="n">redis</span>
-</code></pre></div>
-</li>
-<li>
-<p>Example usage:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.db.connections</span><span class="w"> </span><span class="kn">import</span> <span class="n">redis</span>
+<h1 id="panther-models">Panther Models<a class="headerlink" href="#panther-models" title="Permanent link">#</a></h1>
+<p>Panther models allow you to define your data schema and interact with the database using Python classes. They are built on top of <code>pydantic.BaseModel</code> and extend its functionality with database query capabilities.</p>
+<h2 id="creating-a-model">Creating a Model<a class="headerlink" href="#creating-a-model" title="Permanent link">#</a></h2>
+<p>To create a Panther model, define a class that inherits from <code>panther.db.Model</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/models.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.db</span><span class="w"> </span><span class="kn">import</span> <span class="n">Model</span>
 
-<span class="k">await</span> <span class="n">redis</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">redis</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-</code></pre></div>
+<span class="k">class</span><span class="w"> </span><span class="nc">User</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">username</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">age</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">is_active</span><span class="p">:</span> <span class="nb">bool</span>
+</code></pre></div></td></tr></table></div>
+<p>Panther models inherit from both <code>pydantic.BaseModel</code> and <code>panther.db.Query</code>, giving you access to data validation and database queries.</p>
+<h2 id="defining-attributes">Defining Attributes<a class="headerlink" href="#defining-attributes" title="Permanent link">#</a></h2>
+<p>You can define model attributes (columns) using Python type hints. Each attribute type is handled as follows:</p>
+<h3 id="general-types">General Types<a class="headerlink" href="#general-types" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>str</strong>, <strong>int</strong>, <strong>bool</strong>: Saved in the database as-is.</li>
+</ul>
+<p><strong>Example:</strong>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/models.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.db</span><span class="w"> </span><span class="kn">import</span> <span class="n">Model</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Product</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">price</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">in_stock</span><span class="p">:</span> <span class="nb">bool</span>
+</code></pre></div></td></tr></table></div></p>
+<h3 id="list">List<a class="headerlink" href="#list" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>list</strong>: Each item in the list is processed according to its type. The child type can be a primitive, a <code>pydantic.BaseModel</code>, or another <code>Model</code>.</li>
+</ul>
+<p><strong>Example:</strong>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/models.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseModel</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">panther.db</span><span class="w"> </span><span class="kn">import</span> <span class="n">Model</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Book</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">title</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">author</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">tags</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Library</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">books</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Book</span><span class="p">]</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">School</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">libraries</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Library</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div></p>
+<h3 id="dictionary">Dictionary<a class="headerlink" href="#dictionary" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>dict</strong>: Each value in the dictionary is processed according to its type. Only plain <code>dict</code> is supported (not typed dicts like <code>dict[str, int]</code>).</li>
+</ul>
+<p><strong>Example:</strong>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/models.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.db</span><span class="w"> </span><span class="kn">import</span> <span class="n">Model</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Config</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">settings</span><span class="p">:</span> <span class="nb">dict</span>
+</code></pre></div></td></tr></table></div></p>
+<h3 id="nested-models">Nested Models<a class="headerlink" href="#nested-models" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>pydantic.BaseModel</strong>: Treated like a dictionary, but with type information for each item. Each item is processed according to its type.</li>
+</ul>
+<p><strong>Example:</strong>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/models.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseModel</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">panther.db</span><span class="w"> </span><span class="kn">import</span> <span class="n">Model</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Address</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">city</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">zipcode</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Customer</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">address</span><span class="p">:</span> <span class="n">Address</span>
+</code></pre></div></td></tr></table></div></p>
+<h3 id="foreign-keys">Foreign Keys<a class="headerlink" href="#foreign-keys" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>panther.db.Model</strong>: Treated as a foreign key relationship.<ol>
+<li>The related model's value is stored in the database.</li>
+<li>Its <code>id</code> is saved in the main document (table).</li>
+<li>This process is handled automatically, so you always have access to all attributes of the related model.</li>
+<li>Panther retrieves the corresponding value from the database and returns it as a fully populated model instance.</li>
+</ol>
 </li>
 </ul>
-<h2 id="features-using-redis">Features Using Redis<a class="headerlink" href="#features-using-redis" title="Permanent link">#</a></h2>
+<p><strong>Example:</strong>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/models.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.db</span><span class="w"> </span><span class="kn">import</span> <span class="n">Model</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Department</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Employee</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">department</span><span class="p">:</span> <span class="n">Department</span>
+</code></pre></div></td></tr></table></div></p>
+<h3 id="optional-attributes">Optional Attributes<a class="headerlink" href="#optional-attributes" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>Authentication:</strong> Store and retrieve JWT tokens for logout functionality.</li>
-<li><strong>Caching:</strong> Cache responses for faster access.</li>
-<li><strong>Throttling:</strong> Track and limit request rates.</li>
-<li><strong>WebSocket:</strong> Manage pub/sub connections for real-time features.</li>
+<li>You can make an attribute optional by using a union with <code>None</code> (e.g., <code>str | None</code>) and providing a default value (e.g., <code>= None</code>).</li>
+<li>If you make an attribute optional, you must assign a default value.</li>
 </ul>
+<p><strong>Example:</strong>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/models.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.db</span><span class="w"> </span><span class="kn">import</span> <span class="n">Model</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Article</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">title</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">summary</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Optional attribute with default value</span>
+</code></pre></div></td></tr></table></div></p>
 
 
 
@@ -1060,7 +1276,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../query/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Query">
+          <a href="../urls/" class="md-footer__link md-footer__link--prev" aria-label="Previous: URLs">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1070,20 +1286,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Query
+                URLs
               </div>
             </div>
           </a>
         
         
           
-          <a href="../events/" class="md-footer__link md-footer__link--next" aria-label="Next: Events">
+          <a href="../database/" class="md-footer__link md-footer__link--next" aria-label="Next: Database">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Events
+                Database
               </div>
             </div>
             <div class="md-footer__button md-icon">

@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://pantherpy.github.io/redis/">
+        <link rel="canonical" href="https://pantherpy.github.io/admin_panel/">
       
       
-        <link rel="prev" href="../query/">
+        <link rel="prev" href="../log_queries/">
       
       
-        <link rel="next" href="../events/">
+        <link rel="next" href="../roadmap/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Redis - Panther</title>
+        <title>Admin Panel - Panther</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#redis-integration" class="md-skip">
+        <a href="#panther-admin-panel" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Redis
+              Admin Panel
             
           </span>
         </div>
@@ -431,32 +431,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Redis
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../redis/" class="md-nav__link">
         
   
   
@@ -467,53 +445,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuration
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      How It Works
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#features-using-redis" class="md-nav__link">
-    <span class="md-ellipsis">
-      Features Using Redis
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -698,18 +629,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" checked>
         
           
           <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
@@ -725,7 +658,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_18">
             <span class="md-nav__icon md-icon"></span>
             Advance Configs
@@ -851,10 +784,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../admin_panel/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Admin Panel
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -865,6 +820,77 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-the-admin-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enabling the Admin Panel
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enabling the Admin Panel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-add-the-admin-panel-urls" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Add the Admin Panel URLs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-update-your-configs-if-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Update Your Configs (if needed)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-run-your-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Run Your Application
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-access-the-admin-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Access the Admin Panel
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -948,29 +974,53 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+  <a href="#enabling-the-admin-panel" class="md-nav__link">
     <span class="md-ellipsis">
-      Configuration
+      Enabling the Admin Panel
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enabling the Admin Panel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-add-the-admin-panel-urls" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Add the Admin Panel URLs
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#2-update-your-configs-if-needed" class="md-nav__link">
     <span class="md-ellipsis">
-      How It Works
+      2. Update Your Configs (if needed)
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#features-using-redis" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#3-run-your-application" class="md-nav__link">
     <span class="md-ellipsis">
-      Features Using Redis
+      3. Run Your Application
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-access-the-admin-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Access the Admin Panel
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -993,44 +1043,38 @@
   
 
 
-<h1 id="redis-integration">Redis Integration<a class="headerlink" href="#redis-integration" title="Permanent link">#</a></h1>
-<p>Redis is a fast, in-memory key-value store commonly used for caching, session management, real-time analytics, and pub/sub messaging. Panther supports Redis natively, allowing you to leverage its power for authentication, caching, throttling, and websocket pub/sub features.</p>
-<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">#</a></h2>
-<p>To enable Redis in Panther, fill out the <code>REDIS</code> block in your configuration file:</p>
-<div class="highlight"><pre><span></span><code><span class="n">REDIS</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;panther.db.connections.RedisConnection&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;host&#39;</span><span class="p">:</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>  <span class="c1"># Optional, default is &#39;localhost&#39;</span>
-    <span class="s1">&#39;port&#39;</span><span class="p">:</span> <span class="mi">6379</span><span class="p">,</span>         <span class="c1"># Optional, default is 6379</span>
-    <span class="s1">&#39;db&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>              <span class="c1"># Optional, default is 0</span>
-    <span class="c1"># Add any other redis-py supported parameters here</span>
+<blockquote>
+<p><strong>⚠️ WARNING: The Panther Admin Panel is currently in development. Do NOT use it in production environments!</strong></p>
+<p><strong>Contributions, feedback, and ideas are welcome!</strong></p>
+</blockquote>
+<h1 id="panther-admin-panel">Panther Admin Panel<a class="headerlink" href="#panther-admin-panel" title="Permanent link">#</a></h1>
+<p>Panther provides a built-in admin panel that allows you to easily manage your database models through a web interface.</p>
+<h2 id="enabling-the-admin-panel">Enabling the Admin Panel<a class="headerlink" href="#enabling-the-admin-panel" title="Permanent link">#</a></h2>
+<p>To enable the admin panel in your project, follow these steps:</p>
+<h3 id="1-add-the-admin-panel-urls">1. Add the Admin Panel URLs<a class="headerlink" href="#1-add-the-admin-panel-urls" title="Permanent link">#</a></h3>
+<p>First, ensure your main URL configuration includes the admin panel routes. e.g. open your <code>core/urls.py</code> and add the following:</p>
+<div class="highlight"><span class="filename">core/urls.py</span><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.panel.urls</span><span class="w"> </span><span class="kn">import</span> <span class="n">url_routing</span> <span class="k">as</span> <span class="n">panel_url_routing</span>
+
+<span class="n">url_routing</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;panel/&#39;</span><span class="p">:</span> <span class="n">panel_url_routing</span><span class="p">,</span>
+    <span class="c1"># ... other routes ...</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><strong>Note:</strong> The arguments are the same as those accepted by <code>redis.Redis.__init__()</code> from the <a href="https://redis.readthedocs.io/en/latest/">redis documentation</a>.</p>
-<h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">#</a></h2>
-<ul>
-<li>Panther creates an asynchronous Redis connection based on the <code>REDIS</code> block you define in your configuration.</li>
-<li>
-<p>You can access the Redis connection via:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.db.connections</span><span class="w"> </span><span class="kn">import</span> <span class="n">redis</span>
+<blockquote>
+<p><strong>Note:</strong> If you are using a different file for your URL routing, adjust the import and assignment accordingly.</p>
+</blockquote>
+<h3 id="2-update-your-configs-if-needed">2. Update Your Configs (if needed)<a class="headerlink" href="#2-update-your-configs-if-needed" title="Permanent link">#</a></h3>
+<p>If your project uses a custom configuration file for URLs, make sure it points to your updated URL routing. For example, in <code>core/configs.py</code>:</p>
+<div class="highlight"><span class="filename">core/configs.py</span><pre><span></span><code><span class="n">URLs</span> <span class="o">=</span> <span class="s1">&#39;core.urls.url_routing&#39;</span>
 </code></pre></div>
-</li>
-<li>
-<p>Example usage:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.db.connections</span><span class="w"> </span><span class="kn">import</span> <span class="n">redis</span>
-
-<span class="k">await</span> <span class="n">redis</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">redis</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<h3 id="3-run-your-application">3. Run Your Application<a class="headerlink" href="#3-run-your-application" title="Permanent link">#</a></h3>
+<p>Start your Panther application as usual:</p>
+<div class="highlight"><pre><span></span><code>panther<span class="w"> </span>run<span class="w"> </span>main:app
 </code></pre></div>
-</li>
-</ul>
-<h2 id="features-using-redis">Features Using Redis<a class="headerlink" href="#features-using-redis" title="Permanent link">#</a></h2>
-<ul>
-<li><strong>Authentication:</strong> Store and retrieve JWT tokens for logout functionality.</li>
-<li><strong>Caching:</strong> Cache responses for faster access.</li>
-<li><strong>Throttling:</strong> Track and limit request rates.</li>
-<li><strong>WebSocket:</strong> Manage pub/sub connections for real-time features.</li>
-</ul>
+<h3 id="4-access-the-admin-panel">4. Access the Admin Panel<a class="headerlink" href="#4-access-the-admin-panel" title="Permanent link">#</a></h3>
+<p>Open your browser and navigate to:</p>
+<p><a href="http://127.0.0.1:8000/panel/">http://127.0.0.1:8000/panel/</a></p>
+<p>You should see the Panther Admin Panel interface, where you can manage your database models. </p>
 
 
 
@@ -1060,7 +1104,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../query/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Query">
+          <a href="../log_queries/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Log Queries">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1070,20 +1114,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Query
+                Log Queries
               </div>
             </div>
           </a>
         
         
           
-          <a href="../events/" class="md-footer__link md-footer__link--next" aria-label="Next: Events">
+          <a href="../roadmap/" class="md-footer__link md-footer__link--next" aria-label="Next: Roadmap">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Events
+                Roadmap
               </div>
             </div>
             <div class="md-footer__button md-icon">

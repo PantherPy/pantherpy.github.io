@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://pantherpy.github.io/redis/">
+        <link rel="canonical" href="https://pantherpy.github.io/templates/">
       
       
-        <link rel="prev" href="../query/">
+        <link rel="prev" href="../user_model/">
       
       
-        <link rel="next" href="../events/">
+        <link rel="next" href="../timezone/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Redis - Panther</title>
+        <title>Template Response - Panther</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#redis-integration" class="md-skip">
+        <a href="#template-responses" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Redis
+              Template Response
             
           </span>
         </div>
@@ -431,32 +431,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Redis
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../redis/" class="md-nav__link">
         
   
   
@@ -467,53 +445,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuration
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      How It Works
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#features-using-redis" class="md-nav__link">
-    <span class="md-ellipsis">
-      Features Using Redis
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -698,18 +629,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" checked>
         
           
           <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
@@ -725,7 +658,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_18">
             <span class="md-nav__icon md-icon"></span>
             Advance Configs
@@ -759,10 +692,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../templates/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Template Response
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -773,6 +728,101 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-templates-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting Templates Directory
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-template-files-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Template Files (Recommended)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-inline-html-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Inline HTML Content
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#template-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Template Context
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Project Structure
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -954,21 +1004,69 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-templates-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting Templates Directory
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
+  <a href="#usage" class="md-nav__link">
     <span class="md-ellipsis">
-      How It Works
+      Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-template-files-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Template Files (Recommended)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-inline-html-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Inline HTML Content
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#template-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Template Context
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#features-using-redis" class="md-nav__link">
+  <a href="#example-project-structure" class="md-nav__link">
     <span class="md-ellipsis">
-      Features Using Redis
+      Example Project Structure
     </span>
   </a>
   
@@ -993,44 +1091,128 @@
   
 
 
-<h1 id="redis-integration">Redis Integration<a class="headerlink" href="#redis-integration" title="Permanent link">#</a></h1>
-<p>Redis is a fast, in-memory key-value store commonly used for caching, session management, real-time analytics, and pub/sub messaging. Panther supports Redis natively, allowing you to leverage its power for authentication, caching, throttling, and websocket pub/sub features.</p>
+<h1 id="template-responses">Template Responses<a class="headerlink" href="#template-responses" title="Permanent link">#</a></h1>
+<p>Panther provides <code>TemplateResponse</code> for serving HTML templates with dynamic content. This guide explains how to configure and use templates in your Panther application.</p>
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">#</a></h2>
-<p>To enable Redis in Panther, fill out the <code>REDIS</code> block in your configuration file:</p>
-<div class="highlight"><pre><span></span><code><span class="n">REDIS</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;panther.db.connections.RedisConnection&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;host&#39;</span><span class="p">:</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>  <span class="c1"># Optional, default is &#39;localhost&#39;</span>
-    <span class="s1">&#39;port&#39;</span><span class="p">:</span> <span class="mi">6379</span><span class="p">,</span>         <span class="c1"># Optional, default is 6379</span>
-    <span class="s1">&#39;db&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>              <span class="c1"># Optional, default is 0</span>
-    <span class="c1"># Add any other redis-py supported parameters here</span>
-<span class="p">}</span>
-</code></pre></div>
-<p><strong>Note:</strong> The arguments are the same as those accepted by <code>redis.Redis.__init__()</code> from the <a href="https://redis.readthedocs.io/en/latest/">redis documentation</a>.</p>
-<h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">#</a></h2>
-<ul>
-<li>Panther creates an asynchronous Redis connection based on the <code>REDIS</code> block you define in your configuration.</li>
-<li>
-<p>You can access the Redis connection via:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.db.connections</span><span class="w"> </span><span class="kn">import</span> <span class="n">redis</span>
-</code></pre></div>
-</li>
-<li>
-<p>Example usage:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.db.connections</span><span class="w"> </span><span class="kn">import</span> <span class="n">redis</span>
+<p>To use <code>TemplateResponse</code> with template files, you must configure the <code>TEMPLATES_DIR</code> setting in your application configuration.</p>
+<h3 id="setting-templates-directory">Setting Templates Directory<a class="headerlink" href="#setting-templates-directory" title="Permanent link">#</a></h3>
+<p>The <code>TEMPLATES_DIR</code> can be a single string or a list of strings representing template directory paths:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Single directory</span>
+<span class="n">TEMPLATES_DIR</span> <span class="o">=</span> <span class="s1">&#39;templates/&#39;</span>
 
-<span class="k">await</span> <span class="n">redis</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">redis</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="c1"># Multiple directories (searched in order)</span>
+<span class="n">TEMPLATES_DIR</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;templates/&#39;</span><span class="p">,</span> <span class="s1">&#39;app/templates/&#39;</span><span class="p">,</span> <span class="s1">&#39;shared/templates/&#39;</span><span class="p">]</span>
 </code></pre></div>
-</li>
-</ul>
-<h2 id="features-using-redis">Features Using Redis<a class="headerlink" href="#features-using-redis" title="Permanent link">#</a></h2>
+<p><strong>Default value:</strong> <code>'./'</code> (current directory)</p>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h2>
+<h3 id="using-template-files-recommended">Using Template Files (Recommended)<a class="headerlink" href="#using-template-files-recommended" title="Permanent link">#</a></h3>
+<p>When you have template files, use the <code>name</code> parameter to specify the template file:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.app</span><span class="w"> </span><span class="kn">import</span> <span class="n">API</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">panther.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">TemplateResponse</span>
+
+
+<span class="nd">@API</span><span class="p">()</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">my_html</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">TemplateResponse</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;index.html&#39;</span><span class="p">,</span> 
+        <span class="n">context</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ali&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;Welcome&#39;</span><span class="p">}</span>
+    <span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Benefits:</strong></p>
 <ul>
-<li><strong>Authentication:</strong> Store and retrieve JWT tokens for logout functionality.</li>
-<li><strong>Caching:</strong> Cache responses for faster access.</li>
-<li><strong>Throttling:</strong> Track and limit request rates.</li>
-<li><strong>WebSocket:</strong> Manage pub/sub connections for real-time features.</li>
+<li>Cleaner code separation</li>
+<li>Template reusability</li>
+<li>Better maintainability</li>
 </ul>
+<h3 id="using-inline-html-content">Using Inline HTML Content<a class="headerlink" href="#using-inline-html-content" title="Permanent link">#</a></h3>
+<p>For simple cases or when you need to generate HTML dynamically, you can pass the HTML content directly:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.app</span><span class="w"> </span><span class="kn">import</span> <span class="n">API</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">panther.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">TemplateResponse</span>
+
+
+<span class="nd">@API</span><span class="p">()</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">my_html</span><span class="p">():</span>
+    <span class="n">html_content</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;index.html&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">TemplateResponse</span><span class="p">(</span>
+        <span class="n">source</span><span class="o">=</span><span class="n">html_content</span><span class="p">,</span> 
+        <span class="n">context</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ali&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;Welcome&#39;</span><span class="p">}</span>
+    <span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Note:</strong> This approach requires you to manage the HTML content manually and doesn't provide the benefits of template files.</p>
+<h2 id="template-context">Template Context<a class="headerlink" href="#template-context" title="Permanent link">#</a></h2>
+<p>The <code>context</code> parameter allows you to pass variables to your templates:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.app</span><span class="w"> </span><span class="kn">import</span> <span class="n">API</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">panther.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">TemplateResponse</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_user</span><span class="p">(</span><span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">...</span>
+
+<span class="nd">@API</span><span class="p">()</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">user_profile</span><span class="p">(</span><span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">get_user</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span>  <span class="c1"># Your user fetching logic</span>
+    <span class="k">return</span> <span class="n">TemplateResponse</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;profile.html&#39;</span><span class="p">,</span>
+        <span class="n">context</span><span class="o">=</span><span class="p">{</span>
+            <span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="n">user</span><span class="p">,</span>
+            <span class="s1">&#39;page_title&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">user</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="se">\&#39;</span><span class="s1">s Profile&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;is_admin&#39;</span><span class="p">:</span> <span class="n">user</span><span class="o">.</span><span class="n">role</span> <span class="o">==</span> <span class="s1">&#39;admin&#39;</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="example-project-structure">Example Project Structure<a class="headerlink" href="#example-project-structure" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>my_panther_app/
+├── core/
+│   ├── __init__.py
+│   ├── configs.py
+│   └── urls.py
+├── app/
+│   ├── __init__.py
+│   ├── urls.py
+│   └── views.py
+├── templates/
+│   ├── base.html
+│   ├── index.html
+│   └── profile.html
+└── main.py
+</code></pre></div>
+<p>With this structure, your configuration would be:</p>
+<div class="highlight"><span class="filename">core/configs.py</span><pre><span></span><code><span class="n">TEMPLATES_DIR</span> <span class="o">=</span> <span class="s1">&#39;templates/&#39;</span>
+</code></pre></div>
 
 
 
@@ -1060,7 +1242,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../query/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Query">
+          <a href="../user_model/" class="md-footer__link md-footer__link--prev" aria-label="Previous: User Model">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1070,20 +1252,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Query
+                User Model
               </div>
             </div>
           </a>
         
         
           
-          <a href="../events/" class="md-footer__link md-footer__link--next" aria-label="Next: Events">
+          <a href="../timezone/" class="md-footer__link md-footer__link--next" aria-label="Next: Timezone">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Events
+                Timezone
               </div>
             </div>
             <div class="md-footer__button md-icon">

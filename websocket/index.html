@@ -13,14 +13,14 @@
         <link rel="canonical" href="https://pantherpy.github.io/websocket/">
       
       
-        <link rel="prev" href="../serializer/">
+        <link rel="prev" href="../middlewares/">
       
       
-        <link rel="next" href="../middlewares/">
+        <link rel="next" href="../single_file/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -67,7 +67,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#structure-requirements" class="md-skip">
+        <a href="#websocket-support-in-panther" class="md-skip">
           Skip to content
         </a>
       
@@ -125,7 +125,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/></svg>
@@ -150,11 +150,13 @@
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -186,13 +188,14 @@
     </div>
   </div>
 </div>
+      
     
     
       <div class="md-header__source">
         <a href="https://github.com/AliRn76/Panther" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
     AliRn76/Panther
@@ -238,7 +241,7 @@
       <a href="https://github.com/AliRn76/Panther" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
     AliRn76/Panther
@@ -258,8 +261,548 @@
       <a href=".." class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../first_crud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    First CRUD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    APIs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../serializer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Serializers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../urls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    URLs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Database
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../query/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Query
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../redis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Redis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Events
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../background_tasks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Background Tasks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authentications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Authentications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../middlewares/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Middlewares
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    WebSocket
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    WebSocket
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#structure-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structure &amp; Requirements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structure &amp; Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-websocket-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a WebSocket Class
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registering-websocket-urls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Registering WebSocket URLs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permissions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-workers-redis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiple Workers &amp; Redis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#closing-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Closing Connections
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Path Variables
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-client-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Client Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#echo-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Echo Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tips &amp; Notes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../single_file/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Single-File Application
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cross-Origin Resource Sharing (CORS)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Open API (Swagger)
+    
   </span>
   
 
@@ -278,28 +821,31 @@
     
     
     
+    
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
-    How To CRUD
+    Advance Configs
+    
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_18">
             <span class="md-nav__icon md-icon"></span>
-            How To CRUD
+            Advance Configs
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -310,11 +856,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../function_first_crud/" class="md-nav__link">
+      <a href="../user_model/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
-    Function Base
+    User Model
+    
   </span>
   
 
@@ -331,11 +879,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../class_first_crud/" class="md-nav__link">
+      <a href="../templates/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
-    Class Base
+    Template Response
+    
   </span>
   
 
@@ -352,11 +902,82 @@
   
   
     <li class="md-nav__item">
-      <a href="../generic_crud/" class="md-nav__link">
+      <a href="../timezone/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
-    Generic
+    Timezone
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ruff/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Auto-Reformatting (Ruff)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../log_queries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Log Queries
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admin_panel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Admin Panel
+    
   </span>
   
 
@@ -380,369 +1001,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../database/" class="md-nav__link">
+      <a href="../roadmap/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
-    Database
-  </span>
-  
-
-      </a>
-    </li>
-  
-
+    Roadmap
     
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../panther_odm/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Panther ODM
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../configs/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Configs
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../redis/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Redis
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../serializer/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Serializer
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    WebSocket
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    WebSocket
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#structure-requirements" class="md-nav__link">
-    <span class="md-ellipsis">
-      Structure &amp; Requirements
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Structure & Requirements">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#create-websocket-class" class="md-nav__link">
-    <span class="md-ellipsis">
-      Create WebSocket Class
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#update-urls" class="md-nav__link">
-    <span class="md-ellipsis">
-      Update URLs
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      How It Works?
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../middlewares/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Middlewares
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../authentications/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Authentications
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../events/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Events
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../urls/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    URLs
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../throttling/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Throttling
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../background_tasks/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Background Tasks
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../single_file/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Single-File
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../monitoring/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Monitoring
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../log_queries/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Log Queries
   </span>
   
 
@@ -761,8 +1026,10 @@
       <a href="../release_notes/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Release Notes
+    
   </span>
   
 
@@ -788,6 +1055,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -802,22 +1071,22 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Structure & Requirements">
+    <nav class="md-nav" aria-label="Structure &amp; Requirements">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#create-websocket-class" class="md-nav__link">
+  <a href="#creating-a-websocket-class" class="md-nav__link">
     <span class="md-ellipsis">
-      Create WebSocket Class
+      Creating a WebSocket Class
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#update-urls" class="md-nav__link">
+  <a href="#registering-websocket-urls" class="md-nav__link">
     <span class="md-ellipsis">
-      Update URLs
+      Registering WebSocket URLs
     </span>
   </a>
   
@@ -831,7 +1100,109 @@
         <li class="md-nav__item">
   <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
-      How It Works?
+      How It Works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permissions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-workers-redis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiple Workers &amp; Redis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#closing-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Closing Connections
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Path Variables
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-client-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Client Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#echo-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Echo Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tips &amp; Notes
     </span>
   </a>
   
@@ -851,93 +1222,262 @@
                 
                   
 
+
   
   
 
 
-  <h1>WebSocket</h1>
-
-<p>Panther supports <code>WebSockets</code> routing just like <code>APIs</code></p>
+<h1 id="websocket-support-in-panther">WebSocket Support in Panther<a class="headerlink" href="#websocket-support-in-panther" title="Permanent link">#</a></h1>
+<p><strong>WebSockets</strong> enable you to build interactive, real-time features such as chat, notifications, and live updates.</p>
+<hr />
 <h2 id="structure-requirements">Structure &amp; Requirements<a class="headerlink" href="#structure-requirements" title="Permanent link">#</a></h2>
-<h3 id="create-websocket-class">Create WebSocket Class<a class="headerlink" href="#create-websocket-class" title="Permanent link">#</a></h3>
-<p>Create the <code>BookWebsocket()</code> in <code>app/websockets.py</code> which inherited from <code>GenericWebsocket</code>: </p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.websocket</span> <span class="kn">import</span> <span class="n">GenericWebsocket</span>
+<h3 id="creating-a-websocket-class">Creating a WebSocket Class<a class="headerlink" href="#creating-a-websocket-class" title="Permanent link">#</a></h3>
+<p>Create a WebSocket handler class in <code>app/websockets.py</code> by inheriting from <code>GenericWebsocket</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/websockets.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.websocket</span><span class="w"> </span><span class="kn">import</span> <span class="n">GenericWebsocket</span>
 
-
-<span class="k">class</span> <span class="nc">BookWebsocket</span><span class="p">(</span><span class="n">GenericWebsocket</span><span class="p">):</span>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">BookWebsocket</span><span class="p">(</span><span class="n">GenericWebsocket</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">accept</span><span class="p">()</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">connection_id</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
 
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">receive</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bytes</span><span class="p">):</span>
-        <span class="c1"># Just Echo The Message</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">receive</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bytes</span><span class="p">):</span>
+        <span class="c1"># Echo the received message back to the client</span>
         <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
-</code></pre></div>
-<blockquote>
-<p>We are going to discuss it below ...</p>
-</blockquote>
-<h3 id="update-urls">Update URLs<a class="headerlink" href="#update-urls" title="Permanent link">#</a></h3>
-<p>Add the <code>BookWebsocket</code> in <code>app/urls.py</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">app.websockets</span> <span class="kn">import</span> <span class="n">BookWebsocket</span>
-
+</code></pre></div></td></tr></table></div>
+<h3 id="registering-websocket-urls">Registering WebSocket URLs<a class="headerlink" href="#registering-websocket-urls" title="Permanent link">#</a></h3>
+<p>Register your WebSocket class in <code>app/urls.py</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/urls.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">app.websockets</span><span class="w"> </span><span class="kn">import</span> <span class="n">BookWebsocket</span>
 
 <span class="n">urls</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;ws/book/&#39;</span><span class="p">:</span> <span class="n">BookWebsocket</span><span class="p">,</span>
 <span class="p">}</span>
-</code></pre></div>
-<h2 id="how-it-works">How It Works?<a class="headerlink" href="#how-it-works" title="Permanent link">#</a></h2>
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p>Panther supports WebSocket routing just like APIs.</p>
+</blockquote>
+<hr />
+<h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">#</a></h2>
 <ol>
-<li>Client tries to connect to your <code>ws/book/</code> url with <code>websocket</code> protocol</li>
-<li>The <code>connect()</code> method of your <code>BookWebsocket</code> is going to call</li>
-<li>You should validate the connection with <code>self.headers</code>, <code>self.query_params</code> or etc</li>
-<li>Then <code>accept()</code> the connection with <code>self.accept()</code> otherwise it is going to be <code>rejected</code> by default.</li>
-<li>Now you can see the unique <code>connection_id</code> which is specified to this user with <code>self.connection_id</code>, you may want to store it somewhere (<code>db</code>, <code>cache</code>, or etc.)</li>
-<li>If the client sends you any message, you will receive it in <code>receive()</code> method, the client message can be <code>str</code> or <code>bytes</code>.</li>
-<li>If you want to <strong>send</strong> anything to the client:<ul>
-<li>In websocket class scope: You can send it with <code>self.send()</code> which only takes <code>data</code>.</li>
-<li>Out of websocket class scope: You can send it with <code>send_message_to_websocket()</code> from <code>panther.websocket</code>, it's an <code>async</code> function which takes 2 args, <code>connection_id</code> and <code>data</code>(which can have any type):
-    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther.websocket</span> <span class="kn">import</span> <span class="n">send_message_to_websocket</span>
-<span class="k">await</span> <span class="n">send_message_to_websocket</span><span class="p">(</span><span class="n">connection_id</span><span class="o">=</span><span class="s1">&#39;7e82d57c9ec0478787b01916910a9f45&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s1">&#39;New Message From WS&#39;</span><span class="p">)</span> 
+<li><strong>Client Connection:</strong> The client connects to your <code>ws/book/</code> URL using the WebSocket protocol.</li>
+<li><strong>Connection Handling:</strong> The <code>connect()</code> method of your WebSocket class is called.</li>
+<li><strong>Validation:</strong> You can validate the connection using <code>self.headers</code>, <code>self.query_params</code>, etc.</li>
+<li><strong>Accept/Reject:</strong> Accept the connection with <code>self.accept()</code>. If not accepted, it is rejected by default.</li>
+<li><strong>Connection ID:</strong> Each connection gets a unique <code>connection_id</code> (accessible via <code>self.connection_id</code>). You may want to store this in a database or cache.</li>
+<li><strong>Receiving Messages:</strong> Incoming messages are handled by the <code>receive()</code> method. Messages can be <code>str</code> or <code>bytes</code>.</li>
+<li><strong>Sending Messages:</strong><ul>
+<li><strong>Within the WebSocket class:</strong> Use <code>self.send(data)</code>.</li>
+<li><strong>Outside the WebSocket class:</strong> Use <code>send_message_to_websocket()</code>:
+  <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.websocket</span><span class="w"> </span><span class="kn">import</span> <span class="n">send_message_to_websocket</span>
+<span class="k">await</span> <span class="n">send_message_to_websocket</span><span class="p">(</span><span class="n">connection_id</span><span class="o">=</span><span class="s1">&#39;7e82d57c9ec0478787b01916910a9f45&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="s1">&#39;New Message From WS&#39;</span><span class="p">)</span>
 </code></pre></div></li>
 </ul>
 </li>
-<li>If you want to use <code>webscoket</code> in a backend with <code>multiple workers</code>, we recommend you to add <code>RedisMiddleware</code> in your <code>configs</code> 
-<a href="https://pantherpy.github.io/middlewares/#redis-middleware">[Adding Redis Middleware]</a></li>
-<li>
-<p>If you <strong>don't</strong> want to add <code>RedisMiddleware</code> and you still want to run <code>websocket</code> with <code>multiple workers</code> with <code>gunicorn</code>, 
-you have to use <code>--preload</code>, like below:
-   <div class="highlight"><pre><span></span><code>gunicorn<span class="w"> </span>-w<span class="w"> </span><span class="m">10</span><span class="w"> </span>-k<span class="w"> </span>uvicorn.workers.UvicornWorker<span class="w"> </span>main:app<span class="w"> </span>--preload
-</code></pre></div></p>
-</li>
-<li>
-<p>If you want to <strong>close</strong> a connection:</p>
-<ul>
-<li>In websocket class scope: You can close connection with <code>self.close()</code> method which takes 2 args, <code>code</code> and <code>reason</code>:
-    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther</span> <span class="kn">import</span> <span class="n">status</span>
-<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">WS_1000_NORMAL_CLOSURE</span><span class="p">,</span> <span class="n">reason</span><span class="o">=</span><span class="s1">&#39;I just want to close it&#39;</span><span class="p">)</span>
-</code></pre></div></li>
-<li>Out of websocket class scope: You can close it with <code>close_websocket_connection()</code> from <code>panther.websocket</code>, it's <code>async</code> function with takes 3 args, <code>connection_id</code>, <code>code</code> and <code>reason</code>, like below: 
-    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">panther</span> <span class="kn">import</span> <span class="n">status</span>
-<span class="kn">from</span> <span class="nn">panther.websocket</span> <span class="kn">import</span> <span class="n">close_websocket_connection</span>
-<span class="k">await</span> <span class="n">close_websocket_connection</span><span class="p">(</span><span class="n">connection_id</span><span class="o">=</span><span class="s1">&#39;7e82d57c9ec0478787b01916910a9f45&#39;</span><span class="p">,</span> <span class="n">code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">WS_1008_POLICY_VIOLATION</span><span class="p">,</span> <span class="n">reason</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-</code></pre></div></li>
-</ul>
-</li>
-<li>
-<p><code>Path Variables</code> will be passed to <code>connect()</code>:
-   <div class="highlight"><pre><span></span><code> <span class="kn">from</span> <span class="nn">panther.websocket</span> <span class="kn">import</span> <span class="n">GenericWebsocket</span>
-
- <span class="k">class</span> <span class="nc">UserWebsocket</span><span class="p">(</span><span class="n">GenericWebsocket</span><span class="p">):</span>
-     <span class="k">async</span> <span class="k">def</span> <span class="nf">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">room_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-         <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">accept</span><span class="p">()</span>
-
- <span class="n">url</span> <span class="o">=</span> <span class="p">{</span>
-     <span class="s1">&#39;/ws/&lt;user_id&gt;/&lt;room_id&gt;/&#39;</span><span class="p">:</span> <span class="n">UserWebsocket</span>   
- <span class="p">}</span>
-</code></pre></div></p>
-</li>
-<li>Enjoy.</li>
 </ol>
+<hr />
+<h2 id="advanced-usage">Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permanent link">#</a></h2>
+<h3 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">#</a></h3>
+<p>You can enable authentication in your WebSocket class by setting <code>auth = True</code> and specifying your authentication class in the configuration with <code>WS_AUTHENTICATION</code>. 
+Panther will use the <code>authentication()</code> method of this class to authenticate the user. 
+There are several built-in options, but we recommend <code>QueryParamJWTAuthentication</code> for WebSocket authentication.</p>
+<div class="highlight"><pre><span></span><code><span class="n">WS_AUTHENTICATION</span> <span class="o">=</span> <span class="s1">&#39;panther.authentications.QueryParamJWTAuthentication&#39;</span>
+</code></pre></div>
+<p>This will set <code>self.user</code> to a <code>UserModel</code> instance or <code>None</code>. The connection will be rejected if any exception occurs during authentication.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/websockets.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.websocket</span><span class="w"> </span><span class="kn">import</span> <span class="n">GenericWebsocket</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MyWebSocket</span><span class="p">(</span><span class="n">GenericWebsocket</span><span class="p">):</span>
+    <span class="n">auth</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="p">)</span>
+        <span class="o">...</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">#</a></h3>
+<p>You can implement your authorization logic using permission classes. Any class that inherits from <code>panther.permissions.BasePermission</code> or implements an <code>authorization()</code> method can be used as a permission class.</p>
+<p>Pass a list of permission classes to your WebSocket class, and Panther will call each class's <code>authorization()</code> method. If any return <code>False</code>, the connection will be rejected.</p>
+<blockquote>
+<p>The <code>authorization()</code> method should be an <code>async classmethod</code>.</p>
+</blockquote>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/websockets.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.websocket</span><span class="w"> </span><span class="kn">import</span> <span class="n">Websocket</span><span class="p">,</span> <span class="n">GenericWebsocket</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">panther.permissions</span><span class="w"> </span><span class="kn">import</span> <span class="n">BasePermission</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MyPermission</span><span class="p">(</span><span class="n">BasePermission</span><span class="p">):</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">authorization</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Websocket</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MyWebSocket</span><span class="p">(</span><span class="n">GenericWebsocket</span><span class="p">):</span>
+    <span class="n">permissions</span> <span class="o">=</span> <span class="p">[</span><span class="n">MyPermission</span><span class="p">]</span>
+
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="o">...</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="multiple-workers-redis">Multiple Workers &amp; Redis<a class="headerlink" href="#multiple-workers-redis" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Recommended:</strong> For running WebSockets with multiple workers, add Redis to your configuration. <a href="../redis/">See Adding Redis</a></li>
+<li><strong>Without Redis:</strong> If you do not use Redis but want to run WebSockets with multiple workers (e.g., with Gunicorn), use the <code>--preload</code> flag:
+  <div class="highlight"><pre><span></span><code>gunicorn<span class="w"> </span>-w<span class="w"> </span><span class="m">10</span><span class="w"> </span>-k<span class="w"> </span>uvicorn.workers.UvicornWorker<span class="w"> </span>main:app<span class="w"> </span>--preload
+</code></pre></div></li>
+</ul>
+<h3 id="closing-connections">Closing Connections<a class="headerlink" href="#closing-connections" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Within the WebSocket class:</strong>
+  <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther</span><span class="w"> </span><span class="kn">import</span> <span class="n">status</span>
+<span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">WS_1000_NORMAL_CLOSURE</span><span class="p">,</span> <span class="n">reason</span><span class="o">=</span><span class="s1">&#39;Closing connection&#39;</span><span class="p">)</span>
+</code></pre></div></li>
+<li><strong>Outside the WebSocket class:</strong>
+  <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther</span><span class="w"> </span><span class="kn">import</span> <span class="n">status</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">panther.websocket</span><span class="w"> </span><span class="kn">import</span> <span class="n">close_websocket_connection</span>
+<span class="k">await</span> <span class="n">close_websocket_connection</span><span class="p">(</span><span class="n">connection_id</span><span class="o">=</span><span class="s1">&#39;7e82d57c9ec0478787b01916910a9f45&#39;</span><span class="p">,</span> <span class="n">code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">WS_1008_POLICY_VIOLATION</span><span class="p">,</span> <span class="n">reason</span><span class="o">=</span><span class="s1">&#39;Closing connection&#39;</span><span class="p">)</span>
+</code></pre></div></li>
+</ul>
+<h3 id="path-variables">Path Variables<a class="headerlink" href="#path-variables" title="Permanent link">#</a></h3>
+<p>You can define path variables in your WebSocket URL. These will be passed to the <code>connect()</code> method:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.websocket</span><span class="w"> </span><span class="kn">import</span> <span class="n">GenericWebsocket</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">UserWebsocket</span><span class="p">(</span><span class="n">GenericWebsocket</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">room_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">accept</span><span class="p">()</span>
+
+<span class="n">urls</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;/ws/&lt;user_id&gt;/&lt;room_id&gt;/&#39;</span><span class="p">:</span> <span class="n">UserWebsocket</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">#</a></h2>
+<h3 id="example-client-code">Example Client Code<a class="headerlink" href="#example-client-code" title="Permanent link">#</a></h3>
+<p><strong>Here's a simple example using JavaScript:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">websocket.js</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">ws</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">WebSocket</span><span class="p">(</span><span class="s1">&#39;ws://127.0.0.1:8000/ws/book/&#39;</span><span class="p">);</span>
+<span class="nx">ws</span><span class="p">.</span><span class="nx">onopen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">ws</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;Hello, server!&#39;</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="nx">ws</span><span class="p">.</span><span class="nx">onmessage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Received:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="nx">ws</span><span class="p">.</span><span class="nx">onclose</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Connection closed&#39;</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="echo-example">Echo Example<a class="headerlink" href="#echo-example" title="Permanent link">#</a></h3>
+<p><strong>Full echo example with WebSocket:</strong></p>
+<p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">main.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther</span><span class="w"> </span><span class="kn">import</span> <span class="n">Panther</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">panther.app</span><span class="w"> </span><span class="kn">import</span> <span class="n">GenericAPI</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">panther.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTMLResponse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">panther.websocket</span><span class="w"> </span><span class="kn">import</span> <span class="n">GenericWebsocket</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">EchoWebsocket</span><span class="p">(</span><span class="n">GenericWebsocket</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">accept</span><span class="p">()</span>
+
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">receive</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bytes</span><span class="p">):</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MainPage</span><span class="p">(</span><span class="n">GenericAPI</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        &lt;input id=&quot;msg&quot;&gt;&lt;button onclick=&quot;s.send(msg.value)&quot;&gt;Send&lt;/button&gt;</span>
+<span class="s2">        &lt;ul id=&quot;log&quot;&gt;&lt;/ul&gt;</span>
+<span class="s2">        &lt;script&gt;</span>
+<span class="s2">            const s = new WebSocket(&#39;ws://127.0.0.1:8000/ws&#39;);</span>
+<span class="s2">            s.onmessage = e =&gt; log.innerHTML += `&lt;li&gt;&lt;- $</span><span class="si">{msg.value}</span><span class="s2">&lt;/li&gt;&lt;li&gt;-&gt; $</span><span class="si">{e.data}</span><span class="s2">&lt;/li&gt;`;</span>
+<span class="s2">        &lt;/script&gt;</span>
+<span class="s2">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">HTMLResponse</span><span class="p">(</span><span class="n">template</span><span class="p">)</span>
+
+<span class="n">url_routing</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;&#39;</span><span class="p">:</span> <span class="n">MainPage</span><span class="p">,</span>
+    <span class="s1">&#39;ws&#39;</span><span class="p">:</span> <span class="n">EchoWebsocket</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Panther</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">configs</span><span class="o">=</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">urls</span><span class="o">=</span><span class="n">url_routing</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<strong>Run</strong> with <code>panther run main:app</code> and <strong>visit</strong> <code>http://127.0.0.1:8000</code>.</p>
+<hr />
+<h2 id="tips-notes">Tips &amp; Notes<a class="headerlink" href="#tips-notes" title="Permanent link">#</a></h2>
+<ul>
+<li><strong>Connection Validation:</strong> Always validate connections in <code>connect()</code> using headers or query parameters as needed.</li>
+<li><strong>Connection IDs:</strong> Store <code>connection_id</code> if you need to send messages to clients outside the WebSocket class.</li>
+<li><strong>Multiple Workers:</strong> Use Redis for scaling WebSockets across multiple workers.</li>
+<li><strong>Error Handling:</strong> Implement error handling in your WebSocket methods for production use.</li>
+<li><strong>Security:</strong> Always validate and sanitize incoming data.</li>
+</ul>
+<hr />
+<p>Enjoy building with Panther WebSockets!</p>
 
 
 
@@ -962,6 +1502,46 @@ you have to use <code>--preload</code>, like below:
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../middlewares/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Middlewares">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Middlewares
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../single_file/" class="md-footer__link md-footer__link--next" aria-label="Next: Single-File Application">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Single-File Application
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -984,10 +1564,12 @@ you have to use <code>--preload</code>, like below:
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.path", "navigation.footer", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>

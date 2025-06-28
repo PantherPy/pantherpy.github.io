@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://pantherpy.github.io/redis/">
+        <link rel="canonical" href="https://pantherpy.github.io/cors/">
       
       
-        <link rel="prev" href="../query/">
+        <link rel="prev" href="../single_file/">
       
       
-        <link rel="next" href="../events/">
+        <link rel="next" href="../open_api/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Redis - Panther</title>
+        <title>Cross-Origin Resource Sharing (CORS) - Panther</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#redis-integration" class="md-skip">
+        <a href="#corsmiddleware" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Redis
+              Cross-Origin Resource Sharing (CORS)
             
           </span>
         </div>
@@ -431,32 +431,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Redis
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../redis/" class="md-nav__link">
         
   
   
@@ -467,53 +445,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuration
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      How It Works
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#features-using-redis" class="md-nav__link">
-    <span class="md-ellipsis">
-      Features Using Redis
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -654,10 +585,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../cors/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Cross-Origin Resource Sharing (CORS)
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -668,6 +621,86 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Purpose
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration Options
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -948,11 +981,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+  <a href="#purpose" class="md-nav__link">
     <span class="md-ellipsis">
-      Configuration
+      Purpose
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration Options
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -966,9 +1032,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#features-using-redis" class="md-nav__link">
+  <a href="#notes" class="md-nav__link">
     <span class="md-ellipsis">
-      Features Using Redis
+      Notes
     </span>
   </a>
   
@@ -993,44 +1059,99 @@
   
 
 
-<h1 id="redis-integration">Redis Integration<a class="headerlink" href="#redis-integration" title="Permanent link">#</a></h1>
-<p>Redis is a fast, in-memory key-value store commonly used for caching, session management, real-time analytics, and pub/sub messaging. Panther supports Redis natively, allowing you to leverage its power for authentication, caching, throttling, and websocket pub/sub features.</p>
-<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">#</a></h2>
-<p>To enable Redis in Panther, fill out the <code>REDIS</code> block in your configuration file:</p>
-<div class="highlight"><pre><span></span><code><span class="n">REDIS</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;panther.db.connections.RedisConnection&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;host&#39;</span><span class="p">:</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>  <span class="c1"># Optional, default is &#39;localhost&#39;</span>
-    <span class="s1">&#39;port&#39;</span><span class="p">:</span> <span class="mi">6379</span><span class="p">,</span>         <span class="c1"># Optional, default is 6379</span>
-    <span class="s1">&#39;db&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>              <span class="c1"># Optional, default is 0</span>
-    <span class="c1"># Add any other redis-py supported parameters here</span>
-<span class="p">}</span>
+<h1 id="corsmiddleware">CORSMiddleware<a class="headerlink" href="#corsmiddleware" title="Permanent link">#</a></h1>
+<p><code>CORSMiddleware</code> is a middleware for Panther applications that handles Cross-Origin Resource Sharing (CORS). It
+automatically adds the appropriate CORS headers to all HTTP responses based on your configuration, and handles
+preflight (OPTIONS) requests.</p>
+<h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">#</a></h2>
+<p>CORS is a security feature implemented by browsers to restrict web applications running on one origin from interacting
+with resources from a different origin. <code>CORSMiddleware</code> makes it easy to configure and manage CORS policies in your
+Panther application.</p>
+<h2 id="configuration-options">Configuration Options<a class="headerlink" href="#configuration-options" title="Permanent link">#</a></h2>
+<p>Set the following variables in your Panther config file (e.g., <code>core/configs.py</code>) to control CORS behavior:</p>
+<table>
+<thead>
+<tr>
+<th>Config Variable</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>ALLOW_ORIGINS</em></td>
+<td>list[str]</td>
+<td>List of allowed origins. Use <code>["*"]</code> to allow all origins.</td>
+<td><code>["*"]</code></td>
+</tr>
+<tr>
+<td><em>ALLOW_METHODS</em></td>
+<td>list[str]</td>
+<td>List of allowed HTTP methods.</td>
+<td><code>["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]</code></td>
+</tr>
+<tr>
+<td><em>ALLOW_HEADERS</em></td>
+<td>list[str]</td>
+<td>List of allowed request headers. Use <code>["*"]</code> to allow all headers.</td>
+<td><code>["*"]</code></td>
+</tr>
+<tr>
+<td><em>ALLOW_CREDENTIALS</em></td>
+<td>bool</td>
+<td>Whether to allow credentials (cookies, authorization headers, etc.).</td>
+<td><code>False</code></td>
+</tr>
+<tr>
+<td><em>EXPOSE_HEADERS</em></td>
+<td>list[str]</td>
+<td>List of headers that can be exposed to the browser.</td>
+<td><code>[]</code></td>
+</tr>
+<tr>
+<td><em>CORS_MAX_AGE</em></td>
+<td>int</td>
+<td>Number of seconds browsers can cache preflight responses.</td>
+<td><code>600</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h2>
+<ol>
+<li>Set the desired CORS config variables in your config file.</li>
+<li>Add <code>'panther.middlewares.cors.CORSMiddleware'</code> to your <code>MIDDLEWARES</code> list.</li>
+</ol>
+<h3 id="example-configuration">Example Configuration<a class="headerlink" href="#example-configuration" title="Permanent link">#</a></h3>
+<div class="highlight"><span class="filename">e.g. core/configs.py</span><pre><span></span><code><span class="n">ALLOW_ORIGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;https://example.com&quot;</span><span class="p">,</span> <span class="s2">&quot;https://another.com&quot;</span><span class="p">]</span>
+<span class="n">ALLOW_METHODS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="s2">&quot;POST&quot;</span><span class="p">]</span>
+<span class="n">ALLOW_HEADERS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">,</span> <span class="s2">&quot;Authorization&quot;</span><span class="p">]</span>
+<span class="n">ALLOW_CREDENTIALS</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">EXPOSE_HEADERS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;X-Custom-Header&quot;</span><span class="p">]</span>
+<span class="n">CORS_MAX_AGE</span> <span class="o">=</span> <span class="mi">3600</span>
+
+<span class="n">MIDDLEWARES</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># ... other middlewares ...</span>
+    <span class="s1">&#39;panther.middlewares.cors.CORSMiddleware&#39;</span><span class="p">,</span>
+<span class="p">]</span>
 </code></pre></div>
-<p><strong>Note:</strong> The arguments are the same as those accepted by <code>redis.Redis.__init__()</code> from the <a href="https://redis.readthedocs.io/en/latest/">redis documentation</a>.</p>
 <h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">#</a></h2>
 <ul>
-<li>Panther creates an asynchronous Redis connection based on the <code>REDIS</code> block you define in your configuration.</li>
-<li>
-<p>You can access the Redis connection via:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.db.connections</span><span class="w"> </span><span class="kn">import</span> <span class="n">redis</span>
-</code></pre></div>
-</li>
-<li>
-<p>Example usage:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.db.connections</span><span class="w"> </span><span class="kn">import</span> <span class="n">redis</span>
-
-<span class="k">await</span> <span class="n">redis</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">redis</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-</code></pre></div>
-</li>
+<li>For every request, the middleware adds the appropriate CORS headers to the response.</li>
+<li>For preflight (OPTIONS) requests, it returns a 204 response with the necessary headers.</li>
+<li>The headers are set based on your configuration, with sensible defaults if not specified.</li>
 </ul>
-<h2 id="features-using-redis">Features Using Redis<a class="headerlink" href="#features-using-redis" title="Permanent link">#</a></h2>
+<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>Authentication:</strong> Store and retrieve JWT tokens for logout functionality.</li>
-<li><strong>Caching:</strong> Cache responses for faster access.</li>
-<li><strong>Throttling:</strong> Track and limit request rates.</li>
-<li><strong>WebSocket:</strong> Manage pub/sub connections for real-time features.</li>
+<li>If you set <code>ALLOW_ORIGINS = ["*"]</code>, all origins are allowed.</li>
+<li>If you set <code>ALLOW_HEADERS = ["*"]</code>, all headers are allowed.</li>
+<li>If <code>ALLOW_CREDENTIALS</code> is <code>True</code>, the <code>Access-Control-Allow-Credentials</code> header is set to <code>true</code>.</li>
+<li>If you specify <code>EXPOSE_HEADERS</code>, those headers will be exposed to the browser.</li>
 </ul>
+<p>For more details, see the source code in <code>panther/middlewares/cors.py</code>.</p>
+<hr />
+<p>For a deeper understanding of CORS, you may also want to check
+the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS">MDN Web Docs CORS Guide</a>.</p>
 
 
 
@@ -1060,7 +1181,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../query/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Query">
+          <a href="../single_file/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Single-File Application">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1070,20 +1191,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Query
+                Single-File Application
               </div>
             </div>
           </a>
         
         
           
-          <a href="../events/" class="md-footer__link md-footer__link--next" aria-label="Next: Events">
+          <a href="../open_api/" class="md-footer__link md-footer__link--next" aria-label="Next: Open API (Swagger)">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Events
+                Open API (Swagger)
               </div>
             </div>
             <div class="md-footer__button md-icon">

@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://pantherpy.github.io/redis/">
+        <link rel="canonical" href="https://pantherpy.github.io/query/">
       
       
-        <link rel="prev" href="../query/">
+        <link rel="prev" href="../database/">
       
       
-        <link rel="next" href="../events/">
+        <link rel="next" href="../redis/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Redis - Panther</title>
+        <title>Query - Panther</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#redis-integration" class="md-skip">
+        <a href="#querying-documents" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Redis
+              Query
             
           </span>
         </div>
@@ -409,28 +409,6 @@
       
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../query/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Query
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
     
   
   
@@ -448,7 +426,7 @@
   
   
   <span class="md-ellipsis">
-    Redis
+    Query
     
   </span>
   
@@ -461,7 +439,7 @@
   
   
   <span class="md-ellipsis">
-    Redis
+    Query
     
   </span>
   
@@ -484,27 +462,228 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+  <a href="#find_one" class="md-nav__link">
     <span class="md-ellipsis">
-      Configuration
+      find_one
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
+  <a href="#find" class="md-nav__link">
     <span class="md-ellipsis">
-      How It Works
+      find
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="find">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chaining" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chaining
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#all" class="md-nav__link">
+    <span class="md-ellipsis">
+      all
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#features-using-redis" class="md-nav__link">
+  <a href="#first-last" class="md-nav__link">
     <span class="md-ellipsis">
-      Features Using Redis
+      first / last
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aggregate" class="md-nav__link">
+    <span class="md-ellipsis">
+      aggregate
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#count" class="md-nav__link">
+    <span class="md-ellipsis">
+      count
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inserting-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inserting Documents
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inserting Documents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#insert_one" class="md-nav__link">
+    <span class="md-ellipsis">
+      insert_one
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insert_many" class="md-nav__link">
+    <span class="md-ellipsis">
+      insert_many
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updating-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updating Documents
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Updating Documents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    <span class="md-ellipsis">
+      update
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update_one-update_many" class="md-nav__link">
+    <span class="md-ellipsis">
+      update_one / update_many
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#save" class="md-nav__link">
+    <span class="md-ellipsis">
+      save
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deleting-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deleting Documents
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deleting Documents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      delete
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete_one-delete_many" class="md-nav__link">
+    <span class="md-ellipsis">
+      delete_one / delete_many
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#special-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Special Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Special Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#find_one_or_insert" class="md-nav__link">
+    <span class="md-ellipsis">
+      find_one_or_insert
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find_one_or_raise" class="md-nav__link">
+    <span class="md-ellipsis">
+      find_one_or_raise
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cursor-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cursor Usage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
     </span>
   </a>
   
@@ -514,6 +693,28 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../redis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Redis
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -948,27 +1149,228 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+  <a href="#find_one" class="md-nav__link">
     <span class="md-ellipsis">
-      Configuration
+      find_one
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
+  <a href="#find" class="md-nav__link">
     <span class="md-ellipsis">
-      How It Works
+      find
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="find">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chaining" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chaining
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#all" class="md-nav__link">
+    <span class="md-ellipsis">
+      all
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#features-using-redis" class="md-nav__link">
+  <a href="#first-last" class="md-nav__link">
     <span class="md-ellipsis">
-      Features Using Redis
+      first / last
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aggregate" class="md-nav__link">
+    <span class="md-ellipsis">
+      aggregate
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#count" class="md-nav__link">
+    <span class="md-ellipsis">
+      count
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inserting-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inserting Documents
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inserting Documents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#insert_one" class="md-nav__link">
+    <span class="md-ellipsis">
+      insert_one
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insert_many" class="md-nav__link">
+    <span class="md-ellipsis">
+      insert_many
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#updating-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updating Documents
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Updating Documents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update" class="md-nav__link">
+    <span class="md-ellipsis">
+      update
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update_one-update_many" class="md-nav__link">
+    <span class="md-ellipsis">
+      update_one / update_many
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#save" class="md-nav__link">
+    <span class="md-ellipsis">
+      save
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deleting-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deleting Documents
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deleting Documents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      delete
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete_one-delete_many" class="md-nav__link">
+    <span class="md-ellipsis">
+      delete_one / delete_many
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#special-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Special Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Special Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#find_one_or_insert" class="md-nav__link">
+    <span class="md-ellipsis">
+      find_one_or_insert
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find_one_or_raise" class="md-nav__link">
+    <span class="md-ellipsis">
+      find_one_or_raise
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cursor-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cursor Usage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes
     </span>
   </a>
   
@@ -993,43 +1395,130 @@
   
 
 
-<h1 id="redis-integration">Redis Integration<a class="headerlink" href="#redis-integration" title="Permanent link">#</a></h1>
-<p>Redis is a fast, in-memory key-value store commonly used for caching, session management, real-time analytics, and pub/sub messaging. Panther supports Redis natively, allowing you to leverage its power for authentication, caching, throttling, and websocket pub/sub features.</p>
-<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">#</a></h2>
-<p>To enable Redis in Panther, fill out the <code>REDIS</code> block in your configuration file:</p>
-<div class="highlight"><pre><span></span><code><span class="n">REDIS</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;panther.db.connections.RedisConnection&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;host&#39;</span><span class="p">:</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>  <span class="c1"># Optional, default is &#39;localhost&#39;</span>
-    <span class="s1">&#39;port&#39;</span><span class="p">:</span> <span class="mi">6379</span><span class="p">,</span>         <span class="c1"># Optional, default is 6379</span>
-    <span class="s1">&#39;db&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>              <span class="c1"># Optional, default is 0</span>
-    <span class="c1"># Add any other redis-py supported parameters here</span>
-<span class="p">}</span>
-</code></pre></div>
-<p><strong>Note:</strong> The arguments are the same as those accepted by <code>redis.Redis.__init__()</code> from the <a href="https://redis.readthedocs.io/en/latest/">redis documentation</a>.</p>
-<h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">#</a></h2>
-<ul>
-<li>Panther creates an asynchronous Redis connection based on the <code>REDIS</code> block you define in your configuration.</li>
-<li>
-<p>You can access the Redis connection via:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.db.connections</span><span class="w"> </span><span class="kn">import</span> <span class="n">redis</span>
-</code></pre></div>
-</li>
-<li>
-<p>Example usage:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.db.connections</span><span class="w"> </span><span class="kn">import</span> <span class="n">redis</span>
+<h1 id="querying-documents">Querying Documents<a class="headerlink" href="#querying-documents" title="Permanent link">#</a></h1>
+<p>Panther ODM provides a simple, async interface for interacting with your database models. This guide covers the most common operations.</p>
+<hr />
+<h3 id="find_one">find_one<a class="headerlink" href="#find_one" title="Permanent link">#</a></h3>
+<p>Get a single document matching the filter.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">app.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">User</span>
 
-<span class="k">await</span> <span class="n">redis</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">redis</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="n">user</span><span class="p">:</span> <span class="n">User</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find_one</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
+<span class="c1"># or</span>
+<span class="n">user</span><span class="p">:</span> <span class="n">User</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find_one</span><span class="p">({</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ali&#39;</span><span class="p">})</span>
 </code></pre></div>
-</li>
-</ul>
-<h2 id="features-using-redis">Features Using Redis<a class="headerlink" href="#features-using-redis" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>Authentication:</strong> Store and retrieve JWT tokens for logout functionality.</li>
-<li><strong>Caching:</strong> Cache responses for faster access.</li>
-<li><strong>Throttling:</strong> Track and limit request rates.</li>
-<li><strong>WebSocket:</strong> Manage pub/sub connections for real-time features.</li>
+<li><strong>Returns:</strong> An instance of the model or <code>None</code> if not found.</li>
+</ul>
+<hr />
+<h3 id="find">find<a class="headerlink" href="#find" title="Permanent link">#</a></h3>
+<p>Get multiple documents matching the filter.</p>
+<div class="highlight"><pre><span></span><code><span class="n">users</span><span class="p">:</span> <span class="n">Cursor</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><strong>Returns:</strong> A <code>Cursor</code> object (see <a href="#cursor-usage">Cursor Usage</a>).</li>
+</ul>
+<h4 id="chaining">Chaining<a class="headerlink" href="#chaining" title="Permanent link">#</a></h4>
+<p>You can chain <code>skip()</code>, <code>limit()</code>, and <code>sort()</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">users</span><span class="p">:</span> <span class="n">Cursor</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span><span class="o">.</span><span class="n">skip</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">([(</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)])</span>
+</code></pre></div>
+<hr />
+<h3 id="all">all<a class="headerlink" href="#all" title="Permanent link">#</a></h3>
+<p>Get all documents in the collection.</p>
+<div class="highlight"><pre><span></span><code><span class="n">users</span><span class="p">:</span> <span class="n">Cursor</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</code></pre></div>
+<hr />
+<h3 id="first-last">first / last<a class="headerlink" href="#first-last" title="Permanent link">#</a></h3>
+<p>Get the first or last document matching the filter.</p>
+<div class="highlight"><pre><span></span><code><span class="n">user</span><span class="p">:</span> <span class="n">User</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">user</span><span class="p">:</span> <span class="n">User</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">last</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h3 id="aggregate">aggregate<a class="headerlink" href="#aggregate" title="Permanent link">#</a></h3>
+<p>Perform an aggregation (MongoDB only).</p>
+<div class="highlight"><pre><span></span><code><span class="n">pipeline</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s1">&#39;$match&#39;</span><span class="p">:</span> <span class="p">{</span><span class="o">...</span><span class="p">}},</span>
+    <span class="p">{</span><span class="s1">&#39;$group&#39;</span><span class="p">:</span> <span class="p">{</span><span class="o">...</span><span class="p">}},</span>
+    <span class="c1"># ...</span>
+<span class="p">]</span>
+<span class="n">users</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">pipeline</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h3 id="count">count<a class="headerlink" href="#count" title="Permanent link">#</a></h3>
+<p>Count documents matching the filter.</p>
+<div class="highlight"><pre><span></span><code><span class="n">count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="inserting-documents">Inserting Documents<a class="headerlink" href="#inserting-documents" title="Permanent link">#</a></h2>
+<h3 id="insert_one">insert_one<a class="headerlink" href="#insert_one" title="Permanent link">#</a></h3>
+<p>Insert a single document.</p>
+<div class="highlight"><pre><span></span><code><span class="n">user</span><span class="p">:</span> <span class="n">User</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">insert_one</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h3 id="insert_many">insert_many<a class="headerlink" href="#insert_many" title="Permanent link">#</a></h3>
+<p>Insert multiple documents.</p>
+<div class="highlight"><pre><span></span><code><span class="n">users</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ali&#39;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Saba&#39;</span><span class="p">},</span>
+<span class="p">]</span>
+<span class="n">users</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">User</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">insert_many</span><span class="p">(</span><span class="n">users</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="updating-documents">Updating Documents<a class="headerlink" href="#updating-documents" title="Permanent link">#</a></h2>
+<h3 id="update">update<a class="headerlink" href="#update" title="Permanent link">#</a></h3>
+<p>Update the current document instance.</p>
+<div class="highlight"><pre><span></span><code><span class="n">user</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find_one</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
+<span class="k">await</span> <span class="n">user</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Saba&#39;</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h3 id="update_one-update_many">update_one / update_many<a class="headerlink" href="#update_one-update_many" title="Permanent link">#</a></h3>
+<p>Update one or more documents matching a filter.</p>
+<div class="highlight"><pre><span></span><code><span class="n">is_updated</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">update_one</span><span class="p">({</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
+<span class="n">updated_count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">update_many</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Saba&#39;</span><span class="p">},</span> <span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h3 id="save">save<a class="headerlink" href="#save" title="Permanent link">#</a></h3>
+<p>Save the document (insert or update).</p>
+<div class="highlight"><pre><span></span><code><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
+<span class="k">await</span> <span class="n">user</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</code></pre></div>
+<hr />
+<h2 id="deleting-documents">Deleting Documents<a class="headerlink" href="#deleting-documents" title="Permanent link">#</a></h2>
+<h3 id="delete">delete<a class="headerlink" href="#delete" title="Permanent link">#</a></h3>
+<p>Delete the current document instance.</p>
+<div class="highlight"><pre><span></span><code><span class="n">user</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find_one</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
+<span class="k">await</span> <span class="n">user</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+</code></pre></div>
+<hr />
+<h3 id="delete_one-delete_many">delete_one / delete_many<a class="headerlink" href="#delete_one-delete_many" title="Permanent link">#</a></h3>
+<p>Delete one or more documents matching a filter.</p>
+<div class="highlight"><pre><span></span><code><span class="n">is_deleted</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">delete_one</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">deleted_count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">delete_many</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="special-methods">Special Methods<a class="headerlink" href="#special-methods" title="Permanent link">#</a></h2>
+<h3 id="find_one_or_insert">find_one_or_insert<a class="headerlink" href="#find_one_or_insert" title="Permanent link">#</a></h3>
+<p>Get or insert a document.</p>
+<div class="highlight"><pre><span></span><code><span class="n">is_inserted</span><span class="p">,</span> <span class="n">user</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find_one_or_insert</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h3 id="find_one_or_raise">find_one_or_raise<a class="headerlink" href="#find_one_or_raise" title="Permanent link">#</a></h3>
+<p>Get a document or raise <code>NotFoundAPIError</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">user</span><span class="p">:</span> <span class="n">User</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find_one_or_raise</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="cursor-usage">Cursor Usage<a class="headerlink" href="#cursor-usage" title="Permanent link">#</a></h2>
+<ul>
+<li>The <code>find()</code> and <code>all()</code> methods return a <code>Cursor</code> object.</li>
+<li>You can iterate over it or use it as a list.</li>
+<li>For MongoDB: <code>from panther.db.cursor import Cursor</code></li>
+<li>For PantherDB: <code>from pantherdb import Cursor</code></li>
+</ul>
+<hr />
+<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">#</a></h2>
+<ul>
+<li>All methods are async unless otherwise noted.</li>
+<li>Filters can be passed as keyword arguments or as a dictionary.</li>
+<li>Some features (like <code>aggregate</code>) are only available for MongoDB.</li>
 </ul>
 
 
@@ -1060,7 +1549,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../query/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Query">
+          <a href="../database/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Database">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1070,20 +1559,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Query
+                Database
               </div>
             </div>
           </a>
         
         
           
-          <a href="../events/" class="md-footer__link md-footer__link--next" aria-label="Next: Events">
+          <a href="../redis/" class="md-footer__link md-footer__link--next" aria-label="Next: Redis">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Events
+                Redis
               </div>
             </div>
             <div class="md-footer__button md-icon">
