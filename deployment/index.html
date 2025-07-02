@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://pantherpy.github.io/admin_panel/">
+        <link rel="canonical" href="https://pantherpy.github.io/deployment/">
       
       
-        <link rel="prev" href="../log_queries/">
+        <link rel="prev" href="../admin_panel/">
       
       
-        <link rel="next" href="../deployment/">
+        <link rel="next" href="../roadmap/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Admin Panel - Panther</title>
+        <title>Deployment - Panther</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#panther-admin-panel" class="md-skip">
+        <a href="#deploying-panther-applications" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Admin Panel
+              Deployment
             
           </span>
         </div>
@@ -629,20 +629,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
         
           
           <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
@@ -658,7 +656,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_18">
             <span class="md-nav__icon md-icon"></span>
             Advance Configs
@@ -784,6 +782,36 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../admin_panel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Admin Panel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -801,7 +829,7 @@
   
   
   <span class="md-ellipsis">
-    Admin Panel
+    Deployment
     
   </span>
   
@@ -814,7 +842,7 @@
   
   
   <span class="md-ellipsis">
-    Admin Panel
+    Deployment
     
   </span>
   
@@ -837,46 +865,97 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#enabling-the-admin-panel" class="md-nav__link">
+  <a href="#1-production-ready-asgi-servers" class="md-nav__link">
     <span class="md-ellipsis">
-      Enabling the Admin Panel
+      1. Production-Ready ASGI Servers
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Enabling the Admin Panel">
+    <nav class="md-nav" aria-label="1. Production-Ready ASGI Servers">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-add-the-admin-panel-urls" class="md-nav__link">
+  <a href="#example-using-uvicorn-directly" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Add the Admin Panel URLs
+      Example: Using Uvicorn Directly
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-update-your-configs-if-needed" class="md-nav__link">
+  <a href="#example-using-gunicorn-with-uvicorn-workers" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Update Your Configs (if needed)
+      Example: Using Gunicorn with Uvicorn Workers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-using-the-panther-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Using the Panther CLI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-environment-variables-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Environment Variables &amp; Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-static-files-reverse-proxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Static Files &amp; Reverse Proxy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-websocket-multiple-workers" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. WebSocket &amp; Multiple Workers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-example-docker-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Example: Docker Deployment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Example: Docker Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#advantages-of-multi-stage-uv" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages of Multi-Stage &amp; uv
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-run-your-application" class="md-nav__link">
+  <a href="#example-multi-stage-dockerfile-with-uv" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Run Your Application
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-access-the-admin-panel" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Access the Admin Panel
+      Example Multi-Stage Dockerfile with uv
     </span>
   </a>
   
@@ -891,36 +970,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../deployment/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Deployment
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -996,46 +1045,97 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#enabling-the-admin-panel" class="md-nav__link">
+  <a href="#1-production-ready-asgi-servers" class="md-nav__link">
     <span class="md-ellipsis">
-      Enabling the Admin Panel
+      1. Production-Ready ASGI Servers
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Enabling the Admin Panel">
+    <nav class="md-nav" aria-label="1. Production-Ready ASGI Servers">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-add-the-admin-panel-urls" class="md-nav__link">
+  <a href="#example-using-uvicorn-directly" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Add the Admin Panel URLs
+      Example: Using Uvicorn Directly
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-update-your-configs-if-needed" class="md-nav__link">
+  <a href="#example-using-gunicorn-with-uvicorn-workers" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Update Your Configs (if needed)
+      Example: Using Gunicorn with Uvicorn Workers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-using-the-panther-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Using the Panther CLI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-environment-variables-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Environment Variables &amp; Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-static-files-reverse-proxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Static Files &amp; Reverse Proxy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-websocket-multiple-workers" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. WebSocket &amp; Multiple Workers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-example-docker-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Example: Docker Deployment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Example: Docker Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#advantages-of-multi-stage-uv" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages of Multi-Stage &amp; uv
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-run-your-application" class="md-nav__link">
+  <a href="#example-multi-stage-dockerfile-with-uv" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Run Your Application
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-access-the-admin-panel" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Access the Admin Panel
+      Example Multi-Stage Dockerfile with uv
     </span>
   </a>
   
@@ -1065,38 +1165,92 @@
   
 
 
-<blockquote>
-<p><strong>⚠️ WARNING: The Panther Admin Panel is currently in development. Do NOT use it in production environments!</strong></p>
-<p><strong>Contributions, feedback, and ideas are welcome!</strong></p>
-</blockquote>
-<h1 id="panther-admin-panel">Panther Admin Panel<a class="headerlink" href="#panther-admin-panel" title="Permanent link">#</a></h1>
-<p>Panther provides a built-in admin panel that allows you to easily manage your database models through a web interface.</p>
-<h2 id="enabling-the-admin-panel">Enabling the Admin Panel<a class="headerlink" href="#enabling-the-admin-panel" title="Permanent link">#</a></h2>
-<p>To enable the admin panel in your project, follow these steps:</p>
-<h3 id="1-add-the-admin-panel-urls">1. Add the Admin Panel URLs<a class="headerlink" href="#1-add-the-admin-panel-urls" title="Permanent link">#</a></h3>
-<p>First, ensure your main URL configuration includes the admin panel routes. e.g. open your <code>core/urls.py</code> and add the following:</p>
-<div class="highlight"><span class="filename">core/urls.py</span><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.panel.urls</span><span class="w"> </span><span class="kn">import</span> <span class="n">url_routing</span> <span class="k">as</span> <span class="n">panel_url_routing</span>
-
-<span class="n">url_routing</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;panel/&#39;</span><span class="p">:</span> <span class="n">panel_url_routing</span><span class="p">,</span>
-    <span class="c1"># ... other routes ...</span>
+<h1 id="deploying-panther-applications">Deploying Panther Applications<a class="headerlink" href="#deploying-panther-applications" title="Permanent link">#</a></h1>
+<p>Panther is an ASGI-compatible web framework, which means you can deploy your Panther app using any ASGI server, such as <strong>Uvicorn</strong>, <strong>Granian</strong>, <strong>Daphne</strong>, or others. This guide covers best practices and options for deploying your Panther application in production.</p>
+<hr />
+<h2 id="1-production-ready-asgi-servers">1. Production-Ready ASGI Servers<a class="headerlink" href="#1-production-ready-asgi-servers" title="Permanent link">#</a></h2>
+<p>While Panther comes with a convenient CLI, you are not limited to it. You can use any ASGI server to run your app:</p>
+<ul>
+<li><strong>Uvicorn</strong> (default, recommended)</li>
+<li><strong>Granian</strong></li>
+<li><strong>Daphne</strong></li>
+<li><strong>Hypercorn</strong></li>
+<li>Any other ASGI-compliant server</li>
+</ul>
+<h3 id="example-using-uvicorn-directly">Example: Using Uvicorn Directly<a class="headerlink" href="#example-using-uvicorn-directly" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>uvicorn<span class="w"> </span>main:app<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">8000</span><span class="w"> </span>--workers<span class="w"> </span><span class="m">4</span>
+</code></pre></div>
+<ul>
+<li><code>main:app</code> refers to your application instance (e.g., <code>app = Panther(...)</code> in <code>main.py</code>).</li>
+<li>Adjust <code>--workers</code> for your server's CPU count.</li>
+</ul>
+<h3 id="example-using-gunicorn-with-uvicorn-workers">Example: Using Gunicorn with Uvicorn Workers<a class="headerlink" href="#example-using-gunicorn-with-uvicorn-workers" title="Permanent link">#</a></h3>
+<p>For robust process management and multiple workers:</p>
+<div class="highlight"><pre><span></span><code>gunicorn<span class="w"> </span>-w<span class="w"> </span><span class="m">4</span><span class="w"> </span>-k<span class="w"> </span>uvicorn.workers.UvicornWorker<span class="w"> </span>main:app
+</code></pre></div>
+<hr />
+<h2 id="2-using-the-panther-cli">2. Using the Panther CLI<a class="headerlink" href="#2-using-the-panther-cli" title="Permanent link">#</a></h2>
+<p>Panther provides a built-in CLI for development and deployment. The command:</p>
+<div class="highlight"><pre><span></span><code>panther<span class="w"> </span>run<span class="w"> </span>main:app<span class="w"> </span>--reload
+</code></pre></div>
+<p>is <strong>an alias for running Uvicorn</strong> with your Panther app. You can use all Uvicorn options with this command.</p>
+<ul>
+<li><code>--reload</code> is for development (auto-reloads on code changes).</li>
+<li>Omit <code>--reload</code> for production.</li>
+</ul>
+<p><strong>Note:</strong> For advanced deployment, prefer running Uvicorn (or another ASGI server) directly, as shown above.</p>
+<hr />
+<h2 id="3-environment-variables-configuration">3. Environment Variables &amp; Configuration<a class="headerlink" href="#3-environment-variables-configuration" title="Permanent link">#</a></h2>
+<ul>
+<li>Set environment variables (e.g., <code>PORT</code>, <code>HOST</code>, <code>DATABASE_URL</code>) as needed for your deployment environment.</li>
+<li>Use a process manager (e.g., <strong>systemd</strong>, <strong>supervisor</strong>, <strong>pm2</strong>, or <strong>Docker</strong> (recomended)) to keep your app running and restart on failure.</li>
+</ul>
+<hr />
+<h2 id="4-static-files-reverse-proxy">4. Static Files &amp; Reverse Proxy<a class="headerlink" href="#4-static-files-reverse-proxy" title="Permanent link">#</a></h2>
+<p>Panther does not serve static files in production. Use a reverse proxy (like <strong>Nginx</strong> or <strong>Caddy</strong>) to:</p>
+<ul>
+<li>Serve static files (JS, CSS, images)</li>
+<li>Forward requests to your ASGI server (Uvicorn, etc.)</li>
+<li>Handle HTTPS/SSL termination</li>
+</ul>
+<p><strong>Example Nginx config:</strong>
+<div class="highlight"><pre><span></span><code><span class="k">location</span><span class="w"> </span><span class="s">/</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="s">http://127.0.0.1:8000</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Host</span><span class="w"> </span><span class="nv">$host</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">X-Real-IP</span><span class="w"> </span><span class="nv">$remote_addr</span><span class="p">;</span>
 <span class="p">}</span>
+</code></pre></div></p>
+<hr />
+<h2 id="5-websocket-multiple-workers">5. WebSocket &amp; Multiple Workers<a class="headerlink" href="#5-websocket-multiple-workers" title="Permanent link">#</a></h2>
+<p>If your app uses WebSockets and you want to run multiple workers, configure <strong>Redis</strong> for pub/sub support (see <a href="../redis/">Redis Integration</a>).<br />
+Alternatively, use the <code>--preload</code> flag with Gunicorn for basic multi-worker support (see <a href="../websocket/">WebSocket docs</a>).</p>
+<hr />
+<h2 id="6-example-docker-deployment">6. Example: Docker Deployment<a class="headerlink" href="#6-example-docker-deployment" title="Permanent link">#</a></h2>
+<p>Panther can be efficiently containerized using a multi-stage Docker build and the <a href="https://github.com/astral-sh/uv">uv</a> package manager, which is significantly faster and more reliable than pip. This approach results in smaller, more secure images and faster build times.</p>
+<h3 id="advantages-of-multi-stage-uv">Advantages of Multi-Stage &amp; uv<a class="headerlink" href="#advantages-of-multi-stage-uv" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Smaller final image size</strong>: Only production dependencies and app code are included.</li>
+<li><strong>Faster dependency installation</strong>: <code>uv</code> is much faster than <code>pip</code> and supports modern lockfiles.</li>
+<li><strong>Better security</strong>: Build tools and caches are left behind in the builder stage.</li>
+<li><strong>Cleaner builds</strong>: No unnecessary files in the final image.</li>
+</ul>
+<h3 id="example-multi-stage-dockerfile-with-uv">Example Multi-Stage Dockerfile with uv<a class="headerlink" href="#example-multi-stage-dockerfile-with-uv" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">FROM</span><span class="w"> </span><span class="s">python:3.12</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">builder</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+<span class="k">RUN</span><span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>/opt/venv
+<span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--no-cache-dir<span class="w"> </span>uv
+<span class="k">COPY</span><span class="w"> </span>requirements.txt<span class="w"> </span>.
+<span class="k">RUN</span><span class="w"> </span>/opt/venv/bin/uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt<span class="w"> </span>--system
+
+<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.12-slim</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">production</span>
+<span class="k">ENV</span><span class="w"> </span><span class="nv">PYTHONUNBUFFERED</span><span class="o">=</span><span class="m">1</span>
+<span class="k">ENV</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/opt/venv/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>builder<span class="w"> </span>/opt/venv<span class="w"> </span>/opt/venv
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+<span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>/app
+
+<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;uvicorn&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;main:app&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;--host&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;0.0.0.0&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;--port&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;8000&quot;</span><span class="p">]</span>
 </code></pre></div>
-<blockquote>
-<p><strong>Note:</strong> If you are using a different file for your URL routing, adjust the import and assignment accordingly.</p>
-</blockquote>
-<h3 id="2-update-your-configs-if-needed">2. Update Your Configs (if needed)<a class="headerlink" href="#2-update-your-configs-if-needed" title="Permanent link">#</a></h3>
-<p>If your project uses a custom configuration file for URLs, make sure it points to your updated URL routing. For example, in <code>core/configs.py</code>:</p>
-<div class="highlight"><span class="filename">core/configs.py</span><pre><span></span><code><span class="n">URLs</span> <span class="o">=</span> <span class="s1">&#39;core.urls.url_routing&#39;</span>
-</code></pre></div>
-<h3 id="3-run-your-application">3. Run Your Application<a class="headerlink" href="#3-run-your-application" title="Permanent link">#</a></h3>
-<p>Start your Panther application as usual:</p>
-<div class="highlight"><pre><span></span><code>panther<span class="w"> </span>run<span class="w"> </span>main:app
-</code></pre></div>
-<h3 id="4-access-the-admin-panel">4. Access the Admin Panel<a class="headerlink" href="#4-access-the-admin-panel" title="Permanent link">#</a></h3>
-<p>Open your browser and navigate to:</p>
-<p><a href="http://127.0.0.1:8000/panel/">http://127.0.0.1:8000/panel/</a></p>
-<p>You should see the Panther Admin Panel interface, where you can manage your database models. </p>
 
 
 
@@ -1126,7 +1280,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../log_queries/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Log Queries">
+          <a href="../admin_panel/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Admin Panel">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1136,20 +1290,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Log Queries
+                Admin Panel
               </div>
             </div>
           </a>
         
         
           
-          <a href="../deployment/" class="md-footer__link md-footer__link--next" aria-label="Next: Deployment">
+          <a href="../roadmap/" class="md-footer__link md-footer__link--next" aria-label="Next: Roadmap">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Deployment
+                Roadmap
               </div>
             </div>
             <div class="md-footer__button md-icon">
