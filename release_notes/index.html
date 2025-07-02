@@ -2992,8 +2992,8 @@
 <h1 id="panther-release-notes">Panther Release Notes<a class="headerlink" href="#panther-release-notes" title="Permanent link">#</a></h1>
 <h3 id="500">5.0.0<a class="headerlink" href="#500" title="Permanent link">#</a></h3>
 <ul>
-<li>Add Built-In <code>AdminPanel</code></li>
 <li>Add Built-In <code>OpenAPI</code></li>
+<li>Add Built-In <code>AdminPanel</code></li>
 <li>Support <code>Set-Cookie</code> in Response</li>
 <li>Support <code>application/x-www-form-urlencoded</code> Content Type</li>
 <li>Support Different <code>Middlewares</code> Per API</li>
@@ -3011,7 +3011,6 @@
 <li><code>TemplateResponse(path=...)</code> is renamed to <code>name</code>.</li>
 <li>Middlewares does not support custom args for their <code>__init__</code>.</li>
 <li>New Style of Middleware declaration <a href="../middlewares/">[Documentation]</a>.</li>
-<li><code>API</code> and <code>GenericAPI</code> do not support <code>output_model</code> anymore, checkout <code>output_schema</code> .</li>
 <li>New background task declaration, <code>background_tasks.add_task(BackgroundTask(...))</code> --&gt; <code>BackgroundTask(...).submit()</code>.</li>
 <li><code>REDIS</code> block in configs does not support <code>websocket_db</code> anymore.</li>
 </ul>

@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#openapi-swagger-integration-in-panther" class="md-skip">
+        <a href="#openapi-integration-in-panther" class="md-skip">
           Skip to content
         </a>
       
@@ -666,6 +666,48 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="How to Enable OpenAPI in Your Project">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#available-openapi-ui-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Available OpenAPI UI Components
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-openapi-to-your-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding OpenAPI to Your Project
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative-using-all-ui-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alternative: Using All UI Components
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-panther-determines-response-models-and-status-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Panther Determines Response Models and Status Codes
+    </span>
+  </a>
+  
 </li>
       
         <li class="md-nav__item">
@@ -960,6 +1002,48 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="How to Enable OpenAPI in Your Project">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#available-openapi-ui-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Available OpenAPI UI Components
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-openapi-to-your-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding OpenAPI to Your Project
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative-using-all-ui-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alternative: Using All UI Components
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-panther-determines-response-models-and-status-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Panther Determines Response Models and Status Codes
+    </span>
+  </a>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1005,11 +1089,40 @@
   
 
 
-<h1 id="openapi-swagger-integration-in-panther">OpenAPI (Swagger) Integration in Panther<a class="headerlink" href="#openapi-swagger-integration-in-panther" title="Permanent link">#</a></h1>
-<p>Panther automatically generates an OpenAPI (Swagger) specification for your APIs. This makes it easy to document, test, and share your API endpoints.</p>
+<h1 id="openapi-integration-in-panther">OpenAPI Integration in Panther<a class="headerlink" href="#openapi-integration-in-panther" title="Permanent link">#</a></h1>
+<p>Panther automatically generates an OpenAPI specification for your APIs. This makes it easy to document, test, and share your API endpoints.</p>
 <h2 id="how-to-enable-openapi-in-your-project">How to Enable OpenAPI in Your Project<a class="headerlink" href="#how-to-enable-openapi-in-your-project" title="Permanent link">#</a></h2>
-<p>To enable OpenAPI documentation, simply add the Panther OpenAPI URL routing to your project's URL configuration:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">core/urls.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<p>Panther provides multiple OpenAPI UI options that you can import directly into your project. You don't need to add the bundled <code>openapi.urls.url_routing</code> - instead, you can choose the specific UI component you prefer.</p>
+<h3 id="available-openapi-ui-components">Available OpenAPI UI Components<a class="headerlink" href="#available-openapi-ui-components" title="Permanent link">#</a></h3>
+<p>Panther offers several OpenAPI UI options available in <code>panther.openapi.views</code>:</p>
+<ul>
+<li><strong><code>ScalarOpenAPI</code></strong> - Modern, customizable API documentation UI</li>
+<li><strong><code>SwaggerOpenAPI</code></strong> - Classic Swagger UI interface</li>
+<li><strong><code>RedocOpenAPI</code></strong> - Clean, responsive documentation interface</li>
+<li><strong><code>RapiDocOpenAPI</code></strong> - Fast, lightweight API documentation</li>
+<li><strong><code>SpotlightOpenAPI</code></strong> - Stoplight Elements integration</li>
+</ul>
+<h3 id="adding-openapi-to-your-project">Adding OpenAPI to Your Project<a class="headerlink" href="#adding-openapi-to-your-project" title="Permanent link">#</a></h3>
+<p>You can import and use any of these UI components directly in your URL configuration:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">urls.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.openapi.views</span><span class="w"> </span><span class="kn">import</span> <span class="n">ScalarOpenAPI</span><span class="p">,</span> <span class="n">SwaggerOpenAPI</span><span class="p">,</span> <span class="n">RedocOpenAPI</span>
+
+<span class="n">url_routing</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;docs/scalar/&#39;</span><span class="p">:</span> <span class="n">ScalarOpenAPI</span><span class="p">,</span>    <span class="c1"># Modern UI at /docs/scalar/</span>
+    <span class="s1">&#39;docs/swagger/&#39;</span><span class="p">:</span> <span class="n">SwaggerOpenAPI</span><span class="p">,</span>  <span class="c1"># Classic Swagger at /docs/swagger/</span>
+    <span class="s1">&#39;docs/redoc/&#39;</span><span class="p">:</span> <span class="n">RedocOpenAPI</span><span class="p">,</span>      <span class="c1"># Clean interface at /docs/redoc/</span>
+    <span class="c1"># Other urls</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="alternative-using-all-ui-components">Alternative: Using All UI Components<a class="headerlink" href="#alternative-using-all-ui-components" title="Permanent link">#</a></h3>
+<p>If you want to include all OpenAPI UI options at once, you can still use the bundled routing:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">urls.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -1017,11 +1130,24 @@
 <span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.openapi.urls</span><span class="w"> </span><span class="kn">import</span> <span class="n">url_routing</span> <span class="k">as</span> <span class="n">openapi_url_routing</span>
 
 <span class="n">url_routing</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;swagger/&#39;</span><span class="p">:</span> <span class="n">openapi_url_routing</span><span class="p">,</span>
+    <span class="s1">&#39;docs/&#39;</span><span class="p">:</span> <span class="n">openapi_url_routing</span><span class="p">,</span>  <span class="c1"># Includes all UI options</span>
     <span class="c1"># Other urls</span>
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<p>This will make your OpenAPI documentation available at the <code>/swagger/</code> endpoint.</p>
+<p>This will make the following endpoints available:
+- <code>/docs/scalar/</code> - Scalar UI
+- <code>/docs/swagger/</code> - Swagger UI<br />
+- <code>/docs/redoc/</code> - ReDoc UI
+- <code>/docs/rapidoc/</code> - RapiDoc UI
+- <code>/docs/spotlight/</code> - Spotlight UI</p>
+<h2 id="how-panther-determines-response-models-and-status-codes">How Panther Determines Response Models and Status Codes<a class="headerlink" href="#how-panther-determines-response-models-and-status-codes" title="Permanent link">#</a></h2>
+<p>Panther follows a specific logic to generate the OpenAPI YAML for your APIs:</p>
+<ol>
+<li><strong><code>output_schema</code></strong>: Panther first looks for an <code>output_schema</code> attribute to generate the OpenAPI documentation. This is the recommended and most accurate way to specify your response model and status code.</li>
+<li><strong><code>output_model</code></strong>: If <code>output_schema</code> does not exist, Panther looks for an <code>output_model</code> attribute to generate the response type. It will also attempt to extract the status code from your source code.</li>
+<li><strong>Source Code Analysis</strong>: If neither <code>output_schema</code> nor <code>output_model</code> is available, Panther tries to extract the response data and status code directly from your source code using static analysis with <code>ast</code>.</li>
+</ol>
+<p>For best results and more accurate documentation, always specify <code>output_schema</code> in your APIs.</p>
 <h2 id="how-panther-generates-openapi-docs">How Panther Generates OpenAPI Docs<a class="headerlink" href="#how-panther-generates-openapi-docs" title="Permanent link">#</a></h2>
 <p>Panther inspects your API views for an <code>output_schema</code> attribute. This attribute should be an instance of <code>panther.openapi.OutputSchema</code>, which describes the response model and status code for your endpoint.</p>
 <ul>
@@ -1085,7 +1211,6 @@
 </div>
 </div>
 </div>
-<p>If <code>output_schema</code> is not provided, Panther will attempt to infer the status code and response structure by analyzing your code with <code>ast</code>. However, for best results and more accurate documentation, it is recommended to always specify <code>output_schema</code>.</p>
 <hr />
 <p><strong>Note:</strong> The OpenAPI integration is currently in beta. Contributions, feedback, and ideas are very welcome!</p>
 

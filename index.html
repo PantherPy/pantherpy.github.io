@@ -313,7 +313,7 @@
         <li class="md-nav__item">
   <a href="#why-choose-panther" class="md-nav__link">
     <span class="md-ellipsis">
-      Why Choose Panther?
+      🐾 Why Choose Panther?
     </span>
   </a>
   
@@ -1020,7 +1020,7 @@
         <li class="md-nav__item">
   <a href="#why-choose-panther" class="md-nav__link">
     <span class="md-ellipsis">
-      Why Choose Panther?
+      🐾 Why Choose Panther?
     </span>
   </a>
   
@@ -1133,20 +1133,18 @@
 
 <p><a href="https://pypi.org/project/panther/"><img alt="PyPI" src="https://img.shields.io/pypi/v/panther?label=PyPI" /></a>  <a href="https://pypi.org/project/panther/"><img alt="PyVersion" src="https://img.shields.io/pypi/pyversions/panther.svg" /></a> <a href="https://codecov.io/github/AliRn76/panther"><img alt="codecov" src="https://codecov.io/github/AliRn76/panther/graph/badge.svg?token=YWFQA43GSP" /></a> <a href="https://pepy.tech/project/panther"><img alt="Downloads" src="https://static.pepy.tech/badge/panther/month" /></a> <a href="https://github.com/alirn76/panther/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/alirn76/panther.svg" /></a></p>
 <hr />
-<h2 id="why-choose-panther">Why Choose Panther?<a class="headerlink" href="#why-choose-panther" title="Permanent link">#</a></h2>
+<h2 id="why-choose-panther">🐾 Why Choose Panther?<a class="headerlink" href="#why-choose-panther" title="Permanent link">#</a></h2>
+<p>Panther is designed to be <strong>fast</strong>, <strong>simple</strong>, and <strong>powerful</strong>. Here's what makes it special:</p>
 <ul>
-<li>One of the <strong>fastest Python frameworks</strong> available</li>
-<li>Built-in <strong>file-based</strong> database (<a href="https://pypi.org/project/pantherdb/">PantherDB</a>)</li>
-<li>Built-in document-oriented database <strong>ODM</strong> (Supports <strong>MongoDB</strong> &amp; PantherDB)</li>
-<li>Built-in API <strong>caching</strong> system (Supports in-memory &amp; <strong>Redis</strong>)</li>
-<li>Built-in support of <strong>OpenAPI</strong> (swagger)</li>
-<li>Built-in <strong>Admin Panel</strong></li>
-<li>Native <strong>WebSocket</strong> support</li>
-<li>Integrated <strong>authentication</strong> classes</li>
-<li>Built-in <strong>permission</strong> handling</li>
-<li>Supports custom <strong>background tasks</strong>, <strong>middlewares</strong>, and <strong>throttling</strong></li>
-<li>Offers both <strong>function-based</strong> and <strong>class-based</strong> APIs</li>
-<li>Real-time API <strong>monitoring</strong> in the terminal</li>
+<li><strong>One of the fastest Python frameworks</strong> available</li>
+<li><strong>File-based database</strong> (<a href="https://pypi.org/project/pantherdb/">PantherDB</a>) - No external database setup required</li>
+<li><strong>Document-oriented ODM</strong> - Supports MongoDB &amp; PantherDB with familiar syntax</li>
+<li><strong>API caching system</strong> - In-memory and Redis support</li>
+<li><strong>OpenAPI/Swagger</strong> - Auto-generated API documentation</li>
+<li><strong>WebSocket support</strong> - Real-time communication out of the box</li>
+<li><strong>Authentication &amp; Permissions</strong> - Built-in security features</li>
+<li><strong>Background tasks</strong> - Handle long-running operations</li>
+<li><strong>Middleware &amp; Throttling</strong> - Extensible and configurable</li>
 </ul>
 <hr />
 <h2 id="benchmark">Benchmark<a class="headerlink" href="#benchmark" title="Permanent link">#</a></h2>
@@ -1213,28 +1211,32 @@ $<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </sp
 <span class="normal">20</span>
 <span class="normal">21</span>
 <span class="normal">22</span>
-<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
-
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">panther</span><span class="w"> </span><span class="kn">import</span> <span class="n">status</span><span class="p">,</span> <span class="n">Panther</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">panther.app</span><span class="w"> </span><span class="kn">import</span> <span class="n">GenericAPI</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">panther.openapi.urls</span><span class="w"> </span><span class="kn">import</span> <span class="n">urls</span> <span class="k">as</span> <span class="n">openapi_urls</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">panther.openapi.urls</span><span class="w"> </span><span class="kn">import</span> <span class="n">url_routing</span> <span class="k">as</span> <span class="n">openapi_url_routing</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">panther.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">Response</span>
 
-
-<span class="k">class</span><span class="w"> </span><span class="nc">FirstAPI</span><span class="p">(</span><span class="n">GenericAPI</span><span class="p">):</span>
-    <span class="c1"># Response will be cached for 10 seconds for each user/ ip</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">HelloAPI</span><span class="p">(</span><span class="n">GenericAPI</span><span class="p">):</span>
+    <span class="c1"># Cache responses for 10 seconds</span>
     <span class="n">cache</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">current</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;detail&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;Hello World | </span><span class="si">{</span><span class="n">current</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">}</span>
-        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_202_ACCEPTED</span><span class="p">)</span>
+        <span class="n">current_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span>
+            <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;Hello from Panther! 🐾 | </span><span class="si">{</span><span class="n">current_time</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">},</span>
+            <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_200_OK</span>
+        <span class="p">)</span>
 
-
+<span class="c1"># URL routing configuration</span>
 <span class="n">url_routing</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;/&#39;</span><span class="p">:</span> <span class="n">FirstAPI</span><span class="p">,</span>
-    <span class="s1">&#39;swagger/&#39;</span><span class="p">:</span> <span class="n">openapi_urls</span><span class="p">,</span>  <span class="c1"># Auto generated Swagger API documentation</span>
+    <span class="s1">&#39;/&#39;</span><span class="p">:</span> <span class="n">HelloAPI</span><span class="p">,</span>
+    <span class="s1">&#39;swagger/&#39;</span><span class="p">:</span> <span class="n">openapi_url_routing</span><span class="p">,</span>  <span class="c1"># Auto-generated API docs</span>
 <span class="p">}</span>
+
+<span class="c1"># Create your Panther app</span>
 <span class="n">app</span> <span class="o">=</span> <span class="n">Panther</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">configs</span><span class="o">=</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">urls</span><span class="o">=</span><span class="n">url_routing</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="websocket-example">WebSocket Example<a class="headerlink" href="#websocket-example" title="Permanent link">#</a></h3>
@@ -1267,7 +1269,10 @@ $<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </sp
 <span class="normal">26</span>
 <span class="normal">27</span>
 <span class="normal">28</span>
-<span class="normal">29</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther</span><span class="w"> </span><span class="kn">import</span> <span class="n">Panther</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther</span><span class="w"> </span><span class="kn">import</span> <span class="n">Panther</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">panther.app</span><span class="w"> </span><span class="kn">import</span> <span class="n">GenericAPI</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">panther.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTMLResponse</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">panther.websocket</span><span class="w"> </span><span class="kn">import</span> <span class="n">GenericWebsocket</span>
@@ -1275,13 +1280,16 @@ $<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </sp
 <span class="k">class</span><span class="w"> </span><span class="nc">EchoWebsocket</span><span class="p">(</span><span class="n">GenericWebsocket</span><span class="p">):</span>
     <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">accept</span><span class="p">()</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;Connected to Panther WebSocket!&quot;</span><span class="p">)</span>
 
     <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">receive</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bytes</span><span class="p">):</span>
-        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="c1"># Echo back the received message</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Echo: </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">MainPage</span><span class="p">(</span><span class="n">GenericAPI</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">WebSocketPage</span><span class="p">(</span><span class="n">GenericAPI</span><span class="p">):</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">template</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        &lt;h2&gt;🐾 Panther WebSocket Echo Server&lt;/h2&gt;</span>
 <span class="s2">        &lt;input id=&quot;msg&quot;&gt;&lt;button onclick=&quot;s.send(msg.value)&quot;&gt;Send&lt;/button&gt;</span>
 <span class="s2">        &lt;ul id=&quot;log&quot;&gt;&lt;/ul&gt;</span>
 <span class="s2">        &lt;script&gt;</span>
@@ -1292,7 +1300,7 @@ $<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </sp
         <span class="k">return</span> <span class="n">HTMLResponse</span><span class="p">(</span><span class="n">template</span><span class="p">)</span>
 
 <span class="n">url_routing</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;&#39;</span><span class="p">:</span> <span class="n">MainPage</span><span class="p">,</span>
+    <span class="s1">&#39;&#39;</span><span class="p">:</span> <span class="n">WebSocketPage</span><span class="p">,</span>
     <span class="s1">&#39;ws&#39;</span><span class="p">:</span> <span class="n">EchoWebsocket</span><span class="p">,</span>
 <span class="p">}</span>
 <span class="n">app</span> <span class="o">=</span> <span class="n">Panther</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">configs</span><span class="o">=</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">urls</span><span class="o">=</span><span class="n">url_routing</span><span class="p">)</span>

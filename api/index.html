@@ -370,6 +370,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#output-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#authentication" class="md-nav__link">
     <span class="md-ellipsis">
       Authentication
@@ -1053,6 +1062,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#output-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#authentication" class="md-nav__link">
     <span class="md-ellipsis">
       Authentication
@@ -1245,13 +1263,60 @@ Middlewares
 </div>
 </div>
 <hr />
+<h2 id="output-model">Output Model<a class="headerlink" href="#output-model" title="Permanent link">#</a></h2>
+<p>Use the <code>output_model</code> parameter to automatically serialize your API response data using a specified serializer. This ensures that the response structure is consistent and validated.</p>
+<p><strong>Example Serializer:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/serializers.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.serializer</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModelSerializer</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">UserSerializer</span><span class="p">(</span><span class="n">ModelSerializer</span><span class="p">):</span>
+    <span class="o">...</span>
+</code></pre></div></td></tr></table></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Function-Base API</label><label for="__tabbed_2_2">Class-Base API</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/apis.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.app</span><span class="w"> </span><span class="kn">import</span> <span class="n">API</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">app.serializers</span><span class="w"> </span><span class="kn">import</span> <span class="n">UserSerializer</span>
+
+<span class="nd">@API</span><span class="p">(</span><span class="n">output_model</span><span class="o">=</span><span class="n">UserSerializer</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">user_api</span><span class="p">():</span>
+    <span class="o">...</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/apis.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.app</span><span class="w"> </span><span class="kn">import</span> <span class="n">GenericAPI</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">app.serializers</span><span class="w"> </span><span class="kn">import</span> <span class="n">UserSerializer</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">UserAPI</span><span class="p">(</span><span class="n">GenericAPI</span><span class="p">):</span>
+    <span class="n">output_model</span> <span class="o">=</span> <span class="n">UserSerializer</span>
+    <span class="o">...</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<blockquote>
+<p><strong>Tip:</strong> Use <code>output_model</code> to ensure your API always returns data in the expected format. For OpenAPI documentation, see the <code>output_schema</code> section.</p>
+</blockquote>
+<hr />
 <h2 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">#</a></h2>
 <p>To ensure that each request contains a valid authentication header, set <code>auth=True</code>. Panther will look for the <code>AUTHENTICATION</code> class from your config and use its <code>authentication()</code> method for this purpose.</p>
 <details class="question">
 <summary>How do authentications work in Panther?</summary>
 <p>Refer to <a href="../authentications/">Authentications</a> to learn more about authentications.</p>
 </details>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Function-Base API</label><label for="__tabbed_2_2">Class-Base API</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Function-Base API</label><label for="__tabbed_3_2">Class-Base API</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/apis.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1303,7 +1368,7 @@ Middlewares
 <blockquote>
 <p>If a method is not allowed, a 405 status code will be returned.</p>
 </blockquote>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Function-Base API</label><label for="__tabbed_3_2">Class-Base API</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Function-Base API</label><label for="__tabbed_4_2">Class-Base API</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/apis.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1372,7 +1437,7 @@ Middlewares
     <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">authorization</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">True</span>
 </code></pre></div></td></tr></table></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Function-Base API</label><label for="__tabbed_4_2">Class-Base API</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Function-Base API</label><label for="__tabbed_5_2">Class-Base API</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/apis.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1411,7 +1476,7 @@ Middlewares
 <div class="highlight"><pre><span></span><code>&#39;user_id or ip - request.path - hash of query param - request.validated_data&#39;
 </code></pre></div>
 <p>The value of <code>cache</code> should be an instance of <code>datetime.timedelta()</code>.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Function-Base API</label><label for="__tabbed_5_2">Class-Base API</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Function-Base API</label><label for="__tabbed_6_2">Class-Base API</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/apis.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1458,7 +1523,7 @@ Middlewares
 <span class="n">THROTTLING</span> <span class="o">=</span> <span class="n">Throttle</span><span class="p">(</span><span class="n">rate</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
 </code></pre></div>
 <h3 id="throttling-per-api">Throttling Per API<a class="headerlink" href="#throttling-per-api" title="Permanent link">#</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Function-Base API</label><label for="__tabbed_6_2">Class-Base API</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Function-Base API</label><label for="__tabbed_7_2">Class-Base API</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/apis.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1532,7 +1597,7 @@ Middlewares
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Bye&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">response</span>
 </code></pre></div></td></tr></table></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Function-Base API</label><label for="__tabbed_7_2">Class-Base API</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Function-Base API</label><label for="__tabbed_8_2">Class-Base API</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/apis.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1570,7 +1635,8 @@ Middlewares
 </details>
 <hr />
 <h2 id="output-schema">Output Schema<a class="headerlink" href="#output-schema" title="Permanent link">#</a></h2>
-<p>The <code>output_schema</code> attribute is used when generating OpenAPI (Swagger) documentation. It should be an instance of <code>panther.openapi.OutputSchema</code>, which specifies the desired response data structure and status code.</p>
+<p>The <code>output_schema</code> attribute is used when generating OpenAPI (Swagger) documentation. 
+It should be an instance of <code>panther.openapi.OutputSchema</code>, which specifies the desired response data structure and status code.</p>
 <p><strong>Example Serializer:</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/serializers.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -1580,7 +1646,7 @@ Middlewares
 <span class="k">class</span><span class="w"> </span><span class="nc">UserSerializer</span><span class="p">(</span><span class="n">ModelSerializer</span><span class="p">):</span>
     <span class="o">...</span>
 </code></pre></div></td></tr></table></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Function-Base API</label><label for="__tabbed_8_2">Class-Base API</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Function-Base API</label><label for="__tabbed_9_2">Class-Base API</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/apis.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
