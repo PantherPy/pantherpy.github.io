@@ -1311,9 +1311,12 @@
 <hr />
 <h2 id="advanced-usage">Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permanent link">#</a></h2>
 <h3 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">#</a></h3>
-<p>You can enable authentication in your WebSocket class by setting <code>auth = True</code> and specifying your authentication class in the configuration with <code>WS_AUTHENTICATION</code>. 
-Panther will use the <code>authentication()</code> method of this class to authenticate the user. 
-There are several built-in options, but we recommend <code>QueryParamJWTAuthentication</code> for WebSocket authentication.</p>
+<p>You can enable authentication in your WebSocket class by setting <code>auth</code> to an async function or a class with an async <code>__call__</code> method. Panther will use this callable to authenticate the user. </p>
+<ul>
+<li>If you do not set <code>auth</code>, Panther will use the default <code>WS_AUTHENTICATION</code> from your configuration <strong>only if the request contains an authorization header/ cookie/ param/ etc.</strong>. </li>
+<li>If there is no authorization header, authentication is bypassed and <code>self.user</code> will be <code>None</code>.</li>
+</ul>
+<p>There are several built-in options, but we recommend <code>QueryParamJWTAuthentication</code> for WebSocket authentication.</p>
 <div class="highlight"><pre><span></span><code><span class="n">WS_AUTHENTICATION</span> <span class="o">=</span> <span class="s1">&#39;panther.authentications.QueryParamJWTAuthentication&#39;</span>
 </code></pre></div>
 <p>This will set <code>self.user</code> to a <code>UserModel</code> instance or <code>None</code>. The connection will be rejected if any exception occurs during authentication.</p>
@@ -1324,43 +1327,66 @@ There are several built-in options, but we recommend <code>QueryParamJWTAuthenti
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.websocket</span><span class="w"> </span><span class="kn">import</span> <span class="n">GenericWebsocket</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.websocket</span><span class="w"> </span><span class="kn">import</span> <span class="n">GenericWebsocket</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">app.authentications</span><span class="w"> </span><span class="kn">import</span> <span class="n">MyAuthenticationClass</span>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">MyWebSocket</span><span class="p">(</span><span class="n">GenericWebsocket</span><span class="p">):</span>
-    <span class="n">auth</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">auth</span> <span class="o">=</span> <span class="n">MyAuthenticationClass</span>  <span class="c1"># Or use an async function</span>
 
     <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="p">)</span>
         <span class="o">...</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">#</a></h3>
-<p>You can implement your authorization logic using permission classes. Any class that inherits from <code>panther.permissions.BasePermission</code> or implements an <code>authorization()</code> method can be used as a permission class.</p>
-<p>Pass a list of permission classes to your WebSocket class, and Panther will call each class's <code>authorization()</code> method. If any return <code>False</code>, the connection will be rejected.</p>
 <blockquote>
-<p>The <code>authorization()</code> method should be an <code>async classmethod</code>.</p>
+<p><strong>Note:</strong> When authentication is bypassed (no authorization header), <code>self.user</code> will be <code>None</code> and you must rely on permissions to check the user and their authorization.</p>
 </blockquote>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/websockets.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.websocket</span><span class="w"> </span><span class="kn">import</span> <span class="n">Websocket</span><span class="p">,</span> <span class="n">GenericWebsocket</span>
+<h3 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">#</a></h3>
+<p>You can implement your authorization logic using permission classes or functions. Any async function or class with an async <code>__call__</code> method can be used as a permission. Panther will call each permission (asynchronously). </p>
+<ul>
+<li>If any return <code>False</code>, the connection will be rejected.</li>
+</ul>
+<p>Pass a list of permission callables to your WebSocket class. </p>
+<ul>
+<li>If you pass a single permission, it will be automatically wrapped in a list.</li>
+</ul>
+<blockquote>
+<p>Each permission must be async (either an async function or a class with an async <code>__call__</code>).</p>
+</blockquote>
+<p><strong>Example Permission Function:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/permissions.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.websocket</span><span class="w"> </span><span class="kn">import</span> <span class="n">Websocket</span>
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">custom_permission</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Websocket</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Example Permission Class:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/permissions.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.websocket</span><span class="w"> </span><span class="kn">import</span> <span class="n">Websocket</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">panther.permissions</span><span class="w"> </span><span class="kn">import</span> <span class="n">BasePermission</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">MyPermission</span><span class="p">(</span><span class="n">BasePermission</span><span class="p">):</span>
-    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">authorization</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Websocket</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">CustomPermission</span><span class="p">(</span><span class="n">BasePermission</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Websocket</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">True</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/websockets.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.websocket</span><span class="w"> </span><span class="kn">import</span> <span class="n">GenericWebsocket</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">app.permissions</span><span class="w"> </span><span class="kn">import</span> <span class="n">custom_permission</span><span class="p">,</span> <span class="n">CustomPermission</span>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">MyWebSocket</span><span class="p">(</span><span class="n">GenericWebsocket</span><span class="p">):</span>
-    <span class="n">permissions</span> <span class="o">=</span> <span class="p">[</span><span class="n">MyPermission</span><span class="p">]</span>
+    <span class="n">permissions</span> <span class="o">=</span> <span class="p">[</span><span class="n">custom_permission</span><span class="p">,</span> <span class="n">CustomPermission</span><span class="p">]</span>  <span class="c1"># Or just one</span>
 
     <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="o">...</span>

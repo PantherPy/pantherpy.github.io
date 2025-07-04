@@ -1238,7 +1238,7 @@ $<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </sp
 <span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">panther</span><span class="w"> </span><span class="kn">import</span> <span class="n">status</span><span class="p">,</span> <span class="n">Panther</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">panther.app</span><span class="w"> </span><span class="kn">import</span> <span class="n">GenericAPI</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">panther.openapi.urls</span><span class="w"> </span><span class="kn">import</span> <span class="n">url_routing</span> <span class="k">as</span> <span class="n">openapi_url_routing</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">panther.openapi.views</span><span class="w"> </span><span class="kn">import</span> <span class="n">ScalarOpenAPI</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">panther.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">Response</span>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">HelloAPI</span><span class="p">(</span><span class="n">GenericAPI</span><span class="p">):</span>
@@ -1255,7 +1255,7 @@ $<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </sp
 <span class="c1"># URL routing configuration</span>
 <span class="n">url_routing</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;/&#39;</span><span class="p">:</span> <span class="n">HelloAPI</span><span class="p">,</span>
-    <span class="s1">&#39;swagger/&#39;</span><span class="p">:</span> <span class="n">openapi_url_routing</span><span class="p">,</span>  <span class="c1"># Auto-generated API docs</span>
+    <span class="s1">&#39;docs/&#39;</span><span class="p">:</span> <span class="n">ScalarOpenAPI</span><span class="p">,</span>  <span class="c1"># Auto-generated API docs</span>
 <span class="p">}</span>
 
 <span class="c1"># Create your Panther app</span>

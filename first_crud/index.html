@@ -1549,7 +1549,7 @@ or</p>
     <span class="n">filter_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;author&#39;</span><span class="p">]</span>  <span class="c1">#(3)!</span>
     <span class="n">sort_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;pages_count&#39;</span><span class="p">]</span>  <span class="c1">#(4)!</span>
 
-    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">cursor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="k">return</span> <span class="k">await</span> <span class="n">Book</span><span class="o">.</span><span class="n">find</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
 <ol>
@@ -1636,7 +1636,7 @@ e.g. <code>?name=Something&amp;author=Ali</code>, it will looks for Book that it
 
 
 <span class="k">class</span><span class="w"> </span><span class="nc">SingleBookAPI</span><span class="p">(</span><span class="n">RetrieveAPI</span><span class="p">):</span>
-    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">object</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_instance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="k">return</span> <span class="k">await</span> <span class="n">Book</span><span class="o">.</span><span class="n">find_one_or_raise</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;book_id&#39;</span><span class="p">])</span>
 </code></pre></div></td></tr></table></div>
 </div>
@@ -1731,7 +1731,7 @@ e.g. <code>?name=Something&amp;author=Ali</code>, it will looks for Book that it
 <span class="k">class</span><span class="w"> </span><span class="nc">SingleBookAPI</span><span class="p">(</span><span class="n">RetrieveAPI</span><span class="p">,</span> <span class="n">UpdateAPI</span><span class="p">):</span>
     <span class="n">input_model</span> <span class="o">=</span> <span class="n">BookSerializer</span>
 
-    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">object</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_instance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="k">return</span> <span class="k">await</span> <span class="n">Book</span><span class="o">.</span><span class="n">find_one_or_raise</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;book_id&#39;</span><span class="p">])</span>
 </code></pre></div></td></tr></table></div>
 </div>
@@ -1818,7 +1818,7 @@ e.g. <code>?name=Something&amp;author=Ali</code>, it will looks for Book that it
 <span class="k">class</span><span class="w"> </span><span class="nc">SingleBookAPI</span><span class="p">(</span><span class="n">RetrieveAPI</span><span class="p">,</span> <span class="n">UpdateAPI</span><span class="p">,</span> <span class="n">DeleteAPI</span><span class="p">):</span>
     <span class="n">input_model</span> <span class="o">=</span> <span class="n">BookSerializer</span>
 
-    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">object</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_instance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="k">return</span> <span class="k">await</span> <span class="n">Book</span><span class="o">.</span><span class="n">find_one_or_raise</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;book_id&#39;</span><span class="p">])</span>
 </code></pre></div></td></tr></table></div>
 </div>

@@ -1234,6 +1234,14 @@ Middlewares
 <summary>How do serializers work in Panther?</summary>
 <p>Refer to <a href="../serializer/">Serializer</a> to learn more about serializers.</p>
 </details>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/serializers.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.serializer</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModelSerializer</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">UserInputSerializer</span><span class="p">(</span><span class="n">ModelSerializer</span><span class="p">):</span>
+    <span class="o">...</span>
+</code></pre></div></td></tr></table></div>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Function-Base API</label><label for="__tabbed_1_2">Class-Base API</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1246,16 +1254,20 @@ Middlewares
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther</span><span class="w"> </span><span class="kn">import</span> <span class="n">status</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther</span><span class="w"> </span><span class="kn">import</span> <span class="n">status</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">panther.app</span><span class="w"> </span><span class="kn">import</span> <span class="n">API</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">panther.request</span><span class="w"> </span><span class="kn">import</span> <span class="n">Request</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">panther.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">Response</span>
 
+<span class="kn">from</span><span class="w"> </span><span class="nn">app.serializers</span><span class="w"> </span><span class="kn">import</span> <span class="n">UserInputSerializer</span>
 
-<span class="nd">@API</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nd">@API</span><span class="p">(</span><span class="n">input_model</span><span class="o">=</span><span class="n">UserInputSerializer</span><span class="p">)</span>
 <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">user_api</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
-    <span class="n">user</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span>
-    <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">user</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_200_OK</span><span class="p">)</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">validated_data</span>  <span class="c1"># This is now available</span>
+    <span class="o">...</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -1269,17 +1281,21 @@ Middlewares
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther</span><span class="w"> </span><span class="kn">import</span> <span class="n">status</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther</span><span class="w"> </span><span class="kn">import</span> <span class="n">status</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">panther.app</span><span class="w"> </span><span class="kn">import</span> <span class="n">GenericAPI</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">panther.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">Response</span>
 
+<span class="kn">from</span><span class="w"> </span><span class="nn">app.serializers</span><span class="w"> </span><span class="kn">import</span> <span class="n">UserInputSerializer</span>
+
 
 <span class="k">class</span><span class="w"> </span><span class="nc">UserAPI</span><span class="p">(</span><span class="n">GenericAPI</span><span class="p">):</span>
-    <span class="n">auth</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">input_model</span> <span class="o">=</span> <span class="n">UserInputSerializer</span>
 
     <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
-        <span class="n">user</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span>
-        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">user</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_200_OK</span><span class="p">)</span>
+        <span class="n">request</span><span class="o">.</span><span class="n">validated_data</span>  <span class="c1"># This is now available</span>
+        <span class="o">...</span>
 </code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -1333,7 +1349,13 @@ Middlewares
 </blockquote>
 <hr />
 <h2 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">#</a></h2>
-<p>To ensure that each request contains a valid authentication header, set <code>auth=True</code>. Panther will look for the <code>AUTHENTICATION</code> class from your config and use its <code>authentication()</code> method for this purpose.</p>
+<p>To ensure that each request contains a valid authentication header, use the <code>auth</code> parameter. </p>
+<ul>
+<li>The <code>auth</code> parameter can be an any async function or a class with an async <code>__call__</code> method.</li>
+<li>If you set <code>auth</code>, Panther will use your specified authentication class or function. </li>
+<li>If you do not set <code>auth</code>, Panther will use the default <code>AUTHENTICATION</code> from your config <strong>only if the request contains an authorization header</strong>. </li>
+<li>If there is no authorization header in the request, authentication is bypassed, <code>request.user</code> will be <code>None</code> and you must rely on permissions to check the user and their authorization.</li>
+</ul>
 <details class="question">
 <summary>How do authentications work in Panther?</summary>
 <p>Refer to <a href="../authentications/">Authentications</a> to learn more about authentications.</p>
@@ -1341,20 +1363,22 @@ Middlewares
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Function-Base API</label><label for="__tabbed_3_2">Class-Base API</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/apis.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther</span><span class="w"> </span><span class="kn">import</span> <span class="n">status</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/apis.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther</span><span class="w"> </span><span class="kn">import</span> <span class="n">status</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">panther.app</span><span class="w"> </span><span class="kn">import</span> <span class="n">API</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">panther.request</span><span class="w"> </span><span class="kn">import</span> <span class="n">Request</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">panther.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">Response</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">app.authentications</span><span class="w"> </span><span class="kn">import</span> <span class="n">MyAuthenticationClass</span>
 
-<span class="nd">@API</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nd">@API</span><span class="p">(</span><span class="n">auth</span><span class="o">=</span><span class="n">MyAuthenticationClass</span><span class="p">)</span>  <span class="c1"># You can also use a function</span>
 <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">user_api</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
     <span class="n">user</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span>
     <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">user</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_200_OK</span><span class="p">)</span>
@@ -1370,12 +1394,14 @@ Middlewares
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther</span><span class="w"> </span><span class="kn">import</span> <span class="n">status</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther</span><span class="w"> </span><span class="kn">import</span> <span class="n">status</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">panther.app</span><span class="w"> </span><span class="kn">import</span> <span class="n">GenericAPI</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">panther.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">Response</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">app.authentications</span><span class="w"> </span><span class="kn">import</span> <span class="n">MyAuthenticationClass</span>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">UserAPI</span><span class="p">(</span><span class="n">GenericAPI</span><span class="p">):</span>
-    <span class="n">auth</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">auth</span> <span class="o">=</span> <span class="n">MyAuthenticationClass</span>  <span class="c1"># You can also use a function</span>
 
     <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
         <span class="n">user</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span>
@@ -1439,44 +1465,65 @@ Middlewares
 </div>
 <hr />
 <h2 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">#</a></h2>
-<p>You can implement your authorization logic using permission classes. Any class that inherits from <code>panther.permissions.BasePermission</code> or implements an <code>authorization()</code> method can be used as a permission class.</p>
-<p>Pass a list of permission classes to your API, and Panther will call each class's <code>authorization()</code> method. If any return <code>False</code>, a <code>panther.exceptions.AuthorizationAPIError</code> will be raised.</p>
+<p>You can implement your authorization logic using permission classes or functions. Any async function or class with an async <code>__call__</code> method can be used as a permission. Panther will call each permission (asynchronously).</p>
+<p>Pass a list of permission callables to your API using the <code>permissions</code> parameter. If you pass a single permission, it will be automatically wrapped in a list.</p>
 <blockquote>
-<p>The <code>authorization()</code> method should be an <code>async classmethod</code>.</p>
+<p>Each permission must be async (either an async function or a class with an async <code>__call__</code>).</p>
 </blockquote>
+<p><strong>Example Permission Function:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/permissions.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.request</span><span class="w"> </span><span class="kn">import</span> <span class="n">Request</span>
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">custom_permission</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</code></pre></div></td></tr></table></div>
 <p><strong>Example Permission Class:</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/permissions.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.permissions</span><span class="w"> </span><span class="kn">import</span> <span class="n">BasePermission</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.permissions</span><span class="w"> </span><span class="kn">import</span> <span class="n">BasePermission</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">panther.request</span><span class="w"> </span><span class="kn">import</span> <span class="n">Request</span>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">CustomPermission</span><span class="p">(</span><span class="n">BasePermission</span><span class="p">):</span>
-    <span class="nd">@classmethod</span>
-    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">authorization</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">True</span>
 </code></pre></div></td></tr></table></div>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Function-Base API</label><label for="__tabbed_5_2">Class-Base API</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
+<p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/apis.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.app</span><span class="w"> </span><span class="kn">import</span> <span class="n">API</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">app.permissions</span><span class="w"> </span><span class="kn">import</span> <span class="n">custom_permission</span><span class="p">,</span> <span class="n">CustomPermission</span>
+
+<span class="nd">@API</span><span class="p">(</span><span class="n">permissions</span><span class="o">=</span><span class="p">[</span><span class="n">custom_permission</span><span class="p">,</span> <span class="n">CustomPermission</span><span class="p">])</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">user_api</span><span class="p">():</span>
+    <span class="o">...</span>
+</code></pre></div></td></tr></table></div>
+Or, if you have only one permission:
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/apis.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.app</span><span class="w"> </span><span class="kn">import</span> <span class="n">API</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">app.permissions</span><span class="w"> </span><span class="kn">import</span> <span class="n">CustomPermission</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">app.permissions</span><span class="w"> </span><span class="kn">import</span> <span class="n">custom_permission</span>
 
-<span class="nd">@API</span><span class="p">(</span><span class="n">permissions</span><span class="o">=</span><span class="p">[</span><span class="n">CustomPermission</span><span class="p">])</span>
+<span class="nd">@API</span><span class="p">(</span><span class="n">permissions</span><span class="o">=</span><span class="n">custom_permission</span><span class="p">)</span>
 <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">user_api</span><span class="p">():</span>
     <span class="o">...</span>
 </code></pre></div></td></tr></table></div>
+Panther will treat it as a list internally.</p>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/apis.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/apis.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -1488,6 +1535,20 @@ Middlewares
     <span class="n">permissions</span> <span class="o">=</span> <span class="p">[</span><span class="n">CustomPermission</span><span class="p">]</span>
     <span class="o">...</span>
 </code></pre></div></td></tr></table></div>
+Or, if you have only one permission:
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/apis.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.app</span><span class="w"> </span><span class="kn">import</span> <span class="n">GenericAPI</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">app.permissions</span><span class="w"> </span><span class="kn">import</span> <span class="n">custom_permission</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">UserAPI</span><span class="p">(</span><span class="n">GenericAPI</span><span class="p">):</span>
+    <span class="n">permissions</span> <span class="o">=</span> <span class="n">custom_permission</span>
+    <span class="o">...</span>
+</code></pre></div></td></tr></table></div>
+Panther will treat it as a list internally.</p>
 </div>
 </div>
 </div>
