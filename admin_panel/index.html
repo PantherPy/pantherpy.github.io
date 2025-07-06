@@ -882,6 +882,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#5-create-an-admin-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Create an Admin User
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1041,6 +1050,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#5-create-an-admin-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Create an Admin User
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1097,6 +1115,12 @@
 <p>Open your browser and navigate to:</p>
 <p><a href="http://127.0.0.1:8000/panel/">http://127.0.0.1:8000/panel/</a></p>
 <p>You should see the Panther Admin Panel interface, where you can manage your database models. </p>
+<h3 id="5-create-an-admin-user">5. Create an Admin User<a class="headerlink" href="#5-create-an-admin-user" title="Permanent link">#</a></h3>
+<p>To access the admin panel, you need at least one user account. You can create a user using the following command:</p>
+<div class="highlight"><pre><span></span><code>panther<span class="w"> </span>createuser<span class="w"> </span>main.py
+</code></pre></div>
+<p>Replace <code>main.py</code> with the path to your main application file if it is different. This command will create a new user based on your <code>USER_MODEL</code> (by default, <code>panther.db.models.BaseUser</code>).</p>
+<p>Once the user is created, you can log in to the admin panel using the credentials you set during user creation. </p>
 
 
 
