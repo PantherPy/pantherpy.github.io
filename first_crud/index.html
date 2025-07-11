@@ -539,6 +539,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../file_handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    File Handling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../database/" class="md-nav__link">
         
   
@@ -789,10 +811,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19" >
         
           
-          <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_19" id="__nav_19_label" tabindex="0">
             
   
   
@@ -805,8 +827,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_18">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_19_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_19">
             <span class="md-nav__icon md-icon"></span>
             Advance Configs
           </label>
@@ -1215,6 +1237,10 @@
 <p class="admonition-title">How do models work in Panther?</p>
 <p>Refer to <a href="../model/">Models</a> to learn more about defining models and how they function.</p>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">File Handling in Models</p>
+<p>For models that need to handle file uploads, see <a href="../file_handling/">File Handling</a> for detailed information about using <code>File</code> and <code>Image</code> types in your models.</p>
+</div>
 <p>Create a model named <code>Book</code> in <code>app/models.py</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/models.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -1288,6 +1314,10 @@ In <code>app/urls.py</code>, define the <code>Book</code> API URLs:</p>
 <p class="admonition-title">How do serializers work in Panther?</p>
 <p>Refer to <a href="../serializer/">Serializer</a> to learn more about available serializers.</p>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">File Handling in Serializers</p>
+<p>For serializers that need to handle file uploads, see <a href="../file_handling/">File Handling</a> for information about validating and processing files in your serializers.</p>
+</div>
 <p>Serializers transform data between the application and API requests.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Function-Base/ Class-Base API</label><label for="__tabbed_2_2">Generic API (Beta)</label></div>
 <div class="tabbed-content">
@@ -1352,6 +1382,10 @@ or</p>
 <div class="admonition question">
 <p class="admonition-title">How do APIs work in Panther?</p>
 <p>Refer to <a href="../api/">API</a> to learn more about API types and their usage.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">File Upload APIs</p>
+<p>For APIs that handle file uploads, see <a href="../file_handling/">File Handling</a> for comprehensive examples of file upload endpoints and processing.</p>
 </div>
 <h4 id="create">Create<a class="headerlink" href="#create" title="Permanent link">#</a></h4>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Function-Base API</label><label for="__tabbed_3_2">Class-Base API</label><label for="__tabbed_3_3">Generic API (Beta)</label></div>

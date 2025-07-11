@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://pantherpy.github.io/serializer/">
+        <link rel="canonical" href="https://pantherpy.github.io/file_handling/">
       
       
-        <link rel="prev" href="../api/">
+        <link rel="prev" href="../model/">
       
       
-        <link rel="next" href="../urls/">
+        <link rel="next" href="../database/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Serializers - Panther</title>
+        <title>File Handling - Panther</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#panther-serializers" class="md-skip">
+        <a href="#file-handling-in-panther" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Serializers
+              File Handling
             
           </span>
         </div>
@@ -321,32 +321,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Serializers
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../serializer/" class="md-nav__link">
         
   
   
@@ -357,122 +335,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      Introduction
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#style-1-pydantic-serializer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Style 1: Pydantic Serializer
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#style-2-modelserializer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Style 2: ModelSerializer
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#style-3-modelserializer-with-pydantic-features" class="md-nav__link">
-    <span class="md-ellipsis">
-      Style 3: ModelSerializer with Pydantic Features
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#comparison-table" class="md-nav__link">
-    <span class="md-ellipsis">
-      Comparison Table
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notes-best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      Notes &amp; Best Practices
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#file-handling-in-serializers" class="md-nav__link">
-    <span class="md-ellipsis">
-      File Handling in Serializers
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="File Handling in Serializers">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#basic-file-serialization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Basic File Serialization
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#file-validation" class="md-nav__link">
-    <span class="md-ellipsis">
-      File Validation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#file-properties" class="md-nav__link">
-    <span class="md-ellipsis">
-      File Properties
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -525,10 +387,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../file_handling/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    File Handling
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -539,6 +423,212 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#importing-file-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importing File Classes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-file-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating File Objects
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Properties
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Methods
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saving-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Saving Files
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Saving Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-saving" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Saving
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#directory-path-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directory Path Handling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idempotent-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Idempotent Behavior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automatic-directory-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automatic Directory Creation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-with-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration with Models
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-with-serializers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration with Serializers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration with Serializers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Validation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-upload-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Upload API
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Handling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1061,77 +1151,134 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Introduction
+      Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#style-1-pydantic-serializer" class="md-nav__link">
+  <a href="#basic-usage" class="md-nav__link">
     <span class="md-ellipsis">
-      Style 1: Pydantic Serializer
+      Basic Usage
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#style-2-modelserializer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Style 2: ModelSerializer
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#style-3-modelserializer-with-pydantic-features" class="md-nav__link">
-    <span class="md-ellipsis">
-      Style 3: ModelSerializer with Pydantic Features
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#comparison-table" class="md-nav__link">
-    <span class="md-ellipsis">
-      Comparison Table
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notes-best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      Notes &amp; Best Practices
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#file-handling-in-serializers" class="md-nav__link">
-    <span class="md-ellipsis">
-      File Handling in Serializers
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="File Handling in Serializers">
+    <nav class="md-nav" aria-label="Basic Usage">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#basic-file-serialization" class="md-nav__link">
+  <a href="#importing-file-classes" class="md-nav__link">
     <span class="md-ellipsis">
-      Basic File Serialization
+      Importing File Classes
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-file-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating File Objects
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Properties
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Methods
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saving-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Saving Files
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Saving Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-saving" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Saving
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#directory-path-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Directory Path Handling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idempotent-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Idempotent Behavior
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automatic-directory-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automatic Directory Creation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-with-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration with Models
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-with-serializers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration with Serializers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration with Serializers">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#file-validation" class="md-nav__link">
@@ -1142,10 +1289,25 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#file-properties" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-integration" class="md-nav__link">
     <span class="md-ellipsis">
-      File Properties
+      API Integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-upload-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Upload API
     </span>
   </a>
   
@@ -1153,6 +1315,24 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Handling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices
+    </span>
+  </a>
   
 </li>
       
@@ -1175,265 +1355,149 @@
   
 
 
-<h1 id="panther-serializers">Panther Serializers<a class="headerlink" href="#panther-serializers" title="Permanent link">#</a></h1>
-<p>Panther provides flexible ways to define serializers for your APIs. Serializers are responsible for validating and transforming input data. This guide covers the three supported styles and when to use each.</p>
+<h1 id="file-handling-in-panther">File Handling in Panther<a class="headerlink" href="#file-handling-in-panther" title="Permanent link">#</a></h1>
+<p>Panther provides file handling capabilities through the <code>File</code> and <code>Image</code> classes for file uploads and processing.</p>
 <hr />
-<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">#</a></h2>
-<p><strong>serializer</strong> in Panther is a class that defines how input data is validated and (optionally) transformed before being processed by your API logic. Panther supports three main styles:</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
 <ul>
-<li>
-<p><strong>Pydantic Serializer</strong>: Use a standard Pydantic model.</p>
-</li>
-<li>
-<p><strong>ModelSerializer</strong>: Generate fields from a Panther model.</p>
-</li>
-<li>
-<p><strong>ModelSerializer + Pydantic</strong>: Combine model-based fields with Pydantic features and custom validation.</p>
-</li>
+<li><strong><code>File</code></strong>: General-purpose file handling for any type of file</li>
+<li><strong><code>Image</code></strong>: Specialized file handling for images with automatic MIME type validation</li>
 </ul>
 <hr />
-<h2 id="style-1-pydantic-serializer">Style 1: Pydantic Serializer<a class="headerlink" href="#style-1-pydantic-serializer" title="Permanent link">#</a></h2>
-<p>Use a regular Pydantic class as your serializer. This is the most direct approach and is ideal for simple use cases or when you want full control over the fields.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">Field</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">panther.app</span><span class="w"> </span><span class="kn">import</span> <span class="n">API</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">panther.request</span><span class="w"> </span><span class="kn">import</span> <span class="n">Request</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">panther.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">Response</span>
+<h2 id="basic-usage">Basic Usage<a class="headerlink" href="#basic-usage" title="Permanent link">#</a></h2>
+<h3 id="importing-file-classes">Importing File Classes<a class="headerlink" href="#importing-file-classes" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.file_handler</span><span class="w"> </span><span class="kn">import</span> <span class="n">File</span><span class="p">,</span> <span class="n">Image</span>
+</code></pre></div>
+<h3 id="creating-file-objects">Creating File Objects<a class="headerlink" href="#creating-file-objects" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create from bytes (in-memory file)</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">File</span><span class="p">(</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;document.pdf&#39;</span><span class="p">,</span>
+    <span class="n">content_type</span><span class="o">=</span><span class="s1">&#39;application/pdf&#39;</span><span class="p">,</span>
+    <span class="n">file</span><span class="o">=</span><span class="sa">b</span><span class="s1">&#39;PDF content here...&#39;</span>
+<span class="p">)</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">UserSerializer</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-    <span class="n">username</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">password</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">first_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">last_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-
-<span class="nd">@API</span><span class="p">(</span><span class="n">input_model</span><span class="o">=</span><span class="n">UserSerializer</span><span class="p">)</span>
-<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">serializer_example</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">validated_data</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
+<span class="c1"># Create image file</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;photo.jpg&#39;</span><span class="p">,</span>
+    <span class="n">content_type</span><span class="o">=</span><span class="s1">&#39;image/jpeg&#39;</span><span class="p">,</span>
+    <span class="n">file</span><span class="o">=</span><span class="sa">b</span><span class="s1">&#39;JPEG content here...&#39;</span>
+<span class="p">)</span>
+</code></pre></div>
 <hr />
-<h2 id="style-2-modelserializer">Style 2: ModelSerializer<a class="headerlink" href="#style-2-modelserializer" title="Permanent link">#</a></h2>
-<p>Use Panther's <code>ModelSerializer</code> to automatically generate serializer fields from your model. This is useful for DRY code and consistency between your models and serializers.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">Field</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">panther.app</span><span class="w"> </span><span class="kn">import</span> <span class="n">API</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">panther.db</span><span class="w"> </span><span class="kn">import</span> <span class="n">Model</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">panther.request</span><span class="w"> </span><span class="kn">import</span> <span class="n">Request</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">panther.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">Response</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">panther.serializer</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModelSerializer</span>
-
-<span class="k">class</span><span class="w"> </span><span class="nc">User</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
-    <span class="n">username</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">password</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">first_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">last_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-
-<span class="c1"># Option 1: Specify fields explicitly</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">UserModelSerializer</span><span class="p">(</span><span class="n">ModelSerializer</span><span class="p">):</span>
-    <span class="k">class</span><span class="w"> </span><span class="nc">Config</span><span class="p">:</span>
-        <span class="n">model</span> <span class="o">=</span> <span class="n">User</span>
-        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;first_name&#39;</span><span class="p">,</span> <span class="s1">&#39;last_name&#39;</span><span class="p">]</span>
-        <span class="n">required_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;first_name&#39;</span><span class="p">]</span>
-
-<span class="c1"># Option 2: Exclude specific fields</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">UserModelSerializer</span><span class="p">(</span><span class="n">ModelSerializer</span><span class="p">):</span>
-    <span class="k">class</span><span class="w"> </span><span class="nc">Config</span><span class="p">:</span>
-        <span class="n">model</span> <span class="o">=</span> <span class="n">User</span>
-        <span class="n">fields</span> <span class="o">=</span> <span class="s1">&#39;*&#39;</span>
-        <span class="n">required_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;first_name&#39;</span><span class="p">]</span>
-        <span class="n">exclude</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">]</span>
-
-<span class="nd">@API</span><span class="p">(</span><span class="n">input_model</span><span class="o">=</span><span class="n">UserModelSerializer</span><span class="p">)</span>
-<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">model_serializer_example</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">validated_data</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-<hr />
-<h2 id="style-3-modelserializer-with-pydantic-features">Style 3: ModelSerializer with Pydantic Features<a class="headerlink" href="#style-3-modelserializer-with-pydantic-features" title="Permanent link">#</a></h2>
-<p>Combine <code>ModelSerializer</code> with Pydantic features for advanced use cases. This allows you to add custom fields, validators, and configuration.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">Field</span><span class="p">,</span> <span class="n">field_validator</span><span class="p">,</span> <span class="n">ConfigDict</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">panther.app</span><span class="w"> </span><span class="kn">import</span> <span class="n">API</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">panther.db</span><span class="w"> </span><span class="kn">import</span> <span class="n">Model</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">panther.request</span><span class="w"> </span><span class="kn">import</span> <span class="n">Request</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">panther.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">Response</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">panther.serializer</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModelSerializer</span>
-
-<span class="k">class</span><span class="w"> </span><span class="nc">User</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
-    <span class="n">username</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">password</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">first_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">last_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-
-<span class="k">class</span><span class="w"> </span><span class="nc">UserModelSerializer</span><span class="p">(</span><span class="n">ModelSerializer</span><span class="p">):</span>
-    <span class="n">model_config</span> <span class="o">=</span> <span class="n">ConfigDict</span><span class="p">(</span><span class="n">str_to_upper</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">age</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-    <span class="n">is_male</span><span class="p">:</span> <span class="nb">bool</span>
-    <span class="n">username</span><span class="p">:</span> <span class="nb">str</span>
-
-    <span class="k">class</span><span class="w"> </span><span class="nc">Config</span><span class="p">:</span>
-        <span class="n">model</span> <span class="o">=</span> <span class="n">User</span>
-        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;first_name&#39;</span><span class="p">,</span> <span class="s1">&#39;last_name&#39;</span><span class="p">]</span>
-        <span class="n">required_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;first_name&#39;</span><span class="p">]</span>
-        <span class="n">optional_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;last_name&#39;</span><span class="p">]</span>
-
-    <span class="nd">@field_validator</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">)</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">validate_username</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">username</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">username</span><span class="si">=}</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">username</span>
-
-<span class="nd">@API</span><span class="p">(</span><span class="n">input_model</span><span class="o">=</span><span class="n">UserModelSerializer</span><span class="p">)</span>
-<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">model_serializer_example</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">validated_data</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-<hr />
-<h2 id="comparison-table">Comparison Table<a class="headerlink" href="#comparison-table" title="Permanent link">#</a></h2>
+<h2 id="file-properties">File Properties<a class="headerlink" href="#file-properties" title="Permanent link">#</a></h2>
 <table>
 <thead>
 <tr>
-<th>Feature</th>
-<th style="text-align: center;">Pydantic Serializer</th>
-<th style="text-align: center;">ModelSerializer</th>
-<th style="text-align: center;">ModelSerializer + Pydantic</th>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Model-based fields</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">✅</td>
+<td><code>file_name</code></td>
+<td>str</td>
+<td>The name of the file</td>
 </tr>
 <tr>
-<td>Custom fields</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">✅</td>
+<td><code>content_type</code></td>
+<td>str</td>
+<td>The MIME type of the file</td>
 </tr>
 <tr>
-<td>Pydantic validators</td>
-<td style="text-align: center;">✅</td>
-<td style="text-align: center;">❌</td>
-<td style="text-align: center;">✅</td>
+<td><code>file</code></td>
+<td>bytes | None</td>
+<td>The file content in bytes</td>
 </tr>
 <tr>
-<td>Field inclusion/exclude</td>
-<td style="text-align: center;">Manual</td>
-<td style="text-align: center;">Configurable</td>
-<td style="text-align: center;">Configurable</td>
-</tr>
-<tr>
-<td>Best for</td>
-<td style="text-align: center;">Simple cases</td>
-<td style="text-align: center;">DRY, model-aligned</td>
-<td style="text-align: center;">Advanced/Hybrid</td>
+<td><code>size</code></td>
+<td>int</td>
+<td>File size in bytes</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="notes-best-practices">Notes &amp; Best Practices<a class="headerlink" href="#notes-best-practices" title="Permanent link">#</a></h2>
-<ul>
-<li><code>ModelSerializer</code> uses your model's field types and default values for validation.</li>
-<li><code>Config.model</code> and <code>Config.fields</code> are required for <code>ModelSerializer</code>.</li>
-<li>Use <code>Config.required_fields</code> to force fields to be required.</li>
-<li>Use <code>Config.optional_fields</code> to force fields to be optional.</li>
-<li>A field cannot be in both <code>required_fields</code> and <code>optional_fields</code>.</li>
-<li>If you use <code>required_fields</code> or <code>optional_fields</code>, those fields must also be listed in <code>fields</code>.</li>
-<li>You can use <code>'*'</code> for <code>fields</code>, <code>required_fields</code>, or <code>optional_fields</code> to include all model fields.</li>
-<li><code>Config.exclude</code> is useful when <code>fields</code> is set to <code>'*'</code>.</li>
-<li>You can add custom fields and validators when combining <code>ModelSerializer</code> with Pydantic features.</li>
-</ul>
+<h2 id="file-methods">File Methods<a class="headerlink" href="#file-methods" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># Read file content</span>
+<span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="c1"># Save file to disk</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;uploads/&quot;</span><span class="p">)</span>
+
+<span class="c1"># Use as context manager</span>
+<span class="k">with</span> <span class="n">file</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</code></pre></div>
 <hr />
-<h2 id="file-handling-in-serializers">File Handling in Serializers<a class="headerlink" href="#file-handling-in-serializers" title="Permanent link">#</a></h2>
-<p>When working with file uploads, Panther's <code>File</code> and <code>Image</code> classes integrate seamlessly with serializers.</p>
-<div class="admonition tip">
-<p class="admonition-title">Comprehensive File Handling Guide</p>
-<p>For detailed information about file handling, including advanced features, best practices, and troubleshooting, see the dedicated <a href="../file_handling/">File Handling</a> documentation.</p>
-</div>
-<h3 id="basic-file-serialization">Basic File Serialization<a class="headerlink" href="#basic-file-serialization" title="Permanent link">#</a></h3>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/serializers.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.serializer</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModelSerializer</span>
+<h2 id="saving-files">Saving Files<a class="headerlink" href="#saving-files" title="Permanent link">#</a></h2>
+<p>The <code>save()</code> method provides flexible file saving with several features:</p>
+<h3 id="basic-saving">Basic Saving<a class="headerlink" href="#basic-saving" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Save with original filename</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+<span class="c1"># Save with custom filename</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;custom_name.txt&quot;</span><span class="p">)</span>
+
+<span class="c1"># Save with overwrite</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;existing_file.txt&quot;</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="directory-path-handling">Directory Path Handling<a class="headerlink" href="#directory-path-handling" title="Permanent link">#</a></h3>
+<p>When you provide a path ending with <code>/</code>, it's treated as a directory:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Save to directory with original filename</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;uploads/&quot;</span><span class="p">)</span>  <span class="c1"># Saves as &quot;uploads/original_filename.ext&quot;</span>
+
+<span class="c1"># Save to nested directory</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;uploads/images/&quot;</span><span class="p">)</span>  <span class="c1"># Saves as &quot;uploads/images/original_filename.ext&quot;</span>
+
+<span class="c1"># Save to directory with custom filename</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;uploads/custom_name.txt&quot;</span><span class="p">)</span>  <span class="c1"># Saves as &quot;uploads/custom_name.txt&quot;</span>
+</code></pre></div>
+<h3 id="idempotent-behavior">Idempotent Behavior<a class="headerlink" href="#idempotent-behavior" title="Permanent link">#</a></h3>
+<p>The <code>save()</code> method is <strong>idempotent</strong> - calling it multiple times on the same file instance returns the same path:</p>
+<div class="highlight"><pre><span></span><code><span class="n">file</span> <span class="o">=</span> <span class="n">File</span><span class="p">(</span><span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;test.txt&#39;</span><span class="p">,</span> <span class="n">content_type</span><span class="o">=</span><span class="s1">&#39;text/plain&#39;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="sa">b</span><span class="s1">&#39;content&#39;</span><span class="p">)</span>
+
+<span class="c1"># First call - creates file and returns path</span>
+<span class="n">path1</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;uploads/&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">path1</span><span class="p">)</span>  <span class="c1"># &quot;uploads/test.txt&quot;</span>
+
+<span class="c1"># Subsequent calls - returns same path without creating new files</span>
+<span class="n">path2</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;uploads/&quot;</span><span class="p">)</span>
+<span class="n">path3</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;uploads/&quot;</span><span class="p">)</span>
+
+<span class="k">assert</span> <span class="n">path1</span> <span class="o">==</span> <span class="n">path2</span> <span class="o">==</span> <span class="n">path3</span>  <span class="c1"># All return the same path</span>
+</code></pre></div>
+<p>This prevents accidental creation of duplicate files with different timestamps.</p>
+<h3 id="automatic-directory-creation">Automatic Directory Creation<a class="headerlink" href="#automatic-directory-creation" title="Permanent link">#</a></h3>
+<p>The <code>save()</code> method automatically creates directories if they don't exist:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># This will create the &quot;uploads/images&quot; directory structure if it doesn&#39;t exist</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;uploads/images/&quot;</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="integration-with-models">Integration with Models<a class="headerlink" href="#integration-with-models" title="Permanent link">#</a></h2>
+<p>Files can be used as model attributes:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">panther.db</span><span class="w"> </span><span class="kn">import</span> <span class="n">Model</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">panther.file_handler</span><span class="w"> </span><span class="kn">import</span> <span class="n">File</span><span class="p">,</span> <span class="n">Image</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Document</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">title</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">file</span><span class="p">:</span> <span class="n">File</span>
+    <span class="n">uploaded_at</span><span class="p">:</span> <span class="n">datetime</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Profile</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">avatar</span><span class="p">:</span> <span class="n">Image</span>
+    <span class="n">bio</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+</code></pre></div>
+<p>When using File types in models:
+- The file metadata (name, content type) is preserved
+- The file path is stored in the database
+- The actual file content is automatically saved to disk when inserting the model
+- You can access file properties and methods on the model instance</p>
+<hr />
+<h2 id="integration-with-serializers">Integration with Serializers<a class="headerlink" href="#integration-with-serializers" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.serializer</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModelSerializer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">panther.file_handler</span><span class="w"> </span><span class="kn">import</span> <span class="n">File</span><span class="p">,</span> <span class="n">Image</span>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">FileUploadSerializer</span><span class="p">(</span><span class="n">ModelSerializer</span><span class="p">):</span>
     <span class="k">class</span><span class="w"> </span><span class="nc">Config</span><span class="p">:</span>
@@ -1446,29 +1510,9 @@
         <span class="n">model</span> <span class="o">=</span> <span class="n">ImageUpload</span>
         <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">]</span>
         <span class="n">required_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;image&#39;</span><span class="p">]</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div>
 <h3 id="file-validation">File Validation<a class="headerlink" href="#file-validation" title="Permanent link">#</a></h3>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/serializers.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">field_validator</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">field_validator</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">panther</span><span class="w"> </span><span class="kn">import</span> <span class="n">status</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">panther.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">APIError</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">panther.file_handler</span><span class="w"> </span><span class="kn">import</span> <span class="n">File</span>
@@ -1489,15 +1533,73 @@
                 <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_413_REQUEST_ENTITY_TOO_LARGE</span>
             <span class="p">)</span>
         <span class="k">return</span> <span class="n">file</span>
-</code></pre></div></td></tr></table></div>
-<h3 id="file-properties">File Properties<a class="headerlink" href="#file-properties" title="Permanent link">#</a></h3>
-<p>When working with <code>File</code> objects in serializers, you have access to:</p>
-<ul>
-<li><code>file.file_name</code>: The original filename</li>
-<li><code>file.content_type</code>: The MIME type</li>
-<li><code>file.size</code>: File size in bytes</li>
-<li><code>file.file</code>: The file content as bytes</li>
-</ul>
+</code></pre></div>
+<hr />
+<h2 id="api-integration">API Integration<a class="headerlink" href="#api-integration" title="Permanent link">#</a></h2>
+<h3 id="file-upload-api">File Upload API<a class="headerlink" href="#file-upload-api" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.app</span><span class="w"> </span><span class="kn">import</span> <span class="n">API</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">panther.request</span><span class="w"> </span><span class="kn">import</span> <span class="n">Request</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">panther.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">Response</span>
+
+<span class="nd">@API</span><span class="p">(</span><span class="n">input_model</span><span class="o">=</span><span class="n">FileUploadSerializer</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">upload_file</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
+    <span class="n">file_data</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">validated_data</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="n">file_data</span><span class="o">.</span><span class="n">file</span>
+
+    <span class="c1"># Save file to disk</span>
+    <span class="n">saved_path</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;uploads/&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Store in database</span>
+    <span class="n">document</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Document</span><span class="o">.</span><span class="n">insert_one</span><span class="p">({</span>
+        <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="n">file_data</span><span class="o">.</span><span class="n">description</span><span class="p">,</span>
+        <span class="s1">&#39;file&#39;</span><span class="p">:</span> <span class="n">file</span><span class="p">,</span>
+        <span class="s1">&#39;uploaded_at&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+    <span class="p">})</span>
+
+    <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;File uploaded successfully&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;saved_path&quot;</span><span class="p">:</span> <span class="n">saved_path</span>
+    <span class="p">})</span>
+</code></pre></div>
+<hr />
+<h2 id="error-handling">Error Handling<a class="headerlink" href="#error-handling" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther</span><span class="w"> </span><span class="kn">import</span> <span class="n">status</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">panther.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">APIError</span>
+
+<span class="nd">@API</span><span class="p">(</span><span class="n">input_model</span><span class="o">=</span><span class="n">FileUploadSerializer</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">upload_file</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">file_data</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">validated_data</span>
+        <span class="n">file</span> <span class="o">=</span> <span class="n">file_data</span><span class="o">.</span><span class="n">file</span>
+
+        <span class="c1"># Check file size</span>
+        <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">:</span>  <span class="c1"># 10MB limit</span>
+            <span class="k">raise</span> <span class="n">APIError</span><span class="p">(</span>
+                <span class="n">detail</span><span class="o">=</span><span class="s2">&quot;File too large. Maximum size is 10MB.&quot;</span><span class="p">,</span>
+                <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_413_REQUEST_ENTITY_TOO_LARGE</span>
+            <span class="p">)</span>
+
+        <span class="n">saved_path</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;uploads/&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;saved_path&quot;</span><span class="p">:</span> <span class="n">saved_path</span><span class="p">})</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">APIError</span><span class="p">(</span>
+            <span class="n">detail</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;File upload failed: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_500_INTERNAL_SERVER_ERROR</span>
+        <span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">#</a></h2>
+<ol>
+<li><strong>Validate file types</strong>: Always check MIME types to prevent malicious uploads</li>
+<li><strong>Limit file sizes</strong>: Set reasonable size limits to prevent abuse</li>
+<li><strong>Use context managers</strong>: When reading files, use <code>with</code> statements for proper cleanup</li>
+<li><strong>Handle errors gracefully</strong>: Provide clear error messages for validation failures</li>
+<li><strong>Secure file storage</strong>: Always validate and sanitize file names before saving</li>
+<li><strong>Leverage idempotency</strong>: The <code>save()</code> method is idempotent, so you can call it multiple times safely</li>
+<li><strong>Use directory paths</strong>: When saving files, use directory paths ending with <code>/</code> for better organization</li>
+</ol>
+<p>This guide covers the essential aspects of file handling in Panther. For more advanced features and detailed examples, refer to the API documentation and examples. </p>
 
 
 
@@ -1527,7 +1629,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../api/" class="md-footer__link md-footer__link--prev" aria-label="Previous: APIs">
+          <a href="../model/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Models">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1537,20 +1639,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                APIs
+                Models
               </div>
             </div>
           </a>
         
         
           
-          <a href="../urls/" class="md-footer__link md-footer__link--next" aria-label="Next: URLs">
+          <a href="../database/" class="md-footer__link md-footer__link--next" aria-label="Next: Database">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                URLs
+                Database
               </div>
             </div>
             <div class="md-footer__button md-icon">

@@ -16,7 +16,7 @@
         <link rel="prev" href="../urls/">
       
       
-        <link rel="next" href="../database/">
+        <link rel="next" href="../file_handling/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -490,6 +490,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#file-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Types
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -499,6 +508,28 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file_handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    File Handling
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -760,10 +791,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19" >
         
           
-          <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_19" id="__nav_19_label" tabindex="0">
             
   
   
@@ -776,8 +807,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_18">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_19_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_19">
             <span class="md-nav__icon md-icon"></span>
             Advance Configs
           </label>
@@ -1093,6 +1124,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#file-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Types
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1269,6 +1309,66 @@
     <span class="n">title</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">summary</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Optional attribute with default value</span>
 </code></pre></div></td></tr></table></div></p>
+<h3 id="file-types">File Types<a class="headerlink" href="#file-types" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>panther.file_handler.File</strong>: Handles file uploads and provides file manipulation capabilities.</li>
+<li><strong>panther.file_handler.Image</strong>: Specialized File class for image uploads with automatic MIME type validation.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Comprehensive File Handling Guide</p>
+<p>For detailed information about file handling, including advanced features, best practices, and troubleshooting, see the dedicated <a href="../file_handling/">File Handling</a> documentation.</p>
+</div>
+<p><strong>Example:</strong>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app/models.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">panther.db</span><span class="w"> </span><span class="kn">import</span> <span class="n">Model</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">panther.file_handler</span><span class="w"> </span><span class="kn">import</span> <span class="n">File</span><span class="p">,</span> <span class="n">Image</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Document</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">title</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">file</span><span class="p">:</span> <span class="n">File</span>
+    <span class="n">uploaded_at</span><span class="p">:</span> <span class="n">datetime</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Profile</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">avatar</span><span class="p">:</span> <span class="n">Image</span>
+    <span class="n">bio</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+</code></pre></div></td></tr></table></div></p>
+<p>When using File types in models:</p>
+<ul>
+<li>The file metadata (name, content type) is preserved</li>
+<li>The file path is stored in the database</li>
+<li>The actual file content is automatically saved to disk when inserting the model</li>
+<li>You can access file properties and methods on the model instance</li>
+</ul>
+<p><strong>Example usage:</strong>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create a document with file</span>
+<span class="n">document</span> <span class="o">=</span> <span class="k">await</span> <span class="n">Document</span><span class="o">.</span><span class="n">insert_one</span><span class="p">({</span>
+    <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;My Document&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;file&#39;</span><span class="p">:</span> <span class="n">File</span><span class="p">(</span><span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;document.pdf&#39;</span><span class="p">,</span> <span class="n">content_type</span><span class="o">=</span><span class="s1">&#39;application/pdf&#39;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">file_bytes</span><span class="p">),</span>
+    <span class="s1">&#39;uploaded_at&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="p">})</span>
+
+<span class="c1"># Access file properties</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">document</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">file_name</span><span class="p">)</span>  <span class="c1"># &#39;document.pdf&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">document</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">content_type</span><span class="p">)</span>  <span class="c1"># &#39;application/pdf&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">document</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>  <span class="c1"># File size in bytes</span>
+
+<span class="c1"># Read file content</span>
+<span class="k">with</span> <span class="n">document</span><span class="o">.</span><span class="n">file</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</code></pre></div></p>
 
 
 
@@ -1315,13 +1415,13 @@
         
         
           
-          <a href="../database/" class="md-footer__link md-footer__link--next" aria-label="Next: Database">
+          <a href="../file_handling/" class="md-footer__link md-footer__link--next" aria-label="Next: File Handling">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Database
+                File Handling
               </div>
             </div>
             <div class="md-footer__button md-icon">

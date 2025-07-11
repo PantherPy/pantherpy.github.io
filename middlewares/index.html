@@ -390,6 +390,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../file_handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    File Handling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../database/" class="md-nav__link">
         
   
@@ -817,10 +839,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_19" >
         
           
-          <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_19" id="__nav_19_label" tabindex="0">
             
   
   
@@ -833,8 +855,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_18">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_19_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_19">
             <span class="md-nav__icon md-icon"></span>
             Advance Configs
           </label>
@@ -1235,13 +1257,22 @@
 <p>Middlewares allow you to process requests and responses globally or for all or specific APIs. They are useful for tasks such as logging, timing, and other cross-cutting concerns.</p>
 <hr />
 <h2 id="global-middlewares">Global Middlewares<a class="headerlink" href="#global-middlewares" title="Permanent link">#</a></h2>
-<p>To apply middlewares globally, define a <code>MIDDLEWARES</code> list in your configs. Each item can be either a string (dotted path to the middleware class) or the class itself (useful for single-file applications):</p>
+<p>To apply middlewares globally, define a <code>MIDDLEWARES</code> list in your configs for HTTP middlewares, and a <code>WS_MIDDLEWARE</code> list for WebSocket middlewares. <strong>Only HTTP-related middlewares should be placed in <code>MIDDLEWARES</code>, and WebSocket middlewares must be placed in <code>WS_MIDDLEWARE</code>.</strong></p>
+<blockquote>
+<p><strong>Note:</strong> Previously, WebSocket middlewares were also defined in <code>MIDDLEWARES</code>. Now, you must define them in <code>WS_MIDDLEWARE</code> instead.</p>
+</blockquote>
+<p>Each item can be either a string (dotted path to the middleware class) or the class itself (useful for single-file applications):</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Middleware</span><span class="p">(</span><span class="n">HTTPMiddleware</span><span class="p">):</span>
     <span class="k">pass</span>
 
 <span class="n">MIDDLEWARES</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;core.middlewares.MyMiddleware&#39;</span><span class="p">,</span>  <span class="c1"># Import by dotted path</span>
     <span class="n">Middleware</span><span class="p">,</span>                       <span class="c1"># Or directly by class</span>
+<span class="p">]</span>
+
+<span class="n">WS_MIDDLEWARE</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;core.middlewares.MyWebsocketMiddleware&#39;</span><span class="p">,</span>  <span class="c1"># WebSocket middleware by dotted path</span>
+    <span class="n">MyWebsocketMiddleware</span><span class="p">,</span>                     <span class="c1"># Or directly by class</span>
 <span class="p">]</span>
 </code></pre></div>
 <hr />
