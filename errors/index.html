@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://pantherpy.github.io/query/">
+        <link rel="canonical" href="https://pantherpy.github.io/errors/">
       
       
-        <link rel="prev" href="../database/">
+        <link rel="prev" href="../responses/">
       
       
-        <link rel="next" href="../redis/">
+        <link rel="next" href="../configuration/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Query - Panther</title>
+        <title>Error Handling - Panther</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#querying-documents" class="md-skip">
+        <a href="#error-handling" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Query
+              Error Handling
             
           </span>
         </div>
@@ -473,37 +473,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Query
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../query/" class="md-nav__link">
         
   
   
@@ -519,298 +492,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#find_one" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        find_one
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#find" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        find
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="find">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#chaining" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Chaining
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#all" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        all
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#first-last" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        first / last
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#aggregate" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        aggregate
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#count" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        count
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#inserting-documents" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Inserting Documents
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Inserting Documents">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#insert_one" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        insert_one
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#insert_many" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        insert_many
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#updating-documents" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Updating Documents
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Updating Documents">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#update" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        update
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#update_one-update_many" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        update_one / update_many
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#save" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        save
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deleting-documents" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deleting Documents
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Deleting Documents">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#delete" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        delete
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#delete_one-delete_many" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        delete_one / delete_many
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#special-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Special Methods
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Special Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#find_one_or_insert" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        find_one_or_insert
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#find_one_or_raise" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        find_one_or_raise
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cursor-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cursor Usage
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Notes
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -981,10 +662,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../errors/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Error Handling
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1000,6 +708,125 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#apierror" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        APIError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#built-in-api-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Built-In API Errors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#not-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Not Found
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication-and-authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication And Authorization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Errors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preserving-apierror-status-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preserving APIError Status Codes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redirectapierror" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RedirectAPIError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#websocket-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WebSocket Errors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#framework-and-database-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Framework And Database Errors
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1579,10 +1406,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#find_one" class="md-nav__link">
+  <a href="#apierror" class="md-nav__link">
     <span class="md-ellipsis">
       
-        find_one
+        APIError
       
     </span>
   </a>
@@ -1590,38 +1417,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#find" class="md-nav__link">
+  <a href="#built-in-api-errors" class="md-nav__link">
     <span class="md-ellipsis">
       
-        find
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="find">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#chaining" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Chaining
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#all" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        all
+        Built-In API Errors
       
     </span>
   </a>
@@ -1629,10 +1428,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#first-last" class="md-nav__link">
+  <a href="#not-found" class="md-nav__link">
     <span class="md-ellipsis">
       
-        first / last
+        Not Found
       
     </span>
   </a>
@@ -1640,10 +1439,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#aggregate" class="md-nav__link">
+  <a href="#authentication-and-authorization" class="md-nav__link">
     <span class="md-ellipsis">
       
-        aggregate
+        Authentication And Authorization
       
     </span>
   </a>
@@ -1651,10 +1450,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#count" class="md-nav__link">
+  <a href="#validation-errors" class="md-nav__link">
     <span class="md-ellipsis">
       
-        count
+        Validation Errors
       
     </span>
   </a>
@@ -1662,177 +1461,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#inserting-documents" class="md-nav__link">
+  <a href="#preserving-apierror-status-codes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Inserting Documents
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Inserting Documents">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#insert_one" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        insert_one
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#insert_many" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        insert_many
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#updating-documents" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Updating Documents
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Updating Documents">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#update" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        update
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#update_one-update_many" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        update_one / update_many
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#save" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        save
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deleting-documents" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deleting Documents
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Deleting Documents">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#delete" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        delete
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#delete_one-delete_many" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        delete_one / delete_many
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#special-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Special Methods
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Special Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#find_one_or_insert" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        find_one_or_insert
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#find_one_or_raise" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        find_one_or_raise
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cursor-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cursor Usage
+        Preserving APIError Status Codes
       
     </span>
   </a>
@@ -1840,10 +1472,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
+  <a href="#redirectapierror" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Notes
+        RedirectAPIError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#websocket-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WebSocket Errors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#framework-and-database-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Framework And Database Errors
       
     </span>
   </a>
@@ -1878,132 +1532,182 @@
   
 
 
-<h1 id="querying-documents">Querying Documents<a class="headerlink" href="#querying-documents" title="Permanent link">#</a></h1>
-<p>Panther ODM provides a simple, async interface for interacting with your database models. This guide covers the most common operations.</p>
-<hr />
-<h3 id="find_one">find_one<a class="headerlink" href="#find_one" title="Permanent link">#</a></h3>
-<p>Get a single document matching the filter.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">app.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">User</span>
+<h1 id="error-handling">Error Handling<a class="headerlink" href="#error-handling" title="Permanent link">#</a></h1>
+<p>Panther converts <code>APIError</code> exceptions into HTTP responses. Unknown exceptions are logged and returned as <code>500 Internal Server Error</code>.</p>
+<p>Error classes live in <code>panther.exceptions</code>.</p>
+<h2 id="apierror">APIError<a class="headerlink" href="#apierror" title="Permanent link">#</a></h2>
+<p>Use <code>APIError</code> when you need a custom API error.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther</span><span class="w"> </span><span class="kn">import</span> <span class="n">status</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">panther.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">APIError</span>
 
-<span class="n">user</span><span class="p">:</span> <span class="n">User</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find_one</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
-<span class="c1"># or</span>
-<span class="n">user</span><span class="p">:</span> <span class="n">User</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find_one</span><span class="p">({</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ali&#39;</span><span class="p">})</span>
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">endpoint</span><span class="p">():</span>
+    <span class="k">raise</span> <span class="n">APIError</span><span class="p">(</span>
+        <span class="n">detail</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;detail&#39;</span><span class="p">:</span> <span class="s1">&#39;Something went wrong&#39;</span><span class="p">},</span>
+        <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_400_BAD_REQUEST</span><span class="p">,</span>
+        <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;X-Error-Code&#39;</span><span class="p">:</span> <span class="s1">&#39;example&#39;</span><span class="p">},</span>
+    <span class="p">)</span>
 </code></pre></div>
+<p>Panther returns:</p>
 <ul>
-<li><strong>Returns:</strong> An instance of the model or <code>None</code> if not found.</li>
+<li><code>detail</code> as response data.</li>
+<li><code>status_code</code> as the HTTP status.</li>
+<li><code>headers</code> as response headers.</li>
 </ul>
-<hr />
-<h3 id="find">find<a class="headerlink" href="#find" title="Permanent link">#</a></h3>
-<p>Get multiple documents matching the filter.</p>
-<div class="highlight"><pre><span></span><code><span class="n">users</span><span class="p">:</span> <span class="n">Cursor</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
+<p>If <code>detail</code> is a string, Panther wraps it as <code>{'detail': detail}</code>.</p>
+<h2 id="built-in-api-errors">Built-In API Errors<a class="headerlink" href="#built-in-api-errors" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Exception</th>
+<th style="text-align: right;">Status</th>
+<th>Default detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>APIError</code></td>
+<td style="text-align: right;">500</td>
+<td><code>Internal Server Error</code></td>
+</tr>
+<tr>
+<td><code>BadRequestAPIError</code></td>
+<td style="text-align: right;">400</td>
+<td><code>Bad Request</code></td>
+</tr>
+<tr>
+<td><code>AuthenticationAPIError</code></td>
+<td style="text-align: right;">401</td>
+<td><code>Authentication Error</code></td>
+</tr>
+<tr>
+<td><code>AuthorizationAPIError</code></td>
+<td style="text-align: right;">403</td>
+<td><code>Permission Denied</code></td>
+</tr>
+<tr>
+<td><code>NotFoundAPIError</code></td>
+<td style="text-align: right;">404</td>
+<td><code>Not Found</code></td>
+</tr>
+<tr>
+<td><code>MethodNotAllowedAPIError</code></td>
+<td style="text-align: right;">405</td>
+<td><code>Method Not Allowed</code></td>
+</tr>
+<tr>
+<td><code>UnprocessableEntityError</code></td>
+<td style="text-align: right;">422</td>
+<td><code>Unprocessable Entity Error</code></td>
+</tr>
+<tr>
+<td><code>UpgradeRequiredError</code></td>
+<td style="text-align: right;">426</td>
+<td><code>This service requires use of the WebSocket protocol.</code></td>
+</tr>
+<tr>
+<td><code>ThrottlingAPIError</code></td>
+<td style="text-align: right;">429</td>
+<td><code>Too Many Request</code></td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">BadRequestAPIError</span>
+
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">create_item</span><span class="p">():</span>
+    <span class="k">raise</span> <span class="n">BadRequestAPIError</span><span class="p">(</span><span class="n">detail</span><span class="o">=</span><span class="s1">&#39;Name is required&#39;</span><span class="p">)</span>
 </code></pre></div>
+<h2 id="not-found">Not Found<a class="headerlink" href="#not-found" title="Permanent link">#</a></h2>
+<p>For database models, <code>find_one_or_raise</code> raises <code>NotFoundAPIError</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">app.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Book</span>
+
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_book</span><span class="p">(</span><span class="n">book_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="k">return</span> <span class="k">await</span> <span class="n">Book</span><span class="o">.</span><span class="n">find_one_or_raise</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">book_id</span><span class="p">)</span>
+</code></pre></div>
+<p>Pass filters as keyword arguments or dictionaries. Do not pass a raw ID string positionally.</p>
+<h2 id="authentication-and-authorization">Authentication And Authorization<a class="headerlink" href="#authentication-and-authorization" title="Permanent link">#</a></h2>
+<p>Use <code>AuthenticationAPIError</code> for invalid credentials.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">AuthenticationAPIError</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ApiKeyAuthentication</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;x-api-key&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;secret&#39;</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">AuthenticationAPIError</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="s1">&#39;admin&#39;</span><span class="p">}</span>
+</code></pre></div>
+<p>Use permissions for authorization checks. Returning <code>False</code> from a permission causes <code>AuthorizationAPIError</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">IsAdmin</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">user</span> <span class="ow">and</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;is_admin&#39;</span><span class="p">))</span>
+</code></pre></div>
+<h2 id="validation-errors">Validation Errors<a class="headerlink" href="#validation-errors" title="Permanent link">#</a></h2>
+<p>When <code>input_model</code> validation fails, Panther returns <code>BadRequestAPIError</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">Field</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">panther.app</span><span class="w"> </span><span class="kn">import</span> <span class="n">API</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">panther.request</span><span class="w"> </span><span class="kn">import</span> <span class="n">Request</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">CreateBookInput</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">title</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">min_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+
+<span class="nd">@API</span><span class="p">(</span><span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">],</span> <span class="n">input_model</span><span class="o">=</span><span class="n">CreateBookInput</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">create_book</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">request</span><span class="o">.</span><span class="n">validated_data</span><span class="o">.</span><span class="n">model_dump</span><span class="p">()</span>
+</code></pre></div>
+<p>Invalid JSON raises <code>UnprocessableEntityError</code>.</p>
+<h2 id="preserving-apierror-status-codes">Preserving APIError Status Codes<a class="headerlink" href="#preserving-apierror-status-codes" title="Permanent link">#</a></h2>
+<p>When catching broad exceptions, re-raise <code>APIError</code> before converting unknown exceptions to <code>500</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther</span><span class="w"> </span><span class="kn">import</span> <span class="n">status</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">panther.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">APIError</span>
+
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">upload_file</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">APIError</span><span class="p">(</span><span class="s1">&#39;File too large&#39;</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_413_REQUEST_ENTITY_TOO_LARGE</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">APIError</span><span class="p">:</span>
+        <span class="k">raise</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">APIError</span><span class="p">(</span>
+            <span class="n">detail</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Upload failed: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+            <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_500_INTERNAL_SERVER_ERROR</span><span class="p">,</span>
+        <span class="p">)</span>
+</code></pre></div>
+<p>Without the <code>except APIError: raise</code> branch, intentional API errors can be accidentally converted into <code>500</code> responses.</p>
+<h2 id="redirectapierror">RedirectAPIError<a class="headerlink" href="#redirectapierror" title="Permanent link">#</a></h2>
+<p><code>RedirectAPIError</code> is an exception-based redirect helper.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">RedirectAPIError</span>
+
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">old_endpoint</span><span class="p">():</span>
+    <span class="k">raise</span> <span class="n">RedirectAPIError</span><span class="p">(</span><span class="s1">&#39;/new-endpoint/&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>For normal endpoint code, prefer <code>RedirectResponse</code> when returning a redirect is clearer.</p>
+<h2 id="websocket-errors">WebSocket Errors<a class="headerlink" href="#websocket-errors" title="Permanent link">#</a></h2>
+<p><code>WebsocketError</code> is the base WebSocket error class. WebSocket close codes are available in <code>panther.status</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther</span><span class="w"> </span><span class="kn">import</span> <span class="n">status</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">panther.websocket</span><span class="w"> </span><span class="kn">import</span> <span class="n">close_websocket_connection</span>
+
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">close_connection</span><span class="p">(</span><span class="n">connection_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="k">await</span> <span class="n">close_websocket_connection</span><span class="p">(</span>
+        <span class="n">connection_id</span><span class="o">=</span><span class="n">connection_id</span><span class="p">,</span>
+        <span class="n">code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">WS_1008_POLICY_VIOLATION</span><span class="p">,</span>
+        <span class="n">reason</span><span class="o">=</span><span class="s1">&#39;Policy violation&#39;</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre></div>
+<h2 id="framework-and-database-errors">Framework And Database Errors<a class="headerlink" href="#framework-and-database-errors" title="Permanent link">#</a></h2>
+<p><code>PantherError</code> and <code>DatabaseError</code> are internal/setup-level errors. They are not regular API response helpers:</p>
 <ul>
-<li><strong>Returns:</strong> A <code>Cursor</code> object (see <a href="#cursor-usage">Cursor Usage</a>).</li>
+<li><code>PantherError</code> is used for invalid configuration, routing, imports, and setup.</li>
+<li><code>DatabaseError</code> is used by database/query internals.</li>
 </ul>
-<h4 id="chaining">Chaining<a class="headerlink" href="#chaining" title="Permanent link">#</a></h4>
-<p>You can chain <code>skip()</code>, <code>limit()</code>, and <code>sort()</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="n">users</span><span class="p">:</span> <span class="n">Cursor</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span><span class="o">.</span><span class="n">skip</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">([(</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)])</span>
-</code></pre></div>
-<hr />
-<h3 id="all">all<a class="headerlink" href="#all" title="Permanent link">#</a></h3>
-<p>Get all documents in the collection.</p>
-<div class="highlight"><pre><span></span><code><span class="n">users</span><span class="p">:</span> <span class="n">Cursor</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-</code></pre></div>
-<hr />
-<h3 id="first-last">first / last<a class="headerlink" href="#first-last" title="Permanent link">#</a></h3>
-<p>Get the first or last document matching the filter.</p>
-<div class="highlight"><pre><span></span><code><span class="n">user</span><span class="p">:</span> <span class="n">User</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
-<span class="n">user</span><span class="p">:</span> <span class="n">User</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">last</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
-</code></pre></div>
-<hr />
-<h3 id="aggregate">aggregate<a class="headerlink" href="#aggregate" title="Permanent link">#</a></h3>
-<p>Perform an aggregation (MongoDB only).</p>
-<div class="highlight"><pre><span></span><code><span class="n">pipeline</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="s1">&#39;$match&#39;</span><span class="p">:</span> <span class="p">{</span><span class="o">...</span><span class="p">}},</span>
-    <span class="p">{</span><span class="s1">&#39;$group&#39;</span><span class="p">:</span> <span class="p">{</span><span class="o">...</span><span class="p">}},</span>
-    <span class="c1"># ...</span>
-<span class="p">]</span>
-<span class="n">users</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">pipeline</span><span class="p">)</span>
-</code></pre></div>
-<hr />
-<h3 id="count">count<a class="headerlink" href="#count" title="Permanent link">#</a></h3>
-<p>Count documents matching the filter.</p>
-<div class="highlight"><pre><span></span><code><span class="n">count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
-</code></pre></div>
-<hr />
-<h2 id="inserting-documents">Inserting Documents<a class="headerlink" href="#inserting-documents" title="Permanent link">#</a></h2>
-<h3 id="insert_one">insert_one<a class="headerlink" href="#insert_one" title="Permanent link">#</a></h3>
-<p>Insert a single document.</p>
-<div class="highlight"><pre><span></span><code><span class="n">user</span><span class="p">:</span> <span class="n">User</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">insert_one</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
-</code></pre></div>
-<hr />
-<h3 id="insert_many">insert_many<a class="headerlink" href="#insert_many" title="Permanent link">#</a></h3>
-<p>Insert multiple documents.</p>
-<div class="highlight"><pre><span></span><code><span class="n">users</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ali&#39;</span><span class="p">},</span>
-    <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Saba&#39;</span><span class="p">},</span>
-<span class="p">]</span>
-<span class="n">users</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">User</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">insert_many</span><span class="p">(</span><span class="n">users</span><span class="p">)</span>
-</code></pre></div>
-<hr />
-<h2 id="updating-documents">Updating Documents<a class="headerlink" href="#updating-documents" title="Permanent link">#</a></h2>
-<h3 id="update">update<a class="headerlink" href="#update" title="Permanent link">#</a></h3>
-<p>Update the current document instance.</p>
-<div class="highlight"><pre><span></span><code><span class="n">user</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find_one</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
-<span class="k">await</span> <span class="n">user</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Saba&#39;</span><span class="p">)</span>
-</code></pre></div>
-<hr />
-<h3 id="update_one-update_many">update_one / update_many<a class="headerlink" href="#update_one-update_many" title="Permanent link">#</a></h3>
-<p>Update one or more documents matching a filter.</p>
-<div class="highlight"><pre><span></span><code><span class="n">is_updated</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">update_one</span><span class="p">({</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
-<span class="n">updated_count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">update_many</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Saba&#39;</span><span class="p">},</span> <span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
-</code></pre></div>
-<hr />
-<h3 id="save">save<a class="headerlink" href="#save" title="Permanent link">#</a></h3>
-<p>Save the document (insert or update).</p>
-<div class="highlight"><pre><span></span><code><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
-<span class="k">await</span> <span class="n">user</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
-</code></pre></div>
-<hr />
-<h2 id="deleting-documents">Deleting Documents<a class="headerlink" href="#deleting-documents" title="Permanent link">#</a></h2>
-<h3 id="delete">delete<a class="headerlink" href="#delete" title="Permanent link">#</a></h3>
-<p>Delete the current document instance.</p>
-<div class="highlight"><pre><span></span><code><span class="n">user</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find_one</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
-<span class="k">await</span> <span class="n">user</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
-</code></pre></div>
-<hr />
-<h3 id="delete_one-delete_many">delete_one / delete_many<a class="headerlink" href="#delete_one-delete_many" title="Permanent link">#</a></h3>
-<p>Delete one or more documents matching a filter.</p>
-<div class="highlight"><pre><span></span><code><span class="n">is_deleted</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">delete_one</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
-<span class="n">deleted_count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">delete_many</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
-</code></pre></div>
-<hr />
-<h2 id="special-methods">Special Methods<a class="headerlink" href="#special-methods" title="Permanent link">#</a></h2>
-<h3 id="find_one_or_insert">find_one_or_insert<a class="headerlink" href="#find_one_or_insert" title="Permanent link">#</a></h3>
-<p>Get or insert a document.</p>
-<div class="highlight"><pre><span></span><code><span class="n">user</span><span class="p">,</span> <span class="n">is_inserted</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find_one_or_insert</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
-</code></pre></div>
-<p>For correctness under concurrency, define a unique index/constraint on the queried fields.</p>
-<hr />
-<h3 id="find_one_or_raise">find_one_or_raise<a class="headerlink" href="#find_one_or_raise" title="Permanent link">#</a></h3>
-<p>Get a document or raise <code>NotFoundAPIError</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="n">user</span><span class="p">:</span> <span class="n">User</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find_one_or_raise</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
-</code></pre></div>
-<hr />
-<h2 id="cursor-usage">Cursor Usage<a class="headerlink" href="#cursor-usage" title="Permanent link">#</a></h2>
-<ul>
-<li>The <code>find()</code> and <code>all()</code> methods return a <code>Cursor</code> object.</li>
-<li>You can iterate over it or use it as a list.</li>
-<li>For MongoDB: <code>from panther.db.cursor import Cursor</code></li>
-<li>For PantherDB: <code>from pantherdb import Cursor</code></li>
-</ul>
-<hr />
-<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">#</a></h2>
-<ul>
-<li>All methods are async unless otherwise noted.</li>
-<li>Filters can be passed as keyword arguments or as a dictionary.</li>
-<li>Some features (like <code>aggregate</code>) are only available for MongoDB.</li>
-</ul>
+<p>Use <code>APIError</code> subclasses for user-facing endpoint errors.</p>
 
 
 
@@ -2033,7 +1737,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../database/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Database">
+          <a href="../responses/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Responses">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2043,20 +1747,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Database
+                Responses
               </div>
             </div>
           </a>
         
         
           
-          <a href="../redis/" class="md-footer__link md-footer__link--next" aria-label="Next: Redis">
+          <a href="../configuration/" class="md-footer__link md-footer__link--next" aria-label="Next: Configuration">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Redis
+                Configuration
               </div>
             </div>
             <div class="md-footer__button md-icon">

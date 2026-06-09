@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://pantherpy.github.io/query/">
+        <link rel="canonical" href="https://pantherpy.github.io/configuration/">
       
       
-        <link rel="prev" href="../database/">
+        <link rel="prev" href="../errors/">
       
       
-        <link rel="next" href="../redis/">
+        <link rel="next" href="../websocket/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Query - Panther</title>
+        <title>Configuration - Panther</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#querying-documents" class="md-skip">
+        <a href="#configuration-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Query
+              Configuration
             
           </span>
         </div>
@@ -473,37 +473,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Query
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../query/" class="md-nav__link">
         
   
   
@@ -519,298 +492,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#find_one" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        find_one
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#find" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        find
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="find">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#chaining" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Chaining
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#all" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        all
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#first-last" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        first / last
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#aggregate" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        aggregate
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#count" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        count
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#inserting-documents" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Inserting Documents
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Inserting Documents">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#insert_one" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        insert_one
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#insert_many" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        insert_many
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#updating-documents" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Updating Documents
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Updating Documents">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#update" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        update
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#update_one-update_many" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        update_one / update_many
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#save" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        save
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deleting-documents" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deleting Documents
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Deleting Documents">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#delete" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        delete
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#delete_one-delete_many" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        delete_one / delete_many
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#special-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Special Methods
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Special Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#find_one_or_insert" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        find_one_or_insert
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#find_one_or_raise" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        find_one_or_raise
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cursor-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cursor Usage
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Notes
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1008,10 +689,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../configuration/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1027,6 +735,202 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#common-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Settings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#urls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        URLs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jwt_config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JWT_CONFIG
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#middleware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Middleware
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CORS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#throttling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Throttling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Templates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#background-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background Tasks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timezone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timezone
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logging-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging Queries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auto-reformat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auto-Reformat
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Settings
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1579,10 +1483,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#find_one" class="md-nav__link">
+  <a href="#common-settings" class="md-nav__link">
     <span class="md-ellipsis">
       
-        find_one
+        Common Settings
       
     </span>
   </a>
@@ -1590,38 +1494,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#find" class="md-nav__link">
+  <a href="#urls" class="md-nav__link">
     <span class="md-ellipsis">
       
-        find
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="find">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#chaining" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Chaining
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#all" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        all
+        URLs
       
     </span>
   </a>
@@ -1629,10 +1505,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#first-last" class="md-nav__link">
+  <a href="#database" class="md-nav__link">
     <span class="md-ellipsis">
       
-        first / last
+        Database
       
     </span>
   </a>
@@ -1640,10 +1516,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#aggregate" class="md-nav__link">
+  <a href="#redis" class="md-nav__link">
     <span class="md-ellipsis">
       
-        aggregate
+        Redis
       
     </span>
   </a>
@@ -1651,10 +1527,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#count" class="md-nav__link">
+  <a href="#authentication" class="md-nav__link">
     <span class="md-ellipsis">
       
-        count
+        Authentication
       
     </span>
   </a>
@@ -1662,177 +1538,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#inserting-documents" class="md-nav__link">
+  <a href="#jwt_config" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Inserting Documents
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Inserting Documents">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#insert_one" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        insert_one
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#insert_many" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        insert_many
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#updating-documents" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Updating Documents
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Updating Documents">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#update" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        update
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#update_one-update_many" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        update_one / update_many
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#save" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        save
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deleting-documents" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deleting Documents
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Deleting Documents">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#delete" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        delete
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#delete_one-delete_many" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        delete_one / delete_many
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#special-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Special Methods
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Special Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#find_one_or_insert" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        find_one_or_insert
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#find_one_or_raise" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        find_one_or_raise
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cursor-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cursor Usage
+        JWT_CONFIG
       
     </span>
   </a>
@@ -1840,10 +1549,109 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
+  <a href="#user-model" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Notes
+        User Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#middleware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Middleware
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CORS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#throttling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Throttling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Templates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#background-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background Tasks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timezone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timezone
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logging-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging Queries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auto-reformat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auto-Reformat
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Settings
       
     </span>
   </a>
@@ -1878,132 +1686,266 @@
   
 
 
-<h1 id="querying-documents">Querying Documents<a class="headerlink" href="#querying-documents" title="Permanent link">#</a></h1>
-<p>Panther ODM provides a simple, async interface for interacting with your database models. This guide covers the most common operations.</p>
-<hr />
-<h3 id="find_one">find_one<a class="headerlink" href="#find_one" title="Permanent link">#</a></h3>
-<p>Get a single document matching the filter.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">app.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">User</span>
+<h1 id="configuration-reference">Configuration Reference<a class="headerlink" href="#configuration-reference" title="Permanent link">#</a></h1>
+<p>Panther loads configuration from the module passed to <code>Panther(..., configs=...)</code>. If no config module is provided, Panther tries to load <code>core.configs</code>.</p>
+<p>In single-file apps, pass <code>configs=__name__</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther</span><span class="w"> </span><span class="kn">import</span> <span class="n">Panther</span>
 
-<span class="n">user</span><span class="p">:</span> <span class="n">User</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find_one</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
-<span class="c1"># or</span>
-<span class="n">user</span><span class="p">:</span> <span class="n">User</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find_one</span><span class="p">({</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ali&#39;</span><span class="p">})</span>
+
+<span class="n">url_routing</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Panther</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">configs</span><span class="o">=</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">urls</span><span class="o">=</span><span class="n">url_routing</span><span class="p">)</span>
 </code></pre></div>
-<ul>
-<li><strong>Returns:</strong> An instance of the model or <code>None</code> if not found.</li>
-</ul>
-<hr />
-<h3 id="find">find<a class="headerlink" href="#find" title="Permanent link">#</a></h3>
-<p>Get multiple documents matching the filter.</p>
-<div class="highlight"><pre><span></span><code><span class="n">users</span><span class="p">:</span> <span class="n">Cursor</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
+<p>In multi-file apps, define settings in <code>core/configs.py</code> and let <code>Panther(__name__)</code> load them.</p>
+<h2 id="common-settings">Common Settings<a class="headerlink" href="#common-settings" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Type</th>
+<th>Default</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DATABASE</code></td>
+<td><code>dict</code></td>
+<td><code>{}</code></td>
+<td>Configures the database engine and query backend.</td>
+</tr>
+<tr>
+<td><code>REDIS</code></td>
+<td><code>dict</code></td>
+<td>unset</td>
+<td>Enables Redis for caching, throttling, token revocation, and WebSocket pub/sub.</td>
+</tr>
+<tr>
+<td><code>SECRET_KEY</code></td>
+<td><code>str</code></td>
+<td><code>None</code></td>
+<td>Secret used by JWT and encrypted PantherDB setups.</td>
+</tr>
+<tr>
+<td><code>AUTHENTICATION</code></td>
+<td>dotted path</td>
+<td><code>None</code></td>
+<td>Default HTTP authentication class.</td>
+</tr>
+<tr>
+<td><code>WS_AUTHENTICATION</code></td>
+<td>dotted path</td>
+<td><code>None</code></td>
+<td>Default WebSocket authentication class.</td>
+</tr>
+<tr>
+<td><code>JWT_CONFIG</code></td>
+<td><code>dict</code></td>
+<td><code>{}</code></td>
+<td>JWT key, algorithm, and token lifetimes.</td>
+</tr>
+<tr>
+<td><code>USER_MODEL</code></td>
+<td>dotted path</td>
+<td><code>panther.db.models.BaseUser</code></td>
+<td>User model used by built-in authentication.</td>
+</tr>
+<tr>
+<td><code>MIDDLEWARES</code></td>
+<td><code>list</code></td>
+<td><code>[]</code></td>
+<td>Global HTTP middleware classes or dotted paths.</td>
+</tr>
+<tr>
+<td><code>WS_MIDDLEWARES</code></td>
+<td><code>list</code></td>
+<td><code>[]</code></td>
+<td>Global WebSocket middleware classes or dotted paths.</td>
+</tr>
+<tr>
+<td><code>THROTTLING</code></td>
+<td><code>Throttle</code></td>
+<td><code>None</code></td>
+<td>Global request throttle.</td>
+</tr>
+<tr>
+<td><code>BACKGROUND_TASKS</code></td>
+<td><code>bool</code></td>
+<td><code>False</code></td>
+<td>Enables background task processing.</td>
+</tr>
+<tr>
+<td><code>TEMPLATES_DIR</code></td>
+<td><code>str</code> or <code>list[str]</code></td>
+<td><code>'.'</code></td>
+<td>Template lookup directory or directories.</td>
+</tr>
+<tr>
+<td><code>TIMEZONE</code></td>
+<td><code>str</code></td>
+<td><code>'UTC'</code></td>
+<td>Timezone name used by Panther utilities.</td>
+</tr>
+<tr>
+<td><code>LOG_QUERIES</code></td>
+<td><code>bool</code></td>
+<td><code>False</code></td>
+<td>Enables query logging.</td>
+</tr>
+<tr>
+<td><code>AUTO_REFORMAT</code></td>
+<td><code>bool</code></td>
+<td><code>False</code></td>
+<td>Runs Ruff formatting/check fixes when the app starts.</td>
+</tr>
+<tr>
+<td><code>URLs</code></td>
+<td>dotted path</td>
+<td>required when <code>urls</code> is not passed</td>
+<td>Points to the URL routing dictionary.</td>
+</tr>
+</tbody>
+</table>
+<p>Unknown uppercase config values are also copied onto <code>panther.configs.config</code>, so project-specific settings can be accessed through <code>config.MY_SETTING</code>.</p>
+<h2 id="urls">URLs<a class="headerlink" href="#urls" title="Permanent link">#</a></h2>
+<p>For single-file apps, pass routes directly:</p>
+<div class="highlight"><pre><span></span><code><span class="n">url_routing</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;health/&#39;</span><span class="p">:</span> <span class="n">health_api</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Panther</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">configs</span><span class="o">=</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">urls</span><span class="o">=</span><span class="n">url_routing</span><span class="p">)</span>
 </code></pre></div>
-<ul>
-<li><strong>Returns:</strong> A <code>Cursor</code> object (see <a href="#cursor-usage">Cursor Usage</a>).</li>
-</ul>
-<h4 id="chaining">Chaining<a class="headerlink" href="#chaining" title="Permanent link">#</a></h4>
-<p>You can chain <code>skip()</code>, <code>limit()</code>, and <code>sort()</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="n">users</span><span class="p">:</span> <span class="n">Cursor</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span><span class="o">.</span><span class="n">skip</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">([(</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)])</span>
+<p>For project-style apps, point <code>URLs</code> to a routing dictionary:</p>
+<div class="highlight"><pre><span></span><code><span class="n">URLs</span> <span class="o">=</span> <span class="s1">&#39;core.urls.url_routing&#39;</span>
 </code></pre></div>
-<hr />
-<h3 id="all">all<a class="headerlink" href="#all" title="Permanent link">#</a></h3>
-<p>Get all documents in the collection.</p>
-<div class="highlight"><pre><span></span><code><span class="n">users</span><span class="p">:</span> <span class="n">Cursor</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<p><code>URLs</code> should be a dotted string in config. If you already have the dictionary object, pass it directly to <code>Panther(..., urls=...)</code>.</p>
+<h2 id="database">Database<a class="headerlink" href="#database" title="Permanent link">#</a></h2>
+<p>PantherDB example:</p>
+<div class="highlight"><pre><span></span><code><span class="n">DATABASE</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;engine&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;panther.db.connections.PantherDBConnection&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;database.pdb&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">}</span>
 </code></pre></div>
-<hr />
-<h3 id="first-last">first / last<a class="headerlink" href="#first-last" title="Permanent link">#</a></h3>
-<p>Get the first or last document matching the filter.</p>
-<div class="highlight"><pre><span></span><code><span class="n">user</span><span class="p">:</span> <span class="n">User</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
-<span class="n">user</span><span class="p">:</span> <span class="n">User</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">last</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<p>MongoDB example:</p>
+<div class="highlight"><pre><span></span><code><span class="n">DATABASE</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;engine&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;panther.db.connections.MongoDBConnection&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;host&#39;</span><span class="p">:</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;port&#39;</span><span class="p">:</span> <span class="mi">27017</span><span class="p">,</span>
+        <span class="s1">&#39;database&#39;</span><span class="p">:</span> <span class="s1">&#39;panther&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">}</span>
 </code></pre></div>
-<hr />
-<h3 id="aggregate">aggregate<a class="headerlink" href="#aggregate" title="Permanent link">#</a></h3>
-<p>Perform an aggregation (MongoDB only).</p>
-<div class="highlight"><pre><span></span><code><span class="n">pipeline</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="s1">&#39;$match&#39;</span><span class="p">:</span> <span class="p">{</span><span class="o">...</span><span class="p">}},</span>
-    <span class="p">{</span><span class="s1">&#39;$group&#39;</span><span class="p">:</span> <span class="p">{</span><span class="o">...</span><span class="p">}},</span>
-    <span class="c1"># ...</span>
+<p>You can override only the query backend with:</p>
+<div class="highlight"><pre><span></span><code><span class="n">DATABASE</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;query&#39;</span><span class="p">:</span> <span class="s1">&#39;path.to.CustomQuery&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="redis">Redis<a class="headerlink" href="#redis" title="Permanent link">#</a></h2>
+<p>Redis is optional. Configure it when you need Redis-backed cache, throttling, token revocation, or WebSocket pub/sub.</p>
+<div class="highlight"><pre><span></span><code><span class="n">REDIS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;panther.db.connections.RedisConnection&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;host&#39;</span><span class="p">:</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;port&#39;</span><span class="p">:</span> <span class="mi">6379</span><span class="p">,</span>
+    <span class="s1">&#39;db&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The <code>redis</code> extra dependency is required.</p>
+<h2 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">#</a></h2>
+<p>Configure default HTTP authentication:</p>
+<div class="highlight"><pre><span></span><code><span class="n">AUTHENTICATION</span> <span class="o">=</span> <span class="s1">&#39;panther.authentications.JWTAuthentication&#39;</span>
+<span class="n">SECRET_KEY</span> <span class="o">=</span> <span class="s1">&#39;change-me&#39;</span>
+</code></pre></div>
+<p>Configure default WebSocket authentication:</p>
+<div class="highlight"><pre><span></span><code><span class="n">WS_AUTHENTICATION</span> <span class="o">=</span> <span class="s1">&#39;panther.authentications.QueryParamJWTAuthentication&#39;</span>
+</code></pre></div>
+<p>Endpoint-level <code>auth</code> overrides these defaults.</p>
+<h2 id="jwt_config">JWT_CONFIG<a class="headerlink" href="#jwt_config" title="Permanent link">#</a></h2>
+<p><code>JWT_CONFIG</code> is needed when built-in JWT authentication is used. If <code>key</code> is omitted, Panther uses <code>SECRET_KEY</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">timedelta</span>
+
+
+<span class="n">SECRET_KEY</span> <span class="o">=</span> <span class="s1">&#39;change-me&#39;</span>
+<span class="n">JWT_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="n">SECRET_KEY</span><span class="p">,</span>
+    <span class="s1">&#39;algorithm&#39;</span><span class="p">:</span> <span class="s1">&#39;HS256&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;life_time&#39;</span><span class="p">:</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+    <span class="s1">&#39;refresh_life_time&#39;</span><span class="p">:</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">7</span><span class="p">),</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>life_time</code> and <code>refresh_life_time</code> may be <code>timedelta</code> or integer seconds.</p>
+<h2 id="user-model">User Model<a class="headerlink" href="#user-model" title="Permanent link">#</a></h2>
+<p>By default, Panther uses <code>panther.db.models.BaseUser</code>.</p>
+<p>Use <code>USER_MODEL</code> to point to your own model:</p>
+<div class="highlight"><pre><span></span><code><span class="n">USER_MODEL</span> <span class="o">=</span> <span class="s1">&#39;app.models.User&#39;</span>
+</code></pre></div>
+<p>The user model is also added to <code>config.MODELS</code>.</p>
+<h2 id="middleware">Middleware<a class="headerlink" href="#middleware" title="Permanent link">#</a></h2>
+<p>HTTP middleware:</p>
+<div class="highlight"><pre><span></span><code><span class="n">MIDDLEWARES</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;panther.middlewares.cors.CORSMiddleware&#39;</span><span class="p">,</span>
 <span class="p">]</span>
-<span class="n">users</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">pipeline</span><span class="p">)</span>
 </code></pre></div>
-<hr />
-<h3 id="count">count<a class="headerlink" href="#count" title="Permanent link">#</a></h3>
-<p>Count documents matching the filter.</p>
-<div class="highlight"><pre><span></span><code><span class="n">count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
-</code></pre></div>
-<hr />
-<h2 id="inserting-documents">Inserting Documents<a class="headerlink" href="#inserting-documents" title="Permanent link">#</a></h2>
-<h3 id="insert_one">insert_one<a class="headerlink" href="#insert_one" title="Permanent link">#</a></h3>
-<p>Insert a single document.</p>
-<div class="highlight"><pre><span></span><code><span class="n">user</span><span class="p">:</span> <span class="n">User</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">insert_one</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
-</code></pre></div>
-<hr />
-<h3 id="insert_many">insert_many<a class="headerlink" href="#insert_many" title="Permanent link">#</a></h3>
-<p>Insert multiple documents.</p>
-<div class="highlight"><pre><span></span><code><span class="n">users</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ali&#39;</span><span class="p">},</span>
-    <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Saba&#39;</span><span class="p">},</span>
+<p>WebSocket middleware:</p>
+<div class="highlight"><pre><span></span><code><span class="n">WS_MIDDLEWARES</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;app.middlewares.MyWebsocketMiddleware&#39;</span><span class="p">,</span>
 <span class="p">]</span>
-<span class="n">users</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">User</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">insert_many</span><span class="p">(</span><span class="n">users</span><span class="p">)</span>
 </code></pre></div>
-<hr />
-<h2 id="updating-documents">Updating Documents<a class="headerlink" href="#updating-documents" title="Permanent link">#</a></h2>
-<h3 id="update">update<a class="headerlink" href="#update" title="Permanent link">#</a></h3>
-<p>Update the current document instance.</p>
-<div class="highlight"><pre><span></span><code><span class="n">user</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find_one</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
-<span class="k">await</span> <span class="n">user</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Saba&#39;</span><span class="p">)</span>
+<p>Middleware entries may be classes or dotted import paths.</p>
+<h2 id="cors">CORS<a class="headerlink" href="#cors" title="Permanent link">#</a></h2>
+<p>When using <code>CORSMiddleware</code>, configure CORS settings in the same config module:</p>
+<div class="highlight"><pre><span></span><code><span class="n">ALLOW_ORIGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;https://example.com&#39;</span><span class="p">]</span>
+<span class="n">ALLOW_METHODS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">,</span> <span class="s1">&#39;PUT&#39;</span><span class="p">,</span> <span class="s1">&#39;PATCH&#39;</span><span class="p">,</span> <span class="s1">&#39;DELETE&#39;</span><span class="p">]</span>
+<span class="n">ALLOW_HEADERS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;*&#39;</span><span class="p">]</span>
+<span class="n">ALLOW_CREDENTIALS</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">CORS_MAX_AGE</span> <span class="o">=</span> <span class="mi">3600</span>
 </code></pre></div>
-<hr />
-<h3 id="update_one-update_many">update_one / update_many<a class="headerlink" href="#update_one-update_many" title="Permanent link">#</a></h3>
-<p>Update one or more documents matching a filter.</p>
-<div class="highlight"><pre><span></span><code><span class="n">is_updated</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">update_one</span><span class="p">({</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
-<span class="n">updated_count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">update_many</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Saba&#39;</span><span class="p">},</span> <span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<h2 id="throttling">Throttling<a class="headerlink" href="#throttling" title="Permanent link">#</a></h2>
+<p>Use a global throttle:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">timedelta</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">panther.throttling</span><span class="w"> </span><span class="kn">import</span> <span class="n">Throttle</span>
+
+
+<span class="n">THROTTLING</span> <span class="o">=</span> <span class="n">Throttle</span><span class="p">(</span><span class="n">rate</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
 </code></pre></div>
-<hr />
-<h3 id="save">save<a class="headerlink" href="#save" title="Permanent link">#</a></h3>
-<p>Save the document (insert or update).</p>
-<div class="highlight"><pre><span></span><code><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
-<span class="k">await</span> <span class="n">user</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+<p>Endpoint-level throttling overrides the global throttle.</p>
+<h2 id="templates">Templates<a class="headerlink" href="#templates" title="Permanent link">#</a></h2>
+<p>Use <code>TEMPLATES_DIR</code> for <code>TemplateResponse</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">TEMPLATES_DIR</span> <span class="o">=</span> <span class="s1">&#39;templates/&#39;</span>
 </code></pre></div>
-<hr />
-<h2 id="deleting-documents">Deleting Documents<a class="headerlink" href="#deleting-documents" title="Permanent link">#</a></h2>
-<h3 id="delete">delete<a class="headerlink" href="#delete" title="Permanent link">#</a></h3>
-<p>Delete the current document instance.</p>
-<div class="highlight"><pre><span></span><code><span class="n">user</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find_one</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
-<span class="k">await</span> <span class="n">user</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+<p>If omitted, Panther uses the app base directory and Panther's packaged template folders for the admin panel and OpenAPI.</p>
+<h2 id="background-tasks">Background Tasks<a class="headerlink" href="#background-tasks" title="Permanent link">#</a></h2>
+<p>Enable background tasks:</p>
+<div class="highlight"><pre><span></span><code><span class="n">BACKGROUND_TASKS</span> <span class="o">=</span> <span class="kc">True</span>
 </code></pre></div>
-<hr />
-<h3 id="delete_one-delete_many">delete_one / delete_many<a class="headerlink" href="#delete_one-delete_many" title="Permanent link">#</a></h3>
-<p>Delete one or more documents matching a filter.</p>
-<div class="highlight"><pre><span></span><code><span class="n">is_deleted</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">delete_one</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
-<span class="n">deleted_count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">delete_many</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<p>Then schedule tasks with <code>BackgroundTask(...).submit()</code>. Prefer scheduling tasks during startup so the background task system is initialized.</p>
+<h2 id="timezone">Timezone<a class="headerlink" href="#timezone" title="Permanent link">#</a></h2>
+<p>Set a timezone name:</p>
+<div class="highlight"><pre><span></span><code><span class="n">TIMEZONE</span> <span class="o">=</span> <span class="s1">&#39;UTC&#39;</span>
 </code></pre></div>
-<hr />
-<h2 id="special-methods">Special Methods<a class="headerlink" href="#special-methods" title="Permanent link">#</a></h2>
-<h3 id="find_one_or_insert">find_one_or_insert<a class="headerlink" href="#find_one_or_insert" title="Permanent link">#</a></h3>
-<p>Get or insert a document.</p>
-<div class="highlight"><pre><span></span><code><span class="n">user</span><span class="p">,</span> <span class="n">is_inserted</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find_one_or_insert</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
+<p>Panther utilities use this when generating timezone-aware datetimes.</p>
+<h2 id="logging-queries">Logging Queries<a class="headerlink" href="#logging-queries" title="Permanent link">#</a></h2>
+<p>Enable query logging:</p>
+<div class="highlight"><pre><span></span><code><span class="n">LOG_QUERIES</span> <span class="o">=</span> <span class="kc">True</span>
 </code></pre></div>
-<p>For correctness under concurrency, define a unique index/constraint on the queried fields.</p>
-<hr />
-<h3 id="find_one_or_raise">find_one_or_raise<a class="headerlink" href="#find_one_or_raise" title="Permanent link">#</a></h3>
-<p>Get a document or raise <code>NotFoundAPIError</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="n">user</span><span class="p">:</span> <span class="n">User</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find_one_or_raise</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<h2 id="auto-reformat">Auto-Reformat<a class="headerlink" href="#auto-reformat" title="Permanent link">#</a></h2>
+<p>Enable Ruff auto-formatting:</p>
+<div class="highlight"><pre><span></span><code><span class="n">AUTO_REFORMAT</span> <span class="o">=</span> <span class="kc">True</span>
 </code></pre></div>
-<hr />
-<h2 id="cursor-usage">Cursor Usage<a class="headerlink" href="#cursor-usage" title="Permanent link">#</a></h2>
-<ul>
-<li>The <code>find()</code> and <code>all()</code> methods return a <code>Cursor</code> object.</li>
-<li>You can iterate over it or use it as a list.</li>
-<li>For MongoDB: <code>from panther.db.cursor import Cursor</code></li>
-<li>For PantherDB: <code>from pantherdb import Cursor</code></li>
-</ul>
-<hr />
-<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">#</a></h2>
-<ul>
-<li>All methods are async unless otherwise noted.</li>
-<li>Filters can be passed as keyword arguments or as a dictionary.</li>
-<li>Some features (like <code>aggregate</code>) are only available for MongoDB.</li>
-</ul>
+<p>This runs Ruff when the app initializes. It is intended for development workflows; avoid surprising write operations in production.</p>
+<h2 id="custom-settings">Custom Settings<a class="headerlink" href="#custom-settings" title="Permanent link">#</a></h2>
+<p>Any unknown uppercase setting is copied to <code>config</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">FEATURE_FLAG</span> <span class="o">=</span> <span class="kc">True</span>
+</code></pre></div>
+<p>Access it with:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.configs</span><span class="w"> </span><span class="kn">import</span> <span class="n">config</span>
+
+
+<span class="k">if</span> <span class="n">config</span><span class="o">.</span><span class="n">FEATURE_FLAG</span><span class="p">:</span>
+    <span class="o">...</span>
+</code></pre></div>
 
 
 
@@ -2033,7 +1975,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../database/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Database">
+          <a href="../errors/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Error Handling">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2043,20 +1985,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Database
+                Error Handling
               </div>
             </div>
           </a>
         
         
           
-          <a href="../redis/" class="md-footer__link md-footer__link--next" aria-label="Next: Redis">
+          <a href="../websocket/" class="md-footer__link md-footer__link--next" aria-label="Next: WebSocket">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Redis
+                WebSocket
               </div>
             </div>
             <div class="md-footer__button md-icon">

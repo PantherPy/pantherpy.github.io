@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://pantherpy.github.io/query/">
+        <link rel="canonical" href="https://pantherpy.github.io/responses/">
       
       
-        <link rel="prev" href="../database/">
+        <link rel="prev" href="../middlewares/">
       
       
-        <link rel="next" href="../redis/">
+        <link rel="next" href="../errors/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Query - Panther</title>
+        <title>Responses - Panther</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#querying-documents" class="md-skip">
+        <a href="#responses" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Query
+              Responses
             
           </span>
         </div>
@@ -473,37 +473,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Query
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../query/" class="md-nav__link">
         
   
   
@@ -519,298 +492,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#find_one" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        find_one
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#find" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        find
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="find">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#chaining" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Chaining
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#all" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        all
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#first-last" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        first / last
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#aggregate" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        aggregate
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#count" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        count
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#inserting-documents" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Inserting Documents
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Inserting Documents">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#insert_one" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        insert_one
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#insert_many" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        insert_many
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#updating-documents" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Updating Documents
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Updating Documents">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#update" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        update
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#update_one-update_many" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        update_one / update_many
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#save" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        save
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deleting-documents" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deleting Documents
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Deleting Documents">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#delete" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        delete
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#delete_one-delete_many" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        delete_one / delete_many
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#special-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Special Methods
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Special Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#find_one_or_insert" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        find_one_or_insert
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#find_one_or_raise" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        find_one_or_raise
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cursor-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cursor Usage
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Notes
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -954,10 +635,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../responses/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Responses
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -973,6 +681,169 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#returning-plain-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Returning Plain Data
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Headers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cookies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cookies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#htmlresponse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTMLResponse
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plaintextresponse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PlainTextResponse
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamingresponse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        StreamingResponse
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fileresponse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FileResponse
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#templateresponse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TemplateResponse
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redirectresponse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RedirectResponse
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output Models
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pagination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pagination
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1579,10 +1450,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#find_one" class="md-nav__link">
+  <a href="#response" class="md-nav__link">
     <span class="md-ellipsis">
       
-        find_one
+        Response
       
     </span>
   </a>
@@ -1590,38 +1461,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#find" class="md-nav__link">
+  <a href="#returning-plain-data" class="md-nav__link">
     <span class="md-ellipsis">
       
-        find
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="find">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#chaining" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Chaining
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#all" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        all
+        Returning Plain Data
       
     </span>
   </a>
@@ -1629,10 +1472,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#first-last" class="md-nav__link">
+  <a href="#headers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        first / last
+        Headers
       
     </span>
   </a>
@@ -1640,10 +1483,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#aggregate" class="md-nav__link">
+  <a href="#cookies" class="md-nav__link">
     <span class="md-ellipsis">
       
-        aggregate
+        Cookies
       
     </span>
   </a>
@@ -1651,10 +1494,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#count" class="md-nav__link">
+  <a href="#htmlresponse" class="md-nav__link">
     <span class="md-ellipsis">
       
-        count
+        HTMLResponse
       
     </span>
   </a>
@@ -1662,177 +1505,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#inserting-documents" class="md-nav__link">
+  <a href="#plaintextresponse" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Inserting Documents
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Inserting Documents">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#insert_one" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        insert_one
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#insert_many" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        insert_many
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#updating-documents" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Updating Documents
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Updating Documents">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#update" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        update
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#update_one-update_many" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        update_one / update_many
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#save" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        save
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deleting-documents" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deleting Documents
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Deleting Documents">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#delete" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        delete
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#delete_one-delete_many" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        delete_one / delete_many
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#special-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Special Methods
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Special Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#find_one_or_insert" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        find_one_or_insert
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#find_one_or_raise" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        find_one_or_raise
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cursor-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cursor Usage
+        PlainTextResponse
       
     </span>
   </a>
@@ -1840,10 +1516,76 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
+  <a href="#streamingresponse" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Notes
+        StreamingResponse
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fileresponse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FileResponse
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#templateresponse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TemplateResponse
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redirectresponse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RedirectResponse
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output Models
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pagination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pagination
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
       
     </span>
   </a>
@@ -1878,131 +1620,180 @@
   
 
 
-<h1 id="querying-documents">Querying Documents<a class="headerlink" href="#querying-documents" title="Permanent link">#</a></h1>
-<p>Panther ODM provides a simple, async interface for interacting with your database models. This guide covers the most common operations.</p>
-<hr />
-<h3 id="find_one">find_one<a class="headerlink" href="#find_one" title="Permanent link">#</a></h3>
-<p>Get a single document matching the filter.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">app.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">User</span>
+<h1 id="responses">Responses<a class="headerlink" href="#responses" title="Permanent link">#</a></h1>
+<p>Panther response classes live in <code>panther.response</code>. Endpoints can return a <code>Response</code> instance or plain serializable data. Plain data is automatically wrapped in <code>Response</code>.</p>
+<h2 id="response">Response<a class="headerlink" href="#response" title="Permanent link">#</a></h2>
+<p><code>Response</code> is the default JSON response.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther</span><span class="w"> </span><span class="kn">import</span> <span class="n">status</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">panther.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">Response</span>
 
-<span class="n">user</span><span class="p">:</span> <span class="n">User</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find_one</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
-<span class="c1"># or</span>
-<span class="n">user</span><span class="p">:</span> <span class="n">User</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find_one</span><span class="p">({</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ali&#39;</span><span class="p">})</span>
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_status</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">Response</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="s1">&#39;ok&#39;</span><span class="p">},</span>
+        <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="o">.</span><span class="n">HTTP_200_OK</span><span class="p">,</span>
+        <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;X-App&#39;</span><span class="p">:</span> <span class="s1">&#39;panther&#39;</span><span class="p">},</span>
+    <span class="p">)</span>
 </code></pre></div>
+<p>Supported JSON response data includes dictionaries, lists, tuples, sets, cursors, Pydantic models, primitive values, bytes, and <code>None</code>.</p>
+<p>Panther uses <code>orjson</code> for JSON serialization. <code>Content-Type</code> defaults to <code>application/json</code>, and <code>Content-Length</code> is added when the response is sent.</p>
+<h2 id="returning-plain-data">Returning Plain Data<a class="headerlink" href="#returning-plain-data" title="Permanent link">#</a></h2>
+<p>You can return plain serializable data from an API. Panther wraps it in <code>Response</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.app</span><span class="w"> </span><span class="kn">import</span> <span class="n">API</span>
+
+
+<span class="nd">@API</span><span class="p">()</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">hello</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;Hello from Panther&#39;</span><span class="p">}</span>
+</code></pre></div>
+<p>Use an explicit <code>Response</code> when you need a custom status code, headers, cookies, pagination, or a specialized response class.</p>
+<h2 id="headers">Headers<a class="headerlink" href="#headers" title="Permanent link">#</a></h2>
+<p>Pass headers with the <code>headers</code> argument.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">Response</span>
+
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">with_headers</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">Response</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;ok&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+        <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;X-Request-Source&#39;</span><span class="p">:</span> <span class="s1">&#39;example&#39;</span><span class="p">},</span>
+    <span class="p">)</span>
+</code></pre></div>
+<p>Header values are converted to bytes when the response is sent.</p>
+<h2 id="cookies">Cookies<a class="headerlink" href="#cookies" title="Permanent link">#</a></h2>
+<p>Use <code>Cookie</code> and pass one cookie or a list of cookies with <code>set_cookies</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">Cookie</span><span class="p">,</span> <span class="n">Response</span>
+
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">login</span><span class="p">():</span>
+    <span class="n">cookie</span> <span class="o">=</span> <span class="n">Cookie</span><span class="p">(</span>
+        <span class="n">key</span><span class="o">=</span><span class="s1">&#39;session_id&#39;</span><span class="p">,</span>
+        <span class="n">value</span><span class="o">=</span><span class="s1">&#39;abc123&#39;</span><span class="p">,</span>
+        <span class="n">httponly</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">secure</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">samesite</span><span class="o">=</span><span class="s1">&#39;lax&#39;</span><span class="p">,</span>
+        <span class="n">max_age</span><span class="o">=</span><span class="mi">3600</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">Response</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;logged_in&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span> <span class="n">set_cookies</span><span class="o">=</span><span class="n">cookie</span><span class="p">)</span>
+</code></pre></div>
+<p><code>Cookie</code> supports:</p>
 <ul>
-<li><strong>Returns:</strong> An instance of the model or <code>None</code> if not found.</li>
+<li><code>key</code></li>
+<li><code>value</code></li>
+<li><code>path</code></li>
+<li><code>domain</code></li>
+<li><code>max_age</code></li>
+<li><code>secure</code></li>
+<li><code>httponly</code></li>
+<li><code>samesite</code></li>
 </ul>
-<hr />
-<h3 id="find">find<a class="headerlink" href="#find" title="Permanent link">#</a></h3>
-<p>Get multiple documents matching the filter.</p>
-<div class="highlight"><pre><span></span><code><span class="n">users</span><span class="p">:</span> <span class="n">Cursor</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
+<h2 id="htmlresponse">HTMLResponse<a class="headerlink" href="#htmlresponse" title="Permanent link">#</a></h2>
+<p>Use <code>HTMLResponse</code> for HTML strings.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTMLResponse</span>
+
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">page</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">HTMLResponse</span><span class="p">(</span><span class="s1">&#39;&lt;h1&gt;Hello Panther&lt;/h1&gt;&#39;</span><span class="p">)</span>
 </code></pre></div>
+<p><code>Content-Type</code> is <code>text/html; charset=utf-8</code>.</p>
+<h2 id="plaintextresponse">PlainTextResponse<a class="headerlink" href="#plaintextresponse" title="Permanent link">#</a></h2>
+<p>Use <code>PlainTextResponse</code> for text.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">PlainTextResponse</span>
+
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">text</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">PlainTextResponse</span><span class="p">(</span><span class="s1">&#39;Hello Panther&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p><code>Content-Type</code> is <code>text/plain; charset=utf-8</code>.</p>
+<h2 id="streamingresponse">StreamingResponse<a class="headerlink" href="#streamingresponse" title="Permanent link">#</a></h2>
+<p>Use <code>StreamingResponse</code> for sync or async generators.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">panther.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">StreamingResponse</span>
+
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">stream_numbers</span><span class="p">():</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">numbers</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+            <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="k">yield</span> <span class="p">{</span><span class="s1">&#39;number&#39;</span><span class="p">:</span> <span class="n">number</span><span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">StreamingResponse</span><span class="p">(</span><span class="n">numbers</span><span class="p">())</span>
+</code></pre></div>
+<p><code>StreamingResponse</code> sends chunks with <code>more_body=True</code> until the generator finishes. Bytes are sent as-is; other values are JSON-serialized.</p>
+<h2 id="fileresponse">FileResponse<a class="headerlink" href="#fileresponse" title="Permanent link">#</a></h2>
+<p>Use <code>FileResponse</code> to return a file relative to <code>config.BASE_DIR</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">FileResponse</span>
+
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">download</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">FileResponse</span><span class="p">(</span><span class="s1">&#39;files/report.pdf&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>If the file does not exist, Panther returns a <code>404</code> JSON response. If the file exists, Panther detects the MIME type and reads the file bytes into the response.</p>
+<h2 id="templateresponse">TemplateResponse<a class="headerlink" href="#templateresponse" title="Permanent link">#</a></h2>
+<p>Use <code>TemplateResponse</code> for Jinja templates.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">TemplateResponse</span>
+
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">profile</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">TemplateResponse</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;profile.html&#39;</span><span class="p">,</span>
+        <span class="n">context</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="s1">&#39;ali&#39;</span><span class="p">},</span>
+    <span class="p">)</span>
+</code></pre></div>
+<p>Configure template lookup with:</p>
+<div class="highlight"><pre><span></span><code><span class="n">TEMPLATES_DIR</span> <span class="o">=</span> <span class="s1">&#39;templates/&#39;</span>
+</code></pre></div>
+<p>You can also render an inline template string:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">TemplateResponse</span>
+
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">inline_template</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">TemplateResponse</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="s1">&#39;&lt;h1&gt;Hello {{ name }}&lt;/h1&gt;&#39;</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Panther&#39;</span><span class="p">})</span>
+</code></pre></div>
+<h2 id="redirectresponse">RedirectResponse<a class="headerlink" href="#redirectresponse" title="Permanent link">#</a></h2>
+<p>Use <code>RedirectResponse</code> for redirects.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">RedirectResponse</span>
+
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">old_path</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">RedirectResponse</span><span class="p">(</span><span class="s1">&#39;/new-path/&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>The default status code is <code>307 Temporary Redirect</code>. You can pass another redirect status code with <code>status_code</code>.</p>
+<h2 id="output-models">Output Models<a class="headerlink" href="#output-models" title="Permanent link">#</a></h2>
+<p>Use <code>output_model</code> on <code>API</code> or <code>GenericAPI</code> to filter response data.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseModel</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">panther.app</span><span class="w"> </span><span class="kn">import</span> <span class="n">API</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">UserOutput</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">username</span><span class="p">:</span> <span class="nb">str</span>
+
+
+<span class="nd">@API</span><span class="p">(</span><span class="n">output_model</span><span class="o">=</span><span class="n">UserOutput</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">user_api</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="s1">&#39;ali&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="s1">&#39;hidden&#39;</span><span class="p">}</span>
+</code></pre></div>
+<p>The response data becomes:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ali&quot;</span><span class="p">}</span>
+</code></pre></div>
+<p>If the output model has an async <code>to_response(instance, data)</code> method, Panther calls it to customize the serialized response.</p>
+<h2 id="pagination">Pagination<a class="headerlink" href="#pagination" title="Permanent link">#</a></h2>
+<p><code>Response</code> accepts a <code>pagination</code> object. Generic list APIs use this to wrap results with:</p>
 <ul>
-<li><strong>Returns:</strong> A <code>Cursor</code> object (see <a href="#cursor-usage">Cursor Usage</a>).</li>
+<li><code>count</code></li>
+<li><code>next</code></li>
+<li><code>previous</code></li>
+<li><code>results</code></li>
 </ul>
-<h4 id="chaining">Chaining<a class="headerlink" href="#chaining" title="Permanent link">#</a></h4>
-<p>You can chain <code>skip()</code>, <code>limit()</code>, and <code>sort()</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="n">users</span><span class="p">:</span> <span class="n">Cursor</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span><span class="o">.</span><span class="n">skip</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">([(</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)])</span>
-</code></pre></div>
-<hr />
-<h3 id="all">all<a class="headerlink" href="#all" title="Permanent link">#</a></h3>
-<p>Get all documents in the collection.</p>
-<div class="highlight"><pre><span></span><code><span class="n">users</span><span class="p">:</span> <span class="n">Cursor</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-</code></pre></div>
-<hr />
-<h3 id="first-last">first / last<a class="headerlink" href="#first-last" title="Permanent link">#</a></h3>
-<p>Get the first or last document matching the filter.</p>
-<div class="highlight"><pre><span></span><code><span class="n">user</span><span class="p">:</span> <span class="n">User</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
-<span class="n">user</span><span class="p">:</span> <span class="n">User</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">last</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
-</code></pre></div>
-<hr />
-<h3 id="aggregate">aggregate<a class="headerlink" href="#aggregate" title="Permanent link">#</a></h3>
-<p>Perform an aggregation (MongoDB only).</p>
-<div class="highlight"><pre><span></span><code><span class="n">pipeline</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="s1">&#39;$match&#39;</span><span class="p">:</span> <span class="p">{</span><span class="o">...</span><span class="p">}},</span>
-    <span class="p">{</span><span class="s1">&#39;$group&#39;</span><span class="p">:</span> <span class="p">{</span><span class="o">...</span><span class="p">}},</span>
-    <span class="c1"># ...</span>
-<span class="p">]</span>
-<span class="n">users</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">pipeline</span><span class="p">)</span>
-</code></pre></div>
-<hr />
-<h3 id="count">count<a class="headerlink" href="#count" title="Permanent link">#</a></h3>
-<p>Count documents matching the filter.</p>
-<div class="highlight"><pre><span></span><code><span class="n">count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
-</code></pre></div>
-<hr />
-<h2 id="inserting-documents">Inserting Documents<a class="headerlink" href="#inserting-documents" title="Permanent link">#</a></h2>
-<h3 id="insert_one">insert_one<a class="headerlink" href="#insert_one" title="Permanent link">#</a></h3>
-<p>Insert a single document.</p>
-<div class="highlight"><pre><span></span><code><span class="n">user</span><span class="p">:</span> <span class="n">User</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">insert_one</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
-</code></pre></div>
-<hr />
-<h3 id="insert_many">insert_many<a class="headerlink" href="#insert_many" title="Permanent link">#</a></h3>
-<p>Insert multiple documents.</p>
-<div class="highlight"><pre><span></span><code><span class="n">users</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ali&#39;</span><span class="p">},</span>
-    <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Saba&#39;</span><span class="p">},</span>
-<span class="p">]</span>
-<span class="n">users</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">User</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">insert_many</span><span class="p">(</span><span class="n">users</span><span class="p">)</span>
-</code></pre></div>
-<hr />
-<h2 id="updating-documents">Updating Documents<a class="headerlink" href="#updating-documents" title="Permanent link">#</a></h2>
-<h3 id="update">update<a class="headerlink" href="#update" title="Permanent link">#</a></h3>
-<p>Update the current document instance.</p>
-<div class="highlight"><pre><span></span><code><span class="n">user</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find_one</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
-<span class="k">await</span> <span class="n">user</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Saba&#39;</span><span class="p">)</span>
-</code></pre></div>
-<hr />
-<h3 id="update_one-update_many">update_one / update_many<a class="headerlink" href="#update_one-update_many" title="Permanent link">#</a></h3>
-<p>Update one or more documents matching a filter.</p>
-<div class="highlight"><pre><span></span><code><span class="n">is_updated</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">update_one</span><span class="p">({</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
-<span class="n">updated_count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">update_many</span><span class="p">({</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Saba&#39;</span><span class="p">},</span> <span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
-</code></pre></div>
-<hr />
-<h3 id="save">save<a class="headerlink" href="#save" title="Permanent link">#</a></h3>
-<p>Save the document (insert or update).</p>
-<div class="highlight"><pre><span></span><code><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
-<span class="k">await</span> <span class="n">user</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
-</code></pre></div>
-<hr />
-<h2 id="deleting-documents">Deleting Documents<a class="headerlink" href="#deleting-documents" title="Permanent link">#</a></h2>
-<h3 id="delete">delete<a class="headerlink" href="#delete" title="Permanent link">#</a></h3>
-<p>Delete the current document instance.</p>
-<div class="highlight"><pre><span></span><code><span class="n">user</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find_one</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
-<span class="k">await</span> <span class="n">user</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
-</code></pre></div>
-<hr />
-<h3 id="delete_one-delete_many">delete_one / delete_many<a class="headerlink" href="#delete_one-delete_many" title="Permanent link">#</a></h3>
-<p>Delete one or more documents matching a filter.</p>
-<div class="highlight"><pre><span></span><code><span class="n">is_deleted</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">delete_one</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
-<span class="n">deleted_count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">delete_many</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
-</code></pre></div>
-<hr />
-<h2 id="special-methods">Special Methods<a class="headerlink" href="#special-methods" title="Permanent link">#</a></h2>
-<h3 id="find_one_or_insert">find_one_or_insert<a class="headerlink" href="#find_one_or_insert" title="Permanent link">#</a></h3>
-<p>Get or insert a document.</p>
-<div class="highlight"><pre><span></span><code><span class="n">user</span><span class="p">,</span> <span class="n">is_inserted</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find_one_or_insert</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ali&#39;</span><span class="p">)</span>
-</code></pre></div>
-<p>For correctness under concurrency, define a unique index/constraint on the queried fields.</p>
-<hr />
-<h3 id="find_one_or_raise">find_one_or_raise<a class="headerlink" href="#find_one_or_raise" title="Permanent link">#</a></h3>
-<p>Get a document or raise <code>NotFoundAPIError</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="n">user</span><span class="p">:</span> <span class="n">User</span> <span class="o">=</span> <span class="k">await</span> <span class="n">User</span><span class="o">.</span><span class="n">find_one_or_raise</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
-</code></pre></div>
-<hr />
-<h2 id="cursor-usage">Cursor Usage<a class="headerlink" href="#cursor-usage" title="Permanent link">#</a></h2>
+<p>For most CRUD-style list endpoints, prefer <code>ListAPI</code> with <code>pagination = Pagination</code>.</p>
+<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">#</a></h2>
 <ul>
-<li>The <code>find()</code> and <code>all()</code> methods return a <code>Cursor</code> object.</li>
-<li>You can iterate over it or use it as a list.</li>
-<li>For MongoDB: <code>from panther.db.cursor import Cursor</code></li>
-<li>For PantherDB: <code>from pantherdb import Cursor</code></li>
-</ul>
-<hr />
-<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">#</a></h2>
-<ul>
-<li>All methods are async unless otherwise noted.</li>
-<li>Filters can be passed as keyword arguments or as a dictionary.</li>
-<li>Some features (like <code>aggregate</code>) are only available for MongoDB.</li>
+<li>Return plain data for simple JSON responses.</li>
+<li>Use <code>Response</code> when you need status codes, headers, cookies, or pagination.</li>
+<li>Use <code>HTMLResponse</code>, <code>PlainTextResponse</code>, <code>TemplateResponse</code>, <code>FileResponse</code>, <code>StreamingResponse</code>, and <code>RedirectResponse</code> when the content is not regular JSON.</li>
+<li>Prefer async generators for streaming examples.</li>
+<li>Be careful with large files: <code>FileResponse</code> reads the file into memory.</li>
 </ul>
 
 
@@ -2033,7 +1824,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../database/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Database">
+          <a href="../middlewares/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Middlewares">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2043,20 +1834,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Database
+                Middlewares
               </div>
             </div>
           </a>
         
         
           
-          <a href="../redis/" class="md-footer__link md-footer__link--next" aria-label="Next: Redis">
+          <a href="../errors/" class="md-footer__link md-footer__link--next" aria-label="Next: Error Handling">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Redis
+                Error Handling
               </div>
             </div>
             <div class="md-footer__button md-icon">
