@@ -476,6 +476,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../postgresql_migrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PostgreSQL Migrations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../query/" class="md-nav__link">
         
   
@@ -683,6 +710,17 @@
     <span class="md-ellipsis">
       
         Example usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postgresql-user-lookup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PostgreSQL user lookup
       
     </span>
   </a>
@@ -1066,10 +1104,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_23" >
         
           
-          <label class="md-nav__link" for="__nav_22" id="__nav_22_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_23" id="__nav_23_label" tabindex="0">
             
   
   
@@ -1087,8 +1125,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_22_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_22">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_23_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_23">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1315,10 +1353,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_24" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_25" >
         
           
-          <label class="md-nav__link" for="__nav_24" id="__nav_24_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_25" id="__nav_25_label" tabindex="0">
             
   
   
@@ -1336,8 +1374,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_24_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_24">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_25_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_25">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1530,6 +1568,17 @@
     <span class="md-ellipsis">
       
         Example usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postgresql-user-lookup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PostgreSQL user lookup
       
     </span>
   </a>
@@ -1732,6 +1781,32 @@
 <h4 id="example-usage">Example usage<a class="headerlink" href="#example-usage" title="Permanent link">#</a></h4>
 <div class="highlight"><pre><span></span><code><span class="n">AUTHENTICATION</span> <span class="o">=</span> <span class="s1">&#39;panther.authentications.JWTAuthentication&#39;</span>
 </code></pre></div>
+<h4 id="postgresql-user-lookup">PostgreSQL user lookup<a class="headerlink" href="#postgresql-user-lookup" title="Permanent link">#</a></h4>
+<p>The default <code>get_user()</code> implementation uses the document <code>USER_MODEL.find_one()</code> API. Applications with PostgreSQL can keep Panther's JWT parsing and token handling by overriding that existing method:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">panther.authentications</span><span class="w"> </span><span class="kn">import</span> <span class="n">JWTAuthentication</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">panther.db.connections</span><span class="w"> </span><span class="kn">import</span> <span class="n">db</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">app.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">User</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">PostgreSQLJWTAuthentication</span><span class="p">(</span><span class="n">JWTAuthentication</span><span class="p">):</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_user</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">payload</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">User</span><span class="p">:</span>
+        <span class="n">user_id</span> <span class="o">=</span> <span class="n">payload</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">user_id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="bp">cls</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s1">&#39;Payload does not have `user_id`&#39;</span><span class="p">)</span>
+
+        <span class="k">async</span> <span class="k">with</span> <span class="n">db</span><span class="o">.</span><span class="n">session_context</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+            <span class="n">user</span> <span class="o">=</span> <span class="k">await</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">User</span><span class="p">,</span> <span class="n">user_id</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">user</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="bp">cls</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s1">&#39;User not found&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">user</span>
+</code></pre></div>
+<p>Configure the subclass instead of the default authentication class:</p>
+<div class="highlight"><pre><span></span><code><span class="n">AUTHENTICATION</span> <span class="o">=</span> <span class="s1">&#39;app.authentications.PostgreSQLJWTAuthentication&#39;</span>
+</code></pre></div>
+<p>The returned user must expose an <code>id</code>. For built-in token refresh and logout flows, it must also allow Panther to store transient <code>_auth_token</code> and <code>_auth_refresh_token</code> attributes.</p>
 <h4 id="jwt-configuration">JWT Configuration<a class="headerlink" href="#jwt-configuration" title="Permanent link">#</a></h4>
 <p>You can customize JWT behavior by setting <code>JWT_CONFIG</code> in your configs. Example:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">core/configs.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -1807,14 +1882,14 @@
 <span class="k">class</span><span class="w"> </span><span class="nc">CustomAuthentication</span><span class="p">(</span><span class="n">BaseAuthentication</span><span class="p">):</span>
     <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
         <span class="c1"># Your authentication logic here</span>
-        <span class="c1"># Return an instance of USER_MODEL (default: BaseUser)</span>
+        <span class="c1"># Return the authenticated application user.</span>
         <span class="c1"># Or raise AuthenticationAPIError on failure</span>
         <span class="o">...</span>
 </code></pre></div>
    Or as a function or plain class:
    <div class="highlight"><pre><span></span><code><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">custom_authentication</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
     <span class="c1"># Your authentication logic here</span>
-    <span class="c1"># Return an instance of USER_MODEL (default: BaseUser)</span>
+        <span class="c1"># Return the authenticated application user.</span>
     <span class="c1"># Or raise AuthenticationAPIError on failure</span>
     <span class="o">...</span>
 </code></pre></div></li>

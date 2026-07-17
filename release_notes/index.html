@@ -474,6 +474,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../postgresql_migrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PostgreSQL Migrations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../query/" class="md-nav__link">
         
   
@@ -833,10 +860,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_23" >
         
           
-          <label class="md-nav__link" for="__nav_22" id="__nav_22_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_23" id="__nav_23_label" tabindex="0">
             
   
   
@@ -854,8 +881,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_22_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_22">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_23_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_23">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1082,10 +1109,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_24" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_25" >
         
           
-          <label class="md-nav__link" for="__nav_24" id="__nav_24_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_25" id="__nav_25_label" tabindex="0">
             
   
   
@@ -1103,8 +1130,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_24_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_24">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_25_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_25">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1269,6 +1296,28 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#540" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#530" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3.0
+      
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#523" class="md-nav__link">
@@ -2614,6 +2663,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#540" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#530" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#523" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3951,6 +4022,20 @@
 
 
 <h1 id="panther-release-notes">Panther Release Notes<a class="headerlink" href="#panther-release-notes" title="Permanent link">#</a></h1>
+<h3 id="540">5.4.0<a class="headerlink" href="#540" title="Permanent link">#</a></h3>
+<ul>
+<li>Add opt-in PostgreSQL support using SQLAlchemy async and <code>asyncpg</code> through <code>PostgreSQLConnection</code>.</li>
+<li>Add PostgreSQL connection lifecycle checks, scoped SQLAlchemy sessions, explicit transaction control, and integration-test coverage.</li>
+<li>Document PostgreSQL configuration, SQLAlchemy API patterns, raw SQL execution, Alembic migrations, and SQL-backed JWT user lookup.</li>
+<li>Clarify that Panther document models, document generic APIs, document query methods, and the built-in admin panel do not support SQLAlchemy models.</li>
+</ul>
+<h3 id="530">5.3.0<a class="headerlink" href="#530" title="Permanent link">#</a></h3>
+<ul>
+<li>Add a backend-neutral database connection foundation with lifecycle hooks and scoped-session support.</li>
+<li>Make <code>DocumentModel</code> the explicit name for Panther's built-in document model; <code>Model</code> remains a compatibility alias.</li>
+<li>Move document-only query behavior out of the generic query contract, enabling relational backends to provide their own query implementation.</li>
+<li>Run startup and shutdown events through the ASGI lifespan protocol, including support for asynchronous shutdown handlers.</li>
+</ul>
 <h3 id="523">5.2.3<a class="headerlink" href="#523" title="Permanent link">#</a></h3>
 <ul>
 <li>Fix background task async loop mismatch with app event loop registration (#146)</li>

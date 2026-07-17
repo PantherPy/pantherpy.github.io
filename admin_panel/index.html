@@ -476,6 +476,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../postgresql_migrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PostgreSQL Migrations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../query/" class="md-nav__link">
         
   
@@ -837,10 +864,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_23" checked>
         
           
-          <label class="md-nav__link" for="__nav_22" id="__nav_22_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_23" id="__nav_23_label" tabindex="0">
             
   
   
@@ -858,8 +885,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_22_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_22">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_23_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_23">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1205,10 +1232,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_24" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_25" >
         
           
-          <label class="md-nav__link" for="__nav_24" id="__nav_24_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_25" id="__nav_25_label" tabindex="0">
             
   
   
@@ -1226,8 +1253,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_24_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_24">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_25_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_25">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1526,6 +1553,10 @@
 </blockquote>
 <h1 id="panther-admin-panel">Panther Admin Panel<a class="headerlink" href="#panther-admin-panel" title="Permanent link">#</a></h1>
 <p>Panther provides a built-in admin panel that allows you to easily manage your database models through a web interface.</p>
+<div class="admonition warning">
+<p class="admonition-title">Document models only</p>
+<p>The built-in admin panel currently supports Panther document models backed by MongoDB or PantherDB. It does not manage PostgreSQL SQLAlchemy models. PostgreSQL applications should provide their own administration endpoints or use a SQLAlchemy-compatible admin tool.</p>
+</div>
 <h2 id="enabling-the-admin-panel">Enabling the Admin Panel<a class="headerlink" href="#enabling-the-admin-panel" title="Permanent link">#</a></h2>
 <p>To enable the admin panel in your project, follow these steps:</p>
 <h3 id="1-add-the-admin-panel-urls">1. Add the Admin Panel URLs<a class="headerlink" href="#1-add-the-admin-panel-urls" title="Permanent link">#</a></h3>
@@ -1557,7 +1588,7 @@
 <div class="highlight"><pre><span></span><code>panther<span class="w"> </span>createuser<span class="w"> </span>main.py
 </code></pre></div>
 <p>Replace <code>main.py</code> with the path to your main application file if it is different. This command will create a new user based on your <code>USER_MODEL</code> (by default, <code>panther.db.models.BaseUser</code>).</p>
-<p>Once the user is created, you can log in to the admin panel using the credentials you set during user creation. </p>
+<p>Once the user is created, you can log in to the admin panel using the credentials you set during user creation.</p>
 
 
 

@@ -16,7 +16,7 @@
         <link rel="prev" href="../file_handling/">
       
       
-        <link rel="next" href="../query/">
+        <link rel="next" href="../postgresql_migrations/">
       
       
         
@@ -537,6 +537,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#custom-backends" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Backends
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pantherdb" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -593,6 +604,45 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PostgreSQL
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PostgreSQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#define-sqlalchemy-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Define SQLAlchemy models
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-sessions-explicitly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use sessions explicitly
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-does-it-work" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -607,6 +657,33 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../postgresql_migrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PostgreSQL Migrations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -977,10 +1054,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_23" >
         
           
-          <label class="md-nav__link" for="__nav_22" id="__nav_22_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_23" id="__nav_23_label" tabindex="0">
             
   
   
@@ -998,8 +1075,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_22_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_22">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_23_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_23">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1226,10 +1303,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_24" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_25" >
         
           
-          <label class="md-nav__link" for="__nav_24" id="__nav_24_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_25" id="__nav_25_label" tabindex="0">
             
   
   
@@ -1247,8 +1324,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_24_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_24">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_25_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_25">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1430,6 +1507,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#custom-backends" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Backends
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pantherdb" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1486,6 +1574,45 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PostgreSQL
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PostgreSQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#define-sqlalchemy-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Define SQLAlchemy models
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-sessions-explicitly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use sessions explicitly
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-does-it-work" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1525,7 +1652,8 @@
 
 
 <h1 id="database-support-in-panther">Database Support in Panther<a class="headerlink" href="#database-support-in-panther" title="Permanent link">#</a></h1>
-<p>Panther natively supports two databases: <code>MongoDB</code> and <code>PantherDB</code>. However, you can also define your own custom database connections and queries.</p>
+<p>Panther natively supports <code>MongoDB</code>, <code>PantherDB</code>, and <code>PostgreSQL</code>. You can also define custom database connections and queries.</p>
+<p>The built-in <code>panther.db.Model</code> is a document model. It remains available for compatibility; <code>panther.db.DocumentModel</code> is its explicit name. Relational integrations should provide their own persistence models rather than inheriting from either class.</p>
 <hr />
 <h2 id="configuration-structure">Configuration Structure<a class="headerlink" href="#configuration-structure" title="Permanent link">#</a></h2>
 <p>Define your database configuration in the following format:</p>
@@ -1543,9 +1671,39 @@
 <li><strong>Built-in supported engines:</strong></li>
 <li><code>panther.db.connections.PantherDBConnection</code></li>
 <li><code>panther.db.connections.MongoDBConnection</code></li>
+<li><code>panther.db.connections.PostgreSQLConnection</code></li>
 <li>All values in <code>engine</code> (except <code>class</code>) are passed to the <code>__init__</code> method of the specified class.</li>
 <li>The <code>query</code> key is optional for the default supported engines, but you can customize it if needed.</li>
 </ul>
+<h2 id="custom-backends">Custom Backends<a class="headerlink" href="#custom-backends" title="Permanent link">#</a></h2>
+<p>Custom engines should subclass <code>panther.db.connections.BaseDatabaseConnection</code> and implement the <code>session</code> property. They can return their query implementation from <code>get_query_engine()</code>; alternatively, set the existing <code>query</code> configuration value explicitly.</p>
+<p>Query implementations must subclass <code>panther.db.queries.base_queries.BaseQuery</code>.</p>
+<p>Backends declare capabilities rather than requiring Panther to check their concrete class. The built-in document backends use <code>uses_document_models</code>; MongoDB additionally uses <code>uses_object_ids</code> and <code>uses_mongo_query_syntax</code>. Relational backends leave these capabilities disabled and do not use the document query API.</p>
+<p>If a backend needs an active event loop to allocate or release resources, implement its async <code>startup()</code> and <code>shutdown()</code> hooks. Panther invokes them during ASGI lifespan startup and shutdown.</p>
+<p>Backends can also override <code>session_context()</code> to provide a scoped unit of work. The built-in document backends yield their existing connection; relational backends can create, commit or roll back, and close a session there. Code that needs a scoped session can use <code>db.session_context()</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">contextlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">asynccontextmanager</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">panther.db.connections</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseDatabaseConnection</span><span class="p">,</span> <span class="n">db</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">SQLConnection</span><span class="p">(</span><span class="n">BaseDatabaseConnection</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session_factory</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_session_factory</span> <span class="o">=</span> <span class="n">session_factory</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">session</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_session_factory</span>
+
+    <span class="nd">@asynccontextmanager</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">session_context</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">async</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_session_factory</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">session</span>
+
+
+<span class="k">async</span> <span class="k">with</span> <span class="n">db</span><span class="o">.</span><span class="n">session_context</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+    <span class="c1"># Use the backend&#39;s scoped session.</span>
+    <span class="k">pass</span>
+</code></pre></div>
 <hr />
 <h2 id="pantherdb">PantherDB<a class="headerlink" href="#pantherdb" title="Permanent link">#</a></h2>
 <p>Example configuration for PantherDB:</p>
@@ -1577,6 +1735,64 @@
 <ul>
 <li>The parameters for the engine are the same as those for <code>pymongo.MongoClient</code>. See the <a href="https://pymongo.readthedocs.io/en/stable/tutorial.html#making-a-connection-with-mongoclient">PyMongo documentation</a> for details.</li>
 </ul>
+<hr />
+<h2 id="postgresql">PostgreSQL<a class="headerlink" href="#postgresql" title="Permanent link">#</a></h2>
+<p>Install the optional PostgreSQL dependencies:</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;panther[postgresql]&#39;</span>
+</code></pre></div>
+<p>Configure Panther with a SQLAlchemy async URL:</p>
+<div class="highlight"><pre><span></span><code><span class="n">DATABASE</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;engine&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;panther.db.connections.PostgreSQLConnection&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;postgresql+asyncpg://postgres:password@127.0.0.1:5432/my_database&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;echo&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>  <span class="c1"># Optional SQLAlchemy engine setting</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>PostgreSQLConnection</code> validates the engine configuration while Panther loads settings. During ASGI startup, Panther opens a connection and runs a health check; invalid credentials, hosts, or database names prevent the application from serving requests.</p>
+<h3 id="define-sqlalchemy-models">Define SQLAlchemy models<a class="headerlink" href="#define-sqlalchemy-models" title="Permanent link">#</a></h3>
+<p>PostgreSQL applications use ordinary SQLAlchemy declarative models. Do not inherit from <code>panther.db.DocumentModel</code> or use document query methods such as <code>find()</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy.orm</span><span class="w"> </span><span class="kn">import</span> <span class="n">DeclarativeBase</span><span class="p">,</span> <span class="n">Mapped</span><span class="p">,</span> <span class="n">mapped_column</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Base</span><span class="p">(</span><span class="n">DeclarativeBase</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">User</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
+    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s1">&#39;users&#39;</span>
+
+    <span class="nb">id</span><span class="p">:</span> <span class="n">Mapped</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="n">mapped_column</span><span class="p">(</span><span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">name</span><span class="p">:</span> <span class="n">Mapped</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+</code></pre></div>
+<h3 id="use-sessions-explicitly">Use sessions explicitly<a class="headerlink" href="#use-sessions-explicitly" title="Permanent link">#</a></h3>
+<p><code>db.session</code> is the SQLAlchemy session factory. Prefer <code>db.session_context()</code> so every unit of work receives a new session and failures are rolled back automatically. Successful writes require an explicit commit.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy</span><span class="w"> </span><span class="kn">import</span> <span class="n">select</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">panther.db.connections</span><span class="w"> </span><span class="kn">import</span> <span class="n">db</span>
+
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">create_and_list_users</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">User</span><span class="p">]:</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">db</span><span class="o">.</span><span class="n">session_context</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">))</span>
+        <span class="k">await</span> <span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">session</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">select</span><span class="p">(</span><span class="n">User</span><span class="p">)</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="n">User</span><span class="o">.</span><span class="n">id</span><span class="p">))</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">scalars</span><span class="p">())</span>
+</code></pre></div>
+<p>Panther disposes the connection pool during ASGI shutdown.</p>
+<p>Use <code>sqlalchemy.text()</code> for raw SQL and bind external values as parameters rather than formatting them into the query string:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy</span><span class="w"> </span><span class="kn">import</span> <span class="n">text</span>
+
+
+<span class="k">async</span> <span class="k">with</span> <span class="n">db</span><span class="o">.</span><span class="n">session_context</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">session</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+        <span class="n">text</span><span class="p">(</span><span class="s1">&#39;SELECT id, name FROM users WHERE id = :user_id&#39;</span><span class="p">),</span>
+        <span class="p">{</span><span class="s1">&#39;user_id&#39;</span><span class="p">:</span> <span class="n">user_id</span><span class="p">},</span>
+    <span class="p">)</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">mappings</span><span class="p">()</span><span class="o">.</span><span class="n">one_or_none</span><span class="p">()</span>
+</code></pre></div>
+<p>For a complete CRUD, relationship, and cursor-pagination example, see the <code>examples/postgresql</code> directory in the Panther repository.</p>
 <hr />
 <h2 id="how-does-it-work">How Does It Work?<a class="headerlink" href="#how-does-it-work" title="Permanent link">#</a></h2>
 <ul>
@@ -1631,13 +1847,13 @@
         
         
           
-          <a href="../query/" class="md-footer__link md-footer__link--next" aria-label="Next: Query">
+          <a href="../postgresql_migrations/" class="md-footer__link md-footer__link--next" aria-label="Next: PostgreSQL Migrations">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Query
+                PostgreSQL Migrations
               </div>
             </div>
             <div class="md-footer__button md-icon">

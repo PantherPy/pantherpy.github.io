@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://pantherpy.github.io/query/">
       
       
-        <link rel="prev" href="../database/">
+        <link rel="prev" href="../postgresql_migrations/">
       
       
         <link rel="next" href="../redis/">
@@ -457,6 +457,33 @@
     
   
     Database
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../postgresql_migrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PostgreSQL Migrations
   
 
     
@@ -1154,10 +1181,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_23" >
         
           
-          <label class="md-nav__link" for="__nav_22" id="__nav_22_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_23" id="__nav_23_label" tabindex="0">
             
   
   
@@ -1175,8 +1202,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_22_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_22">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_23_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_23">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1403,10 +1430,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_24" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_25" >
         
           
-          <label class="md-nav__link" for="__nav_24" id="__nav_24_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_25" id="__nav_25_label" tabindex="0">
             
   
   
@@ -1424,8 +1451,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_24_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_24">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_25_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_25">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1880,6 +1907,10 @@
 
 <h1 id="querying-documents">Querying Documents<a class="headerlink" href="#querying-documents" title="Permanent link">#</a></h1>
 <p>Panther ODM provides a simple, async interface for interacting with your database models. This guide covers the most common operations.</p>
+<div class="admonition note">
+<p class="admonition-title">Document queries only</p>
+<p>These query methods apply to Panther document models used with MongoDB and PantherDB. PostgreSQL applications use SQLAlchemy queries such as <code>select()</code> within <code>db.session_context()</code>; see the <a href="../database/#postgresql">PostgreSQL guide</a>.</p>
+</div>
 <hr />
 <h3 id="find_one">find_one<a class="headerlink" href="#find_one" title="Permanent link">#</a></h3>
 <p>Get a single document matching the filter.</p>
@@ -2033,7 +2064,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../database/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Database">
+          <a href="../postgresql_migrations/" class="md-footer__link md-footer__link--prev" aria-label="Previous: PostgreSQL Migrations">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2043,7 +2074,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Database
+                PostgreSQL Migrations
               </div>
             </div>
           </a>
